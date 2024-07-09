@@ -1,0 +1,24 @@
+{
+	"required": [
+		"id",
+		"name",
+		"images"
+	],
+	"type": "object",
+	"properties": {
+		"id" : {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 1
+		},
+		"name": {
+			"type": "string",
+			"example": "image lists #1",
+			"minLength": 1
+		},
+		"images": {
+			"$ref": "./images.json"
+		}
+	}
+}

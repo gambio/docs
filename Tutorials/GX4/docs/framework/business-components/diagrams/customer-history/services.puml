@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IteratorAggregate
+
+package Gambio\Admin\Modules\Customer\Submodules\History\Services {
+
+    class CustomerHistoryFactory {
+        + createCustomerId(int $customerId): CustomerId
+        + createCustomerHistory(CustomerHistoryEntry ...$entries): CustomerHistory
+        + createCustomerHistoryEntryDto(\
+        \n    int $customerId, array $payload,\
+        \n    string $type, DateTimeImmutable $date\
+        \n): CustomerHistoryEntryDto
+        + createCustomerHistoryEntryDtos(CustomerHistoryEntryDto ...$dtos): CustomerHistoryEntryDtos
+    }
+
+    interface CustomerHistoryReadService {
+        + getCustomerHistory(int $customerId): CustomerHistory
+        + getCustomerHistoryForType(int $customerId, string $type): CustomerHistory
+    }
+
+    interface CustomerHistoryRepository {
+        + getCustomerHistory(CustomerId $customerId): CustomerHistory
+        + getCustomerHistoryForType(CustomerId $customerId, string $type): CustomerHistory
+        + registerCustomerHistoryReader(CustomerHistoryReader $reader): void
+    }
+
+    interface CustomerHistoryReader {
+        + getCustomerHistoryEntries(CustomerId $customerId): CustomerHistoryEntryDtos
+        + getType(): string
+    }
+
+    package Gambio\Admin\Modules\Customer\Submodules\History\Services\DTO {
+        class CustomerHistoryEntryDto {
+            - customerId: int
+            - payload: array
+            - type: string
+            - date: DateTimeImmutable
+            --
+            + {static} create(\
+            \n    int $customerId, array $payload,\
+            \n    string $type, DateTimeImmutable $date\
+            \n): CustomerHistoryEntryDto
+            ..
+            + customerId(): int
+            + content(): array
+            + type(): string
+            + date(): DateTimeImmutable
+        }
+    }
+
+    note right of CustomerHistoryReadService: Reads from :\
+    \n Cart\
+    \n Wishlist\
+    \n Orders\
+    \n Reviews\
+    \n Customer (creation date)\
+    \n Newsletter registration + receiving one ?!\
+    \n vouchers
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\History\Services\DTO\Collections {
+    class CustomerHistoryEntryDtos {
+        + {static} create(CustomerHistoryEntryDto ...$dtos): CustomerHistoryEntryDtos
+    }
+}
+
+@enduml

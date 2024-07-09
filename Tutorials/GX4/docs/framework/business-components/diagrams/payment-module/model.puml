@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+interface IteratorAggregate
+
+package Gambio\Admin\Modules\PaymentModule\Model\Collections {
+
+    class PaymentMethods {
+        + {static} create(PaymentMethod ...$paymentMethods): PaymentMethods
+        + toArray(): array
+    }
+
+}
+
+package Gambio\Admin\Modules\PaymentModule\Model {
+
+    class PaymentMethod <<Aggregate Root>> {
+        - name: string
+        --
+        + {static} create(PaymentMethodId $id, string $name): PaymentMethod
+        + toArray(): array
+        ..
+        + id(): string
+        + name(): string
+    }
+}
+
+package Gambio\Admin\Modules\PaymentModule\Model\ValueObjects {
+
+    class PaymentMethodId {
+        - value: string
+        + {static} create(string $value): PaymentMethodId
+        + value(): string
+    }
+}
+
+PaymentMethods o- PaymentMethod
+PaymentMethod *- PaymentMethodId
+PaymentMethods --|> IteratorAggregate
+
+@enduml

@@ -1,0 +1,38 @@
+{
+	"required": [
+		"id",
+		"content",
+		"creationTime",
+		"updatedAtTime"
+	],
+	"type": "object",
+	"properties": {
+		"id" : {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 1
+		},
+		"creatorId" : {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 1
+		},
+		"content": {
+			"type": "string",
+			"example": "content of the memo",
+			"minLength": 1
+		},
+		"creationTime": {
+			"type": "string",
+			"example": "2022-01-13 01:23:45",
+			"minLength": 1
+		},
+		"updatedAtTime": {
+			"type": "string",
+			"example": "2022-01-13 01:23:45",
+			"minLength": 1
+		}
+	}
+}

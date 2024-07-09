@@ -1,0 +1,92 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+interface IteratorAggregate
+
+package Gambio\Core\Event\EventRaisingEntity {
+	abstract class AbstractEventRaisingEntity {}
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\Memos\Model\Collections {
+    class CustomerMemos {
+        + {static} create(CustomerMemo ...$customerMemos): CustomerMemos
+        + toArray(string $datetimeFormat = 'Y-m-d H:i:s'): array
+    }
+
+    class CustomerMemoIds {
+		+ {static} create(CustomerMemoId ...$customerMemoIds): CustomerMemoIds
+		+ toArray(): array
+	}
+}
+
+
+package Gambio\Admin\Modules\Customer\Submodules\Memos\Model {
+	class CustomerMemo <<Aggregate Root>> {
+		- content: string
+		- creationTime: DateTimeImmutable
+		- updatedAtTime: DateTimeImmutable
+		--
+		+ {static} create(\
+		\n    CustomerMemoId $customerMemoId, CustomerId $customerId, CreatorId $creatorId,\
+		\n    string $content, DateTimeImmutable $creationTime, DateTimeImmutable $updatedAtTime\
+		\n): CustomerMemoId
+		+ toArray(string $datetimeFormat = 'Y-m-d H:i:s'): array
+		..
+		+ changeContent(string $content): void
+		..
+		+ id(): int
+		+ customerId(): int
+		+ creatorId(): int
+		+ content(): string
+		+ creationTime(string $datetimeFormat = 'Y-m-d H:i:s'): string
+		+ updatedAtTime(string $datetimeFormat = 'Y-m-d H:i:s'): string
+	}
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\Memos\Model\ValueObjects {
+	class CustomerMemoId {
+		- value: int
+		--
+		+ {static} create(int $customerMemoId): CustomerMemoId
+		..
+		+ value(): int
+	}
+
+	class CustomerId {
+		- value: int
+		--
+		+ {static} create(int $customerId): CustomerId
+		..
+		+ value(): int
+	}
+
+	class CreatorId {
+		- value: int
+		--
+		+ {static} create(int $creatorId): CreatorId
+		..
+		+ value(): int
+	}
+}
+
+AbstractEventRaisingEntity <|-- CustomerMemo
+
+CustomerMemo *-- CustomerMemoId
+CustomerMemo *-- CustomerId
+
+CustomerMemo *-- CreatorId
+
+CustomerMemos o- CustomerMemo
+CustomerMemos --|> IteratorAggregate
+
+CustomerMemoIds o- CustomerMemoId
+CustomerMemoIds --|> IteratorAggregate
+
+CustomerIds --|> IteratorAggregate
+CustomerIds o- CustomerId
+
+
+
+@enduml

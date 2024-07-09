@@ -1,0 +1,9 @@
+{
+	"type": "array",
+	"items": {
+		"type": "string",
+		"example": "an-addon-value-key",
+		"minLength": 1,
+		"description": "Contains the keys of the customer addon values"
+	}
+}

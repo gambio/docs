@@ -1,0 +1,4137 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://developers.gambio.de/Tutorials/GX3/plugins/1_introduction/">
+      
+      
+        <link rel="prev" href="../../markdown/using_vagrant/">
+      
+      
+        <link rel="next" href="../2_autoloading/">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>1. Einführung - Developer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="gambio" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-einfuhrung" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../../.." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+      
+  <img src="../../../../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Developer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Einführung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Hauptnavigation" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ADRs/001-starting_adr/" class="md-tabs__link">
+        
+  
+    
+  
+  We are going to create architectural decision records
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../CI/create-nightly-build/" class="md-tabs__link">
+        
+  
+    
+  
+  How to Set Up a Nightly Build for a Specific Branch
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../REST/" class="md-tabs__link">
+        
+  
+    
+  
+  REST API documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../application/bootstrapper/" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+      
+  <img src="../../../../logo.svg" alt="logo">
+
+    </a>
+    Developer Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../ADRs/001-starting_adr/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    We are going to create architectural decision records
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            We are going to create architectural decision records
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/002-rest_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Following a specific concept for the new REST API v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/003-rules_conventions_and_conding_standards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rules and coding standards for clean, less verbose and concise code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/004-inner-structure-of-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The inner structure of the new architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/005-implementing-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rules and best practices for implementing modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/006-naming-version-receipts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Naming of version receipts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/007-handling-of-prices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Handling of prices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/008-gambio-admin-submodules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support for submodules in the GambioAdmin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ADRs/attachments/001-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+     
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../CI/create-nightly-build/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    How to Set Up a Nightly Build for a Specific Branch
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            How to Set Up a Nightly Build for a Specific Branch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../CI/nightwatch.js/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nightwatch.js Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../REST/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    REST API documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GX3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            GX3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../application/bootstrapper/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bootstrapper
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_1_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Bootstrapper
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../application/ioc_container/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gambio Core - Dependency Container
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../application/request_lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request Lifecycle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../application/service_provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service Provider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/legacy_to_gx_configurations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Konfigurationsspeicher vor GX 4.1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../markdown/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Gambio Entwickler-Dokumentation
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_1_3">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Gambio Entwickler-Dokumentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/add_content_manager_content/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einbindung von Content Manager Inhalten
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/base_structure_of_new_modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basisstruktur für neue Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/change_existing_classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ändern bestehender PHP Klassen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_email_template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen und Bearbeiten von Email-Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_html_content/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen neuer HTML Inhalte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_http_controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen neuer HTTP-Controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_javascript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen neuer JavaScript Inhalte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_language_phrases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen und Bearbeiten von Sprachdateien
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_menu_entry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen und Bearbeiten von Menüeinträgen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_menubox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen neuer Menüboxen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_module-center_module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen eines Module-Center Eintrags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_php_classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen neuer PHP Klassen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_styling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anlegen neuer Styling Inhalte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/create_new_theme/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entwicklung eines neuen Themes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/deprecated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Veraltete Inhalte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/development_git-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entwicklung und Git-Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/execute_unit_tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ausführen von Unit Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/extending_orders_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erweitern der neuen Bestellübersicht
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/extending_rest_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erweitern der REST-API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/extending_style_edit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Erweitern vom StyleEdit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/general_guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Allgemeine Programmierrichtlinien
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Richtlinien für Entwickler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/gx-modules-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GXModules Konfigurationsdatei
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/installing_needed_components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation notwendiger Programme und Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/javascript_guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript Richtlinien
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/list_of_all_extender/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Liste aller Extender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/module_development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entwicklung eigener Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/php_guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PHP Richtlinien
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/setup_environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einrichtung der Entwicklungsumgebung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/setup_project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aufsetzen des Shop Projektes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/special_topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spezielle Themen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/styling_guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Styling Richtlinien
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/supported-php-versions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unterstützte PHP-Versionen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/usage_of_the_admin_access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verwendung der Zugriffsverwaltung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/usage_of_the_auth_service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verwendung des Auth-Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/usage_of_widgets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verwendung unserer JavaScript Widgets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/using_docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nutzung von Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/using_vagrant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nutzung von Vagrant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  <span class="md-ellipsis">
+    1. Einführung
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link md-nav__link--active" for="__nav_4_1_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            1. Einführung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_autoloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autoloading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application_core/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anwendungskern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Gambio Developers Documentation
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Gambio Developers Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/develop-environment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Introduction for Development Environment
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction for Development Environment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/develop-environment/development-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Required Development Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/develop-environment/setup-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set up the shop project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/framework/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Introduction for Architecture and Framework
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction for Architecture and Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/application-core/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Core
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/legacy-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Legacy architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/framework/business-components/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    All available business-related components
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_2_3">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            All available business-related components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/_template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    << Name of the domain or noun that stands for the module >>
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/admin-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Admin Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/customer-addon-value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customer Addon Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/customer-legacy-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customer Legacy Services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/customer-memo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customer Memo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/customer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/image-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/option/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Option
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/parcel-service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parcel Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/product-option/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Option
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/product-variant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Variant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/statistics-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistics Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/tracking-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tracking Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/user-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/withdrawal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Withdrawal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_3_16" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/framework/business-components/internal/configuration/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Internal use only - Should not be released
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_2_3_16">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_4_2_2_3_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_3_16">
+            <span class="md-nav__icon md-icon"></span>
+            Internal use only - Should not be released
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/internal/exception-transmitter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internal Use Only - Should Not Be Released
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/internal/sellingunit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selling Unit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_3_17" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/framework/business-components/work-in-progress/customer-address/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Work in progress - Customer Address
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_2_3_17">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_4_2_2_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_3_17">
+            <span class="md-nav__icon md-icon"></span>
+            Work in progress - Customer Address
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/work-in-progress/customer-credentials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customer Credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/work-in-progress/language/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work in progress - Should not be released, as long as the model is incomplete.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/work-in-progress/product-listing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Listing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_3_17_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/framework/business-components/work-in-progress/product-listing/components/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_2_3_17_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_4_2_2_3_17_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_3_17_4">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/work-in-progress/product-listing/deliverables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deliverables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/work-in-progress/product-listing/planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TODO'S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/business-components/work-in-progress/product-listing/price_notices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listing item price struct and formatting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/framework/details/application-layers/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Application Layers
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_2_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Application Layers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/details/autoloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autoloading and Namespaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/details/di-container/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dependency Injection Container
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/details/service-provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service Providers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/framework/technical-components/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    All available technical-related components
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_2_5">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            All available technical-related components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/cache/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cache
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/configurations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/emails/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Emails
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environment Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Languages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/logging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/permissions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/pricing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pricing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/text-phrases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text Phrases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/framework/technical-components/verification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VerificationService
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_3" >
+        
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Gambio admin
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Gambio admin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_3_1" >
+        
+          <label class="md-nav__link" for="__nav_4_2_3_1" id="__nav_4_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Internal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Internal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_3_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/gambio-admin/internal/frontend/entrypoint/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Gambio Admin - Entrypoint
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_3_1_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_4_2_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Gambio Admin - Entrypoint
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/gambio-admin/internal/frontend/info-box/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gambio Admin - Info Box
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/gambio-admin/internal/frontend/user-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/module-development/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Introduction for Module Development
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction for Module Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Guidelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/sample-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample Modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/module-development/admin/admin-menu-json/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Extending the Admin Menu
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_4_3">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Extending the Admin Menu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/admin/custom-configuration-page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a custom configuration page
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/admin/custom-module-center-module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a custom module for the Module Center
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/admin/define-http-routes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding and managing HTTP routes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/admin/gx-modules-json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a generic Module Center module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/admin/http-actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a new HTTP action
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/module-development/general/all-extenders/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    List of all available extenders (deprecated)
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_4_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            List of all available extenders (deprecated)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/general/defining-a-module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining a module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/general/extending-html/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extending existing HTML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/general/gx-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GXModules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/general/languages-text-phrases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding languages and managing text phrases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/module-development/store/adding-css/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Adding and extending CSS
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_4_5">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Adding and extending CSS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/store/adding-js/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adding new JavaScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/store/creating-http-controller/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a new HTTP controller
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/module-development/store/creating-theme/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a new Theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/sample-modules/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Sample modules
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_5">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Sample modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/sample-modules/extend-shop-functionality/real-command-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extend Layout Data of gambio admin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../GX4/docs/theme-development/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Introduction Theme Development
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_2_6">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction Theme Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Theme System Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/content-manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating Content Manager entries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/extension/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Extending a theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/final/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The final theme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/html-templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating HTML templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with JavaScript files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/styles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with stylesheets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GX4/docs/theme-development/text-phrases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with language files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>1. Einführung</h1>
+
+<h2 id="1-einfuhrung">1. Einführung<a class="headerlink" href="#1-einfuhrung" title="Permanent link">&para;</a></h2>
+<p>In den Tutorial entwickeln wir zusammen ein kleines Plugin für den GambioAdmin. Am Ende soll es in der Lage sein, eine
+Übersicht mit Informationen zu allen installierten Plugins darzustellen.</p>
+<h4 id="anwendungskern">Anwendungskern<a class="headerlink" href="#anwendungskern" title="Permanent link">&para;</a></h4>
+<p>In der Version 4.1.1.0 ist der Anwendungskern erneuert worden. Doch was bedeutet der Begriff <em>Anwendungskern</em> und was
+bedeutet es </p>
+<h3 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gambio Shop Version: &gt;= 4.1.1.0</li>
+<li>Web-Server (lokal oder remote)</li>
+<li>IDE (Integrated Developer Environment / Entwicklungsumgebung) | Empfehlungen:<ol>
+<li>PHPStorm</li>
+<li>Visual Studio Code</li>
+</ol>
+</li>
+</ul>
+<p>Während des Tutorials werden wir ausschließlich innerhalb des Verzeichnisses <em>GXModules</em> arbeiten. Trotzdem ist
+es empfehlenswert, das gesamte Shopverzeichniss in der IDE zu öffnen. Die meisten Entwicklungsumgebungen sind dadurch
+in der Lage, mit Hilfe der Code-Completion Funktion die Arbeit deutlich zu erleichtern. Außerdem sind so viele Fehler,
+wie die Verwendung falscher Namespaces, viel leichter zu finden und zu beheben.<br />
+Die PHPStorm-IDE zum Beispiel zeigt während des tippens eines Klassennamens eine Liste mit Vorschlägen zu vorhandenen
+Klassen an. Wenn die gewünschte Klasse mit der <em>Enter</em> Taste eingebunden wird, kümmert sich die IDE automatisch darum,
+den Namespace richtig im <em>use</em> statement am Anfang der Datei zu setzen.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Zurück zum Seitenanfang
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Gambio GmbH
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.gambio-support.de" target="_blank" rel="noopener" title="Gambio Kundenportal" class="md-social__link">
+      <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="M63.37,52.59a19.56,19.56,0,0,0,6.86-14.84,14.42,14.42,0,0,0-.77-4.57A19,19,0,0,0,67.05,28l.12.11,4.09-4.46L64,17l-4.09,4.46.06.06a21.23,21.23,0,0,0-9.78-2.61l-.27,0H49.7c-10.62.08-20.49,6.67-20.49,19.53,0,11.86,8.14,19.31,20.71,19.31,6.9,0,9.3,2.86,9.3,6.59,0,4.73-4.5,7.77-9.46,7.77-5.19,0-9.23-2-9.61-7H29.76c-.24,11,6.66,16.88,20,16.88,10.47,0,20.78-5.86,20.78-17.26A12.62,12.62,0,0,0,63.37,52.59ZM40,38.37c0-6.2,4.27-9.61,9.93-9.61a9.46,9.46,0,0,1,9.61,9.61c0,6.13-4.58,9.15-9.61,9.15C44.26,47.52,40,44,40,38.37Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/gambio" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/gambio-gmbh" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+package Gambio\Admin\Modules\Customer\Submodules\AddonValues\Model\Events {
+	left to right direction
+
+	class CustomerAddonValueCreated {
+		- customerAddonValueId: CustomerAddonValueId
+		+ {static} create(CustomerAddonValueId $customerAddonValueId): CustomerAddonValueCreated
+		+ customerAddonValueId(): CustomerAddonValueId
+	}
+
+	class CustomerAddonValueDeleted{
+		- customerAddonValueId: CustomerAddonValueId
+		+ {static} create(CustomerAddonValueId $customerAddonValueId): CustomerAddonValueDeleted
+		+ customerAddonValueId(): CustomerAddonValueId
+	}
+
+	class CustomerAddonValuesValueUpdated{
+		- customerAddonValueId: CustomerAddonValueId
+		- value: string
+		+ {static} create(CustomerAddonValueId $customerAddonValueId, string $value): CustomerAddonValueDeleted
+		+ customerAddonValueId(): CustomerAddonValueId
+		+ value(): string
+	}
+
+	class AllCustomerAddonValuesOfSpecificCustomerDeleted{
+		- customerId: CustomerId
+		+ {static} create(CustomerId $customerId): AllCustomerAddonValuesOfSpecificCustomerDeleted
+		+ customerId(): CustomerId
+	}
+
+	class AllCustomerAddonValuesWithSpecificKeyDeleted{
+		- customerAddonValueKey: CustomerAddonValueKey
+		+ {static} create(CustomerAddonValueKey $customerAddonValueKey): AllCustomerAddonValuesWithSpecificKeyDeleted
+		+ customerAddonValueKey(): CustomerAddonValueKey
+	}
+}
+@enduml

@@ -1,0 +1,16 @@
+{
+	"name": "filter",
+	"in": "query",
+	"description": "Optional query parameter for filtering. Parameter represents an object, which is used to filter the provided documents.",
+	"required": false,
+	"style": "deepObject",
+	"explode": true,
+	"schema": {
+		"type": "object",
+		"example":{
+            "name": "*Hermes*",
+            "isDefault": "0",
+            "descriptions.url": "https://www.myhermes.de*"
+		}
+	}
+}

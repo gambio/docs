@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "yarn install"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-ui-dist": "^1.12.1",
+    "simplelightbox": "^2.9.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+	"get": {
+		"$ref": "./get.json"
+	},
+	"post": {
+		"$ref": "./post.json"
+	},
+	"put": {
+		"$ref": "./put.json"
+	},
+	"patch": {
+		"$ref": "./patch.json"
+	},
+	"delete": {
+		"$ref": "./delete.json"
+	}
+}

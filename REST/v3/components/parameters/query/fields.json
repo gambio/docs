@@ -1,0 +1,12 @@
+{
+	"name": "fields",
+	"in": "query",
+	"description": "Optional query parameter for trimming the provided documents. Parameter represents a comma separated list of attributes.",
+	"required": false,
+	"style": "form",
+	"explode": false,
+	"schema": {
+		"type": "string",
+		"example": "id,customer,orders.id"
+	}
+}

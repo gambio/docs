@@ -1,0 +1,69 @@
+{
+	"summary": "Update sort order of an existing option value",
+	"operationId": "patch-options-values",
+	"tags": [
+		{
+			"$ref": "./../../tags/options.json#/name"
+		}
+	],
+	"parameters": [
+		{
+			"name": "optionId",
+			"in": "path",
+			"description": "ID of an existing option.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		}
+	],
+	"description": "Updates the sort order(s) of a single or multiple option values based on the request body.",
+	"requestBody": {
+		"description": "Option values data to update sort orders.",
+		"content": {
+			"application/json": {
+				"schema": {
+					"$ref": "#/components/schemas/options-optionPatches"
+				}
+			}
+		},
+		"required": true
+	},
+	"responses": {
+		"204": {
+			"description": "Option values sort order successfully updated.",
+			"headers": {
+				"X-Shop-Version": {
+					"$ref": "#/components/headers/shopVersion"
+				},
+				"X-API-Version": {
+					"$ref": "#/components/headers/apiVersion"
+				},
+				"X-Rate-Limit-Limit": {
+					"$ref": "#/components/headers/rateLimitLimit"
+				},
+				"X-Rate-Limit-Remaining": {
+					"$ref": "#/components/headers/rateLimitRemaining"
+				},
+				"X-Rate-Limit-Reset": {
+					"$ref": "#/components/headers/rateLimitReset"
+				}
+			}
+		},
+		"400": {
+			"$ref": "#/components/responses/missingAttribute"
+		},
+		"404": {
+			"$ref": "#/components/responses/notFound"
+		},
+		"409": {
+			"$ref": "#/components/responses/conflictByDataOrAction"
+		},
+		"422": {
+			"$ref": "#/components/responses/invalidData"
+		}
+	}
+}

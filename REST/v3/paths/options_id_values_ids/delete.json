@@ -1,0 +1,44 @@
+{
+    "summary": "Delete multiple option values",
+    "operationId": "delete-option-values",
+    "tags": [
+        {
+            "$ref": "./../../tags/options.json#/name"
+        }
+    ],
+    "description": "Deletes one or more option values based on the provided IDs.",
+    "parameters": [
+        {
+            "name": "optionId",
+            "in": "path",
+            "description": "ID of an existing option.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+                "type": "integer",
+                "example": 1,
+                "minimum": 1
+            }
+        },
+        {
+            "name": "optionValueIds",
+            "in": "path",
+            "description": "Option value IDs represented as a comma separated list.",
+            "required": true,
+            "style": "simple",
+            "explode": true,
+            "schema": {
+                "type": "string",
+                "example": "1,2,3"
+            }
+        }
+    ],
+    "responses": {
+        "204": {
+            "description": "Option values successfully deleted."
+        },
+        "409": {
+            "$ref": "#/components/responses/conflictByDataOrAction"
+        }
+    }
+}

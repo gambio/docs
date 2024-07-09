@@ -1,0 +1,17 @@
+{
+    "required": [
+        "left",
+        "right"
+    ],
+    "type": "object",
+    "properties": {
+        "left": {
+            "type": "string",
+            "example": ""
+        },
+        "right": {
+            "type": "string",
+            "example": "EUR"
+        }
+    }
+}

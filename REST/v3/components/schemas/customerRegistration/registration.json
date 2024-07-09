@@ -1,0 +1,51 @@
+{
+    "type": "array",
+    "items": {
+        "required": [
+            "customerGroup",
+            "isFavorite",
+            "personalInformation",
+            "contactInformation",
+            "businessInformation",
+            "locationInformation",
+            "password",
+            "credit"
+        ],
+        "type": "object",
+        "properties": {
+            "customerGroup" : {
+                "type": "integer",
+                "format": "int32",
+                "example": 1,
+                "minimum": 1,
+                "nullable": true
+            },
+            "isFavorite" : {
+                "type": "boolean",
+                "example": true
+            },
+            "personalInformation" : {
+                "$ref" : "../customers/personalInformation.json"
+            },
+            "contactInformation" : {
+                "$ref" : "../customers/contactInformation.json"
+            },
+            "businessInformation" : {
+                "$ref" : "../customers/businessInformation.json"
+            },
+            "locationInformation" : {
+                "$ref" : "./locationInformation.json"
+            },
+            "password": {
+                "type": "string",
+                "example": "plain text password",
+                "minLength": 5,
+                "nullable": true
+            },
+            "credit": {
+                "type": "number",
+                "example": 999.99
+            }
+        }
+    }
+}

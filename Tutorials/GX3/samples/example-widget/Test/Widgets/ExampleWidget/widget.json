@@ -1,0 +1,39 @@
+{
+	"id": "example",
+	"title": "ExampleWidget.title",
+	"icon": {
+		"name": "Image",
+		"file": "example.svg"
+	},
+	"author": {
+		"name": "Example GmbH",
+		"email": "info@example.com",
+		"url": "https://www.gambio.de"
+	},
+	"helpUrl": "https://www.gambio.de/help",
+	"description": "ExampleWidget.description",
+	"cache": 0,
+	"version": "1.0.0",
+	"displayConfig": "modal",
+	"fieldsets": [
+		{
+			"title": "ExampleWidget.options.general.title",
+			"options": [
+				{
+					"id": "id",
+					"label": "ExampleWidget.options.id.label",
+					"type": "textbox",
+					"placeholder": "ExampleWidget.options.id.placeholder",
+					"default": ""
+				},
+				{
+					"id": "text",
+					"label": "ExampleWidget.options.text.label",
+					"type": "textbox",
+					"placeholder": "ExampleWidget.options.text.placeholder",
+					"default": ""
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"summary": "Delete multiple customer addon values",
+	"operationId": "delete-customer-addon-values",
+	"tags": [
+		{
+			"$ref": "./../../tags/customerAddonValues.json#/name"
+		}
+	],
+	"description": "Deletes one or more customer addon values based on the provided keys.",
+	"parameters": [
+		{
+			"name": "customerId",
+			"in": "path",
+			"description": "ID of an existing customer.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		},
+		{
+			"name": "keys",
+			"in": "path",
+			"description": "Key of an existing customer addon value as a comma separated list.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "string",
+				"example": "test_key1,test_key2,test_key3",
+				"minimum": 1
+			}
+		}
+	],
+	"responses": {
+		"204": {
+			"description": "Customer addon values successfully deleted."
+		}
+	}
+}

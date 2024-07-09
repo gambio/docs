@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/simple-lightbox.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/simple-lightbox.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript">
+		var testResult = __TEST_RESULT__
+		</script>
+		<script type="text/javascript" src="js/report.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="info">
+				Tabs for successful tests only show the baseline image<br><br>
+				Tabs for tests that resulted in a failure show 3 images<br>
+				<ol>
+					<li>Baseline image.</li>
+					<li>Difference between Baseline and Latest</li>
+					<li>Latest image.</li>
+				</ol>
+				<br>
+				Images can be clicked to enlarge them. <br> <br>
+				<span class="download-notice">Click <a href="download.php">here</a> to download all images that didn't match the baseline.</span>
+				<div id="hide-test-text-wrapper">
+					<a id="hide-successful-tests"> hide successful tests </a>
+				</div>
+				<br> <br>
+			</div>
+			<div id="accordion">
+
+			</div>
+        </div>
+	</body>
+</html>

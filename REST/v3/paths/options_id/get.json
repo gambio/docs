@@ -1,0 +1,64 @@
+{
+	"summary": "Get a specific option",
+	"operationId": "get-options-by-id",
+	"tags": [
+		{
+			"$ref": "./../../tags/options.json#/name"
+		}
+	],
+	"description": "Returns a single option based in the provided ID.",
+	"parameters": [
+		{
+			"name": "optionId",
+			"in": "path",
+			"description": "ID of an existing option.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		}
+	],
+	"responses": {
+		"200": {
+			"description": "Returns a specific option.",
+			"headers": {
+				"X-Shop-Version": {
+					"$ref": "#/components/headers/shopVersion"
+				},
+				"X-API-Version": {
+					"$ref": "#/components/headers/apiVersion"
+				},
+				"X-Rate-Limit-Limit": {
+					"$ref": "#/components/headers/rateLimitLimit"
+				},
+				"X-Rate-Limit-Remaining": {
+					"$ref": "#/components/headers/rateLimitRemaining"
+				},
+				"X-Rate-Limit-Reset": {
+					"$ref": "#/components/headers/rateLimitReset"
+				}
+			},
+			"content": {
+				"application/json": {
+					"schema": {
+						"type": "object",
+						"properties": {
+							"data": {
+								"$ref": "#/components/schemas/options-option"
+							},
+							"_meta": {
+								"$ref": "#/components/schemas/options-documentMetaData"
+							}
+						}
+					}
+				}
+			}
+		},
+		"404": {
+			"$ref": "#/components/responses/notFound"
+		}
+	}
+}

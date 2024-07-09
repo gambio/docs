@@ -1,0 +1,59 @@
+{
+    "required": [
+        "streetName",
+        "houseNumber",
+        "postcode",
+        "city",
+        "country",
+        "additionalInformation",
+        "suburb",
+        "state"
+    ],
+    "type": "object",
+    "properties": {
+        "streetName": {
+            "type": "string",
+            "example": "Parallelweg"
+        },
+        "houseNumber": {
+            "type": "string",
+            "example": "30"
+        },
+        "postcode": {
+            "type": "string",
+            "example": "28219"
+        },
+        "city": {
+            "type": "string",
+            "example": "Bremen"
+        },
+        "country": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "Germany"
+                },
+                "isoCode2": {
+                    "type": "string",
+                    "example": "DE"
+                }
+            },
+            "required": [
+                "name", "isoCode2"
+            ]
+        },
+        "additionalInformation": {
+            "type": "string",
+            "example": ""
+        },
+        "suburb": {
+            "type": "string",
+            "example": "Walle"
+        },
+        "state": {
+            "type": "string",
+            "example": "Bremen"
+        }
+    }
+}
