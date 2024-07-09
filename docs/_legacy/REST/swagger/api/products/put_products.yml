@@ -1,0 +1,28 @@
+'/products':
+    put:
+        tags:
+            - products
+        summary: 'Update Products (Multiple)'
+        description: 'Use this method to update multiple existing product records. It takes an array of GXProduct Objects, identified by their <b>id</b> property.'
+        operationId: updateProducts
+        produces:
+            - application/json
+        parameters:
+            -
+                name: GXProductArray
+                in: body
+                description: 'An array of products to update.'
+                required: true
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXProductArray'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of the updated products'
+                schema:
+                    $ref: '#/definitions/productArrayPutResponse'
+            '400':
+                description: '(Missing data or ID invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

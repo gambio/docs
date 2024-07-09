@@ -1,0 +1,28 @@
+/addresses:
+    post:
+        tags:
+            - addresses
+        summary: 'Create Address'
+        description: "Create an address record for a customer in the system."
+        operationId: createAddress
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: address
+                in: body
+                description: 'The address to be created'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXAddress'
+        responses:
+            '200':
+                description: 'Upon success, returns the newly created address'
+                schema:
+                    $ref: '#/definitions/GXCustomer'
+            '400':
+                description: '(Address data was not provided)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

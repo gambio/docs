@@ -1,0 +1,22 @@
+/product_images:
+    get:
+        tags:
+            - product_images
+        summary: 'Get Product Images'
+        description: 'Get a list of all product image files which exists in the server''s filesystem through a GET request.'
+        operationId: getProductImage
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of files'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/productImageGetResponse'

@@ -1,0 +1,26 @@
+'/emails/{email_id}':
+    delete:
+        tags:
+            - emails
+        summary: 'Delete Email'
+        description: 'Delete an email record from database. To see an example usage take a look at `docs/REST/samples/email-service/remove_email.php`.'
+        operationId: deleteEmail
+        produces:
+            - application/json
+        parameters:
+            -
+                name: email_id
+                in: path
+                description: 'The email ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted ID'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithEmailID'
+            '400':
+                description: '(Customer ID missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

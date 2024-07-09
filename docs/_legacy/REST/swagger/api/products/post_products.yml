@@ -1,0 +1,30 @@
+/products:
+    post:
+        tags:
+            - products
+        summary: 'Create Products'
+        description: 'Creates new product records in the system. May be provided an array of product records, for bulk insertion. For single insertion, provide a single GXProduct object.'
+        operationId: createProducts
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: GXProductArray
+                in: body
+                description: 'An array of products'
+                required: true
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXProductArray'
+        responses:
+            '201':
+                description: 'Upon success, returns the newly created product(s)'
+                schema:
+                    $ref: '#/definitions/productArrayPostResponse'
+            '400':
+                description: '(Missing data)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

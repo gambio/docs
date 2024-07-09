@@ -1,0 +1,14 @@
+/cache/properties:
+    delete:
+        tags:
+            - cache
+        summary: 'Clear Properties Cache'
+        description: 'Empty properties cache with a DELETE request.'
+        operationId: deleteCacheProperties
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithFilename'

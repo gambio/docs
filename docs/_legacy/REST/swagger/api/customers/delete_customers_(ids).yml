@@ -1,0 +1,29 @@
+'/customers/{customer_ids}':
+    delete:
+        tags:
+            - customers
+        summary: 'Delete Customers'
+        description: 'Removes customer records from the system. This method will always return success even if the customers do not exist (due to internal CustomerWriteService architecture decisions, which strive to avoid unnecessary failures). An example script to demonstrate how to delete a customer is located under `./docs/REST/samples/customer-service/remove_account.php` in the git clone.'
+        operationId: deleteCustomers
+        produces:
+            - application/json
+        parameters:
+            -
+                name: customer_ids
+                in: path
+                description: 'A comma-seperated list of customer IDs to delete'
+                required: true
+                type: array
+                items:
+                    type: 'integer'
+                    format: 'int64'
+                collectionFormat: csv
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted customer IDs'
+                schema:
+                    $ref: '#/definitions/customerArrayDeleteResponse'
+            '400':
+                description: '(customer ID missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

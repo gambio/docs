@@ -1,0 +1,22 @@
+CategoryDeleteSuccessResponse:
+    title: CategoryDeleteSuccessResponse
+    type: object
+    required:
+        - code
+        - status
+        - action
+        - resource
+        - categoryId
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        resource:
+            type: string
+        categoryId:
+            type: integer
+            format: int64

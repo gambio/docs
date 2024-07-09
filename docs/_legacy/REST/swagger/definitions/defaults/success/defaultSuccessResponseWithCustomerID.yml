@@ -1,0 +1,14 @@
+defaultSuccessResponseWithCustomerID:
+    title: defaultSuccessResponseWithCustomerID
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        customerId:
+            type: integer
+            format: int64

@@ -1,0 +1,46 @@
+{
+	"type": "object",
+	"properties": {
+		"totalItems": {
+			"type": "integer",
+			"minimum": 0,
+			"example": 42
+		},
+        "totalPages": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 2
+        },
+		"perPage": {
+			"type": "integer",
+			"minimum": 1,
+			"example": 25
+		},
+		"page": {
+			"type": "integer",
+			"minimum": 0,
+			"example": 2
+		},
+		"links": {
+			"type": "object",
+			"properties": {
+				"firstPage": {
+					"type": "string",
+					"example": "https://example.org/api.php/v3/..."
+				},
+				"previousPage": {
+					"type":  "string",
+					"example": "https://example.org/api.php/v3/..."
+				},
+				"nextPage": {
+					"type":  "string",
+					"example": "https://example.org/api.php/v3/..."
+				},
+				"lastPage": {
+					"type":  "string",
+					"example": "https://example.org/api.php/v3/..."
+				}
+			}
+		}
+	}
+}

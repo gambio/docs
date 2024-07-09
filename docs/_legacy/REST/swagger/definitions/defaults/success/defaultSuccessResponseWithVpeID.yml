@@ -1,0 +1,14 @@
+defaultSuccessResponseWithVpeID:
+    title: defaultSuccessResponseWithVpeID
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        vpeId:
+            type: integer
+            format: int64

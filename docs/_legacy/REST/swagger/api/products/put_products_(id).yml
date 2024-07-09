@@ -1,0 +1,33 @@
+'/products/{product_id}':
+    put:
+        tags:
+            - products
+        summary: 'Update Product'
+        description: 'Use this method to update an existing product record. Take a look in the POST method for more detailed explanation on every resource property. To see an example usage consider `docs/REST/samples/product-service/update_product.php`'
+        operationId: updateProduct
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXProduct
+                in: body
+                description: 'The product'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXProduct'
+        responses:
+            '200':
+                description: 'Upon success, returns the updated product'
+                schema:
+                    $ref: '#/definitions/GXProduct'
+            '400':
+                description: '(Missing data or ID invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

@@ -1,0 +1,64 @@
+{
+	"summary": "Get a specific customer",
+	"operationId": "get-customer-by-id",
+	"tags": [
+		{
+			"$ref": "./../../tags/customers.json#/name"
+		}
+	],
+	"description": "Returns a single customer based in the provided ID.",
+	"parameters": [
+		{
+			"name": "customerId",
+			"in": "path",
+			"description": "ID of an existing customer.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		}
+	],
+	"responses": {
+		"200": {
+			"description": "Returns a specific customer.",
+			"headers": {
+				"X-Shop-Version": {
+					"$ref": "#/components/headers/shopVersion"
+				},
+				"X-API-Version": {
+					"$ref": "#/components/headers/apiVersion"
+				},
+				"X-Rate-Limit-Limit": {
+					"$ref": "#/components/headers/rateLimitLimit"
+				},
+				"X-Rate-Limit-Remaining": {
+					"$ref": "#/components/headers/rateLimitRemaining"
+				},
+				"X-Rate-Limit-Reset": {
+					"$ref": "#/components/headers/rateLimitReset"
+				}
+			},
+			"content": {
+				"application/json": {
+					"schema": {
+						"type": "object",
+						"properties": {
+							"data": {
+								"$ref": "#/components/schemas/customers-customer"
+							},
+							"_meta": {
+								"$ref": "#/components/schemas/customers-documentMetaData"
+							}
+						}
+					}
+				}
+			}
+		},
+		"404": {
+			"$ref": "#/components/responses/notFound"
+		}
+	}
+}

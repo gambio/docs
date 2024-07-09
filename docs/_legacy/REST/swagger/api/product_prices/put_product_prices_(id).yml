@@ -1,0 +1,37 @@
+/product_prices/{product_id}:
+    put:
+        tags:
+            - product_prices
+        summary: 'Update Product Prices'
+        description: 'Updates product price data for the product of the given id. All price information gets replaced with the new one.'
+        operationId: putProductPrices
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product id'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXProductPrices
+                in: body
+                required: true
+                description: 'Product price data'
+                schema:
+                    type: object
+                    items:
+                        $ref: '#/definitions/GXProductPrices'
+        responses:
+            '200':
+                description: 'Upon success, returns all price information for the updated product'
+                schema:
+                    $ref: '#/definitions/GXProductPrices'
+            '400':
+                description: '(Missing or invalid id)'
+            '404':
+                description: '(Product not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

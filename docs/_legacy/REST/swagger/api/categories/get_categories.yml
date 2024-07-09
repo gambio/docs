@@ -1,0 +1,28 @@
+'/categories':
+    get:
+        tags:
+            - categories
+        summary: 'Get Categories (Multiple)'
+        description: 'Get multiple category records through a GET request. This method supports all the GET parameters that are mentioned in the "Introduction" section of this documentation. To see an example usage take a look at `docs/REST/samples/category-service/fetch_category.php`'
+        operationId: getCategories
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/recursive'
+            - $ref: '#/parameters/changed'
+            - $ref: '#/parameters/modified'
+            - $ref: '#/parameters/deleted'
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of categories'
+                schema:
+                    $ref: '#/definitions/GXCategoryListing'
+            '404':
+                description: '(Category does not exist)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

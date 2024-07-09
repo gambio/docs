@@ -1,0 +1,30 @@
+'/reviews/{review_id}':
+    get:
+        tags:
+            - reviews
+        summary: 'Get Review (Single)'
+        description: 'Get a single review through the GET method.'
+        operationId: getReview
+        produces:
+            - application/json
+        parameters:
+            -
+                name: review_id
+                in: path
+                description: 'The review ID'
+                required: true
+                type: integer
+                format: int64
+        responses:
+            '200':
+                description: 'Upon success, returns a GXReview'
+                schema:
+                    $ref: '#/definitions/GXReview'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Review Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

@@ -1,0 +1,99 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+package Gambio\Admin\Modules\Customer\Submodules\Credential\Services {
+    note "REST-API endpoints could be something like .../customers/{customerId}/basic-auths and  .../basic-auth/_authenticate" as N1
+    note "REST-API endpoints could be something like .../customers/{customerId}/json-web-tokens and  .../json-web-tokens/_authenticate" as N2
+
+	class BasicAuthFactory {
+	    + createBasicAuths(BasicAuth ...$basicAuths): BasicAuths
+	    + createBasicAuthId(int $id): BasicAuthId
+	    + createCustomerId(int $id): CustomerId
+	    + createBasicAuthLogin(string $login): BasicAuthLogin
+	    + createBasicAuthPassword(string $password): BasicAuthPassword
+	}
+
+	class BasicAuthRepository {
+		+ getBasicAuths(CustomerId $customerId): BasicAuths
+		+ getBasicAuthById(BasicAuthId $basicAuthId): BasicAuth
+		+ deleteBasicAuths(BasicAuthId ...$basicAuthIds): void
+		+ storeBasicAuths(BasicAuth ...$basicAuths): void
+	    + createBasicAuth(CustomerId $customerId, BasicAuthLogin $login, BasicAuthPassword $password): BasicAuthId
+		+ authenticate(BasicAuthLogin $login, BasicAuthPassword $password): CustomerId
+	}
+
+	class BasicAuthReadService {
+		+ getBasicAuths(int $customerId): BasicAuths
+		+ getBasicAuthById(int $basicAuthId): BasicAuth
+	}
+
+	class BasicAuthWriteService {
+		+ deleteBasicAuths(int ...$basicAuthIds): void
+		+ storeBasicAuths(BasicAuth ...$basicAuths): void
+	    + createBasicAuth(int $customerId, string $login, string $password): BasicAuthId
+	}
+
+	class JsonWebTokenFactory {
+	    + createJsonWebTokens(JsonWebToken ...$basicAuths): JsonWebTokens
+	    + createJsonWebTokenId(int $id): JsonWebTokenId
+	    + createCustomerId(int $id): CustomerId
+	    + createJsonWebTokenLogin(string $login): JsonWebTokenLogin
+	    + createJsonWebTokenPassword(string $password): JsonWebTokenPassword
+	}
+	note top of JsonWebTokenFactory: We won't implement this yet.
+
+	class JsonWebTokenRepository {
+		+ getJsonWebTokens(CustomerId $customerId): JsonWebTokens
+		+ getJsonWebTokenById(JsonWebTokenId $basicAuthId): JsonWebToken
+		+ deleteJsonWebTokens(JsonWebTokenId ...$basicAuthIds): void
+		+ storeJsonWebTokens(JsonWebToken ...$basicAuths): void
+	    + createJsonWebToken(CustomerId $customerId, JsonWebTokenLogin $login, JsonWebTokenPassword $password): JsonWebTokenId
+		+ authenticate(JsonWebTokenLogin $login, JsonWebTokenPassword $password): CustomerId
+	}
+	note top of JsonWebTokenRepository: We won't implement this yet.
+
+	class JsonWebTokenReadService {
+		+ getJsonWebTokens(int $customerId): JsonWebTokens
+		+ getJsonWebTokenById(int $basicAuthId): JsonWebToken
+	}
+	note top of JsonWebTokenReadService: We won't implement this yet.
+
+	class JsonWebTokenWriteService {
+		+ deleteJsonWebTokens(int ...$basicAuthIds): void
+		+ storeJsonWebTokens(JsonWebToken ...$basicAuths): void
+	    + createJsonWebToken(int $customerId, string $issuer, int $timeToLife): JsonWebTokenId
+	}
+	note top of JsonWebTokenWriteService: We won't implement this yet.
+
+	class JsonWebTokenAuthenticationService {
+		+ authenticate(string $token): CustomerId
+	}
+	note top of CustomerJsonWebTokenCredentialCreated: We won't implement this yet.
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\Credential\Services\Exceptions {
+	left to right direction
+
+	class CreationOfBasicAuthFailedException
+	class StorageOfBasicAuthFailedException
+	class DeletionOfBasicAuthFailedException
+
+	class CreationOfJsonWebTokenFailedException
+	note top of CreationOfJsonWebTokenFailedException: We won't implement this yet.
+	class StorageOfJsonWebTokenFailedException
+	note top of StorageOfJsonWebTokenFailedException: We won't implement this yet.
+	class DeletionOfJsonWebTokenFailedException
+	note top of DeletionOfJsonWebTokenFailedException: We won't implement this yet.
+}
+
+CreationOfBasicAuthFailedException -up-|> Exception
+StorageOfBasicAuthFailedException -up-|> Exception
+DeletionOfBasicAuthFailedException -up-|> Exception
+
+CreationOfJsonWebTokenFailedException -up-|> Exception
+StorageOfJsonWebTokenFailedException -up-|> Exception
+DeletionOfJsonWebTokenFailedException -up-|> Exception
+
+@enduml

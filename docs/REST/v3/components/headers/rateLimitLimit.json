@@ -1,0 +1,7 @@
+{
+	"description": "Request limit per time frame.",
+	"schema": {
+		"type": "integer",
+		"example": 5000
+	}
+}

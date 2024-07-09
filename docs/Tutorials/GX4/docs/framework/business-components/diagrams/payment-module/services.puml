@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+package Gambio\Admin\Modules\PaymentModule\Services {
+
+    class PaymentMethodFactory {
+        + createPaymentMethods(PaymentMethod ...$paymentMethods): PaymentMethods
+        + createPaymentMethodId(string $paymentMethodId): PaymentMethodId
+    }
+
+    interface CustomerDisallowedPaymentMethodsReadService {
+        + getCustomersDisallowedPaymentMethods(int $customerId): PaymentMethods
+    }
+
+    interface CustomerDisallowedPaymentMethodsWriteService {
+        + setDisallowedPaymentMethods(int $customerId, string ...$methodsIds): void
+    }
+
+}
+
+@enduml

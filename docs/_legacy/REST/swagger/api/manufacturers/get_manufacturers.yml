@@ -1,0 +1,30 @@
+'/manufacturers':
+    get:
+        tags:
+            - manufacturers
+        summary: 'Get Manufacturers (Multiple)'
+        description: 'Get multiple manufacturers record through the GET method'
+        operationId: getMultipleManufacturers
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of manufacturers'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXManufacturer'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Manufacturers Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

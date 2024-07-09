@@ -1,0 +1,9 @@
+sort:
+    name: sort
+    in: query
+    required: false
+    type: array
+    items:
+        type: string
+    collectionFormat: csv
+    description: '*Optional parameter*. Sorts by the desired properties. Maximum sorting fields are 5. (prefix property with + for ascending, - for descending)'

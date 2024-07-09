@@ -1,0 +1,31 @@
+/attachments:
+    post:
+        tags:
+            - attachments
+        summary: 'Upload Attachment'
+        description: 'If an email contains an attachment this must be uploaded before the email is sent. This method accepts the upload of one file at a time. It will return its temporary path which can be used as the attachment path in the email JSON data. The name of the file form field is not taken into concern (can be whatever). The important rule is that only one file will be uploaded at a time and that you are sending the Content-Type: multipart/form-data header instead of application/json.'
+        operationId: uploadAttachments
+        consumes:
+            - multipart/form-data
+        parameters:
+            - in: formData
+              name: upload_attachment
+              type: file
+              required: true
+              description: 'The attachment to upload'
+            - in: formData
+              name: filename
+              type: string
+              required: true
+              description: 'The final filename'
+        produces:
+            - application/json
+        responses:
+            '201':
+                description: 'Upon success, returns the default success response with the attachment path'
+                schema:
+                    $ref: '#/definitions/attachmentSuccessExample'
+            '400':
+                description: '(No attachment file was provided)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

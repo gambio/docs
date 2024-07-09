@@ -1,0 +1,12 @@
+{
+	"name": "sort",
+	"in": "query",
+	"description": "Optional query parameter for sorting. Parameter represents a comma separated list of attributes.",
+	"required": false,
+	"style": "form",
+	"explode": false,
+	"schema": {
+		"type": "string",
+		"example": "-creationDate,+customer.firstName"
+	}
+}

@@ -1,0 +1,32 @@
+/additional_fields:
+    post:
+        tags:
+            - additional_fields
+        summary: 'Create additional fields'
+        description: "Create an additional field record in the system."
+        operationId: createAdditionalField
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: additionalField
+                in: body
+                description: 'The additional field to be created'
+                required: true
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXAdditionalFieldCreationItem'
+        responses:
+            '200':
+                description: 'Upon success, returns the ids of newly created items'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXAdditionalFieldListItem'
+            '400':
+                description: '(Additional field data was not provided)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

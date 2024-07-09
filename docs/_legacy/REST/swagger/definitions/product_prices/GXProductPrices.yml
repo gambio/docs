@@ -1,0 +1,44 @@
+GXProductPrices:
+    title: GXProductPrices
+    type: object
+    required:
+        - productId
+        - price
+        - taxClassId
+        - groupPrices
+    properties:
+        productId:
+            type: integer
+            format: int64
+            readOnly: true
+        price:
+            type: number
+            format: double
+        taxClassId:
+            type: integer
+            format: int64
+            readOnly: true
+        groupPrices:
+            type: array
+            items:
+                $ref: '#/definitions/GXProductGroupPrices'
+    example:
+        price: 123.123
+        groupPrices:
+            -   customerGroupId: 1
+                groupPrice: 122.1220
+                graduatedPrices:
+                    -   graduatedPrice: 115
+                        threshold: 5
+                    -   graduatedPrice: 100
+                        threshold: 10
+            -   customerGroupId: 2
+                groupPrice: 100.0000
+            -   customerGroupId: 3
+                graduatedPrices:
+                    -   graduatedPrice: 98
+                        threshold: 2.5000
+                    -   graduatedPrice: 95
+                        threshold: 5.0000
+                    -   graduatedPrice: 90
+                        threshold: 7.500

@@ -1,0 +1,62 @@
+GXLanguageListItem:
+    title: GXLanguageListItem
+    type: object
+    required:
+        - id
+        - name
+        - code
+        - image
+        - directory
+        - sortOrder
+        - status
+        - statusAdmin
+        - currency
+        - currencyId
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+            example: 1
+        name:
+            type: string
+            example: 'English'
+        code:
+            type: string
+            example: 'en'
+        image:
+            type: string
+            example: 'icon.gif'
+        directory:
+            type: string
+            example: 'english'
+        sortOrder:
+            type: integer
+            format: int64
+            readOnly: true
+            example: 2
+        status:
+            type: boolean
+            example: true
+        statusAdmin:
+            type: boolean
+            example: false
+        currency:
+            type: string
+            example: 'USD'
+        currencyId:
+            type: integer
+            format: int64
+            readOnly: true
+            example: 3
+    example:
+        id: 1
+        name: 'English'
+        code: 'en'
+        image: 'icon.gif'
+        directory: 'english'
+        sortOrder: 2
+        status: true
+        statusAdmin: false
+        currency: 'USD'
+        currencyId: 3

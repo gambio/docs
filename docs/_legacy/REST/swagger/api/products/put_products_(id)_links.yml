@@ -1,0 +1,29 @@
+'/products/{product_id}/links':
+    put:
+        tags:
+            - products
+        summary: 'Update Product Link'
+        description: 'Changes an existing product to category link.'
+        operationId: updateProductLink
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product link ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXProductLinkPutRequest
+                in: body
+                description: 'The old and new category ID'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXProductLinkPutRequest'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the product ID and category IDs'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithProductIDAndCategoryIDs'

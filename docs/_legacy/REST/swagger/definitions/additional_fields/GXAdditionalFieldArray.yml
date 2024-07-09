@@ -1,0 +1,5 @@
+GXAdditionalFieldArray:
+    title: GXAdditionalFieldArray
+    type: array
+        items:
+            $ref: '#/definitions/GXAdditionalFieldListItem'

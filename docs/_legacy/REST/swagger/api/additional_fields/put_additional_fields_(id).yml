@@ -1,0 +1,32 @@
+'/additional_fields/{field_id}':
+    put:
+        tags:
+            - additional_fields
+        summary: 'Update additional fields'
+        description: 'Update an existing additional fields record by providing new data. The additional field ID will be taken from the URI of the request so it is not required that it is included withing the request JSON.'
+        operationId: updateAdditionalField
+        produces:
+            - application/json
+        parameters:
+            -
+                name: field_id
+                in: path
+                description: 'The ID of the additional field'
+                required: true
+                type: 'string'
+            -
+                name: additionalField
+                in: body
+                description: 'The additional field to be created'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXAdditionalFieldCreationItem'
+        responses:
+            '200':
+                description: 'Upon success, returns the updated additional field'
+                schema:
+                    $ref: '#/definitions/GXAdditionalFieldListItem'
+            '400':
+                description: 'invalid data was not provided'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

@@ -1,0 +1,6 @@
+search:
+    name: search
+    in: query
+    required: false
+    type: string
+    description: '*Optional parameter*. Search for a url-encoded keyword.'

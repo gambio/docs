@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Module center example page</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="../styles/style.css" />
+		<link rel="stylesheet" href="../styles/compatibility.min.css" />
+		<link rel="stylesheet" href="../ext/font-awesome/css/font-awesome.min.css">
+	</head>
+	<body>
+		<!-- Module center page -->
+		<div class="gx-compatibility">
+			<div class="gx-container">
+				<!-- Table -->
+				<table class="gx-compatibility-table gx-modules-table payment left-table"
+				       cellspacing="0"
+				       cellpadding="0">
+					<tr class="dataTableHeadingRow">
+						<td></td>
+						<td>Module name</td>
+						<td>Module description</td>
+					</tr>
+					<tr class="dataTableRow">
+						<td></td>
+						<td>My module</td>
+						<td>This is my example module for testing purposes</td>
+					</tr>
+					<tr class="dataTableRow">
+						<td></td>
+						<td>Mobile payment</td>
+						<td>Easy flexible payment with your mobile phone</td>
+					</tr>
+					<tr class="dataTableRow active">
+						<td></td>
+						<td>Active module</td>
+						<td>This module has been clicked, so this row is active</td>
+					</tr>
+					<tr class="dataTableRow module-head">
+						<td>
+                <span class="collapse-icon">
+                  <i class="fa fa-plus-square-o"></i>
+                </span>
+						</td>
+						<td>Expandable</td>
+						<td>This module contains nested entries</td>
+					</tr>
+					<tr class="dataTableRow nested hidden">
+						<td></td>
+						<td>Nested entry</td>
+						<td>This is a nested entry</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- Panel -->
+			<div class="gx-configuration-box gx-container">
+				<div class="configuration-box-content">
+					<div class="configuration-box-header">
+						<h2>Active module</h2>
+					</div>
+					
+					<div class="configuration-box-body">
+						<div class="configuration-box-description">
+							<p>This is a custom description for this module.</p>
+						</div>
+						<div class="configuration-box-form"></div>
+					</div>
+					
+					<div class="configuration-box-footer">
+						<button type="button" class="btn btn-primary pull-right">Install</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</body>
+</html>

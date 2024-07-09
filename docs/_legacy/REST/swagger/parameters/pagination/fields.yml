@@ -1,0 +1,9 @@
+fields:
+    name: fields
+    in: query
+    required: false
+    type: array
+    items:
+        type: string
+    collectionFormat: csv
+    description: '*Optional parameter*. If provided limits the properties to be included in the response.'

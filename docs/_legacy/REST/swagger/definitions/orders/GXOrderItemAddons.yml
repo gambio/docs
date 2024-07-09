@@ -1,0 +1,11 @@
+GXOrderItemAddons:
+    title: GXOrderItemsAddons
+    type: object
+    required:
+        - productId
+        - productType
+    properties:
+        productId:
+            type: string
+        productType:
+            type: string

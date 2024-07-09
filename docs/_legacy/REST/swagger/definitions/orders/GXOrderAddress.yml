@@ -1,0 +1,62 @@
+GXOrderAddress:
+  title: GXOrderAddress
+  type: object
+  required:
+    - gender
+    - firstname
+    - lastname
+    - company
+    - street
+    - houseNumber
+    - additionalAddressInfo
+    - suburb
+    - postcode
+    - city
+    - countryId
+    - zoneId
+    - b2bStatus
+  properties:
+    gender:
+      type: string
+    firstname:
+      type: string
+    lastname:
+      type: string
+    company:
+      type: string
+    street:
+      type: string
+    houseNumber:
+      type: string
+    additionalAddressInfo:
+      type: string
+    suburb:
+      type: string
+    postcode:
+      type: string
+    city:
+      type: string
+    countryId:
+      type: integer
+      format: int64
+    zoneId:
+      type: integer
+      format: int64
+    b2bStatus:
+      type: boolean
+  example:
+    customerId: 1
+    gender: m
+    company: 'Test Company'
+    firstname: John
+    lastname: Doe
+    street: 'Test Street'
+    houseNumber: '123'
+    additionalAddressInfo: '1. Etage'
+    suburb: 'Test Suburb'
+    postcode: '23983'
+    city: 'Test City'
+    countryId: 81
+    zoneId: 84
+    class: null
+    b2bStatus: false

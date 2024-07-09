@@ -1,0 +1,30 @@
+'/customer_groups':
+    get:
+        tags:
+            - customer_groups
+        summary: 'Get Customer Groups (Multiple)'
+        description: 'Get multiple customer groups records through the GET method'
+        operationId: getCustomerGroups
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of Customer Groups'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXCustomerGroup'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Country Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

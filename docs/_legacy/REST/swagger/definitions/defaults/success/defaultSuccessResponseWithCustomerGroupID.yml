@@ -1,0 +1,14 @@
+defaultSuccessResponseWithCustomerGroupID:
+    title: defaultSuccessResponseWithCustomerGroupID
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        customerGroupId:
+            type: integer
+            format: int64

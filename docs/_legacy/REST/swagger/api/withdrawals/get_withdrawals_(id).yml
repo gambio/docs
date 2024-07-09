@@ -1,0 +1,32 @@
+'/withdrawals/{withdrawal_id}':
+    get:
+        tags:
+            - withdrawal
+        summary: 'Get Withdrawal (Single)'
+        description: 'Get a single withdrawal through the GET method.'
+        operationId: getWithdrawal
+        produces:
+            - application/json
+        parameters:
+            -
+                name: withdrawal_id
+                in: path
+                description: 'The withdrawal ID'
+                required: true
+                type: integer
+                format: int64
+        responses:
+            '200':
+                description: 'Upon success, returns a GXWithdrawal'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXWithdrawal'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Withdrawal Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

@@ -1,0 +1,24 @@
+/quantity_units:
+    post:
+        tags:
+            - quantity_units
+        summary: 'Create Quantity Units'
+        description: 'This method enables the creation of a new QuantityUnits into the system.'
+        operationId: createQuantityUnits
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: GXQuantityUnit
+                in: body
+                description: 'The Quantity Unit.'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXQuantityUnit'
+        responses:
+            '200':
+                description: 'Upon success, returns the newly created Quantity Unit'
+                schema:
+                    $ref: '#/definitions/GXQuantityUnit'

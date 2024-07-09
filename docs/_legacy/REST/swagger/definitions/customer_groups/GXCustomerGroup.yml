@@ -1,0 +1,45 @@
+GXCustomerGroup:
+    title: GXCustomerGroup
+    type: object
+    required:
+        - names
+        - settings
+        - configurations
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        names:
+            $ref: '#/definitions/GXMultiLangOption'
+        settings:
+            $ref: '#/definitions/GXCustomerGroupSettings'
+        configurations:
+            $ref: '#/definitions/GXCustomerGroupConfigurations'
+    example:
+        names:
+         - en: "Kids"
+           de: "Kinder"
+        settings:
+            public: false
+            otDiscountFlag: false
+            graduatedPrices: false
+            showPrice: true
+            showPriceTax: false
+            addTaxOt: false
+            discountAttributes: false
+            fsk18: false
+            fsk18Display: false
+            writeReviews: false
+            readReviews: false
+        configurations:
+            minOrder: 2.5
+            maxOrder: 20
+            discount: 0.5
+            otDiscount: 0
+            unallowedPaymentModules:
+            - "paypal"
+            - "cod"
+            - "moneyorder"
+            unallowedShippingModules:
+            - "selfpickup"

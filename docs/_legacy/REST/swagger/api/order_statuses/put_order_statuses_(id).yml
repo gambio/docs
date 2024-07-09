@@ -1,0 +1,33 @@
+'/order_statuses/{order_status_id}':
+    put:
+        tags:
+            - order_statuses
+        summary: 'Update Order Status'
+        description: 'This method updates a order status in the database.'
+        operationId: updateOrderStatuses
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_status_id
+                in: path
+                description: 'The order status ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXOrderStatus
+                in: body
+                description: 'The order status'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXOrderStatus'
+        responses:
+            '201':
+                description: 'Upon success, returns the updated order status'
+                schema:
+                    $ref: '#/definitions/GXOrderStatus'
+            '400':
+                description: '(Order status ID invalid or missing data)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

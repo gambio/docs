@@ -1,0 +1,50 @@
+GXCustomerGroupSettings:
+    title: GXCustomerGroupSettings
+    type: object
+    required:
+        - public
+        - otDiscountFlag
+        - graduatedPrices
+        - showPrice
+        - showPriceTax
+        - addTaxOt
+        - discountAttributes
+        - fsk18
+        - fsk18Display
+        - writeReviews
+        - readReviews
+    properties:
+        public:
+            type: boolean
+        otDiscountFlag:
+            type: boolean
+        graduatedPrices:
+            type: boolean
+        showPrice:
+            type: boolean
+        showPriceTax:
+            type: boolean
+        addTaxOt:
+            type: boolean
+        discountAttributes:
+            type: boolean
+        fsk18:
+            type: boolean
+        fsk18Display:
+            type: boolean
+        writeReviews:
+            type: boolean
+        readReviews:
+            type: boolean
+    example:
+      public: false
+      otDiscountFlag: false
+      graduatedPrices: false
+      showPrice: true
+      showPriceTax: false
+      addTaxOt: false
+      discountAttributes: false
+      fsk18: false
+      fsk18Display: false
+      writeReviews: false
+      readReviews: false

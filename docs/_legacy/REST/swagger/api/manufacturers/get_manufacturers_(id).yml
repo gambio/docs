@@ -1,0 +1,30 @@
+'/manufacturers/{manufacturer_id}':
+    get:
+        tags:
+            - manufacturers
+        summary: 'Get Manufacturers'
+        description: 'Get a single manufacturers record through the GET method'
+        operationId: getManufacturer
+        produces:
+            - application/json
+        parameters:
+            -
+                name: manufacturer_id
+                in: path
+                description: 'The manufacturers ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns a manufacturers'
+                schema:
+                    $ref: '#/definitions/GXManufacturer'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Manufacturers Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

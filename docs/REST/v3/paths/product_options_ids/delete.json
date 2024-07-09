@@ -1,0 +1,41 @@
+{
+	"summary": "Delete multiple product options",
+	"operationId": "delete-product-options",
+	"tags": [
+		{
+			"$ref": "./../../tags/productOptions.json#/name"
+		}
+	],
+	"description": "Deletes one or more product options based on the provided IDs.",
+	"parameters": [
+		{
+			"name": "productId",
+			"in": "path",
+			"description": "ID of a product.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		},
+		{
+			"name": "ids",
+			"in": "path",
+			"description": "Product variant IDs represented as a comma separated list.",
+			"required": true,
+			"style": "simple",
+			"explode": true,
+			"schema": {
+				"type": "string",
+				"example": "1,2,3,4,5"
+			}
+		}
+	],
+	"responses": {
+		"204": {
+			"description": "Product options successfully deleted."
+		}
+	}
+}

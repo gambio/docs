@@ -1,0 +1,151 @@
+body {
+	padding-top: 80px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+	background-color: #002337;
+	min-height:       50px;
+}
+
+.navbar .navbar-brand {
+	padding:     0;
+	text-shadow: none;
+}
+
+.navbar .gambio-logo-img {
+	float:        left;
+	margin-top:   10px;
+	margin-right: 15px;
+	height:       30px;
+}
+
+.navbar .title {
+	margin-top:     15px;
+	display:        inline-block;
+	text-transform: uppercase;
+	font-weight:    bold;
+}
+
+.navbar a.navbar-brand {
+	text-shadow: none;
+}
+
+.navbar-nav > li > a {
+	transition:  color 0.2s linear;
+	text-shadow: none;
+}
+
+.navbar-nav > li > a:hover {
+	text-decoration: none;
+	color:           #FDC300;
+	text-shadow:     none;
+}
+
+.footer {
+	background-color: #002337;
+	font-weight:      bold;
+	text-shadow:      none;
+}
+
+p a {
+	color: #0091E6;
+}
+
+pre, code, pre code, p code, li code, .attribute {
+	color:            #002337;
+	background-color: #F5F5F5;
+	border-color:     #DDDDDD;
+}
+
+pre code {
+	background: none !important;
+}
+
+td pre {
+	color: #0091E6;
+}
+
+.nav-toggle.open {
+	color:       #002337;
+	font-weight: bold;
+}
+
+td.resource {
+	color: #002337;
+}
+
+.side-nav.affix {
+	position:     absolute;
+	overflow:     auto;
+	width:        100%;
+	padding-left: 12px;
+}
+
+.nav.nav-inner.collapse {
+	overflow-y: hidden;
+}
+
+/* snippet section */
+td.hljs-ln-numbers {
+	/* line count style */
+	-webkit-touch-callout: none;
+	-webkit-user-select:   none;
+	-khtml-user-select:    none;
+	-moz-user-select:      none;
+	-ms-user-select:       none;
+	user-select:           none;
+	
+	color:                 #CCCCCC;
+	border-right:          1px solid #CCCCCC;
+	vertical-align:        top;
+	
+	width:                 2em;
+}
+
+/* Highlight hovered row */
+table.hljs-ln {
+	display: block;
+}
+
+table.hljs-ln tbody {
+	display: block;
+}
+
+table.hljs-ln tbody tr {
+	display: block;
+}
+
+table.hljs-ln tbody tr:hover {
+	background: #F5F5F5;
+}
+
+table.hljs-ln tbody tr:hover .hljs-ln-line.hljs-ln-n {
+	color: #AAAAAA;
+}
+
+/* offset code from line numbers by half a character */
+.hljs-ln-code {
+	padding-left: 0.5em !important;
+}
+
+/* offset line numbers from row box by 5px */
+.hljs-ln-line.hljs-ln-n {
+	padding-left: 5px;
+}
+
+.hljs-comment {
+	color: #002337;
+}
+
+body .shadow {
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
+}
+
+.nav a.nav-selected {
+	color: #002337;
+}
+
+.nav-tabs {
+	margin-bottom: 10px;
+}

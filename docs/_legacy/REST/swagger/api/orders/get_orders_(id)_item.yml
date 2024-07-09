@@ -1,0 +1,24 @@
+'/orders/{order_id}/items':
+    get:
+        tags:
+            - orders
+        summary: 'Get Order Items (Multiple)'
+        description: 'Get multiple order items from an existing order. All the GET manipulation parameters are applied with this method (search, sort, minimize, paginate etc).'
+        operationId: getOrderItems
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns a an array of order items'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXOrderItem'

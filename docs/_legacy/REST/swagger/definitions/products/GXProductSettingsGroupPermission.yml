@@ -1,0 +1,14 @@
+GXProductSettingsGroupPermission:
+    title: GXProductSettingsGroupPermission
+    type: object
+    required:
+        - isPermitted
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        isPermitted:
+            type: boolean
+    example:
+        isPermitted: false

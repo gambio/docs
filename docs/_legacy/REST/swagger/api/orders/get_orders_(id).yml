@@ -1,0 +1,24 @@
+'/orders/{order_id}':
+    get:
+        tags:
+            - orders
+        summary: 'Get Order (Single)'
+        description: 'Get a single order record through a GET request. This method supports all the GET parameters that are mentioned in the "Introduction" section of this documentation. Important: Whenever you make requests that will return multiple orders the response will contain a smaller version of each order record called order-list-item. This is done for better performance because the creation of a complete order record takes significant time (many objects are involved). If you still need the complete data of an order record you will have to make an extra GET request with the ID provided.'
+        operationId: getOrders
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the order resource'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXOrder'

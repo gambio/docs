@@ -1,0 +1,37 @@
+'/orders/{order_id}/totals/{total_id}':
+    delete:
+        tags:
+            - orders
+        summary: 'Delete Order Total'
+        description: 'Use this method to remove an order total from an existing order.'
+        operationId: deleteOrderTotals
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: total_id
+                in: path
+                description: 'The total ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the order and order total ID'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithOrderIDAndOrderTotalID'
+            '400':
+                description: '(Order total ID missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Order total ID does not exist in given order)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

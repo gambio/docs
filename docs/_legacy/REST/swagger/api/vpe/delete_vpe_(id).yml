@@ -1,0 +1,26 @@
+'/vpe/{vpe_id}':
+    delete:
+        tags:
+            - vpe
+        summary: 'Delete VPE'
+        description: 'Removes a vpe record from the system. This method will always return success even if the vpe does not exist (due to internal VPEWriteService architecture decisions, which strive to avoid unnecessary failures).'
+        operationId: deleteVPE
+        produces:
+            - application/json
+        parameters:
+            -
+                name: vpe_id
+                in: path
+                description: 'The VPE ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted VPE ID'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithVpeID'
+            '400':
+                description: '(Missing ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

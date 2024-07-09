@@ -1,0 +1,29 @@
+'/orders_history/{order_id}':
+    get:
+        tags:
+            - orders_history
+        summary: 'Get Order History (Single)'
+        description: 'Get a single order history record through a GET request.'
+        operationId: getOrdersHistory
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID to GET history for.'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the order history resource'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXOrderStatusHistory'
+            '400':
+                description: '(Order History not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+

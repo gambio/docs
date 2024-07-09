@@ -1,0 +1,43 @@
+GXWithdrawal:
+    title: GXWithdrawal
+    type: object
+    required:
+        - withdrawalDate
+        - content
+        - order
+        - dateCreated
+        - createdByAdmin
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        withdrawalDate:
+            type: string
+        content:
+            type: string
+        order:
+            $ref: '#/definitions/GXWithdrawalOrder'
+        dateCreated:
+            type: string
+        createdByAdmin:
+            type: boolean
+    example:
+        id: 1
+        withdrawalDate: "2018-05-28 12:45:07"
+        content: "This is an example for a withdrawal's content."
+        order:
+            orderId: 400276
+            customerId: 0
+            customerGender: "Frau"
+            customerFirstName: "Maxi"
+            customerLastName: "Musterfrau"
+            customerStreetAddress: "Musterstraße 3"
+            customerPostCode: "28219"
+            customerCity: "Bremen"
+            customerCountry: "Germany"
+            customerEmail: "m.musterfrau@example.com"
+            orderDate: "2018-05-14 12:45:07"
+            deliveryDate: "1000-01-01 00:00:00"
+        dateCreated: "2018-05-28 12:45:07"
+        createdByAdmin: true

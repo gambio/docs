@@ -1,0 +1,26 @@
+'/categories/{category_id}/children':
+    get:
+        tags:
+            - categories
+        summary: 'Get Category Children'
+        description: 'Get multiple or a single sub category records of a given category through a GET request. This method supports all the GET parameters that are mentioned in the "Introduction" section of this documentation.'
+        operationId: getCategoryChildren
+        produces:
+            - application/json
+        parameters:
+            -
+                name: category_id
+                in: path
+                description: 'The parent category ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of categories'
+                schema:
+                    $ref: '#/definitions/GXCategoryListing'
+            '404':
+                description: '(Category does not exist)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

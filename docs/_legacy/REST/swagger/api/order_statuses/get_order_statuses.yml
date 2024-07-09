@@ -1,0 +1,26 @@
+'/order_statuses':
+    get:
+        tags:
+            - order_statuses
+        summary: 'Get order statuses (Multiple)'
+        description: 'Get a multiple order status entries.'
+        operationId: getOrderStatuses
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of order statuses'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXOrderStatus'
+            '400':
+                description: '(Order status ID invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

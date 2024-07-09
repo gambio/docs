@@ -1,0 +1,16 @@
+customerArrayDeleteResponse:
+    title: customerArrayDeleteResponse
+    type: object
+    required:
+        - deleted
+        - errors
+    properties:
+        deleted:
+            type: array
+            items:
+                type: 'integer'
+                format: 'int64'
+        errors:
+            type: array
+            items:
+                $ref: '#/definitions/defaultErrorResponse'

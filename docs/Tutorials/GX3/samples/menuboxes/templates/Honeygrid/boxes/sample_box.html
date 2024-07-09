@@ -1,0 +1,9 @@
+{load_language_text section="box_sample"}
+
+{include file="get_usermod:{$tpl_path}snippets/box/default/top.html" class="sample-box" headline=$txt.heading_sample}
+
+<div id="{$content_data.BOX_ID}" class="sample-box-container">
+	<p class="sample-box-text">{$txt.sample_greeting}</p>
+</div>
+
+{include file="get_usermod:{$tpl_path}snippets/box/default/bottom.html"}

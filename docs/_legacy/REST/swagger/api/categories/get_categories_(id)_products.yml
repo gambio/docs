@@ -1,0 +1,29 @@
+'/categories/{category_id}/products':
+    get:
+        tags:
+            - categories
+        summary: 'Get Category Products'
+        description: 'Get multiple product records of an specified category through a GET request. Using the `recursive` query parameter allows you to receive the products from the sub categories.'
+        operationId: getCategoriyProducts
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/recursive'
+            -
+                name: category_id
+                in: path
+                description: 'The category ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of products'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXProductListing'
+            '404':
+                description: '(Category does not exist)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

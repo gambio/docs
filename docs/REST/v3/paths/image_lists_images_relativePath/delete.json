@@ -1,0 +1,41 @@
+{
+	"summary": "Delete single image list image",
+	"operationId": "delete-image-list-image",
+	"tags": [
+		{
+			"$ref": "./../../tags/imageLists.json#/name"
+		}
+	],
+	"description": "Deletes a single image list image based on the provided image path.",
+	"parameters": [
+		{
+			"name": "imageListId",
+			"in": "path",
+			"description": "ID of an existing image list.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		},
+		{
+			"name": "relativePath",
+			"in": "path",
+			"description": "Relative path of an image list image.",
+			"required": true,
+			"style": "simple",
+			"explode": true,
+			"schema": {
+				"type": "string",
+				"example": "subdirectory/image.jpg"
+			}
+		}
+	],
+	"responses": {
+		"204": {
+			"description": "Image list image successfully deleted."
+		}
+	}
+}

@@ -1,0 +1,12 @@
+<div class="row">
+    [: if not (or .APIs .NavigationGuides) :]
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main">
+        [: else :]
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        [: template "fragments/sidenav" . :]
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 main">
+        [: end :]
+        [: yield :]
+    </div>
+</div>

@@ -1,0 +1,30 @@
+/tax_zones:
+    get:
+        tags:
+            - tax
+        summary: 'Get Tax Zones'
+        description: 'Get all tax zones or a single tax zone.'
+        operationId: getTaxZones
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of tax zones'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXTaxZone'
+            '400':
+                description: '(Invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Tax Class Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

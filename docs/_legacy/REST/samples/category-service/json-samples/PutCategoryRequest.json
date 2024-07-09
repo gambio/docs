@@ -1,0 +1,85 @@
+{
+	"id": 1,
+	"parentId": 0,
+	"isActive": false,
+	"sortOrder": 1,
+	"dateAdded": "2016-01-27 11.49:08",
+	"lastModified": "2016-01-27 11.49:08",
+	"name": {
+		"en": "test category-UPDATED",
+		"de": "Testkategorie-UPDATED"
+	},
+	"headingTitle": {
+		"en": "test category-UPDATED",
+		"de": "Testkategorie-UPDATED"
+	},
+	"description": {
+		"en": "<p>test category description-UPDATED</p>",
+		"de": "<p>Testkategorie Beschreibung-UPDATED</p>"
+	},
+	"metaTitle": {
+		"en": "UPDATED",
+		"de": "UPDATED"
+	},
+	"metaDescription": {
+		"en": "UPDATED",
+		"de": "UPDATED"
+	},
+	"metaKeywords": {
+		"en": "UPDATED",
+		"de": "UPDATED"
+	},
+	"urlKeywords": {
+		"en": "test-category-UPDATED",
+		"de": "Testkategorie-UPDATED"
+	},
+	"icon": "icon.png",
+	"image": "image.png",
+	"imageAltText": {
+		"en": "UPDATED",
+		"de": "UPDATED"
+	},
+	"settings": {
+		"categoryListingTemplate": "categorie_listing-UPDATED.html",
+		"productListingTemplate": "product_listing_v1-UPDATED.html",
+		"sortColumn": "p.products_price",
+		"sortDirection": "DESC",
+		"onSitemap": true,
+		"sitemapPriority": "0.5",
+		"sitemapChangeFrequency": "daily",
+		"showAttributes": true,
+		"showGraduatedPrice": true,
+		"showQuantity": false,
+		"showQuantityInfo": true,
+		"showSubCategories": false,
+		"showSubCategoryImages": false,
+		"showSubCategoryNames": false,
+		"showSubCategoryProducts": true,
+		"isViewModeTiled": true,
+		"showCategoryFilter": false,
+		"filterSelectionMode": 0,
+		"filterValueDeactivation": 0,
+		"groupPermissions": [
+			{
+				"id": 0,
+				"isPermitted": false
+			},
+			{
+				"id": 1,
+				"isPermitted": false
+			},
+			{
+				"id": 2,
+				"isPermitted": true
+			},
+			{
+				"id": 3,
+				"isPermitted": true
+			}
+		]
+	},
+	"addonValues": {
+		"test_key": "test_value"
+	},
+	"_links": []
+}

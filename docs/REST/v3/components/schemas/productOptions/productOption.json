@@ -1,0 +1,78 @@
+{
+	"required": [
+		"id",
+		"optionId",
+		"optionValueId",
+		"imageListId",
+		"modelNumber",
+		"weight",
+		"price",
+		"stockType",
+		"stock",
+		"sortOrder"
+	],
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer",
+			"format": "int32",
+			"minimum": 1,
+			"example": 1
+		},
+		"optionId": {
+			"type": "integer",
+			"format": "int32",
+			"minimum": 1,
+			"example": 1
+		},
+		"optionValueId": {
+			"type": "integer",
+			"format": "int32",
+			"minimum": 1,
+			"example": 1
+		},
+		"imageListId": {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 1,
+			"nullable": true
+		},
+		"modelNumber": {
+			"type": "string",
+			"example": "abcdef-12345"
+		},
+		"weight": {
+			"type": "number",
+			"format": "double",
+			"example": 13.37
+		},
+		"price": {
+			"type": "number",
+			"format": "double",
+			"example": 13.37
+		},
+		"stockType": {
+			"type": "string",
+            "description": "Determines the behavior for the stock management. `only-positive` allows only positive stock values (including zero), `all-numbers` allows all numeric stock values, and `not-managed` means that this value is not considered for the stock management.",
+            "enum" : [
+                "only-positive",
+                "all-numbers",
+				"not-managed"
+			],
+			"example": "only-positive",
+			"minLength": 1
+		},
+		"stock": {
+			"type": "number",
+            "format": "double",
+            "example": 13.37
+		},
+		"sortOrder": {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 0
+		}
+	}
+}

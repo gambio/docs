@@ -1,0 +1,14 @@
+GXMultiLangOption:
+    title: GXMultiLangOption
+    type: object
+    required:
+        - en
+        - de
+    properties:
+        en:
+            type: string
+        de:
+            type: string
+    example:
+        en: "English Content"
+        de: "Deutscher Inhalt"

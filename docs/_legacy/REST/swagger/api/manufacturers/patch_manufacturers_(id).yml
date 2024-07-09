@@ -1,0 +1,41 @@
+'/manufacturers/{manufacturer_id}':
+    patch:
+        tags:
+            - manufacturers
+        summary: 'Updates Manufacturers'
+        description: 'Use this method if you want to update an existing manufacturers record.'
+        operationId: updateManufacturers
+        produces:
+            - application/json
+        parameters:
+            -
+                name: manufacturer_id
+                in: path
+                description: 'The manufacturer ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXManufacturer
+                in: body
+                description: 'The manufacturer'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXManufacturer'
+        responses:
+            '200':
+                description: 'Upon success, returns the updated manufacturer'
+                schema:
+                    $ref: '#/definitions/GXManufacturer'
+            '400':
+                description: '(Missing manufacturer data)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Manufacturer not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '500':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

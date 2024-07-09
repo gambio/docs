@@ -1,0 +1,7 @@
+deleted:
+    in: query
+    name: deleted
+    type: string
+    format: date
+    required: false
+    description: '*Optional parameter*. If provided, receive a change history of items that were **deleted** at the given date.'

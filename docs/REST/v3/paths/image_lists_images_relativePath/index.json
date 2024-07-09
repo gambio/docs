@@ -1,0 +1,8 @@
+{
+	"delete": {
+		"$ref": "./delete.json"
+	},
+	"post": {
+		"$ref": "./post.json"
+	}
+}

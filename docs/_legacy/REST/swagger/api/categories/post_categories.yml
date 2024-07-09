@@ -1,0 +1,30 @@
+/categories:
+    post:
+        tags:
+            - categories
+        summary: 'Create Categories'
+        description: 'Creates new categories in the system by taking an array of categories. It is also possible to provide a single <a href="/gambio-gx3-api/resources/gxcategory">GXCategory</a> ressource, to create a single entry.'
+        operationId: createCategories
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: GXCategoryArray
+                in: body
+                description: 'An array of categories'
+                required: true
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXCategoryArray'
+        responses:
+            '201':
+                description: 'Upon success, returns the categories that was created'
+                schema:
+                    $ref: '#/definitions/categoryArrayPostResponse'
+            '400':
+                description: '(Category data was not provided)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

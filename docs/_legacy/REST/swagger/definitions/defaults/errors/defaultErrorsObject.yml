@@ -1,0 +1,13 @@
+defaultErrorsObject:
+    title: defaultErrorsObject
+    type: object
+    properties:
+        file:
+            type: string
+        line:
+            type: integer
+            format: int64
+        stack:
+            type: array
+            items:
+                $ref: '#/definitions/defaultErrorStackObject'

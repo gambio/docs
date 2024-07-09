@@ -1,0 +1,33 @@
+'/vpe/{vpe_id}':
+    patch:
+        tags:
+            - vpe
+        summary: 'Updates VPE'
+        description: 'Use this method if you want to update an existing vpe record.'
+        operationId: updateVPE
+        produces:
+            - application/json
+        parameters:
+            -
+                name: vpe_id
+                in: path
+                description: 'The VPE ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXVPE
+                in: body
+                description: 'The updated VPE'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXVPE'
+        responses:
+            '200':
+                description: 'Upon success, returns the updated VPE'
+                schema:
+                    $ref: '#/definitions/GXVPE'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

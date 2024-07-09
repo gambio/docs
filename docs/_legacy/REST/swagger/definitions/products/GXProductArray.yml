@@ -1,0 +1,250 @@
+GXProductArray:
+  title: GXProductArray
+  type: object
+  required:
+    - id
+    - isActive
+    - sortOrder
+    - dateAdded
+    - dateAvailable
+    - lastModified
+    - orderedCount
+    - productModel
+    - ean
+    - price
+    - discountAllowed
+    - taxClassId
+    - quantity
+    - weight
+    - shippingCosts
+    - shippingTimeId
+    - productTypeId
+    - manufacturerId
+    - isFsk18
+    - isVpeActive
+    - vpeId
+    - vpeValue
+    - name
+    - description
+    - shortDescription
+    - keywords
+    - metaTitle
+    - metaDescription
+    - metaKeywords
+    - url
+    - infoUrl
+    - urlKeywords
+    - checkoutInformation
+    - viewedCount
+    - addonValues
+    - settings
+    - quantityUnitId
+  properties:
+    id:
+      type: integer
+      format: int64
+    isActive:
+      type: boolean
+    sortOrder:
+      type: integer
+      format: int64
+    dateAdded:
+      type: string
+    dateAvailable:
+      type: string
+    lastModified:
+      type: string
+    orderedCount:
+      type: integer
+      format: int64
+    productModel:
+      type: string
+    ean:
+      type: string
+    price:
+      type: number
+      format: float
+    discountAllowed:
+      type: number
+      format: float
+    taxClassId:
+      type: integer
+      format: int64
+    quantity:
+      type: integer
+      format: int64
+    weight:
+      type: integer
+      format: int64
+    shippingCosts:
+      type: integer
+      format: int64
+    shippingTimeId:
+      type: integer
+      format: int64
+    productTypeId:
+      type: integer
+      format: int64
+    manufacturerId:
+      type: integer
+      format: int64
+    isFsk18:
+      type: boolean
+    isVpeActive:
+      type: boolean
+    vpeId:
+      type: integer
+      format: int64
+    vpeValue:
+      type: integer
+      format: int64
+    name:
+      $ref: '#/definitions/GXMultiLangOption'
+    description:
+      $ref: '#/definitions/GXMultiLangOption'
+    shortDescription:
+      $ref: '#/definitions/GXMultiLangOption'
+    keywords:
+      $ref: '#/definitions/GXMultiLangOption'
+    metaTitle:
+      $ref: '#/definitions/GXMultiLangOption'
+    metaDescription:
+      $ref: '#/definitions/GXMultiLangOption'
+    metaKeywords:
+      $ref: '#/definitions/GXMultiLangOption'
+    url:
+      $ref: '#/definitions/GXMultiLangOption'
+    infoUrl:
+      $ref: '#/definitions/GXMultiLangOption'
+    urlKeywords:
+      $ref: '#/definitions/GXMultiLangOption'
+    checkoutInformation:
+      $ref: '#/definitions/GXMultiLangOption'
+    viewedCount:
+      $ref: '#/definitions/GXMultiLangIntOption'
+    images:
+      type: array
+      items:
+        $ref: '#/definitions/GXProductImage'
+    addonValues:
+      $ref: '#/definitions/GXOrderAddonValues'
+    settings:
+        $ref: '#/definitions/GXProductSettings'
+    quantityUnitId:
+        type: integer
+        format: int64
+    additionalFields:
+        type: array
+        items:
+            type: integer
+        readOnly: true
+    mainCategoryId:
+        type: integer
+        format: int64
+  example:
+    - 
+        isActive: false
+        sortOrder: 0
+        dateAdded: '2015-08-08 17.19:46'
+        dateAvailable: '2016-01-21 12:15:42'
+        lastModified: '2016-03-16 16:01:51'
+        orderedCount: 1
+        productModel: ABC123
+        ean: ""
+        price: 16.7983
+        discountAllowed: 0.00
+        taxClassId: 1
+        quantity: 998
+        weight: 0
+        shippingCosts: 0
+        shippingTimeId: 1
+        productTypeId: 1
+        manufacturerId: 0
+        isFsk18: false
+        isVpeActive: false
+        vpeID: 0
+        vpeValue: 0
+        name:
+          en: 'Test Product'
+          de: Testartikel
+        description:
+          en: '<p>Test product description.</p>'
+          de: "[TAB:Seite 1] Testartikel Beschreibung Seite 1 [TAB:Seite 2] Testartikel Beschreibung\nSeite 2 [TAB:Seite 3] Testartikel Beschreibung Seite 3"
+        shortDescription:
+          en: '<p>Test product short description.</p>'
+          de: '<p>Testartikel Kurzbeschreibung</p>'
+        keywords:
+          en: ""
+          de: ""
+        metaTitle:
+          en: ""
+          de: ""
+        metaDescription:
+          en: ""
+          de: ""
+        metaKeywords:
+          en: ""
+          de: ""
+        url:
+          en: ""
+          de: ""
+        urlKeywords:
+          en: test-product
+          de: testartikel
+        checkoutInformation:
+          en: ""
+          de: ""
+        viewedCount:
+          en: 0
+          de: 32
+        images:
+          -
+            filename: artikelbild_1_1.jpg
+            isPrimary: false
+            isVisible: true
+            imageAltText:
+              en: ""
+              de: ""
+          -
+            filename: artikelbild_1_2.jpg
+            isPrimary: false
+            isVisible: true
+            imageAltText:
+              en: ""
+              de: ""
+          -
+            filename: artikelbild_1_3.jpg
+            isPrimary: false
+            isVisible: true
+            imageAltText:
+              en: ""
+              de: ""
+        settings:
+          detailsTemplate: standard.html
+          optionsDetailsTemplate: product_options_dropdown.html
+          optionsListingTemplate: product_options_dropdown.html
+          showOnStartpage: false
+          showQuantityInfo: true
+          showWeight: false
+          showPriceOffer: true
+          showAddedDateTime: false
+          priceStatus: 0
+          minOrder: 1
+          graduatedQuantity: 1
+          onSitemap: true
+          sitemapPriority: '0.5'
+          sitemapChangeFrequency: daily
+          propertiesDropdownMode: dropdown_mode_1
+          startpageSortOrder: 0
+          showPropertiesPrice: true
+          usePropertiesCombisQuantity: false
+          usePropertiesCombisShippingTime: true
+          usePropertiesCombisWeight: false
+        addonValues:
+          productsImageWidth: '0'
+          productsImageHeight: '0'
+        quantityUnitId: 0
+        additionalFields:
+            - 1
+            - 2
+        mainCategoryId: 1

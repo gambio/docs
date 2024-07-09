@@ -1,0 +1,22 @@
+'/tracking_code':
+    get:
+        tags:
+            - tracking_code
+        summary: 'Get Tracking Codes (Multiple) (deprecated)'
+        description: 'Get an array of all tracking code records through the GET method.'
+        operationId: getTrackingCodesDeprecated
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of Tracking Codes'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXTrackingCode'

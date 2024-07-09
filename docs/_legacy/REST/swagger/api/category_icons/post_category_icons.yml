@@ -1,0 +1,29 @@
+/category_icons:
+    post:
+        tags:
+            - category_icons
+        summary: 'Upload Category Icon'
+        description: 'Upload an icon image for the categories. Make sure this request with Content-Type: multipart/form-data header instead of application/json. Except from the file the POST request must also contain a "filename" value with the final filename.'
+        operationId: uploadCategoryIcons
+        consumes:
+            - multipart/form-data
+        parameters:
+            - in: formData
+              name: uploaded_file
+              type: file
+              description: 'The icon to upload'
+            - in: formData
+              name: filenae
+              type: string
+              description: 'The final filename'
+        produces:
+            - application/json
+        responses:
+            '201':
+                description: 'Upon success, returns the default success response with the filename'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithFilename'
+            '400':
+                description: '(No filename)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

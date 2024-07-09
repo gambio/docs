@@ -1,0 +1,121 @@
+site_name: Gambio Tutorials
+site_url: https://developers.gambio.de
+docs_dir: ./docs
+site_dir: ./build
+copyright: Copyright &copy; 2023 Gambio GmbH
+theme:
+  name: null
+  highlightjs: true
+  custom_dir: ../../../node_modules/mkdocs-material/material
+  favicon: _assets/favicon.ico
+  language: en
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: _assets/logo.svg
+  feature:
+    tabs: true
+  sticky_navigation: true
+  collapse_navigation: false
+  search:
+    language: 'en'
+extra:
+  social:
+    - type: gitlab
+      link: https://sources.gambio-server.net
+    - type: twitter
+      link: https://twitter.com/gambio
+    - type: linkedin
+      link: https://www.linkedin.com/company/gambio-gmbh
+extra_css:
+  - _assets/extra.css
+  - _assets/highlight-js-docco.min.css
+extra_javascript:
+  - _assets/highlight-js.min.js
+  - _assets/extra.js
+nav:
+  - Development Environment:
+      - develop-environment/index.md
+      - develop-environment/development-tools.md
+      - develop-environment/setup-project.md
+      - Supported PHP Versions: https://tracker.gambio-server.net/projects/gxdoc/wiki/Unterst%C3%BCtzte_PHP-Versionen
+  - Architecture and Framework:
+      - framework/index.md
+      - framework/application-core.md
+      - More information about ...:
+          - framework/details/application-layers.md
+          - framework/details/autoloading.md
+          - framework/details/di-container.md
+          - framework/details/service-provider.md
+      - Technical components:
+          - framework/technical-components/index.md
+          - framework/technical-components/authentication.md
+          - framework/technical-components/cache.md
+          - framework/technical-components/configurations.md
+          - framework/technical-components/database.md
+          - framework/technical-components/emails.md
+          - framework/technical-components/environment.md
+          - framework/technical-components/events.md
+          - framework/technical-components/languages.md
+          - framework/technical-components/logging.md
+          - framework/technical-components/permissions.md
+          - framework/technical-components/pricing.md
+          - framework/technical-components/routing.md
+          - framework/technical-components/text-phrases.md
+          - framework/technical-components/verification.md
+      - Business components:
+          - framework/business-components/index.md
+          - framework/business-components/admin-access.md
+          - framework/business-components/customer.md
+          - framework/business-components/customer-addon-value.md
+          - framework/business-components/customer-memo.md
+          - framework/business-components/customer-legacy-services.md
+          - framework/business-components/image-list.md
+          - framework/business-components/option.md
+          - framework/business-components/parcel-service.md
+          - framework/business-components/product-option.md
+          - framework/business-components/product-variant.md
+          - framework/business-components/statistics-overview.md
+          - framework/business-components/tracking-code.md
+          - framework/business-components/user-configuration.md
+          - framework/business-components/withdrawal.md
+      - framework/legacy-architecture.md
+  - Module Development:
+      - module-development/index.md
+      - General Development:
+          - module-development/general/gx-modules.md
+          - module-development/general/defining-a-module.md
+          - module-development/general/extending-html.md
+          - module-development/general/languages-text-phrases.md
+          - module-development/general/all-extenders.md
+      - Store Development:
+          - module-development/store/adding-css.md
+          - module-development/store/adding-js.md
+          - module-development/store/creating-http-controller.md
+          - module-development/store/creating-theme.md
+      - Admin Development:
+          - module-development/admin/define-http-routes.md
+          - module-development/admin/http-actions.md
+          - module-development/admin/admin-menu-json.md
+          - module-development/admin/gx-modules-json.md
+          - module-development/admin/custom-module-center-module.md
+          - module-development/admin/custom-configuration-page.md
+      - module-development/guidelines.md
+      - module-development/sample-modules.md
+  - Theme Development:
+      - theme-development/index.md
+      - theme-development/architecture.md
+      - theme-development/extension.md
+      - theme-development/content-manager.md
+      - theme-development/html-templates.md
+      - theme-development/styles.md
+      - theme-development/scripts.md
+      - theme-development/text-phrases.md
+      - theme-development/final.md
+markdown_extensions:
+  - extra
+  - admonition
+  - meta

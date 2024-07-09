@@ -1,0 +1,13 @@
+attachmentSuccessExample:
+    title: attachmentSuccessExample
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        path:
+            type: string

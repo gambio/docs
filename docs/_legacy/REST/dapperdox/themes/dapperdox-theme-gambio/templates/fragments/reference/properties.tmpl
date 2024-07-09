@@ -1,0 +1,42 @@
+[: range $name, $property := .Properties :]
+<tr>
+    <td class="resource">
+        [: if $property.FQNS :]<span class="object" style="padding-left: calc(15px*[: len $property.FQNS :]);">[: join $property.FQNS "." :]</span>.[: end :][: $property.ID :]
+    </td>
+    <!-- <td class="type">[: index $property.Type 0 :]</td> -->
+    <td class="type">[: join $property.Type " of " :]</td>
+    <td>
+        [: safehtml $property.Description :]
+        [: if $property.Enum :]
+        <p>Possible values are:</p>
+        <ul class="list-bullet">
+            [: range $property.Enum :]
+            <li><code>[: . :]</code></li>
+            [: end :]
+        </ul>
+        [: end :]
+    </td>
+    <td>
+        [: if $property.Required :]
+            [: if $property.FQNS :]
+                <span style="color: grey">Required</span>
+            [: else :]
+                Required
+            [: end :]
+            [: if $property.ReadOnly :]
+                , read only.
+            [: end :]
+        [: else :]
+            [: if $property.FQNS :]
+                <span style="color: grey">Optional</span>
+            [: else :]
+                Optional
+            [: end :]
+            [: if $property.ReadOnly :]
+                , read only.
+            [: end :]
+        [: end :]
+    </td>
+</tr>
+[: template "fragments/reference/properties" $property :]
+[: end :]

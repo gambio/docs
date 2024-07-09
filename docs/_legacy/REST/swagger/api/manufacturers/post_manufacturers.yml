@@ -1,0 +1,28 @@
+/manufacturers:
+    post:
+        tags:
+            - manufacturers
+        summary: 'Create Manufacturers'
+        description: 'This method enables the creation of a new Manufacturers into the system.'
+        operationId: createManufacturers
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: GXManufacturer
+                in: body
+                description: 'The manufacturer'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXManufacturer'
+        responses:
+            '201':
+                description: 'Upon success, returns the created manufacturer'
+                schema:
+                    $ref: '#/definitions/GXManufacturer'
+            '400':
+                description: '(Manufacturer data missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

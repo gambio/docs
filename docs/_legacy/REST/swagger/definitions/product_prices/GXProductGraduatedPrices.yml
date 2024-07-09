@@ -1,0 +1,17 @@
+GXProductGraduatedPrices:
+    title: GXProductGraduatedPrices
+    type: object
+    required:
+        - graduatedPrice
+        - threshold
+    properties:
+        graduatedPrice:
+            type: number
+            format: double
+        threshold:
+            type: number
+            format: double
+        
+    example:
+        graduatedPrice: 75.6303
+        threshold: 2.5000

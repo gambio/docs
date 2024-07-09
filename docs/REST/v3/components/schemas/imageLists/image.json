@@ -1,0 +1,40 @@
+{
+	"required": [
+		"relativePath",
+		"url",
+		"titles",
+		"altTitles",
+		"sortOrder"
+	],
+	"type": "object",
+	"properties": {
+		"relativePath": {
+			"type": "string",
+			"example": "subdirectory/image.jpg",
+			"minLength": 1
+		},
+		"url": {
+			"type": "string",
+			"example": "https://www.my-shop.org/images/product_images/original_images/subdirectory/image.jpg",
+			"minLength": 1
+		},
+		"titles": {
+			"type": "array",
+			"items": {
+				"$ref": "./title.json"
+			}
+		},
+		"altTitles": {
+			"type": "array",
+			"items": {
+				"$ref": "./title.json"
+			}
+		},
+		"sortOrder": {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 0
+		}
+	}
+}

@@ -1,0 +1,8 @@
+page:
+    name: page
+    in: query
+    type: integer
+    format: int64
+    required: false
+    description: '*Optional parameter*. If provided, displays the specified page. Defaults to 0.'
+    default: 0

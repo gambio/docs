@@ -1,0 +1,38 @@
+GXParcelService:
+    title: GXParcelService
+    type: object
+    required:
+        - name
+        - isDefault
+        - descriptions
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        name:
+            type: string
+        isDefault:
+            type: boolean
+        descriptions:
+            type: array
+            items:
+                type: object
+                required:
+                    - url
+                    - comment
+                properties:
+                    url:
+                        $ref: '#/definitions/GXMultiLangOption'
+                    comment:
+                        $ref: '#/definitions/GXMultiLangOption'
+    example:
+        name: 'DHL'
+        isDefault: true
+        descriptions:
+            url:
+                en: "http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=en&idc={TRACKING_NUMBER}&rfn=&extendedSearch=true"
+                de: "http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&idc={TRACKING_NUMBER}&rfn=&extendedSearch=true"
+            comment:
+                en: "You can access the shipment tracking for your order by visiting the link above."
+                de: "Die Sendungsverfolgung für Ihre Bestellung können Sie über den oben stehenden Link aufrufen."

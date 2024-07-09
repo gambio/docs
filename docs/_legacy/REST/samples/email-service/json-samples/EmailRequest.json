@@ -1,0 +1,17 @@
+{
+	"subject": "Test Subject",
+	"sender": {
+		"emailAddress": "john@doe0123456789.de",
+		"contactName": "John Doe"
+	},
+	"recipient": {
+		"emailAddress": "jane@doe0123456789.de",
+		"contactName": "Jane Doe"
+	},
+	"replyTo": {
+		"emailAddress": "john@doe0123456789.de",
+		"contactName": "John Doe (Reply To)"
+	},
+	"contentHtml": "<strong>HTML Content</content>",
+	"contentPlain": "Plain Content"
+}

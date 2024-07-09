@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+dist/
+.cache/
+src/all_files
+.DS_Store
+/docs/REST/template/.yarn/

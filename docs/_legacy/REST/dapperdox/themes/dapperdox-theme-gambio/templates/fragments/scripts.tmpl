@@ -1,0 +1,214 @@
+
+<!-- Additional scripts to be loaded at end of page -->
+<!-- This should be overridden to take control of the authorisation process (adding keys to the explorer request). -->
+<script>
+    var init = function(){
+        var cleanTextForSorting = function (str) {
+            // As jQuery's .text() prototype returns the innerHTML but disregards element tags,
+            return str.toUpperCase() // case consistency
+                .replace(/^\s*[\r\n]/gm, '') // get rid of whitespace lines.
+                .replace(/\s*(POST|DELETE|PUT|GET)/g, ''); // boilerplate: ignore the first 'operation' occurence
+        };
+
+        /* Sort the document's tables */
+        var sortTables = function() {
+            var tables = $('table');
+            var tableRows = [];
+
+            $.each(tables, function (idx, table) {
+                table = $(table); // Type cast into a jQuery object.
+                tableRows = table.find('tr');
+                tableRows[0] = undefined; // Lets not sort the table's heading.
+                tableRows.sort(function (a, b) {
+                    //compare cleared elements
+                    return cleanTextForSorting($(a).text())
+                        .localeCompare(cleanTextForSorting($(b).text()));
+                });
+
+                $.each(tableRows, function (idx, tableRow) {
+                    table.append(tableRow);
+                });
+            });
+        };
+
+        /* sorts the side navigation */
+        var sortSideNav = function(){
+            var sideList = $('#navigation');
+            var listItems = sideList.children('li').get();
+
+            listItems.sort(function(a,b){
+                return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+            });
+
+            $.each(listItems, function(idx, itm){sideList.append(itm)});
+        };
+
+        sortSideNav();
+        sortTables();
+
+        /* Remove empty code blocks
+        	- This is a temp fix so that the current endpoints that do not provide correct JSON
+        	(such as category Icon, category Image, product image and product links) but instead provide
+        	a simple array of strings can be correctly rendered with an overlay
+        */
+		var removeEmptyCodeBlocks = function() {
+			var codeBlocks = $('pre');
+			$.each(codeBlocks, function (idx, block) {
+				block = $(block);
+				codes = block.children('code');
+				if (codes.html() === '{}') {
+					block.css('visibility', 'hidden');
+					block.hide(0);
+				}
+			});
+
+		};
+
+		removeEmptyCodeBlocks();
+
+		var fixSideNavMultiExpand = function() {
+		    $('.nav-toggle').click(function(e){
+		        e.stopPropagation(); // Override dapperdox built-in-behaviour.
+                var $targetHeading = $(e.target); // this is the 'heading' element clicked
+                var $targetList = $targetHeading.next(); // and this the corresponding list that should expand/collapse
+
+                if($targetList.hasClass('isAnimating')){ // if we currently are animating, abort.
+                    return 0;
+                } else {
+
+                    // these hold all elements except the one clicked.
+                    var $toggleHeadings = $('#navigation').find('.nav-toggle').not($targetHeading);
+                    var $toggleLists = $toggleHeadings.next();
+
+                    // set all of them to be collapsed.
+                    $toggleHeadings.addClass('collapsed');
+                    $toggleLists.removeClass('in');
+
+                    // this is where we toggle the clicked element
+                    if($targetHeading.hasClass('collapsed')) {
+                        $targetHeading.removeClass('collapsed');
+                        $targetList.addClass('isAnimating');
+
+                        $targetList.addClass('in');
+                        $targetList.animate({maxHeight: 400}, 400, function(){
+                            $targetList.removeClass('isAnimating');
+                            $targetList.css('max-height', '1200px');
+                        });
+
+                    } else {
+                        $targetHeading.addClass('collapsed');
+
+                        $targetList.addClass('isAnimating');
+                        $targetList.animate({maxHeight:0}, 400, function(){
+                             $targetList.removeClass('isAnimating');
+                             $targetList.removeClass('in');
+                             $targetList.css('max-height', '0');
+                        });
+                    }
+                }
+            });
+        };
+
+        fixSideNavMultiExpand();
+
+        /* This function fixes dapperdox' behaviour of ommiting some HTML components/classes that are required for bootstrap-styling.
+         *
+         * It does so by finding an identifier that was set, and wraps/replaces it with HTML tags accordingly,
+         * so that bootstrap renders it as required.
+         */
+        var fixMarkdown = function() {
+            // wrap the 'postRenderNav' class div element with UL tags, setting it to a bootstrap compatible navbar
+            var $postRenderNav = $('.postRenderNav');
+            $postRenderNav.wrapInner('<ul class="nav nav-tabs"></ul>');
+            $postRenderNav.find('li a').attr('data-toggle', 'tab');
+
+            var $postRenderDropDown = $('.postRenderDropdown'); // this is to become a dropdown
+            var $dropDownTogglers = $('.makeMeADropDownToggler'); // these are to become dropdown toggleing elements.
+
+            $.each($dropDownTogglers, function(index, value){
+                // every object that should become a dropdown toggler will have their bootstrap-compatible class set accordingly.
+                $(value).replaceWith('<a href="#" class="dropdown-toggle" data-toggle="dropdown">'+value.innerHTML+' <span class="caret"></span></a>');
+            });
+            // the child 'ul' elements should be declared a dropdown menu for bootstrap.
+            $postRenderDropDown.find('ul').addClass('dropdown-menu');
+
+            // finally, the dropdowns should also be integrated nicely in the bootstrap navbar.
+            $.each($postRenderDropDown, function(index, value){
+            	// the first dropdown should be set to active by default
+	            var activeAppendix = index === 0 ? 'active' : '';
+               $(value).replaceWith('<li class="dropdown '+activeAppendix+'">'+value.innerHTML+'</li>');
+            });
+
+            var $postRenderCodeBlocks = $('.postRenderCodeBlock');
+
+            $.each($postRenderCodeBlocks, function(index, value){
+                var $codeBlock = $(value);
+                var targetHighlightSyntax = value.classList[1];
+
+                index === 0 // set the first tab active for bootstrap
+                    ? $codeBlock.parent().addClass('tab-pane fade in active')
+                    : $codeBlock.parent().addClass('tab-pane fade');
+
+
+                $codeBlock.replaceWith('<pre><code class="'+targetHighlightSyntax+' hljs">'+value.innerHTML+'</code></pre>');
+            });
+	
+	        // remove wild commas placed by dapperdox markdown
+	        $.each($postRenderNav.find('ul'), function(index, value){
+		        $(value).contents().filter( function(){
+			        return this.nodeType === 3 // a #text nodeType
+		        }).remove();
+	        });
+
+            $('code.hljs').each(function(index, block){
+                hljs.lineNumbersBlock(block);
+            });
+        };
+	
+	    var makeEnvironmentDownloadable = function() {
+	    	// This is a base64 encoded json file Gambio_GX3_api.postman_environment.json which can be found in the project's root.
+		    var postmanEnvironmentBase64 = 'ew0KICAiaWQiOiAiNDMyOGM5ZmMtMWQ4NS00M2UwLWIzZTUtMmFjN2QxMDBhMmIwIiwNCiAgIm5hbWUiOiAiR2FtYmlvIEdYMyBBcGkiLA0KICAidmFsdWVzIjogWw0KICAgIHsNCiAgICAgICJrZXkiOiAiYWRkcmVzc19pZCIsDQogICAgICAidmFsdWUiOiAiMSIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImtleSI6ICJjYXRlZ29yeV9pZCIsDQogICAgICAidmFsdWUiOiAiMSIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImtleSI6ICJjb3VudHJ5X2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogImN1c3RvbWVyX2dyb3VwX2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogImN1c3RvbWVyX2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogImVtYWlsX2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogIm1hbnVmYWN0dXJlcl9pZCIsDQogICAgICAidmFsdWUiOiAiMSIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImtleSI6ICJvcmRlcl9zdGF0dXNfaWQiLA0KICAgICAgInZhbHVlIjogIjEiLA0KICAgICAgInR5cGUiOiAidGV4dCIsDQogICAgICAiZW5hYmxlZCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJrZXkiOiAib3JkZXJfaWQiLA0KICAgICAgInZhbHVlIjogIjQwMDIxMCIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImtleSI6ICJpdGVtX2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogImF0dHJpYnV0ZV9pZCIsDQogICAgICAidmFsdWUiOiAiMSIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImtleSI6ICJwcm9kdWN0X2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogInF1YW50aXR5X3VuaXRfaWQiLA0KICAgICAgInZhbHVlIjogIjEiLA0KICAgICAgInR5cGUiOiAidGV4dCIsDQogICAgICAiZW5hYmxlZCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJrZXkiOiAidnBlX2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogInpvbmVfaWQiLA0KICAgICAgInZhbHVlIjogIjEiLA0KICAgICAgInR5cGUiOiAidGV4dCIsDQogICAgICAiZW5hYmxlZCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJrZXkiOiAicGFyY2VsX3NlcnZpY2VfaWQiLA0KICAgICAgInZhbHVlIjogIjEiLA0KICAgICAgInR5cGUiOiAidGV4dCIsDQogICAgICAiZW5hYmxlZCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJrZXkiOiAidHJhY2tpbmdfY29kZV9pZCIsDQogICAgICAidmFsdWUiOiAiMSIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImtleSI6ICJ3aXRoZHJhd2FsX2lkIiwNCiAgICAgICJ2YWx1ZSI6ICIxIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogInNwZWNpYWxfb2ZmZXJfaWQiLA0KICAgICAgInZhbHVlIjogIjEiLA0KICAgICAgInR5cGUiOiAidGV4dCIsDQogICAgICAiZW5hYmxlZCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJrZXkiOiAic29ydCIsDQogICAgICAidmFsdWUiOiAiIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogInNlYXJjaCIsDQogICAgICAidmFsdWUiOiAiIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogImZpZWxkcyIsDQogICAgICAidmFsdWUiOiAiIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogImNoYW5nZWQiLA0KICAgICAgInZhbHVlIjogIiIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgImtleSI6ICJtb2RpZmllZCIsDQogICAgICAidmFsdWUiOiAiIiwNCiAgICAgICJ0eXBlIjogInRleHQiLA0KICAgICAgImVuYWJsZWQiOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAia2V5IjogImRlbGV0ZWQiLA0KICAgICAgInZhbHVlIjogIiIsDQogICAgICAidHlwZSI6ICJ0ZXh0IiwNCiAgICAgICJlbmFibGVkIjogdHJ1ZQ0KICAgIH0NCiAgXSwNCiAgIl9wb3N0bWFuX3ZhcmlhYmxlX3Njb3BlIjogImVudmlyb25tZW50IiwNCiAgIl9wb3N0bWFuX2V4cG9ydGVkX2F0IjogIjIwMTgtMDctMjBUMTE6MTM6NTguMjMxWiIsDQogICJfcG9zdG1hbl9leHBvcnRlZF91c2luZyI6ICJQb3N0bWFuLzYuMC4xMCINCn0=';
+		
+		    var $environmentDownloadLink = $('#postman_env_download');
+		    $environmentDownloadLink.attr('href', 'data:application/json;base64,'+postmanEnvironmentBase64);
+		    $environmentDownloadLink.attr('download', 'Gambio_GX3_api.postman_environment.json');
+	    }
+        
+        fixMarkdown();
+	    makeEnvironmentDownloadable();
+    };
+
+    $(document).ready(init);
+
+    /* Google analytics script */
+    !function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-2535969-8","auto"),ga("send","pageview");
+
+
+    // This is set by dapperdox.
+    // Register callback to add authorisation parameters to request before it is sent
+    apiExplorer.setBeforeSendCallback( function( request ) {
+        var apiKey = apiExplorer.readApiKey();           // Read API key from explorer input
+        var accessToken = apiExplorer.readAccessToken(); // Read access token from explorer input
+        var basicAuth   = apiExplorer.getBasicAuthentication(); // Create basic auth string
+
+        // Favour access tokens over api keys
+        [: range $name, $security := .Method.Security :]
+        [: if $security.Scheme.IsApiKey :]
+        if     ( accessToken != "" ) { request.headers = {Authorization: "Bearer "+accessToken}; }
+        else if( basicAuth   != "" ) { request.headers = {Authorization: "Basic "+basicAuth}; }
+        else if( apiKey != "" ) {
+            var nam = "[: $security.Scheme.ParamName :]";
+            [: if eq $security.Scheme.ParamLocation "header" :]
+            request.headers = {};
+            request.headers[nam] = apiKey;
+            [: end :]
+            [: if eq $security.Scheme.ParamLocation "query" :]
+            request.params = {};
+            request.params[nam] = apiKey;
+            [: end :]
+        }
+        [: end :]
+        [: end :]
+    });
+
+</script>

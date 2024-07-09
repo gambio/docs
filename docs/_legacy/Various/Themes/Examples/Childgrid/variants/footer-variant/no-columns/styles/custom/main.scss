@@ -1,0 +1,26 @@
+#footer {
+	a {
+		color: $gx-footer-link-color;
+		&:hover {
+			color: $gx-footer-link-hover-color;
+		}
+	}
+	.copyright-line {
+		line-height: $gx-footer-line-height;
+	}
+	.footer-navigation {
+		.nav {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				display: inline-block;
+				a {
+					display: inline-block;
+					padding: 5px 15px;
+					line-height: $gx-footer-line-height;
+				}
+			}
+		}
+	}
+}

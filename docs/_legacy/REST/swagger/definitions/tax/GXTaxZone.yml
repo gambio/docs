@@ -1,0 +1,17 @@
+GXTaxZone:
+    title: GXTaxZone
+    type: object
+    required:
+        - name
+        - description
+    properties:
+        id:
+            type: string
+            readOnly: true
+        name:
+            type: string
+        description:
+            type: string
+    example:
+        name: "Steuerzone EU"
+        description: "Steuerzone für die EU"

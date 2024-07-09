@@ -1,0 +1,7 @@
+recursive:
+    in: query
+    name: recursive
+    type: boolean
+    required: false
+    allowEmptyValue: true
+    description: "*Optional parameter*. If provided, recursively includes the ressources child-resources."

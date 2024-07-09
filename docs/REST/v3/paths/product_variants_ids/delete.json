@@ -1,0 +1,42 @@
+{
+	"summary": "Delete multiple product variants",
+	"operationId": "delete-product-variants",
+	"tags": [
+		{
+			"$ref": "./../../tags/productVariants.json#/name"
+		}
+	],
+	"description": "Deletes one or more product variants based on the provided IDs.",
+	"parameters": [
+		{
+			"name": "productId",
+			"in": "path",
+			"description": "ID of a product.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		},
+		{
+			"name": "ids",
+			"in": "path",
+			"description": "Product variant IDs represented as a comma separated list.",
+			"required": true,
+			"style": "simple",
+			"explode": true,
+			"schema": {
+				"type": "int",
+				"example": 1,
+				"minimum": 1
+			}
+		}
+	],
+	"responses": {
+		"204": {
+			"description": "Product variants successfully deleted."
+		}
+	}
+}

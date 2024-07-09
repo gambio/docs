@@ -1,0 +1,31 @@
+GXCountry:
+    title: GXCountry
+    type: object
+    required:
+        - name
+        - iso2
+        - iso3
+        - addressFormatId
+        - status
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        name:
+            type: string
+        iso2:
+            type: string
+        iso3:
+            type: string
+        addressFormatId:
+            type: integer
+            format: int64
+        status:
+            type: boolean
+    example:
+            name: "Deutschland"
+            iso2: "de"
+            iso3: "deu"
+            addressFormatId: 3
+            status: true

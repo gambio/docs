@@ -1,0 +1,13 @@
+defaultSuccessResponseWithFilename:
+    title: defaultSuccessResponseWithFilename
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        filename:
+            type: string

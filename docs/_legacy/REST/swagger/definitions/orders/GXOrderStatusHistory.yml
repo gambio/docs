@@ -1,0 +1,28 @@
+GXOrderStatusHistory:
+    title: GXOrderStatusHistory
+    type: object
+    required:
+        - statusId
+        - dateAdded
+        - comment
+        - customerNotified
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        statusId:
+            type: integer
+            format: int64
+        dateAdded:
+            type: string
+        comment:
+            type: string
+        customerNotified:
+            type: boolean
+    example:
+        statusId: 1
+        dateAdded: "2015-11-06 12:22:39"
+        comment: ""
+        customerNotified: true
+        customerId: 1

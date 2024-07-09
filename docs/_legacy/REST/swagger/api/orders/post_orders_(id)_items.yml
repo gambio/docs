@@ -1,0 +1,33 @@
+'/orders/{order_id}/items':
+    post:
+        tags:
+            - orders
+        summary: 'Create Order Item'
+        description: 'Use this method to create a new order item to an existing order. The order item JSON format must be the same with the "items" entries in the original order item.'
+        operationId: createOrderItem
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXOrderItem
+                in: body
+                description: 'The order item'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXOrderItem'
+        responses:
+            '201':
+                description: 'Upon success, returns the created order item'
+                schema:
+                    $ref: '#/definitions/GXOrderItem'
+            '400':
+                description: '(Order Item data missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

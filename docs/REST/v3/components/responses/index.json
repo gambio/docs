@@ -1,0 +1,14 @@
+{
+	"missingAttribute": {
+		"$ref": "./missingAttribute.json"
+	},
+	"notFound": {
+		"$ref": "./notFound.json"
+	},
+	"conflictByDataOrAction": {
+		"$ref": "./conflictByDataOrAction.json"
+	},
+	"invalidData": {
+		"$ref": "./invalidData.json"
+	}
+}

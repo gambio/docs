@@ -1,0 +1,26 @@
+'/order_statuses/{order_status_id}':
+    delete:
+        tags:
+            - order_statuses
+        summary: 'Delete Order Status'
+        description: 'Removes a order status record from the system. This method will always return success.'
+        operationId: deleteOrderStatuses
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_status_id
+                in: path
+                description: 'The order status ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the order status ID that was deleted'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithOrderStatusID'
+            '400':
+                description: '(Order status ID invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

@@ -1,0 +1,29 @@
+'/orders/{order_id}/totals/{totals_id}':
+    get:
+        tags:
+            - orders
+        summary: 'Get Order Total'
+        description: 'Returns a single order total from an existing order. All the GET manipulation parameters are applied with this method (search, sort, minimize, paginate etc).'
+        operationId: getOrderTotal
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: totals_id
+                in: path
+                description: 'The totals ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns one order total'
+                schema:
+                    $ref: '#/definitions/GXOrderTotal'

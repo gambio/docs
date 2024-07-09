@@ -1,0 +1,30 @@
+{
+	"number": "234982739",
+	"gender": "m",
+	"firstname": "John",
+	"lastname": "Doe",
+	"dateOfBirth": "1985-02-13",
+	"vatNumber": "0923429837942",
+	"vatNumberStatus": true,
+	"telephone": "2343948798345",
+	"fax": "2093049283",
+	"email": "customer3@example.org",
+	"password": "1234567890",
+	"statusId": 2,
+	"isGuest": false,
+	"address": {
+		"company": "Test Company",
+		"b2bStatus": false,
+		"street": "Test Street",
+		"houseNumber": "5",
+		"additionalAddressInfo": "6. Etage",
+		"suburb": "Test Suburb",
+		"postcode": "23983",
+		"city": "Test City",
+		"countryId": 81,
+		"zoneId": 84
+	},
+	"addonValues": {
+	  "test_key": "test_value-UPDATED"
+	}
+}

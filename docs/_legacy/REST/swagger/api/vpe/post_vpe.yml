@@ -1,0 +1,28 @@
+/vpe:
+    post:
+        tags:
+            - vpe
+        summary: 'Create VPE'
+        description: 'This method enables the creation of a new VPE into the system.'
+        operationId: createVPE
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: GXVPE
+                in: body
+                description: 'The VPE to be created'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXVPE'
+        responses:
+            '201':
+                description: 'Upon success, returns the newly created VPE'
+                schema:
+                    $ref: '#/definitions/GXVPE'
+            '400':
+                description: '(Missing data)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

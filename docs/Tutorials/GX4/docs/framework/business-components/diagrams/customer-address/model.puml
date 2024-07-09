@@ -1,0 +1,149 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+interface IteratorAggregate
+
+package Gambio\Core\Event\EventRaisingEntity {
+	abstract class AbstractEventRaisingEntity {}
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\Address\Model\Collections {
+    class CustomerAddresses {
+        + {static} create(CustomerAddress ...$customerMemos): CustomerAddress
+        + toArray(string $datetimeFormat = 'Y-m-d H:i:s'): array
+    }
+
+    class CustomerAddressIds {
+		+ {static} create(CustomerAddressId ...$customerAddressIds): CustomerAddressIds
+		+ toArray(): array
+	}
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\Address\Model {
+	class CustomerAddress <<Aggregate Root>> {
+		- isDefaultForShipping: bool
+		- isDefaultForPayment: bool
+		- creationTime: DateTimeImmutable
+		- updatedAtTime: DateTimeImmutable
+		--
+		+ {static} create(\
+		\n    CustomerAddressId $customerAddressId, CustomerId $customerId, PersonalInformation $personalInformation,\
+		\n    LocationInformation $locationInformation, DateTimeImmutable $creationTime, DateTimeImmutable $updatedAtTime,\
+		\n    bool $isDefaultForShipping = false, bool $isDefaultForPayment = false\
+		\n): CustomerAddress
+		+ toArray(string $datetimeFormat = 'Y-m-d H:i:s'): array
+		..
+		+ changePersonalInformation(PersonalInformation $personalInformation): void
+		+ changeLocationInformation(LocationInformation $locationInformation): void
+		..
+		+ id(): int
+		+ customerId(): int
+		+ isDefaultForShipping(): bool
+		+ isDefaultForPayment(): bool
+		+ gender(): string
+		+ firstName(): string
+		+ lastName(): string
+		+ companyName(): string
+		+ streetName(): string
+		+ houseNumber(): string
+		+ additionalInformation(): string
+		+ suburb(): string
+		+ postcode(): int
+		+ city(): string
+		+ state(): string
+		+ country(): string
+		+ creationTime(string $datetimeFormat = 'Y-m-d H:i:s'): string
+		+ updatedAtTime(string $datetimeFormat = 'Y-m-d H:i:s'): string
+	}
+
+	note top of CustomerAddress: In the first implementation of GX 4.7 the default payment address and\
+	\n default shipping address will always be the same.
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\Address\Model\ValueObjects {
+	class CustomerAddressId {
+		- value: int
+		--
+		+ {static} create(int $customerAddressId): CreatorId
+		..
+		+ value(): int
+	}
+
+	class PersonalInformation {
+		- firstName: string
+		- lastName: string
+		- companyName: string
+		--
+		+ {static} create(CustomerGender $gender, string $firstName = null, string $lastName = null, string $companyName = null): PersonalInformation
+		+ toArray(): array
+		..
+		+ gender(): string
+		+ firstName(): string
+		+ lastName(): string
+		+ companyName(): string
+	}
+
+	class LocationInformation {
+		- streetName: string
+		- houseNumber: string
+		- additionalInformation: string
+		- postcode: int
+		- city: string
+		- suburb: string
+		- state: string
+		- country: string
+		--
+		+ {static} create(\
+		\n    string $streetName, string $houseNumber, string $postcode, string $city, string $country, \
+		\n    string $additionalInformation = '', string $suburb = '', string $state = ''\
+		\n): LocationInformation
+		+ toArray(): array
+		..
+		+ streetName(): string
+		+ houseNumber(): string
+		+ additionalInformation(): string
+		+ postcode(): int
+		+ city(): string
+		+ suburb(): string
+		+ state(): string
+		+ country(): string
+	}
+
+	class CustomerGender {
+		+ {static} GENDER_MALE: string = 'm'
+		+ {static} GENDER_FEMALE: string = 'f'
+		+ {static} GENDER_OTHER: string = 'o'
+		+ {static} GENDER_ALLOWED_VALUES: array = ['m', 'f', 'o', '']
+		..
+		- value: string
+		--
+		+ {static} create(string $value = ''): CustomerGender
+		+ value(): string
+	}
+
+	class CustomerId {
+		- value: int
+		--
+		+ {static} create(int $customerId): CustomerId
+		..
+		+ value(): int
+	}
+}
+
+CustomerAddresses o-down- CustomerAddress
+CustomerAddresses --|> IteratorAggregate
+
+CustomerAddressIds o-down- CustomerAddressId
+CustomerAddressIds --|> IteratorAggregate
+
+CustomerAddress *-- CustomerAddressId
+CustomerAddress *-- PersonalInformation
+CustomerAddress *-- LocationInformation
+CustomerAddress *-- CustomerId
+CustomerAddress -up-|> AbstractEventRaisingEntity
+
+PersonalInformation *-- CustomerGender
+
+@enduml

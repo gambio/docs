@@ -1,0 +1,16 @@
+{
+	"type": "object",
+	"properties": {
+		"links": {
+			"type": "object",
+            "properties": {
+                "customer": {
+                    "type": "string"
+                }
+            },
+			"example": {
+				"customer": "https://example.org/api.php/v3/..."
+			}
+		}
+	}
+}

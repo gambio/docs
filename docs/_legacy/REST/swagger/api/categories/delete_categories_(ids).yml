@@ -1,0 +1,29 @@
+'/categories/{category_ids}':
+    delete:
+        tags:
+            - categories
+        summary: 'Delete Categories'
+        description: 'Removes multiple category records from the database, provided a comma-seperated list of IDs to delete.'
+        operationId: deleteCategories
+        produces:
+            - application/json
+        parameters:
+            -
+                name: category_ids
+                in: path
+                description: 'A comma-seperated list of category IDs to delete'
+                required: true
+                type: array
+                items:
+                    type: 'integer'
+                    format: 'int64'
+                collectionFormat: csv
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted category IDs'
+                schema:
+                    $ref: '#/definitions/CategoryDeleteSuccessResponse'
+            '400':
+                description: '(category ID missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

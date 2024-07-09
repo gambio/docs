@@ -1,0 +1,15 @@
+productArrayPostResponse:
+    title: productArrayPostResponse
+    type: object
+    required:
+        - created
+        - errors
+    properties:
+        created:
+            type: array
+            items:
+                $ref: '#/definitions/GXProduct'
+        errors:
+            type: array
+            items:
+                $ref: '#/definitions/defaultErrorResponse'

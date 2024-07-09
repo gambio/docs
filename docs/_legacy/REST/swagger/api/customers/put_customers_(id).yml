@@ -1,0 +1,34 @@
+'/customers/{customer_id}':
+    put:
+        tags:
+            - customers
+        summary: 'Update Customer'
+        description: 'This method will update the information of an existing customer record. You will need to provide all the customer information with the request (except from password and customer id). Also note that you only have to include the "addressId" property. An example script to demonstrate how to update the admin accounts telephone number is located under `./docs/REST/samples/customer-service/update_admin_telephone.php` in the git clone.'
+        operationId: updateCustomer
+        produces:
+            - application/json
+        parameters:
+            -
+                name: customer_id
+                in: path
+                description: 'The customer ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the updated customer'
+                schema:
+                    $ref: '#/definitions/GXCustomer'
+            '400':
+                description: '(Customer data missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Customer not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '409':
+                description: '(Customer email already exists)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

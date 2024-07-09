@@ -1,0 +1,16 @@
+{
+	"name": "filter",
+	"in": "query",
+	"description": "Optional query parameter for filtering. Parameter represents an object, which is used to filter the provided documents.",
+	"required": false,
+	"style": "deepObject",
+	"explode": true,
+	"schema": {
+		"type": "object",
+		"example":{
+            "combination": "1-1|2-4",
+            "price": "gte|2",
+            "stock": "lt|10"
+		}
+	}
+}

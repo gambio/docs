@@ -1,0 +1,7 @@
+{
+	"description": "Seconds til the current rate limit resets.",
+	"schema": {
+		"type": "integer",
+		"example": 3500
+	}
+}

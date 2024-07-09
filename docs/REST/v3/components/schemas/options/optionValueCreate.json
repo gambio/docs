@@ -1,0 +1,64 @@
+{
+	"required": [
+		"sortOrder",
+		"details",
+		"image",
+		"modelNumber",
+		"weight",
+		"price",
+		"stockType",
+		"stock",
+		"stockCentrallyManaged"
+	],
+	"type": "object",
+	"properties": {
+		"sortOrder": {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 0,
+			"default": 1
+		},
+		"details": {
+			"$ref": "./optionValueDetails.json"
+		},
+		"image": {
+			"type": "string",
+			"example": "xxl.jpg"
+		},
+		"modelNumber": {
+			"type": "string",
+			"example": "xxl"
+		},
+		"weight": {
+			"type": "number",
+			"format": "double",
+			"example": 13.37
+		},
+		"price": {
+			"type": "number",
+			"format": "double",
+			"example": 13.37
+		},
+		"stockType": {
+			"type": "string",
+            "description": "Determines the behavior for the stock management. `only-positive` allows only positive stock values (including zero), `all-numbers` allows all numeric stock values, and `not-managed` means that this value is not considered for the stock management.",
+			"enum": [
+                "only-positive",
+                "all-numbers",
+				"not-managed"
+			],
+			"example": "only-positive",
+			"minLength": 1
+		},
+		"stock": {
+			"type": "number",
+			"format": "double",
+			"example": 13.37
+		},
+		"stockCentrallyManaged": {
+			"type": "boolean",
+			"example": true
+		}
+	}
+}

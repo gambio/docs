@@ -1,0 +1,5 @@
+name: "Currencies"
+description: |
+  The following endpoints can be used to manage the currencies of this shop.
+
+  Currently, the shop does only support endpoints to read currencies.

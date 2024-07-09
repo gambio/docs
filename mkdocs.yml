@@ -1,0 +1,61 @@
+site_name: Developer Documentation
+site_url: https://developers.gambio.de/
+docs_dir: ./docs
+site_dir: ./site
+copyright: Copyright &copy; 2024 Gambio GmbH
+theme:
+  name: material
+  custom_dir: html
+  favicon: favicon.ico
+  logo: logo.svg
+  language: de
+  palette:
+    scheme: gambio
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - toc.autohide
+    - navigation.tabs
+    - navigation.expand
+    - toc.integrate
+    - navigation.top
+extra:
+  generator: false
+  social:
+    - icon: gambio/white
+      link: https://www.gambio-support.de
+      name: Gambio Kundenportal
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/gambio
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/gambio-gmbh
+extra_css:
+  - assets/css/extra.css
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - html/.icons
+  - def_list
+  - footnotes
+  - abbr
+  - extra
+  - admonition
+  - meta
+  - attr_list
+  - toc:
+      toc_depth: 6
+      permalink: true
+plugins:
+  - section-index
+  - mkdocs-nav-enhancements
+  - tags
+  - search:
+      lang: de
+      separator: '[\s\-\.]+'

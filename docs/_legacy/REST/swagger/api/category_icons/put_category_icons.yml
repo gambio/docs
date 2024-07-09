@@ -1,0 +1,18 @@
+/category_icons:
+    put:
+        tags:
+            - category_icons
+        summary: 'Rename Icon File'
+        description: 'Use this method to rename an existing icon file.'
+        operationId: putCategoryIcons
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the updated filename'
+                schema:
+                    $ref: '#/definitions/defaultUpdateResponseWithFilenames'
+            '400':
+                description: '(Missing parameters)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

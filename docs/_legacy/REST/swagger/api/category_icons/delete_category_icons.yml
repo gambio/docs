@@ -1,0 +1,18 @@
+/category_icons:
+    delete:
+        tags:
+            - category_icons
+        summary: 'Delete Category Icon'
+        description: 'Removes the category icon file from the server. This method will always provide a successful response even if the image file was not found.'
+        operationId: deleteCategoryIcon
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted filename'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithFilename'
+            '400':
+                description: '(Missing parameters / Empty request body)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

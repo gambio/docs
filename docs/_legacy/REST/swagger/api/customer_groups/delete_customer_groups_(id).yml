@@ -1,0 +1,26 @@
+'/customer_groups/{customer_group_id}':
+    delete:
+        tags:
+            - customer_groups
+        summary: 'Delete Customer Groups'
+        description: 'Removes a customer groups record from the system. This method will always return success even if the customer group does not exist.'
+        operationId: deleteCustomerGroups
+        produces:
+            - application/json
+        parameters:
+            -
+                name: customer_group_id
+                in: path
+                description: 'Customer Group ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the customer group ID that was deleted'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithCustomerGroupID'
+            '400':
+                description: '(Customer group ID invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

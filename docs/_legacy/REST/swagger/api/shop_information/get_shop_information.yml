@@ -1,0 +1,14 @@
+/shop_information:
+    get:
+        tags:
+            - shop_information
+        summary: 'Get Shop Information'
+        description: 'Returns shop information like shop url, shop name, shop owner address data, shop template name and shop version.'
+        operationId: getShopInformation
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Returns the shop information'
+                schema:
+                    $ref: '#/definitions/GXShopInfo'
