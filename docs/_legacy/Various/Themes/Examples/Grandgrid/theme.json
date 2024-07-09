@@ -1,8 +1,0 @@
-{
-    "id": "Grandgrid",
-    "title": "Grandgrid",
-    "extends": "Childgrid",
-    "thumbnail": "screenshot-theme-3.png",
-    "author": "Gambio GmbH",
-    "version": "1.0.0"
-}

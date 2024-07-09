@@ -1,7 +1,0 @@
-modified:
-    in: query
-    name: modified
-    type: string
-    format: date
-    required: false
-    description: '*Optional parameter*. If provided, receive a change history of items that were **modified** at a given date.'

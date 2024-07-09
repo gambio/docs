@@ -1,5 +1,0 @@
-productImageGetResponse:
-    title: productImageGetResponse
-    type: string
-    example:
-        - 'an_image.png'

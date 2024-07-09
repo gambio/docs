@@ -1,9 +1,0 @@
-default:
-    path:
-        directory: src
-        extensions: inc.php 
-        exclude: actindo|admin|affiliprint_module|cache|callback|debug|download|export|ext|gambio_installer|gambio_updater|gm|GProtector|GXUserComponents|images|import|inc|includes|JSEngine|lang|lettr|logfiles|media|PdfCreator            |pub|shopgate|StyleEdit|StyleEdit3|system|templates|uploads|vendor|version_info
-    
-    logging: 
-        report: 
-            html: developers.gambio.de/docs/phpmetrics/index.html
