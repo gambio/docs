@@ -8,22 +8,28 @@
       
       
       
+        <link rel="canonical" href="https://developers.gambio.de/framework/technical-components/authentication/">
       
       
+        <link rel="prev" href="../">
       
-      <link rel="icon" href="/favicon.ico">
+      
+        <link rel="next" href="../cache/">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
-        <title>Developer Documentation</title>
+        <title>Authentication - Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
       
       
 
@@ -42,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/css/extra.css">
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#authentication" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -78,9 +89,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="/logo.svg" alt="logo">
+  <img src="../../../logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -97,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Authentication
             
           </span>
         </div>
@@ -165,7 +176,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/develop-environment/" class="md-tabs__link">
+      <a href="../../../develop-environment/" class="md-tabs__link">
         
   
     
@@ -180,9 +191,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="/framework/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -199,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/module-development/" class="md-tabs__link">
+      <a href="../../../module-development/" class="md-tabs__link">
         
   
     
@@ -216,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/theme-development/" class="md-tabs__link">
+      <a href="../../../theme-development/" class="md-tabs__link">
         
   
     
@@ -252,9 +265,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="/logo.svg" alt="logo">
+  <img src="../../../logo.svg" alt="logo">
 
     </a>
     Developer Documentation
@@ -283,7 +296,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/develop-environment/" class="md-nav__link ">
+            <a href="../../../develop-environment/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -312,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/develop-environment/development-tools/" class="md-nav__link">
+      <a href="../../../develop-environment/development-tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -332,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/develop-environment/setup-project/" class="md-nav__link">
+      <a href="../../../develop-environment/setup-project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -377,24 +390,24 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -410,7 +423,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Introduction for Architecture and Framework
@@ -423,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/application-core/" class="md-nav__link">
+      <a href="../../application-core/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,7 +471,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/details/application-layers/" class="md-nav__link ">
+            <a href="../../details/application-layers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -487,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/details/autoloading/" class="md-nav__link">
+      <a href="../../details/autoloading/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/details/di-container/" class="md-nav__link">
+      <a href="../../details/di-container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -527,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/details/service-provider/" class="md-nav__link">
+      <a href="../../details/service-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,24 +566,24 @@
                 
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/technical-components/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -586,7 +599,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             All available technical-related components
@@ -597,9 +610,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/framework/technical-components/authentication/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -608,6 +641,74 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#userauthenticator-service" class="md-nav__link">
+    UserAuthenticator service
+  </a>
+  
+    <nav class="md-nav" aria-label="UserAuthenticator service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authenticate-a-user" class="md-nav__link">
+    Authenticate a user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress-update-user-password" class="md-nav__link">
+    Work in progress - Update user password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress-generate-request-key" class="md-nav__link">
+    Work in progress - Generate request key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-hashes" class="md-nav__link">
+    Password hashes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonwebtokenauthenticator-service" class="md-nav__link">
+    JsonWebTokenAuthenticator service
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -619,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/cache/" class="md-nav__link">
+      <a href="../cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/configurations/" class="md-nav__link">
+      <a href="../configurations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -659,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/database/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/emails/" class="md-nav__link">
+      <a href="../emails/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -699,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/environment/" class="md-nav__link">
+      <a href="../environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -719,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/events/" class="md-nav__link">
+      <a href="../events/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -739,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/languages/" class="md-nav__link">
+      <a href="../languages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -759,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/logging/" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -779,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/permissions/" class="md-nav__link">
+      <a href="../permissions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/pricing/" class="md-nav__link">
+      <a href="../pricing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -819,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/routing/" class="md-nav__link">
+      <a href="../routing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -839,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/text-phrases/" class="md-nav__link">
+      <a href="../text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -859,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/verification/" class="md-nav__link">
+      <a href="../verification/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -902,7 +1003,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/business-components/" class="md-nav__link ">
+            <a href="../../business-components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -931,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/admin-access/" class="md-nav__link">
+      <a href="../../business-components/admin-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer/" class="md-nav__link">
+      <a href="../../business-components/customer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -971,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer-addon-value/" class="md-nav__link">
+      <a href="../../business-components/customer-addon-value/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer-memo/" class="md-nav__link">
+      <a href="../../business-components/customer-memo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer-legacy-services/" class="md-nav__link">
+      <a href="../../business-components/customer-legacy-services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/image-list/" class="md-nav__link">
+      <a href="../../business-components/image-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/option/" class="md-nav__link">
+      <a href="../../business-components/option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/parcel-service/" class="md-nav__link">
+      <a href="../../business-components/parcel-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/product-option/" class="md-nav__link">
+      <a href="../../business-components/product-option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1111,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/product-variant/" class="md-nav__link">
+      <a href="../../business-components/product-variant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/statistics-overview/" class="md-nav__link">
+      <a href="../../business-components/statistics-overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1151,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/tracking-code/" class="md-nav__link">
+      <a href="../../business-components/tracking-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/user-configuration/" class="md-nav__link">
+      <a href="../../business-components/user-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/withdrawal/" class="md-nav__link">
+      <a href="../../business-components/withdrawal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1219,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/legacy-architecture/" class="md-nav__link">
+      <a href="../../legacy-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1261,7 +1362,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/" class="md-nav__link ">
+            <a href="../../../module-development/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1305,7 +1406,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/general/gx-modules/" class="md-nav__link ">
+            <a href="../../../module-development/general/gx-modules/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1334,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/defining-a-module/" class="md-nav__link">
+      <a href="../../../module-development/general/defining-a-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1354,7 +1455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/extending-html/" class="md-nav__link">
+      <a href="../../../module-development/general/extending-html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/languages-text-phrases/" class="md-nav__link">
+      <a href="../../../module-development/general/languages-text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1394,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/all-extenders/" class="md-nav__link">
+      <a href="../../../module-development/general/all-extenders/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1538,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/store/adding-css/" class="md-nav__link ">
+            <a href="../../../module-development/store/adding-css/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1466,7 +1567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/store/adding-js/" class="md-nav__link">
+      <a href="../../../module-development/store/adding-js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1486,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/store/creating-http-controller/" class="md-nav__link">
+      <a href="../../../module-development/store/creating-http-controller/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1506,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/store/creating-theme/" class="md-nav__link">
+      <a href="../../../module-development/store/creating-theme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,7 +1650,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/admin/define-http-routes/" class="md-nav__link ">
+            <a href="../../../module-development/admin/define-http-routes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1578,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/http-actions/" class="md-nav__link">
+      <a href="../../../module-development/admin/http-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/admin-menu-json/" class="md-nav__link">
+      <a href="../../../module-development/admin/admin-menu-json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1618,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/gx-modules-json/" class="md-nav__link">
+      <a href="../../../module-development/admin/gx-modules-json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1638,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/custom-module-center-module/" class="md-nav__link">
+      <a href="../../../module-development/admin/custom-module-center-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1658,7 +1759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/custom-configuration-page/" class="md-nav__link">
+      <a href="../../../module-development/admin/custom-configuration-page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1686,7 +1787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/guidelines/" class="md-nav__link">
+      <a href="../../../module-development/guidelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1706,7 +1807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/sample-modules/" class="md-nav__link">
+      <a href="../../../module-development/sample-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1748,7 +1849,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/theme-development/" class="md-nav__link ">
+            <a href="../../../theme-development/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1777,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/architecture/" class="md-nav__link">
+      <a href="../../../theme-development/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1797,7 +1898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/extension/" class="md-nav__link">
+      <a href="../../../theme-development/extension/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1817,7 +1918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/content-manager/" class="md-nav__link">
+      <a href="../../../theme-development/content-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1837,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/html-templates/" class="md-nav__link">
+      <a href="../../../theme-development/html-templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1857,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/styles/" class="md-nav__link">
+      <a href="../../../theme-development/styles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1877,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/scripts/" class="md-nav__link">
+      <a href="../../../theme-development/scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1897,7 +1998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/text-phrases/" class="md-nav__link">
+      <a href="../../../theme-development/text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1917,7 +2018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/final/" class="md-nav__link">
+      <a href="../../../theme-development/final/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1950,8 +2051,254 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h1>
+<p>Authentication is an important part of the shop software. There are two ways of authenticate a user (normal customer
+or admin):</p>
+<ol>
+<li>Authentication by email address and password using the <code>UserAuthenticator</code> service</li>
+<li>Authentication by a JSON web token using the <code>JsonWebTokenAuthenticator</code> service</li>
+</ol>
+<h2 id="userauthenticator-service"><code>UserAuthenticator</code> service<a class="headerlink" href="#userauthenticator-service" title="Permanent link">&para;</a></h2>
+<p>The <code>Gambio\Core\Auth\UserAuthenticator</code> service is used in most cases, e.g. the login page or REST API.
+Besides the authentication of a user, this services provides the functionality to change the password of a user,
+or to generate a request key if the user has forgotten his password.</p>
+<h3 id="authenticate-a-user">Authenticate a user<a class="headerlink" href="#authenticate-a-user" title="Permanent link">&para;</a></h3>
+<p>The <code>UserAuthenticator</code> provides a simple <code>authentication</code> method, which expects a user's email address and password.
+The method returns a <code>Gambio\Core\Auth\UserId</code> object, which provides a <code>userId</code> method that returns the ID of
+the authenticated user.</p>
+<p>If the user can't be authenticated, a <code>Gambio\Core\Auth\Exceptions\AuthenticationException</code> exception will be thrown.</p>
+<p>The following example shows how you could use this service:</p>
+<pre><code class="language-php">namespace GXModules\&lt;Vendor&gt;\&lt;Module&gt;;
+
+use Gambio\Core\Auth\UserAuthenticator;
+use Gambio\Core\Auth\Exceptions\AuthenticationException;
+
+/**
+ * Class SampleClass
+ * @package GXModules\&lt;Vendor&gt;\&lt;Module&gt;
+ */
+class SampleClass
+{
+    /**
+     * @var UserAuthenticator 
+     */
+    private $authenticator;
+
+
+    /**
+     * SampleClass constructor.
+     *
+     * @param UserAuthenticator $authenticator
+     */
+    public function __construct(UserAuthenticator $authenticator)
+    {
+        $this-&gt;authenticator = $authenticator;
+    }
+
+
+    /**
+     * @param string $email
+     * @param string $password
+     *
+     * @return int
+     */
+    public function checkUserCredentials(string $email, string $password): int
+    {
+        try {
+            $userId = $this-&gt;authenticator-&gt;authenticate($email, $password);
+
+            return $userId-&gt;userId();
+        } catch (AuthenticationException $exception) {
+            return false;
+        }
+    }
+}
+</code></pre>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>This example expects you to use the <a href="../../details/service-provider/">Service Provider</a> to register your classes to the <a href="../../application-core/">Application Core</a>.
+If your are using the legacy architecture, you need to fetch this service using the <a href="../../details/di-container/#legacy-di-container">Legacy DI Container</a>.</p>
+</div>
+<h3 id="work-in-progress-update-user-password">Work in progress - Update user password<a class="headerlink" href="#work-in-progress-update-user-password" title="Permanent link">&para;</a></h3>
+<p>As said, the service also provides the possibility to update a users' password.</p>
+<p>The following example shows how you could use this service:</p>
+<pre><code class="language-php">namespace GXModules\&lt;Vendor&gt;\&lt;Module&gt;;
+
+use Gambio\Core\Auth\UserAuthenticator;
+use Gambio\Core\Auth\UserId;
+use Gambio\Core\Auth\Exceptions\UserNotFound;
+
+/**
+ * Class SampleClass
+ * @package GXModules\&lt;Vendor&gt;\&lt;Module&gt;
+ */
+class SampleClass
+{
+    /**
+     * @var UserAuthenticator 
+     */
+    private $authenticator;
+
+
+    /**
+     * SampleClass constructor.
+     *
+     * @param UserAuthenticator $authenticator
+     */
+    public function __construct(UserAuthenticator $authenticator)
+    {
+        $this-&gt;authenticator = $authenticator;
+    }
+
+
+    /**
+     * @param int    $userId
+     * @param string $newPassword
+     *
+     * @return bool
+     */
+    public function updateUserCredentials(int $userId, string $newPassword): bool
+    {
+        try {
+            $this-&gt;authenticator-&gt;updateUserPassword($userId, $newPassword);
+
+            return true;
+        } catch (UserNotFound $exception) {
+            return false;
+        }
+    }
+}
+</code></pre>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+</div>
+<p>This example expects you to use the <a href="../../details/service-provider/">Service Provider</a> to register your classes to the <a href="../../application-core/">Application Core</a>.
+If your are using the legacy architecture, you need to fetch this service using the <a href="../../details/di-container/#legacy-di-container">Legacy DI Container</a>.</p>
+<h3 id="work-in-progress-generate-request-key">Work in progress - Generate request key<a class="headerlink" href="#work-in-progress-generate-request-key" title="Permanent link">&para;</a></h3>
+<p>If a user forgot his password, it's possible to create a request key to change the password.</p>
+<p>The following example shows how you could use this service:</p>
+<pre><code class="language-php">namespace GXModules\&lt;Vendor&gt;\&lt;Module&gt;;
+
+use Gambio\Core\Auth\UserAuthenticator;
+use Gambio\Core\Auth\UserId;
+use Gambio\Core\Auth\Exceptions\UserNotFound;
+
+/**
+ * Class SampleClass
+ * @package GXModules\&lt;Vendor&gt;\&lt;Module&gt;
+ */
+class SampleClass
+{
+    /**
+     * @var UserAuthenticator 
+     */
+    private $authenticator;
+
+
+    /**
+     * SampleClass constructor.
+     *
+     * @param UserAuthenticator $authenticator
+     */
+    public function __construct(UserAuthenticator $authenticator)
+    {
+        $this-&gt;authenticator = $authenticator;
+    }
+
+
+    /**
+     * @param int $userId
+     *
+     * @return string|null
+     */
+    public function updateUserCredentials(int $userId): ?string
+    {
+        try {
+            return $this-&gt;authenticator-&gt;generateRequestKey($userId, $newPassword);
+        } catch (UserNotFound $exception) {
+            return null;
+        }
+    }
+}
+</code></pre>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+</div>
+<p>This example expects you to use the <a href="../../details/service-provider/">Service Provider</a> to register your classes to the <a href="../../application-core/">Application Core</a>.
+If your are using the legacy architecture, you need to fetch this service using the <a href="../../details/di-container/#legacy-di-container">Legacy DI Container</a>.</p>
+<h3 id="password-hashes">Password hashes<a class="headerlink" href="#password-hashes" title="Permanent link">&para;</a></h3>
+<p>Since the user's passwords are only available in the database as hashes, the validation of the passwords is based on
+implementations of the <code>Gambio\Core\Auth\HashStrategy</code> interface, for which there are currently two implementations:</p>
+<ol>
+<li><code>Gambio\Core\Auth\HashStrategies\Md5HashStrategy</code> creates and validates password hashes using MD5</li>
+<li><code>Gambio\Core\Auth\HashStrategies\PhpNativeHashStrategy</code> creates and validates password hashes using the
+   PHP native functions <code>password_hash</code> and <code>password_verify</code>. This strategy is used primarly.</li>
+</ol>
+<h2 id="jsonwebtokenauthenticator-service"><code>JsonWebTokenAuthenticator</code> service<a class="headerlink" href="#jsonwebtokenauthenticator-service" title="Permanent link">&para;</a></h2>
+<p>The <code>JsonWebTokenAuthenticator</code> provides a simple <code>authenticate</code> method, which expects a JSON web token. The method
+returns a <code>Gambio\Core\Auth\UserId</code> object, which provides a <code>userId</code> method, that returns the ID of the
+authenticated user.</p>
+<p>If the user can't be authenticated, a <code>Gambio\Core\Auth\Exceptions\AuthenticationException</code> exception will be thrown.</p>
+<p>The following example shows how you could use this service:</p>
+<pre><code class="language-php">namespace GXModules\&lt;Vendor&gt;\&lt;Module&gt;;
+
+use Gambio\Core\Auth\JsonWebTokenAuthenticator;
+use Gambio\Core\Auth\Exceptions\AuthenticationException;
+
+/**
+ * Class SampleClass
+ * @package GXModules\&lt;Vendor&gt;\&lt;Module&gt;
+ */
+class SampleClass
+{
+    /**
+     * @var JsonWebTokenAuthenticator
+     */
+    private $authenticator;
+
+
+    /**
+     * SampleClass constructor.
+     *
+     * @param JsonWebTokenAuthenticator $authenticator
+     */
+    public function __construct(JsonWebTokenAuthenticator $authenticator)
+    {
+        $this-&gt;authenticator = $authenticator;
+    }
+
+
+    /**
+     * @param string $token
+     *
+     * @return int
+     */
+    public function checkUserCredentials(string $token): int
+    {
+        try {
+            $userId = $this-&gt;authenticator-&gt;authenticate($token);
+
+            return $userId-&gt;userId();
+        } catch (AuthenticationException $exception) {
+            return false;
+        }
+    }
+}
+</code></pre>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>This example expects you to use the <a href="../../details/service-provider/">Service Provider</a> to register your classes to the <a href="../../application-core/">Application Core</a>.
+If your are using the legacy architecture, you need to fetch this service using the <a href="../../details/di-container/#legacy-di-container">Legacy DI Container</a>.</p>
+</div>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2033,10 +2380,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "/assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
     
   </body>

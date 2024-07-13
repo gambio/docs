@@ -1,7 +1,0 @@
-name: "ImageLists"
-description: |
-  The following endpoints can be used to manage the image lists of this shop.
-
-  The shown paths of the API endpoints are relative paths and references the
-  `<shop-root>/images/product_images/original_images` directory. E.g. the image path `tshirds/red.jpg` references the
-  `<shop-root>/images/product_images/original_images/tshirds/red.jpg` file.

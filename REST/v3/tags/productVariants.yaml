@@ -1,6 +1,0 @@
-name: "Product Variants"
-description: |
-  The following endpoints can be used to manage the product variants of this shop.
-
-  Currently, the shop does no support all fields inside the documents completly. The following fields aren't
-  supported yet: `GTIN`, `ASIN`

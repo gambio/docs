@@ -8,22 +8,28 @@
       
       
       
+        <link rel="canonical" href="https://developers.gambio.de/module-development/store/creating-http-controller/">
       
       
+        <link rel="prev" href="../adding-js/">
       
-      <link rel="icon" href="/favicon.ico">
+      
+        <link rel="next" href="../creating-theme/">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
-        <title>Developer Documentation</title>
+        <title>Creating a new HTTP controller - Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
       
       
 
@@ -42,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/css/extra.css">
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#creating-a-new-http-controller" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -78,9 +89,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="/logo.svg" alt="logo">
+  <img src="../../../logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -97,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Creating a new HTTP controller
             
           </span>
         </div>
@@ -165,7 +176,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/develop-environment/" class="md-tabs__link">
+      <a href="../../../develop-environment/" class="md-tabs__link">
         
   
     
@@ -182,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/framework/" class="md-tabs__link">
+      <a href="../../../framework/" class="md-tabs__link">
         
   
     
@@ -197,9 +208,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="/module-development/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -216,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/theme-development/" class="md-tabs__link">
+      <a href="../../../theme-development/" class="md-tabs__link">
         
   
     
@@ -252,9 +265,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="/logo.svg" alt="logo">
+  <img src="../../../logo.svg" alt="logo">
 
     </a>
     Developer Documentation
@@ -283,7 +296,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/develop-environment/" class="md-nav__link ">
+            <a href="../../../develop-environment/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -312,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/develop-environment/development-tools/" class="md-nav__link">
+      <a href="../../../develop-environment/development-tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -332,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/develop-environment/setup-project/" class="md-nav__link">
+      <a href="../../../develop-environment/setup-project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -394,7 +407,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/" class="md-nav__link ">
+            <a href="../../../framework/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -423,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/application-core/" class="md-nav__link">
+      <a href="../../../framework/application-core/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -458,7 +471,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/details/application-layers/" class="md-nav__link ">
+            <a href="../../../framework/details/application-layers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -487,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/details/autoloading/" class="md-nav__link">
+      <a href="../../../framework/details/autoloading/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/details/di-container/" class="md-nav__link">
+      <a href="../../../framework/details/di-container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -527,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/details/service-provider/" class="md-nav__link">
+      <a href="../../../framework/details/service-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -570,7 +583,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/technical-components/" class="md-nav__link ">
+            <a href="../../../framework/technical-components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -599,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/authentication/" class="md-nav__link">
+      <a href="../../../framework/technical-components/authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -619,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/cache/" class="md-nav__link">
+      <a href="../../../framework/technical-components/cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/configurations/" class="md-nav__link">
+      <a href="../../../framework/technical-components/configurations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -659,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/database/" class="md-nav__link">
+      <a href="../../../framework/technical-components/database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/emails/" class="md-nav__link">
+      <a href="../../../framework/technical-components/emails/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -699,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/environment/" class="md-nav__link">
+      <a href="../../../framework/technical-components/environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -719,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/events/" class="md-nav__link">
+      <a href="../../../framework/technical-components/events/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -739,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/languages/" class="md-nav__link">
+      <a href="../../../framework/technical-components/languages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -759,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/logging/" class="md-nav__link">
+      <a href="../../../framework/technical-components/logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -779,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/permissions/" class="md-nav__link">
+      <a href="../../../framework/technical-components/permissions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/pricing/" class="md-nav__link">
+      <a href="../../../framework/technical-components/pricing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -819,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/routing/" class="md-nav__link">
+      <a href="../../../framework/technical-components/routing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -839,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/text-phrases/" class="md-nav__link">
+      <a href="../../../framework/technical-components/text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -859,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/technical-components/verification/" class="md-nav__link">
+      <a href="../../../framework/technical-components/verification/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -902,7 +915,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/framework/business-components/" class="md-nav__link ">
+            <a href="../../../framework/business-components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -931,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/admin-access/" class="md-nav__link">
+      <a href="../../../framework/business-components/admin-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -971,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer-addon-value/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer-addon-value/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer-memo/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer-memo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/customer-legacy-services/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer-legacy-services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/image-list/" class="md-nav__link">
+      <a href="../../../framework/business-components/image-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/option/" class="md-nav__link">
+      <a href="../../../framework/business-components/option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1071,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/parcel-service/" class="md-nav__link">
+      <a href="../../../framework/business-components/parcel-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/product-option/" class="md-nav__link">
+      <a href="../../../framework/business-components/product-option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1111,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/product-variant/" class="md-nav__link">
+      <a href="../../../framework/business-components/product-variant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/statistics-overview/" class="md-nav__link">
+      <a href="../../../framework/business-components/statistics-overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1151,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/tracking-code/" class="md-nav__link">
+      <a href="../../../framework/business-components/tracking-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1171,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/user-configuration/" class="md-nav__link">
+      <a href="../../../framework/business-components/user-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/business-components/withdrawal/" class="md-nav__link">
+      <a href="../../../framework/business-components/withdrawal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1219,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/framework/legacy-architecture/" class="md-nav__link">
+      <a href="../../../framework/legacy-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,24 +1257,24 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1277,7 +1290,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Introduction for Module Development
@@ -1305,7 +1318,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/general/gx-modules/" class="md-nav__link ">
+            <a href="../../general/gx-modules/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1334,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/defining-a-module/" class="md-nav__link">
+      <a href="../../general/defining-a-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1354,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/extending-html/" class="md-nav__link">
+      <a href="../../general/extending-html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/languages-text-phrases/" class="md-nav__link">
+      <a href="../../general/languages-text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1394,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/general/all-extenders/" class="md-nav__link">
+      <a href="../../general/all-extenders/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1420,24 +1433,24 @@
                 
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/store/adding-css/" class="md-nav__link ">
+            <a href="../adding-css/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1453,7 +1466,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Adding and extending CSS
@@ -1466,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/store/adding-js/" class="md-nav__link">
+      <a href="../adding-js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1484,9 +1497,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/module-development/store/creating-http-controller/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Creating a new HTTP controller
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1495,6 +1528,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-http-service-and-what-is-it-for" class="md-nav__link">
+    What is the HTTP service and what is it for?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-front-controller" class="md-nav__link">
+    What is a front controller?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-httpviewcontroller-and-what-is-it-for" class="md-nav__link">
+    What is the HttpViewController and what is it for?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is the HttpViewController and what is it for?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httpviewcontroller-protected-helper" class="md-nav__link">
+    HttpViewController protected helper
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valid-return-values-of-the-action-methods" class="md-nav__link">
+    Valid return values of the action methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-template-files" class="md-nav__link">
+    Working with template files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determination-of-controller-classes" class="md-nav__link">
+    Determination of controller classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-sources-of-error" class="md-nav__link">
+    Common sources of error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-controller" class="md-nav__link">
+    Sample controller
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1506,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/store/creating-theme/" class="md-nav__link">
+      <a href="../creating-theme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1549,7 +1684,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/module-development/admin/define-http-routes/" class="md-nav__link ">
+            <a href="../../admin/define-http-routes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1578,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/http-actions/" class="md-nav__link">
+      <a href="../../admin/http-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/admin-menu-json/" class="md-nav__link">
+      <a href="../../admin/admin-menu-json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1618,7 +1753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/gx-modules-json/" class="md-nav__link">
+      <a href="../../admin/gx-modules-json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1638,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/custom-module-center-module/" class="md-nav__link">
+      <a href="../../admin/custom-module-center-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1658,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/admin/custom-configuration-page/" class="md-nav__link">
+      <a href="../../admin/custom-configuration-page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1686,7 +1821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/guidelines/" class="md-nav__link">
+      <a href="../../guidelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1706,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/module-development/sample-modules/" class="md-nav__link">
+      <a href="../../sample-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1748,7 +1883,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/theme-development/" class="md-nav__link ">
+            <a href="../../../theme-development/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1777,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/architecture/" class="md-nav__link">
+      <a href="../../../theme-development/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1797,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/extension/" class="md-nav__link">
+      <a href="../../../theme-development/extension/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1817,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/content-manager/" class="md-nav__link">
+      <a href="../../../theme-development/content-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1837,7 +1972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/html-templates/" class="md-nav__link">
+      <a href="../../../theme-development/html-templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1857,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/styles/" class="md-nav__link">
+      <a href="../../../theme-development/styles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1877,7 +2012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/scripts/" class="md-nav__link">
+      <a href="../../../theme-development/scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1897,7 +2032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/text-phrases/" class="md-nav__link">
+      <a href="../../../theme-development/text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1917,7 +2052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/theme-development/final/" class="md-nav__link">
+      <a href="../../../theme-development/final/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1950,8 +2085,153 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="creating-a-new-http-controller">Creating a new HTTP controller<a class="headerlink" href="#creating-a-new-http-controller" title="Permanent link">&para;</a></h1>
+<p>Before you want to create a new HTTP controller, you should understand the HTTP service. Therefore, this section will
+primarily focus on the HTTP service and explain how you can write your controller for HTTP requests.</p>
+<div class="admonition warning">
+<p class="admonition-title">Notice</p>
+<p>This tutorial is based on the <a href="../../../framework/legacy-architecture/">legacy architecture</a> and isn't compatible with the new one. See
+<a href="../../admin/http-actions/">tutorial for the admin area</a>.</p>
+</div>
+<h2 id="what-is-the-http-service-and-what-is-it-for">What is the HTTP service and what is it for?<a class="headerlink" href="#what-is-the-http-service-and-what-is-it-for" title="Permanent link">&para;</a></h2>
+<p>The HTTP service is a fundamental part of the GXEngine. The client, for example a browser, uses HTTP to interact
+with a web server on which the shop is installed. The dialogue between the server and the client takes place via
+well-defined messages. The client sends a so-called "request" to the Web server, which in turn replies with a response. </p>
+<p>In PHP the request of the client is represented by the global variables <code>$_GET</code>, <code>$_POST</code>, <code>$_FILE</code>, <code>$_COOKIE</code>,
+<code>$_SESSION</code>. The response message is generated with functions like <code>echo</code> or <code>header</code>. </p>
+<p>One goal of the HTTP service is to replace the global PHP variables and functions with an object-oriented layer. The
+front controllers of the shop <code>admin/admin.php</code> or <code>shop.php</code> use the service to control which <code>HTTPViewController</code>
+child classes are to be used for the current request. They in turn generate the response message for the client.
+This means that the same script is used for each request at a central point in the software. New pages can easily be
+created using an <code>HttpViewController</code> and a template file defined in the controller.</p>
+<h2 id="what-is-a-front-controller">What is a front controller?<a class="headerlink" href="#what-is-a-front-controller" title="Permanent link">&para;</a></h2>
+<p>The front controller is a central script that receives all client requests and delegates them to a specific controller
+(<code>HttpViewController</code>). Generic tasks, which have to be done at each page request, are executed before the delegation. </p>
+<p>In the shop two scripts, acting as entry points for the HTTP, request handling.</p>
+<ul>
+<li><strong>Frontend</strong>: <code>shop.php</code></li>
+<li><strong>Gambio Admin</strong>: <code>admin/admin.php</code></li>
+</ul>
+<p>For the controller to delegate to an <code>HttpViewController</code>, the script has to be called with the <code>$_GET</code> parameters <code>do</code>.</p>
+<ul>
+<li><code>shop.php?do=NewFrontendModule</code>: Delegation to <code>NewFrontendModuleController</code></li>
+<li><code>admin/admin.php?do=NewBackendModule</code>: Delegation to <code>NewBackendModuleController</code></li>
+</ul>
+<p>The <code>HttpViewControllers</code> have different action methods (see next section for details). The <code>actionDefault</code> method
+exists in every controller and every action method has to return a response object.</p>
+<p>Imagine the <code>NewBackendModuleController</code> has an action method called <code>actionInstall</code>, to which you want to delegate.
+The requested URL has to look like this:</p>
+<ul>
+<li><code>admin/admin.php?do=NewBackendModule/Install</code>: Delegation to the method <code>NewBackendModuleController::actionInstall</code></li>
+</ul>
+<p>The value of the <code>$_GET</code> parameter with the key <code>do</code> after the slash specifies the action method. Additional <code>$_GET</code>
+parameters can be added as usual (e.g. <code>admin/admin.php?do=NewBackendModule/Install&amp;module=moduleToInstall</code>).</p>
+<h2 id="what-is-the-httpviewcontroller-and-what-is-it-for">What is the HttpViewController and what is it for?<a class="headerlink" href="#what-is-the-httpviewcontroller-and-what-is-it-for" title="Permanent link">&para;</a></h2>
+<p>All controller classes that can be accessed through the frontend entry points inherit from the <code>HttpViewController</code>
+class. It provides some auxiliary methods to access the request variables and the possibility to define and render
+a template file.</p>
+<p>Each <code>HttpViewController</code> has so-called <code>action</code> methods, which further specify the control of the request. They
+return instances of objects that implement the <code>HttpControllerResponseInterface</code> <em>(the response message)</em> . The
+response instances are automatically further processed by the HTTP service and transmitted to the client (browser).
+Action methods can be controlled by the front controller, as described above. They have to be defined as <code>public</code>,
+have an <code>action</code> prefix in the method name and return an object of type <code>HttpControllerResponseInterface</code>. If no
+action method is specified in the <code>do</code> parameter, the <code>actionDefault</code> method is executed. </p>
+<p>We take the following request URL as an example: <code>shop.php?do=NewFrontendModule/Install</code>. The corresponding
+<code>HttpViewController</code> should be structured as follows.</p>
+<pre><code class="language-php">// Request URL: shop.php?do=NewFrontendModule/Install
+class NewFrontendModuleController extends HttpViewController
+{
+    public function actionInstall()
+    {
+        // Execute business logic here!
+
+        return new HttpControllerResponse('Hello World!');
+    }
+}
+</code></pre>
+<p>Depending on whether the requests are delegated by the entry point of the frontend or Gambio Admin, the
+<code>HttpViewController</code> class has to inherit from another parent class.</p>
+<ul>
+<li><strong>Frontend</strong>: <code>HttpViewController</code></li>
+<li><strong>Gambio Admin</strong>: <code>AdminHttpViewController</code></li>
+</ul>
+<p>The <code>AdminHttpViewController</code> ensures that only a logged-in user with admin privileges can view these pages. </p>
+<h3 id="httpviewcontroller-protected-helper">HttpViewController <code>protected</code> helper<a class="headerlink" href="#httpviewcontroller-protected-helper" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>_callActionMethod</code>: Calls an internally available action method.</li>
+<li><code>_render</code>: Renders the passed template file <em>(1<sup>st</sup> argument)</em> and sets the template variables <em>(2<sup>nd</sup> argument)</em>.</li>
+<li><code>_getQueryParametersCollection</code>: Returns a collection class containing all values of the global <code>$_GET</code> variable.</li>
+<li><code>_getPostDataCollection</code>: Returns a collection class containing all values of the global <code>$_POST</code> variable.</li>
+<li><code>_getQueryParameter</code>: Return a contained value from <code>$_GET</code>.</li>
+<li><code>_getPostData</code>: Return a contained value from <code>$_POST</code>.</li>
+<li><code>_validatePageToken</code>: Checks the page token and generates an exception if it is not valid.</li>
+</ul>
+<h3 id="valid-return-values-of-the-action-methods">Valid return values of the action methods<a class="headerlink" href="#valid-return-values-of-the-action-methods" title="Permanent link">&para;</a></h3>
+<p>All action methods have to return objects of type <code>HttpControllerResponseInterface</code>! List of objects that implement
+the <code>HttpControllerResponseInterface</code>:</p>
+<ul>
+<li><code>HttpControllerResponse</code>: Response object for pages in the frontend.</li>
+<li><code>AdminPageHttpControllerResponse</code>: Response object for pages in the Gambio Admin.</li>
+<li><code>AdminLayoutHttpControllerResponse</code>: Response object for <strong>new pages</strong> in Gambio Admin.</li>
+<li><code>RedirectHttpControllerResponse</code>: Response object for forwarding.</li>
+<li><code>JsonHttpControllerResponse</code>: Response object for JSON (for example for Ajax requests).</li>
+</ul>
+<h3 id="working-with-template-files">Working with template files<a class="headerlink" href="#working-with-template-files" title="Permanent link">&para;</a></h3>
+<p>The method <code>_render($templateFile, $keyValuePairs)</code> returns a rendered template. The first parameter specifies the
+path to the template file. The second parameter has to be an associative array, where the key is the variable name of
+the template and the value is the value to be output. The path to the template file must be relative to the template
+directory of the ContentView. The template directory can be changed within the controller:</p>
+<p><code>$this-&gt;contentView-&gt;set_template_dir('/absolute/path/to/new/template/directory');</code></p>
+<p>The return value of the <code>_render</code> method can afterwards simply be passed to the response object as a second parameter,
+e.g.:</p>
+<pre><code class="language-php">return new AdminPageHttpControllerResponse(
+    'Page Title', 
+    $this-&gt;_render('template_file.html', array('templateVariable', 'templateValue'))
+);
+</code></pre>
+<h3 id="determination-of-controller-classes">Determination of controller classes<a class="headerlink" href="#determination-of-controller-classes" title="Permanent link">&para;</a></h3>
+<p>Controller classes that inherit from the <code>HttpViewController</code> class will automatically be recognized and registered
+by the system. The system determines controllers inside the following directories: </p>
+<ul>
+<li><code>GXEngine</code></li>
+<li><code>GXMainComponents</code></li>
+<li><code>GXModules</code></li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Entry points:<ul>
+<li><strong>Frontend</strong>: <code>shop.php</code></li>
+<li><strong>Gambio Admin</strong>: <code>admin/admin.php</code></li>
+</ul>
+</li>
+<li>Creating a new controller class<ul>
+<li>Class has to contain <code>Controller</code> as a suffix in the class name.</li>
+<li>Class has to inherit from <code>HttpViewController</code>. If delegated by Gambio Admin Entry point has to inherit from
+  <code>AdminHttpViewController</code>.</li>
+</ul>
+</li>
+<li>If required, add more action methods and develop the corresponding template file.</li>
+<li>Empty the cache: For the MainFactory to find the new controller class, the class registry cache has to be cleared.</li>
+</ul>
+<h3 id="common-sources-of-error">Common sources of error<a class="headerlink" href="#common-sources-of-error" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Class registry cache not cleared</li>
+<li>New controller does not inherit from <code>HttpViewController</code> or <code>AdminHttpViewController</code></li>
+<li>Non-existent action method</li>
+<li>Incorrect return value of the executed action method</li>
+<li>Template directory in <code>ContentView</code> set incorrectly</li>
+</ul>
+<h3 id="sample-controller">Sample controller<a class="headerlink" href="#sample-controller" title="Permanent link">&para;</a></h3>
+<p>You can find sample controllers with instructions on how to use them <a href="../../_samples/sample-controllers.zip">here</a>.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2033,10 +2313,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "/assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
     
   </body>

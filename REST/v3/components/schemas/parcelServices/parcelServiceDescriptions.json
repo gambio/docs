@@ -1,6 +1,0 @@
-{
-	"type": "array",
-	"items": {
-		"$ref": "./parcelServiceDescription.json"
-	}
-}

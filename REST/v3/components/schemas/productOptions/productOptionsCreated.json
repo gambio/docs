@@ -1,8 +1,0 @@
-{
-	"type": "array",
-	"items": {
-		"type": "integer",
-		"format": "int32",
-		"example": 1
-	}
-}

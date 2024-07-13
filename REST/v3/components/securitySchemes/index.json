@@ -1,8 +1,0 @@
-{
-	"basicAuth": {
-		"$ref": "./basicAuth.json"
-	},
-	"bearerAuth": {
-		"$ref": "./bearerAuth.json"
-	}
-}
