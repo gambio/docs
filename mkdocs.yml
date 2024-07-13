@@ -26,7 +26,7 @@ extra:
     - icon: gambio/white
       link: https://www.gambio-support.de
       name: Gambio Kundenportal
-    - icon: fontawesome/brands/x
+    - icon: fontawesome/brands/twitter
       link: https://x.com/gambio
     - icon: fontawesome/brands/github
       link: https://github.com/gambio
@@ -114,7 +114,11 @@ nav:
       - theme-development/text-phrases.md
       - theme-development/final.md
 markdown_extensions:
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: plantuml
+          class: plantuml
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed
   - pymdownx.smartsymbols
   - pymdownx.emoji:
