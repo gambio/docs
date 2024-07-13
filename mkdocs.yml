@@ -1,6 +1,6 @@
 site_name: Developer Documentation
 site_url: https://developers.gambio.de/
-docs_dir: ./docs/Tutorials
+docs_dir: ./docs/Tutorials/GX4
 site_dir: ./site
 copyright: Copyright &copy; 2024 Gambio GmbH
 theme:
@@ -118,11 +118,11 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.smartsymbols
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      options:
-        custom_icons:
-          - html/.icons
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        options:
+          custom_icons:
+            - html/.icons
   - def_list
   - footnotes
   - abbr
