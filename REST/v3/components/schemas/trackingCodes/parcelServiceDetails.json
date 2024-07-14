@@ -1,0 +1,44 @@
+{
+    "required": [
+        "id",
+        "languageCode",
+        "name",
+        "url",
+        "comment",
+        "shipmentType"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1,
+            "minimum": 1
+        },
+        "languageCode": {
+            "type": "string",
+            "example": "en",
+            "description": "Language code that had been used for all language-dependent attributes, like name, url, and comment."
+        },
+        "name": {
+            "type": "string",
+            "example": "DHL",
+            "description": "Name based on defined parcel service and language."
+        },
+        "url": {
+            "type": "string",
+            "example": "http:\\/\\/nolp.dhl.de\\/nextt-online-public\\/set_identcodes.do?lang=en&idc=123456789&rfn=&extendedSearch=true",
+            "description": "URL including trackng code based on defined parcel service and language."
+        },
+        "comment": {
+            "type": "string",
+            "example": "You can access the shipment tracking for your order by visiting the link above.",
+            "description": "Comment based on defined parcel service and language."
+        },
+        "shipmentType": {
+            "type": "string",
+            "example": "Sample Shipment Type",
+            "description": "The is a free form input field to define the type of the shipment."
+        }
+    }
+}

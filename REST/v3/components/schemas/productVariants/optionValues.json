@@ -1,0 +1,16 @@
+{
+	"type": "array",
+	"items": {
+		"$ref": "./optionValue.json"
+	},
+	"example": [
+		{
+			"optionId": 1,
+			"optionValueId": 1
+		},
+		{
+			"optionId": 2,
+			"optionValueId": 2
+		}
+	]
+}

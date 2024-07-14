@@ -1,0 +1,70 @@
+<!--
+	Configuration Table and Box
+	 
+	Use the configuration box whenever you need a sidebar for displaying the configuration options. A live 
+	example of such configuration pages can be seen in the Module Center page. The configuration-box component
+	works well with tables which use the "table-modules" helper.
+-->
+
+<table class="table table-modules table-payment table-left">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Module name</th>
+			<th>Module description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td>My module</td>
+			<td>This is my example module for testing purposes</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Mobile payment</td>
+			<td>Easy flexible payment with your mobile phone</td>
+		</tr>
+		<tr class="active">
+			<td></td>
+			<td>Active module</td>
+			<td>This module has been clicked, so this row is active</td>
+		</tr>
+		<tr>
+			<td>
+				<span class="collapse-icon"> <i class="fa fa-plus-square-o"></i> </span>
+			</td>
+			<td>Expandable</td>
+			<td>This module contains nested entries</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Nested entry</td>
+			<td>This is a nested entry</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="configuration-box">
+	<div class="configuration-box-content">
+		<div class="configuration-box-header">
+			<h2 class="configuration-box-title">Active module</h2>
+		</div>
+
+		<div class="configuration-box-body">
+			<div>
+				<p>This is a custom description for this module.</p>
+			</div>
+			<form class="form">
+				<div class="form-group">
+					<label class="control-label">Name</label>
+					<input type="text" class="form-control" />
+				</div>
+			</form>
+		</div>
+
+		<div class="configuration-box-footer">
+			<button type="button" class="btn btn-primary pull-right">Install</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,1294 @@
+openapi: 3.0.0
+
+info:
+  title: API v3 Example
+  version: 1.0.0
+  description: This OpenAPI specification an example for some endpoints regarding the withdrawal documents in the shop.
+
+servers:
+  - url: https://example.org
+
+paths:
+  /api.php/v3/withdrawals:
+    get:
+      summary: Get multiple withdrawals.
+      description: |
+        Returns a list of multiple withdrawals and provides methods for filtering, sorting and pagination.
+      parameters:
+        - name: filter
+          in: query
+          description: |
+            Optional query parameter for filtering. Parameter need to be an array. The keys needs to match an document
+            attribute and the values contains a filter pattern or compare statements.
+          required: false
+          style: deepObject
+          schema:
+            type: object
+            example:
+              customer.firstname: M*
+              date: gte|2019-01-01
+        - name: sort
+          in: query
+          description: Optional query parameter for sorting.
+          required: false
+          schema:
+            type: string
+            example: +orders.creationDate
+            default: +id
+        - name: fields
+          in: query
+          description: Optional query parameter for filtering document attributes.
+          required: false
+          style: form
+          schema:
+            type: string
+            example: id,orders.creationDate
+        - name: page
+          in: query
+          description: Optional query parameter to define current page.
+          required: false
+          style: form
+          schema:
+            minimum: 1
+            type: integer
+            example: 2
+            default: 1
+        - name: per-page
+          in: query
+          description: Optional query parameter to limitate the output.
+          required: false
+          style: form
+          schema:
+            maximum: 100
+            minimum: 1
+            type: integer
+            example: 25
+            default: 25
+      responses:
+        200:
+          description: Lists all withdrawals based on request parameters.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ExistingWithdrawal'
+                  _meta:
+                    type: object
+                    properties:
+                      totalItems:
+                        type: integer
+                        minimum: 0
+                        example: 142
+                      perPage:
+                        type: integer
+                        minimum: 1
+                        example: 25
+                      page:
+                        type: integer
+                        minimum: 0
+                        example: 2
+                      links:
+                        type: object
+                        properties:
+                          firstPage:
+                            type: string
+                            example: https://example.org/api.php/v3/withdrawals?page=1
+                          previousPage:
+                            type: string
+                            example: https://example.org/api.php/v3/withdrawals?page=2
+                          nextPage:
+                            type: string
+                            example: https://example.org/api.php/v3/withdrawals?page=4
+                          lastPage:
+                            type: string
+                            example: https://example.org/api.php/v3/withdrawals?page=5
+
+    post:
+      summary: Creates new withdrawals.
+      description: Creates a single or multiple new withdrawals based on the request body.
+      requestBody:
+        description: Withdrawals details.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WithdrawalDetailsMap'
+        required: true
+      responses:
+        201:
+          description: Withdrawal successfully created.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      0:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                            example: 4
+                  _meta:
+                    type: object
+                    properties:
+                      links:
+                        type: object
+                        properties:
+                          created:
+                            type: string
+                            example: https://example.org/api.php/v3/withdrawals/4
+        400:
+          description: A required attribute is missing.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: Customer ID is missing.
+                  _meta:
+                    type: object
+        409:
+          description: Withdrawal already exists. **(Just an example, there is no
+            real use case for this response in withdrawals.)**
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: There is already an existing withdrawal for the provided order ID.
+                  _meta:
+                    type: object
+        422:
+          description: A provided attribute is invalid.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: Provided datetime for withdrawal data is invalid.
+                  _meta:
+                    type: object
+
+    put:
+      summary: Updates existing withdrawals.
+      description: Updates a single or multiple withdrawals based on the request body.
+      requestBody:
+        description: Withdrawals details.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WithdrawalDetailsMap'
+        required: true
+      responses:
+        204:
+          description: Withdrawals successfully updated.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+        400:
+          description: A required attribute is missing.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: Customer ID is missing.
+                  _meta:
+                    type: object
+        409:
+          description: Withdrawal already exists. **(Just an example, there is no
+            real use case for this response in withdrawals.)**
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: There is already an existing withdrawal for the provided order ID.
+                  _meta:
+                    type: object
+        422:
+          description: A provided attribute is invalid.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: Provided datetime for withdrawal data is invalid.
+                  _meta:
+                    type: object
+
+    patch:
+      summary: Patches existing withdrawals.
+      description: Patches a single or multiple withdrawals based on the request body.
+      requestBody:
+        description: Withdrawals details.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WithdrawalDetailsMap'
+        required: true
+      responses:
+        204:
+          description: Withdrawals successfully patched.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+        400:
+          description: A required attribute is missing.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: Customer ID is missing.
+                  _meta:
+                    type: object
+        409:
+          description: Withdrawal already exists. **(Just an example, there is no
+            real use case for this response in withdrawals.)**
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: There is already an existing withdrawal for the provided order ID.
+                  _meta:
+                    type: object
+        422:
+          description: A provided attribute is invalid.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      0:
+                        type: array
+                        items:
+                          type: string
+                          example: Provided datetime for withdrawal data is invalid.
+                  _meta:
+                    type: object
+
+  /api.php/v3/withdrawals/{id}:
+    get:
+      summary: Get a single withdrawal.
+      description: Returns a single withdrawal based in the provided ID.
+      parameters:
+        - name: id
+          in: path
+          description: ID of an existing withdrawal.
+          required: true
+          style: simple
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: Withdrawal data.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/ExistingWithdrawal'
+                  _meta:
+                    type: object
+                    properties:
+                      links:
+                        type: object
+                        properties:
+                          customer:
+                            type: string
+                            example: http://example.org/api.php/v3/customers/1
+                          order:
+                            type: string
+                            example: http://example.org/api.php/v3/orders/1
+        404:
+          description: Withdrawal not found.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+
+    put:
+      summary: Update an existing withdrawal.
+      description: Updates an existing withdrawal based on the provided withdrawal data.
+      parameters:
+        - name: id
+          in: path
+          description: ID of an existing withdrawal.
+          required: true
+          style: simple
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        description: New withdrawal details for update process.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WithdrawalDetails'
+        required: true
+      responses:
+        204:
+          description: Withdrawal successfully updated.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+        400:
+          description: A required attribute is missing.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: Customer ID is missing.
+                  _meta:
+                    type: object
+        404:
+          description: Withdrawal not found.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+        409:
+          description: Withdrawal already exists. **(Just an example, there is no
+            real use case for this response in withdrawals.)**
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: There is already an existing withdrawal for the provided order ID.
+                  _meta:
+                    type: object
+        422:
+          description: A provided attribute is invalid.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: Provided datetime for withdrawal data is invalid.
+                  _meta:
+                    type: object
+
+    patch:
+      summary: Update an existing withdrawal partwise.
+      description: |
+        Updates an existing withdrawal based on the provided withdrawal data. Partwise update is possible and not all
+        attributes are needed in the request body.
+      parameters:
+        - name: id
+          in: path
+          description: ID of an existing withdrawal.
+          required: true
+          style: simple
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        description: New withdrawal details for update process.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WithdrawalDetails'
+        required: true
+      responses:
+        204:
+          description: Withdrawal successfully patched.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+        400:
+          description: A required attribute is missing.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: Customer ID is missing.
+                  _meta:
+                    type: object
+        404:
+          description: Withdrawal not found.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+        409:
+          description: Withdrawal already exists. **(Just an example, there is no
+            real use case for this response in withdrawals.)**
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: There is already an existing withdrawal for the provided order ID.
+                  _meta:
+                    type: object
+        422:
+          description: A provided attribute is invalid.
+          headers:
+            X-Shop-Version:
+              description: Current shop verison.
+              schema:
+                type: string
+                example: 4.1.0.0
+            X-API-Version:
+              description: Current API verison.
+              schema:
+                type: string
+                example: 3.0.0
+            X-Rate-Limit-Limit:
+              description: Request limit per hour.
+              schema:
+                type: integer
+                example: 5000
+            X-Rate-Limit-Remaining:
+              description: Number of requests left for current time window.
+              schema:
+                type: integer
+                example: 4999
+            X-Rate-Limit-Reset:
+              description: Seconds til the current rate limit window resets.
+              schema:
+                type: integer
+                example: 3500
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                      example: Provided datetime for withdrawal data is invalid.
+                  _meta:
+                    type: object
+
+  /api.php/v3/withdrawals/{ids}:
+    delete:
+      summary: Delete one or more existing withdrawals.
+      description: Deletes one or more existing withdrawals based on the provided IDs.
+      parameters:
+        - name: ids
+          in: path
+          description: Comma-seperated list of IDs of existing withdrawals.
+          required: true
+          style: deepObject
+          schema:
+            type: string
+            example: 1,2,3
+      responses:
+        204:
+          description: Withdrawals successfully deleted.
+
+
+components:
+  schemas:
+    WithdrawalDetailsMap:
+      description: |
+        The "withdrawals" attribute should contain a map of withdrawal details.
+        The keys will be used as reference for the response.
+      type: object
+      properties:
+        0:
+          $ref: '#/components/schemas/WithdrawalDetails'
+        1:
+          $ref: '#/components/schemas/WithdrawalDetails'
+
+    ExistingWithdrawalMap:
+      description: |
+        The "withdrawals" attribute will contain a map of existing withdrawal.
+        The keys will be used as reference for the response.
+      type: object
+      properties:
+        first-withdrawal:
+          $ref: '#/components/schemas/ExistingWithdrawal'
+
+    ExistingWithdrawal:
+      required:
+        - id
+        - order
+        - customer
+        - date
+        - content
+        - createdByAdmin
+        - createdOn
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        order:
+          $ref: '#/components/schemas/OrderDetails'
+        customer:
+          $ref: '#/components/schemas/CustomerDetails'
+        date:
+          type: string
+          format: date-time
+          example: "2019-11-29 12:00:00"
+        content:
+          type: string
+          example: Hiermit widerrufe ich ...
+        createdByAdmin:
+          type: boolean
+          example: true
+        createdOn:
+          type: string
+          format: date-time
+          example: "2019-11-29 12:00:00"
+
+    WithdrawalDetails:
+      required:
+        - order
+        - customer
+        - date
+        - content
+        - createdByAdmin
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/OrderDetails'
+        customer:
+          $ref: '#/components/schemas/CustomerDetails'
+        date:
+          type: string
+          format: date-time
+        content:
+          type: string
+          example: Hiermit widerrufe ich ...
+        createdByAdmin:
+          type: boolean
+          example: true
+
+    OrderDetails:
+      required:
+        - id
+        - creationDate
+        - deliveryDate
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        creationDate:
+          type: string
+          format: date-time
+          example: "2019-11-29 12:00:00"
+        deliveryDate:
+          type: string
+          format: date-time
+          nullable: true
+          example: "2019-11-29 12:00:00"
+
+    CustomerDetails:
+      required:
+        - id
+        - gender
+        - firstName
+        - lastName
+        - address
+        - email
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        gender:
+          type: string
+          example: male
+        firstName:
+          type: string
+          example: Max
+        lastName:
+          type: string
+          example: Mustermann
+        address:
+          $ref: '#/components/schemas/CustomerAddress'
+        email:
+          type: string
+          example: max@mustermann.de
+
+    CustomerAddress:
+      required:
+        - street
+        - postcode
+        - city
+        - country
+      type: object
+      properties:
+        street:
+          type: string
+          example: Parallelweg 30
+        postcode:
+          type: string
+          example: "28219"
+        city:
+          type: string
+          example: Bremen
+        country:
+          type: string
+          example: Germany

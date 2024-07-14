@@ -1,0 +1,29 @@
+{
+	"summary": "Delete multiple parcel services",
+	"operationId": "delete-parcelServices",
+	"tags": [
+		{
+			"$ref": "./../../tags/parcelServices.json#/name"
+		}
+	],
+	"description": "Deletes one or more parcel services based on the provided IDs.",
+	"parameters": [
+		{
+			"name": "ids",
+			"in": "path",
+			"description": "Parcel service IDs represented as a comma separated list.",
+			"required": true,
+			"style": "simple",
+			"explode": true,
+			"schema": {
+				"type": "string",
+				"example": "1,2,3"
+			}
+		}
+	],
+	"responses": {
+		"204": {
+			"description": "Parcel services successfully deleted."
+		}
+	}
+}

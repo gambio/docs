@@ -1,0 +1,32 @@
+{
+	"description": "Option ID that should be removed, as well as the option value ID that is used to determine which combinations should be kept.",
+	"type": "array",
+	"items": {
+		"required": [
+			"optionId",
+			"retainableOptionValueId"
+		],
+		"type": "object",
+		"properties": {
+			"optionId" : {
+				"type": "integer",
+				"format": "int32",
+				"example": 1,
+				"minimum": 1
+			},
+			"retainableOptionValueId" : {
+				"type": "integer",
+				"format": "int32",
+				"example": 1,
+				"minimum": 1,
+				"description": "Variant's that had this option value will be modified, while variants with other option values of that option will be removed"
+			}
+		}
+	},
+	"example": [
+		{
+			"optionId": 1,
+			"retainableOptionValueId" : 3
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"required": [
+		"languageCode",
+		"url",
+		"comment"
+	],
+	"type": "object",
+	"properties": {
+		"languageCode": {
+			"type": "string",
+			"example": "en"
+		},
+		"url": {
+			"type": "string",
+			"example": "http:\\/\\/nolp.dhl.de\\/nextt-online-public\\/set_identcodes.do?lang=en&idc={TRACKING_NUMBER}&rfn=&extendedSearch=true"
+		},
+		"comment": {
+			"type": "string",
+			"example": "You can access the shipment tracking for your order by visiting the link above."
+		}
+	}
+}

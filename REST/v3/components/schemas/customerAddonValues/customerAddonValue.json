@@ -1,0 +1,18 @@
+{
+	"required": [
+		"key",
+		"value"
+	],
+	"type": "object",
+	"properties": {
+		"key" : {
+			"type": "string",
+			"example": "an-addon-value-key",
+			"minLength": 1
+		},
+		"value" : {
+			"type": "string",
+			"example": "some customer-specific data"
+		}
+	}
+}

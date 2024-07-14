@@ -1,0 +1,33 @@
+{
+    "required": [
+        "id",
+        "name",
+        "isDefault",
+        "descriptions",
+        "shipmentType"
+    ],
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1,
+            "minimum": 1
+        },
+        "name": {
+            "type": "string",
+            "example": "DHL"
+        },
+        "isDefault": {
+            "type": "boolean",
+            "example": true
+        },
+        "descriptions": {
+            "$ref": "./parcelServiceDescriptions.json"
+        },
+        "shipmentType": {
+            "type": "string",
+            "example": "shipment type"
+        }
+    }
+}

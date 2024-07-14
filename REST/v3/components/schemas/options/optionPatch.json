@@ -1,0 +1,21 @@
+{
+	"required": [
+		"id",
+		"sortOrder"
+	],
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 1
+		},
+		"sortOrder": {
+			"type": "integer",
+			"format": "int32",
+			"example": 1,
+			"minimum": 0
+		}
+	}
+}

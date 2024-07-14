@@ -1,0 +1,12 @@
+{
+	"name": "page",
+	"in": "query",
+	"description": "Optional query parameter to define current page.",
+	"required": false,
+	"schema": {
+		"minimum": 1,
+		"type": "integer",
+		"example": 2,
+		"default": 1
+	}
+}

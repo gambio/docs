@@ -1,0 +1,96 @@
+{
+	"summary": "Generate new product variants",
+	"operationId": "generate-product-variant",
+	"tags": [
+		{
+			"$ref": "./../../tags/productVariants.json#/name"
+		}
+	],
+	"description": "Generates a single or multiple product variants based on the request body.",
+	"parameters": [
+		{
+			"name": "productId",
+			"in": "path",
+			"description": "ID of a product.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		},
+		{
+			"name": "limit",
+			"in": "query",
+			"description": "Optional query parameter to limit how many product variants can be generated per request.",
+			"required": false,
+			"schema": {
+				"minimum": 1,
+				"type": "integer",
+				"example": 100,
+				"default": 100
+			}
+		},
+		{
+			"name": "offset",
+			"in": "query",
+			"description": "Optional query parameter offset is used to specify which product variants should be processed.",
+			"required": false,
+			"schema": {
+				"minimum": 1,
+				"type": "integer",
+				"example": 0,
+				"default": 0
+			}
+		}
+	],
+	"requestBody": {
+		"description": "Option IDs and option value IDs for generation of product variant combinations.",
+		"required": true,
+		"content": {
+			"application/json": {
+				"schema": {
+					"$ref": "#/components/schemas/productVariants-generation"
+				}
+			}
+		}
+	},
+	"responses": {
+		"200": {
+			"description": "Product variants successfully generated.",
+			"headers": {
+				"X-Shop-Version": {
+					"$ref": "#/components/headers/shopVersion"
+				},
+				"X-API-Version": {
+					"$ref": "#/components/headers/apiVersion"
+				},
+				"X-Rate-Limit-Limit": {
+					"$ref": "#/components/headers/rateLimitLimit"
+				},
+				"X-Rate-Limit-Remaining": {
+					"$ref": "#/components/headers/rateLimitRemaining"
+				},
+				"X-Rate-Limit-Reset": {
+					"$ref": "#/components/headers/rateLimitReset"
+				}
+			},
+			"content": {
+				"application/json": {
+					"schema": {
+						"type": "object",
+						"properties": {
+							"data": {
+								"$ref": "#/components/schemas/productVariants-variants-created"
+							},
+							"_meta": {
+								"$ref": "#/components/schemas/productVariants-creationMetaData"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

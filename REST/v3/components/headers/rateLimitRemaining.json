@@ -1,0 +1,7 @@
+{
+	"description": "Number of requests left for current time frame.",
+	"schema": {
+		"type": "integer",
+		"example": 4242
+	}
+}

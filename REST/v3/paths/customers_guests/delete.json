@@ -1,0 +1,18 @@
+{
+	"summary": "Delete outdated guest accounts",
+	"operationId": "delete-guests-customers",
+	"tags": [
+		{
+			"$ref": "./../../tags/customers.json#/name"
+		}
+	],
+	"description": "Deletes customers' guest accounts that are outdated (with no active session).",
+	"responses": {
+		"204": {
+			"description": "Outdated customers' guest accounts successfully deleted."
+		},
+		"409": {
+			"$ref": "#/components/responses/conflictByDataOrAction"
+		}
+	}
+}

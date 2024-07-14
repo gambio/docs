@@ -1,0 +1,19 @@
+{
+	"required": [
+		"languageCode",
+		"text"
+	],
+	"type": "object",
+	"properties": {
+		"languageCode": {
+			"type": "string",
+			"example": "en",
+			"minLength": 1
+		},
+		"text": {
+			"type": "string",
+			"example": "text for image",
+			"minLength": 1
+		}
+	}
+}

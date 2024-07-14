@@ -1,3 +1,0 @@
-1. Copy the 'Test' directory to '/src/GXModules/'
-2. Clear your module & language cache in 'Gambio Admin'
-3. Open StyleEdit4

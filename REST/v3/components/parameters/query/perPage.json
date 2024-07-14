@@ -1,0 +1,13 @@
+{
+	"name": "per-page",
+	"in": "query",
+	"description": "Optional query parameter to limiting the provided documents.",
+	"required": false,
+	"schema": {
+		"maximum": 100,
+		"minimum": 1,
+		"type": "integer",
+		"example": 25,
+		"default": 25
+	}
+}
