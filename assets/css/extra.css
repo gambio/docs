@@ -32,6 +32,10 @@
 	max-width: initial;
 }
 
+.cards ul li {
+	float: left;
+}
+
 article img {
 	display: block;
 	margin: 0 auto;

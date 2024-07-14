@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://developers.gambio.de/CSS/</loc>
+         <lastmod>2024-07-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://developers.gambio.de/REST/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>

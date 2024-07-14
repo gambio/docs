@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://developers.gambio.de/Tutorials/module-development/admin/define-http-routes/">
+        <link rel="canonical" href="https://developers.gambio.de/CSS/">
       
       
-        <link rel="prev" href="../custom-module-center-module/">
+        <link rel="prev" href="../CI/nightwatch.js/">
       
       
-        <link rel="next" href="../gx-modules-json/">
+        <link rel="next" href="../REST/">
       
       
-      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
-        <title>Adding and managing HTTP routes - Developer Documentation</title>
+        <title>GX Admin Boilerplate - Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/css/extra.css">
+      <link rel="stylesheet" href="../assets/css/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adding-and-managing-http-routes" class="md-skip">
+        <a href="#gx-admin-boilerplate" class="md-skip">
           Skip to content
         </a>
       
@@ -89,9 +89,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href=".." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="../../../../logo.svg" alt="logo">
+  <img src="../logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Adding and managing HTTP routes
+              GX Admin Boilerplate
             
           </span>
         </div>
@@ -202,7 +202,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -219,7 +219,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../ADRs/" class="md-tabs__link">
+      <a href="../ADRs/" class="md-tabs__link">
         
   
     
@@ -236,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../CI/create-nightly-build/" class="md-tabs__link">
+      <a href="../CI/create-nightly-build/" class="md-tabs__link">
         
   
     
@@ -251,9 +251,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../../../../CSS/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -270,7 +272,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../REST/" class="md-tabs__link">
+      <a href="../REST/" class="md-tabs__link">
         
   
     
@@ -285,11 +287,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="../../../" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../Tutorials/" class="md-tabs__link">
         
   
     
@@ -325,9 +325,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href=".." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="../../../../logo.svg" alt="logo">
+  <img src="../logo.svg" alt="logo">
 
     </a>
     Developer Documentation
@@ -341,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -375,7 +375,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../ADRs/" class="md-nav__link ">
+            <a href="../ADRs/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -404,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/002-rest_api/" class="md-nav__link">
+      <a href="../ADRs/002-rest_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/003-rules_conventions_and_conding_standards/" class="md-nav__link">
+      <a href="../ADRs/003-rules_conventions_and_conding_standards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -444,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/004-inner-structure-of-architecture/" class="md-nav__link">
+      <a href="../ADRs/004-inner-structure-of-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/005-implementing-modules/" class="md-nav__link">
+      <a href="../ADRs/005-implementing-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/006-naming-version-receipts/" class="md-nav__link">
+      <a href="../ADRs/006-naming-version-receipts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/007-handling-of-prices/" class="md-nav__link">
+      <a href="../ADRs/007-handling-of-prices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -524,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/008-gambio-admin-submodules/" class="md-nav__link">
+      <a href="../ADRs/008-gambio-admin-submodules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../ADRs/attachments/001-template/" class="md-nav__link">
+      <a href="../ADRs/attachments/001-template/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -586,7 +586,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../CI/create-nightly-build/" class="md-nav__link ">
+            <a href="../CI/create-nightly-build/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -615,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../CI/nightwatch.js/" class="md-nav__link">
+      <a href="../CI/nightwatch.js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -640,9 +640,18 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../CSS/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -651,6 +660,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -661,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../REST/" class="md-nav__link">
+      <a href="../REST/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -678,24 +688,24 @@
       
   
   
-    
-  
   
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../Tutorials/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -711,7 +721,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -739,7 +749,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../develop-environment/" class="md-nav__link ">
+            <a href="../Tutorials/develop-environment/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -768,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../develop-environment/development-tools/" class="md-nav__link">
+      <a href="../Tutorials/develop-environment/development-tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -788,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../develop-environment/setup-project/" class="md-nav__link">
+      <a href="../Tutorials/develop-environment/setup-project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -831,7 +841,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../framework/" class="md-nav__link ">
+            <a href="../Tutorials/framework/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -860,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/application-core/" class="md-nav__link">
+      <a href="../Tutorials/framework/application-core/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -880,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/legacy-architecture/" class="md-nav__link">
+      <a href="../Tutorials/framework/legacy-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,7 +925,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../framework/business-components/" class="md-nav__link ">
+            <a href="../Tutorials/framework/business-components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -944,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/_template/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/_template/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/admin-access/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/admin-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -984,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/customer-addon-value/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/customer-addon-value/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1004,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/customer-legacy-services/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/customer-legacy-services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1024,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/customer-memo/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/customer-memo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1044,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/customer/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/customer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1064,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/image-list/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/image-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/option/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1104,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/parcel-service/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/parcel-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1124,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/product-option/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/product-option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1144,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/product-variant/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/product-variant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1164,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/statistics-overview/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/statistics-overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1184,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/tracking-code/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/tracking-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1204,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/user-configuration/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/user-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/withdrawal/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/withdrawal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1259,7 +1269,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../framework/business-components/internal/configuration/" class="md-nav__link ">
+            <a href="../Tutorials/framework/business-components/internal/configuration/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1288,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/internal/exception-transmitter/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/internal/exception-transmitter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1308,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/internal/sellingunit/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/internal/sellingunit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1351,7 +1361,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../framework/business-components/work-in-progress/customer-address/" class="md-nav__link ">
+            <a href="../Tutorials/framework/business-components/work-in-progress/customer-address/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1380,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/work-in-progress/customer-credentials/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/work-in-progress/customer-credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1400,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/work-in-progress/language/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/work-in-progress/language/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1420,7 +1430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/work-in-progress/product-listing/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/work-in-progress/product-listing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1455,7 +1465,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../framework/business-components/work-in-progress/product-listing/components/" class="md-nav__link ">
+            <a href="../Tutorials/framework/business-components/work-in-progress/product-listing/components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1484,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/work-in-progress/product-listing/deliverables/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/work-in-progress/product-listing/deliverables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1504,7 +1514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/work-in-progress/product-listing/planning/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/work-in-progress/product-listing/planning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/business-components/work-in-progress/product-listing/price_notices/" class="md-nav__link">
+      <a href="../Tutorials/framework/business-components/work-in-progress/product-listing/price_notices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1583,7 +1593,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../framework/details/application-layers/" class="md-nav__link ">
+            <a href="../Tutorials/framework/details/application-layers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1612,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/details/autoloading/" class="md-nav__link">
+      <a href="../Tutorials/framework/details/autoloading/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1632,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/details/di-container/" class="md-nav__link">
+      <a href="../Tutorials/framework/details/di-container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1652,7 +1662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/details/service-provider/" class="md-nav__link">
+      <a href="../Tutorials/framework/details/service-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1695,7 +1705,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../framework/technical-components/" class="md-nav__link ">
+            <a href="../Tutorials/framework/technical-components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1724,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/authentication/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1744,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/cache/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1764,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/configurations/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/configurations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1784,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/database/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1804,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/emails/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/emails/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1824,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/environment/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1844,7 +1854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/events/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/events/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1864,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/languages/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/languages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1884,7 +1894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/logging/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1904,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/permissions/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/permissions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1924,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/pricing/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/pricing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1944,7 +1954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/routing/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/routing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1964,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/text-phrases/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1984,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../framework/technical-components/verification/" class="md-nav__link">
+      <a href="../Tutorials/framework/technical-components/verification/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2071,7 +2081,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../gambio-admin/internal/frontend/entrypoint/" class="md-nav__link ">
+            <a href="../Tutorials/gambio-admin/internal/frontend/entrypoint/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2100,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gambio-admin/internal/frontend/info-box/" class="md-nav__link">
+      <a href="../Tutorials/gambio-admin/internal/frontend/info-box/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2120,7 +2130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gambio-admin/internal/frontend/user-configuration/" class="md-nav__link">
+      <a href="../Tutorials/gambio-admin/internal/frontend/user-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2154,24 +2164,24 @@
                 
   
   
-    
-  
   
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../Tutorials/module-development/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2187,7 +2197,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             Introduction for Module Development
@@ -2200,7 +2210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guidelines/" class="md-nav__link">
+      <a href="../Tutorials/module-development/guidelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2220,7 +2230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sample-modules/" class="md-nav__link">
+      <a href="../Tutorials/module-development/sample-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2238,24 +2248,24 @@
                 
   
   
-    
-  
   
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../admin-menu-json/" class="md-nav__link ">
+            <a href="../Tutorials/module-development/admin/admin-menu-json/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2271,7 +2281,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_4_3">
             <span class="md-nav__icon md-icon"></span>
             Extending the Admin Menu
@@ -2284,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-configuration-page/" class="md-nav__link">
+      <a href="../Tutorials/module-development/admin/custom-configuration-page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2304,7 +2314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-module-center-module/" class="md-nav__link">
+      <a href="../Tutorials/module-development/admin/custom-module-center-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2322,29 +2332,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Adding and managing HTTP routes
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Tutorials/module-development/admin/define-http-routes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2353,61 +2343,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#adding-a-getpostetc-route" class="md-nav__link">
-    Adding a GET/POST/etc. route
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#replace-callback-for-an-already-defined-route" class="md-nav__link">
-    Replace callback for an already defined route
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-middleware-to-a-specific-route" class="md-nav__link">
-    Add a middleware to a specific route
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-an-argument-to-a-specific-route" class="md-nav__link">
-    Add an argument to a specific route
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-a-name-to-a-specific-route" class="md-nav__link">
-    Add a name to a specific route
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2419,7 +2354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gx-modules-json/" class="md-nav__link">
+      <a href="../Tutorials/module-development/admin/gx-modules-json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2439,7 +2374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../http-actions/" class="md-nav__link">
+      <a href="../Tutorials/module-development/admin/http-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2482,7 +2417,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../general/all-extenders/" class="md-nav__link ">
+            <a href="../Tutorials/module-development/general/all-extenders/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2511,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/defining-a-module/" class="md-nav__link">
+      <a href="../Tutorials/module-development/general/defining-a-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2531,7 +2466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/extending-html/" class="md-nav__link">
+      <a href="../Tutorials/module-development/general/extending-html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2551,7 +2486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/gx-modules/" class="md-nav__link">
+      <a href="../Tutorials/module-development/general/gx-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2571,7 +2506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/languages-text-phrases/" class="md-nav__link">
+      <a href="../Tutorials/module-development/general/languages-text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2614,7 +2549,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../store/adding-css/" class="md-nav__link ">
+            <a href="../Tutorials/module-development/store/adding-css/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2643,7 +2578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../store/adding-js/" class="md-nav__link">
+      <a href="../Tutorials/module-development/store/adding-js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2663,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../store/creating-http-controller/" class="md-nav__link">
+      <a href="../Tutorials/module-development/store/creating-http-controller/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2683,7 +2618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../store/creating-theme/" class="md-nav__link">
+      <a href="../Tutorials/module-development/store/creating-theme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2719,7 +2654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sample-modules/extend-shop-functionality/real-command-example/" class="md-nav__link">
+      <a href="../Tutorials/sample-modules/extend-shop-functionality/real-command-example/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2754,7 +2689,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../theme-development/" class="md-nav__link ">
+            <a href="../Tutorials/theme-development/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2783,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/architecture/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2803,7 +2738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/content-manager/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/content-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2823,7 +2758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/extension/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/extension/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2843,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/final/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/final/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2863,7 +2798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/html-templates/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/html-templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2883,7 +2818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/scripts/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2903,7 +2838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/styles/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/styles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2923,7 +2858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../theme-development/text-phrases/" class="md-nav__link">
+      <a href="../Tutorials/theme-development/text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2967,76 +2902,36 @@
                   
 
 
-<h1 id="adding-and-managing-http-routes">Adding and managing HTTP routes<a class="headerlink" href="#adding-and-managing-http-routes" title="Permanent link">&para;</a></h1>
-<p>Routes can easily be created and managed by creating a <code>routes.php</code> file anywhere inside your modules directory (e.g.
-<code>GXModules/&lt;Vendor&gt;/&lt;Module&gt;/routes.php</code>). The shop software will automatically determine these files and use them to
-define the available HTTP routes of the application.</p>
-<p>These <code>routes.php</code> will be included and therefore need to return a callback method. The first parameter of this
-callback method must be the <code>Gambio\Core\Application\Routing\RouteCollector</code>, which is used to manage the HTTP routes.</p>
-<p>The following example shows the content of such a <code>routes.php</code> file and how routes can be added and modified:</p>
-<h2 id="adding-a-getpostetc-route">Adding a GET/POST/etc. route<a class="headerlink" href="#adding-a-getpostetc-route" title="Permanent link">&para;</a></h2>
-<pre><code class="language-php">use Gambio\Core\Application\Routing\RouteCollector;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SampleGetAction;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SamplePostAction;
-
-return static function (RouteCollector $routeCollector) {
-    $routeCollector-&gt;get('/admin/my-module', SampleGetAction::class);
-    $routeCollector-&gt;post('/admin/my-module', SamplePostAction::class);
-    // ... similar for PUT, PATCH, DELETE and OPTION
-};
-</code></pre>
-<h2 id="replace-callback-for-an-already-defined-route">Replace callback for an already defined route<a class="headerlink" href="#replace-callback-for-an-already-defined-route" title="Permanent link">&para;</a></h2>
-<pre><code class="language-php">use Gambio\Core\Application\Routing\RouteCollector;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HTTPActions\AnotherSampleGetAction;
-
-return static function (RouteCollector $routeCollector) {
-    $routeCollector-&gt;getDefinedRoute('/admin/my-module', 'get')-&gt;setCallback(AnotherSampleGetAction::class);
-};
-</code></pre>
-<h2 id="add-a-middleware-to-a-specific-route">Add a middleware to a specific route<a class="headerlink" href="#add-a-middleware-to-a-specific-route" title="Permanent link">&para;</a></h2>
-<pre><code class="language-php">use Gambio\Core\Application\Routing\RouteCollector;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SampleGetAction;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SamplePostAction;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpMiddlewares\SampleGetMiddleware;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpMiddlewares\SamplePostMiddleware;
-
-return static function (RouteCollector $routeCollector) {
-    $routeCollector-&gt;get('/admin/my-module', SampleGetAction::class)-&gt;addMiddleware(SampleGetMiddleware::class);
-    $routeCollector-&gt;post('/admin/my-module', SamplePostAction::class);
-
-    // If route has been already defined 
-    $routeCollector-&gt;getDefinedRoute('/admin/my-module', 'post')-&gt;addMiddleware(SampleGetMiddleware::class);
-};
-</code></pre>
-<h2 id="add-an-argument-to-a-specific-route">Add an argument to a specific route<a class="headerlink" href="#add-an-argument-to-a-specific-route" title="Permanent link">&para;</a></h2>
-<pre><code class="language-php">use Gambio\Core\Application\Routing\RouteCollector;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SampleGetAction;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SamplePostAction;
-
-return static function (RouteCollector $routeCollector) {
-    $sampleArgumentName = 'argumentName';
-    $sampleArgumentValue = 'argumentValue';
-
-    $routeCollector-&gt;get('/admin/my-module', SampleGetAction::class)-&gt;addArgument($sampleArgumentName, $sampleArgumentValue);
-    $routeCollector-&gt;post('/admin/my-module', SamplePostAction::class);
-
-    // If route has been already defined 
-    $routeCollector-&gt;getDefinedRoute('/admin/my-module', 'post')-&gt;addArgument($sampleArgumentName, $sampleArgumentValue);
-};
-</code></pre>
-<h2 id="add-a-name-to-a-specific-route">Add a name to a specific route<a class="headerlink" href="#add-a-name-to-a-specific-route" title="Permanent link">&para;</a></h2>
-<pre><code class="language-php">use Gambio\Core\Application\Routing\RouteCollector;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SampleGetAction;
-use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\HttpActions\SamplePostAction;
-
-return static function (RouteCollector $routeCollector) {
-    $routeCollector-&gt;get('/admin/my-module', SampleGetAction::class)-&gt;setName('my-sample-get-route');
-    $routeCollector-&gt;post('/admin/my-module', SamplePostAction::class);
-
-    // If route has been already defined 
-    $routeCollector-&gt;getDefinedRoute('/admin/my-module', 'post')-&gt;setName('my-sample-post-route');
-};
-</code></pre>
+<h1 id="gx-admin-boilerplate">GX Admin Boilerplate<a class="headerlink" href="#gx-admin-boilerplate" title="Permanent link">&para;</a></h1>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 4a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8m0 2a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0-6-6m-1 2h1.5v3.78l2.33 2.33-1.06 1.06L14 12.4V8M2 18a1 1 0 0 1-1-1 1 1 0 0 1 1-1h3.83c.31.71.71 1.38 1.17 2H2m1-5a1 1 0 0 1-1-1 1 1 0 0 1 1-1h2.05L5 12l.05 1H3m1-5a1 1 0 0 1-1-1 1 1 0 0 1 1-1h3c-.46.62-.86 1.29-1.17 2H4Z"/></svg></span> <strong>Set up in 5 minutes</strong></p>
+<hr />
+<p>Install <a href="#"><code>mkdocs-material</code></a> with <a href="#"><code>pip</code></a> and get up
+and running in minutes</p>
+<p><a href="Tutorials/develop-environment/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Getting started</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/></svg></span> <strong>It's just Markdown</strong></p>
+<hr />
+<p>Focus on your content and generate a responsive and searchable static site</p>
+<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Reference</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8h3v12h1v1h-4v-1h1v-3h-4l-1.5 3H14v1h-4v-1h1l6-12m1 1-3.5 7H18V9M5 3h5c1.11 0 2 .89 2 2v11H9v-5H6v5H3V5c0-1.11.89-2 2-2m1 2v4h3V5H6Z"/></svg></span> <strong>Made to measure</strong></p>
+<hr />
+<p>Change the colors, fonts, language, icons, logo and more with a few lines</p>
+<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Customization</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3L6.05 7h3.12c.33.85.98 1.5 1.83 1.83V20H2v2h20v-2h-9V8.82c.85-.32 1.5-.97 1.82-1.82h3.13L15 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3l-2.95-7H21V5h-6.17C14.4 3.8 13.27 3 12 3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-6.5 5.25L7 14H4l1.5-3.75m13 0L20 14h-3l1.5-3.75Z"/></svg></span> <strong>Open Source, MIT</strong></p>
+<hr />
+<p>Material for MkDocs is licensed under MIT and available on [GitHub]</p>
+<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> License</a></p>
+</li>
+</ul>
+</div>
 
 
 
@@ -3124,10 +3019,10 @@ return static function (RouteCollector $routeCollector) {
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
     
   </body>
