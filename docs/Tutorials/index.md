@@ -1,4 +1,4 @@
-# Gambio Developers Documentation
+# Tutorials
 
 On this page, we provide you with all kind of tutorials supporting you to start developing within the Gambio shop
 system quickly.

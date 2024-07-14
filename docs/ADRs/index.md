@@ -1,4 +1,6 @@
-# We are going to create architectural decision records
+# ADRs
+
+## We are going to create architectural decision records
 
 **Created:** 2019-11-28 by Mirko
 

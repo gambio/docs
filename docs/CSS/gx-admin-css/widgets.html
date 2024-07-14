@@ -4,12 +4,12 @@
 		<meta charset="UTF-8">
 		<title>GX-Admin CSS - Widgets</title>
 		<link rel="icon" href="favicon.ico" />
-		
+
 		<link rel="stylesheet" href="assets/ext/bootstrap/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/ext/font-awesome/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="assets/ext/prism/prism.min.css" />
 		<link rel="stylesheet" href="assets/styles/style.css" />
-		
+
 		<!-- Will be copied by developers-doc.sh -->
 		<link rel="stylesheet" href="assets/styles/compatibility.min.css" />
 		<link rel="stylesheet" href="assets/styles/gx-admin-vendor.min.css" />
@@ -24,12 +24,13 @@
 			<div class="wrap">
 				<h1>Gambio Developers</h1>
 				<nav>
-					<a href="index.html">Boilerplate</a> 
+					<a href="/docs/CSS">Home</a>
+					<a href="index.html">Boilerplate</a>
 					<a href="compatibility.html">Compatibility</a>
 				</nav>
 			</div>
 		</header>
-		
+
 		<!--
 			Master Header
 		-->
@@ -39,74 +40,74 @@
 				This document will guide you through the use of widget styles for the Gambio GX3 shop.
 			</p>
 		</section>
-		
+
 		<div class="container">
 			<div class="row">
 			<div class="col-sm-9">
-				
+
 				<section id="introduction">
 					<h1>Introduction</h1>
-					
+
 					<p>
 						The shop implements a JavaScript Module Engine for handling JavaScript operations easily and consistently.
 						It features useful libraries, extensions and widgets which can boost up the UI development for the whole GX3 system.
 					</p>
-					
+
 					<p>
 						Continue reading in order to learn how to use the widgets for the Gambio Admin through the provided examples and
 						demos. <strong>Keep in mind that you will need to place the "gx-container" class only once
 							in your page and not for every container element as shown in the examples</strong>. The
 						"gx-compatibility" class will be automatically added into old pages that use the "header.php" file.
 					</p>
-					
+
 					<div class="blockquote">What is a widget?</div>
 					<p>
 						Widgets define JavaScript UI controls that can be easily manipulated in order to provide advanced functionality that will enhance the user experience.
 						The engine wraps the functionality of major JavaScript projects and plugins such as the jQuery UI library, the DataTables plugin and many more.
 					</p>
-					
+
 					<div class="blockquote">But how can I use it?</div>
 					<p>
 						Simply use the data-attributes, shown in the following examples, to bind the needed widget on your HTML
 						structure. The styling will be applied by the gx-admin.css which is included by every page using the "header.php".
 					</p>
-					
+
 				</section>
-				
+
 				<section id="checkboxes">
 					<h1>Checkbox Widgets</h1>
-					
+
 					<p>
 						By applying this to your structure the normal checkboxes are replaced by specific structures in
 						gx-admin style.
 					</p>
-					
+
 					<p>
 						Checkbox widget for one single checkbox:
 					</p>
-					
+
 					<ul>
 						<li>Use <strong>data-single_checkbox</strong> if a singel checkbox and no switcher is needed.</li>
 						<li>If <strong>data-single_checkbox</strong> is not added to the html structure, a switcher is generated.</li>
 					</ul>
-					
+
 					<div class="example split">
 						<pre data-src="assets/examples-widgets/one_checkbox.html"></pre>
-						
+
 						<div class="gx-container">
 							<div data-gx-widget="checkbox">
 								<div class="grid">
 									<div class="span5">
 										<div class="control-group">
 											<label for="my-checkbox1">Single Checkbox</label>
-											<input type="checkbox" 
-											       id="my-checkbox1" 
-											       title="Single Checkbox" 
+											<input type="checkbox"
+											       id="my-checkbox1"
+											       title="Single Checkbox"
 											       data-single_checkbox />
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="grid">
 									<div class="span5">
 										<div class="control-group">
@@ -119,7 +120,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="grid">
 									<div class="span5">
 										<div class="control-group">
@@ -132,7 +133,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="grid">
 									<div class="span5">
 										<div class="control-group">
@@ -146,20 +147,20 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="grid">
 									<div class="span5">
 										<div class="control-group">
-											<label for="my-checkbox">Receive Notifications</label> 
+											<label for="my-checkbox">Receive Notifications</label>
 											<input type="checkbox" id="my-checkbox" title="Receive Notifications" />
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="grid">
 									<div class="span5">
 										<div class="control-group">
-											<label>Locked Checkbox</label> 
+											<label>Locked Checkbox</label>
 											<input type="checkbox" title="on disabled" disabled /> <br/>
 											<input type="checkbox" title="off disabled" checked disabled />
 										</div>
@@ -168,14 +169,14 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<p>
-						By adding <strong>data-gx-widget="checkbox"</strong> on a wrapping element which contians two radio buttons, 
+						By adding <strong>data-gx-widget="checkbox"</strong> on a wrapping element which contians two radio buttons,
 						the radio buttons will be transformed to a switcher.
 					</p>
 					<div class="example split">
 						<pre data-src="assets/examples-widgets/two_radio_checkbox.html"></pre>
-						
+
 						<div class="gx-container">
 							<div class="control-group" data-gx-widget="checkbox">
 								<input type="radio" name="status" value="1" title="Installed" checked />
@@ -183,7 +184,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<p>
 						To call different URLs on different states of a switcher <strong>data-checkbox-on_url</strong>
 						and <strong>data-checkbox-off_url</strong> can be applied to the widget element.
@@ -196,7 +197,7 @@
 							<strong>data-checkbox-off_url:</strong> URL that is called when the switcher state changes to "unchecked"
 						</li>
 					</ul>
-					
+
 					<p>
 						If the switcher symbols should be replaced by custom labels following data-attributes can be used:
 					</p>
@@ -205,7 +206,7 @@
 						<li><strong>data-checkbox-off_label:</strong> Label for the "unchecked" state of the switcher</li>
 						<li><strong>data-checkbox-class="labeled":</strong> To tell the widget that a custom labeling is needed</li>
 					</ul>
-					
+
 					<div class="example split">
 						<pre data-src="assets/examples-widgets/url_switcher.html"></pre>
 						<div class="gx-container">
@@ -213,7 +214,7 @@
 							     data-checkbox-checked="true"
 							     data-checkbox-on_url="#on"
 							     data-checkbox-off_url="#off"></div>
-							
+
 							<div data-gx-widget="checkbox"
 							     data-checkbox-checked="true"
 							     data-checkbox-on_url="#installed"
@@ -224,10 +225,10 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="tooltip_icon">
 					<h1>Tooltip Icon</h1>
-					<p>If additional informations should displayed in a tooltip, 
+					<p>If additional informations should displayed in a tooltip,
 						<strong>data-gx-widget="tooltip_icon"</strong> is used.</p>
 					<ul>
 						<li><strong>data-tooltip_icon-type="warning"</strong> generates a warning icon.</li>
@@ -245,7 +246,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="ckeditor">
 					<h1>CKEditor</h1>
 					<p>To apply a CKEditor on a textarea, the following widget is used.</p>
@@ -263,7 +264,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="colorpicker">
 					<h1>Colorpicker</h1>
 					<p>To generate a colorpicker element the following widget can be used.</p>
@@ -278,10 +279,10 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="datatable">
 					<h1>DataTable</h1>
-					<p>To tranform a normal table into a data table with a pagination and a possibility to search for 
+					<p>To tranform a normal table into a data table with a pagination and a possibility to search for
 						values of the table, the following widget can be used.</p>
 					<div class="example split">
 						<pre data-src="assets/examples-widgets/data_table.html"></pre>
@@ -360,7 +361,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="datepicker">
 					<h1>Datepicker</h1>
 					<p>To generate a datepicker, following structure can be applied to an input field.</p>
@@ -374,7 +375,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="datetimepicker">
 					<h1>Datetimepicker</h1>
 					<p>To generate a datetimepicker, following structure can be applied to an input field.</p>
@@ -385,7 +386,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="progress_bar">
 					<h1>Progress Bar</h1>
 					<p>To generate a progress bar following elements can be used.</p>
@@ -398,7 +399,7 @@
 						<pre data-src="assets/examples-widgets/progressbar.html"></pre>
 						<div class="gx-container">
 							<div data-gx-widget="progressbar" data-progressbar-value="50"></div>
-							
+
 							<div class="progress progress-striped active">
 								<div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
 									<span class="sr-only">45% Complete</span>
@@ -407,7 +408,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="slider">
 					<h1>Slider</h1>
 					<p>To generate a slider the following widget can be used.</p>
@@ -418,7 +419,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="spinner">
 					<h1>Spinner</h1>
 					<p>To generate a spinner the following widget can be used.</p>
@@ -435,7 +436,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="tabs">
 					<h1>Tabs</h1>
 					<p>Following html structure will generate a tab system:</p>
@@ -455,7 +456,7 @@
 						</div>
 					</div>
 				</section>
-				
+
 				<section id="button_dropdown">
 					<h1>Button Dropdown</h1>
 					<p>To generate a button with multiple values, combined in a dropdown, following widget can be used.</p>
@@ -494,13 +495,13 @@
 			</div>
 		</div>
 		</div>
-		
+
 		<footer>
 			<div class="wrap">
 				Gambio GmbH &copy; 2017 - All Rights Reserved
 			</div>
 		</footer>
-		
+
 		<!-- Required JS Engine JavaScript -->
 		<script type="text/javascript">
 			var js_options = {
@@ -510,9 +511,9 @@
 					language_id: 'language_id'
 				}
 			};
-			
-			var url = location.href.substring(0, location.href.lastIndexOf('/')); 
-			
+
+			var url = location.href.substring(0, location.href.lastIndexOf('/'));
+
 			window.JSEngineConfiguration = {
 				environment: 'development',
 				appUrl: url,
@@ -522,20 +523,20 @@
 				}
 			};
 		</script>
-		
+
 		<!-- Include JS Files -->
 		<script src="assets/ext/jquery/jquery.min.js"></script>
 		<script src="assets/ext/bootstrap/js/bootstrap.min.js"></script>
 		<script src="assets/ext/prism/prism.min.js"></script>
 		<script src="assets/scripts/preview.js"></script>
-		
+
 		<!-- Will be copied by developers-doc.sh -->
 		<script src="assets/ext/ckeditor/ckeditor.js"></script>
 		<script src="assets/jse/build/vendor.min.js"></script>
 		<script src="assets/scripts/admin-vendor.min.js"></script>
 		<script src="assets/jse/build/jse.min.js"></script>
 		<script src="assets/jse/build/require.min.js"></script>
-		
+
 		<!-- Google Analytics Code -->
 		<script type="text/javascript">
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

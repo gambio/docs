@@ -1,4 +1,4 @@
-## Everything you need to know
+# GX Admin Boilerplate
 
 <div class="grid cards" markdown>
 
