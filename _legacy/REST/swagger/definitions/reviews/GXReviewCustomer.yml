@@ -1,0 +1,14 @@
+GXReviewCustomer:
+    title: GXReviewCustomer
+    type: object
+    required:
+        - customerName
+    properties:
+        customerId:
+            type: integer
+            format: int64
+            readOnly: true
+        customerName:
+            type: string
+    example:
+        customerName: "Ester Tester"

@@ -1,0 +1,32 @@
+'/tracking_codes/{tracking_code_id}':
+    get:
+        tags:
+            - tracking_codes
+        summary: 'Get Tracking Code (Single)'
+        description: 'Get a single tracking code through the GET method.'
+        operationId: getTrackingCode
+        produces:
+            - application/json
+        parameters:
+            -
+                name: tracking_code_id
+                in: path
+                description: 'The tracking code ID'
+                required: true
+                type: integer
+                format: int64
+        responses:
+            '200':
+                description: 'Upon success, returns a GXTrackingCode'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXTrackingCode'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Tracking Code Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

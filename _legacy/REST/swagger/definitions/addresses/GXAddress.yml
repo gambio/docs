@@ -1,0 +1,76 @@
+GXAddress:
+    title: GXAddress
+    type: object
+    required:
+        - customerId
+        - gender
+        - company
+        - firstname
+        - lastname
+        - street
+        - houseNumber
+        - additionalAddressInfo
+        - suburb
+        - postcode
+        - city
+        - countryId
+        - zoneId
+        - class
+        - b2bStatus
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        customerId:
+            type: integer
+            format: int64
+        gender:
+            type: string
+            enum:
+                - m
+                - f
+        company:
+            type: string
+        firstname:
+            type: string
+        lastname:
+            type: string
+        street:
+            type: string
+        houseNumber:
+            type: string
+        additionalAddressInfo:
+            type: string
+        suburb:
+            type: string
+        postcode:
+            type: string
+        city:
+            type: string
+        countryId:
+            type: integer
+            format: int64
+        zoneId:
+            type: integer
+            format: int64
+        class:
+            type: string
+        b2bStatus:
+            type: boolean
+    example:
+        customerId: 1
+        gender: "m"
+        company: "Test Company"
+        firstname: "John"
+        lastname: "Doe"
+        street: "Test Street"
+        houseNumber: "123"
+        additionalAddressInfo: "1. Etage"
+        suburb: "Test Suburb"
+        postcode: "23983"
+        city: "Test City"
+        countryId: 81
+        zoneId: 84
+        class:
+        b2bStatus: false

@@ -1,0 +1,29 @@
+'/orders/{order_id}/items/{item_id}':
+    get:
+        tags:
+            - orders
+        summary: 'Get Order Item (Single)'
+        description: 'Get a single order item from an existing order. All the GET manipulation parameters are applied with this method (search, sort, minimize, paginate etc).'
+        operationId: getOrderItem
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: item_id
+                in: path
+                description: 'The item ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns a single order item'
+                schema:
+                    $ref: '#/definitions/GXOrderItem'

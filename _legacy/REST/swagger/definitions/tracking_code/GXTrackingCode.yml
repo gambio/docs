@@ -1,0 +1,45 @@
+GXTrackingCode:
+    title: GXTrackingCode
+    type: object
+    required:
+        - id
+        - orderId
+        - creationDate
+        - trackingCode
+        - parcelServiceId
+        - languageId
+    properties:
+        id:
+            type: string
+            readOnly: true
+        orderId:
+            type: string
+            readOnly: true
+            description: 'A tracking code is bound to an order on creation.'
+        trackingCode:
+            type: string
+        parcelServiceId:
+            type: string
+        parcelServiceName:
+            type: string
+            readOnly: true
+        languageId:
+            type: string
+        url:
+            type: string
+            readOnly: true
+        comment:
+            type: string
+            readOnly: true
+        creationDate:
+            type: string
+            readOnly: true
+    example:
+        orderId: "403510"
+        trackingCode: "71179106254223"
+        parcelServiceId: "4"
+        parcelServiceName: "Test-Service"
+        languageId: "2"
+        url: "https://tracking.example.com/?TrackID=0123456789"
+        comment: "A comment."
+        creationDate: "2016-07-30 09:59:43"

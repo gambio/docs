@@ -1,0 +1,15 @@
+customerArrayPutResponse:
+    title: customerArrayPutResponse
+    type: object
+    required:
+        - updated
+        - errors
+    properties:
+        updated:
+            type: array
+            items:
+                $ref: '#/definitions/GXCustomer'
+        errors:
+            type: array
+            items:
+                $ref: '#/definitions/defaultErrorResponse'

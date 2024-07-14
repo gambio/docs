@@ -1,0 +1,18 @@
+GXAddressFormat:
+    title: GXAddressFormat
+    type: object
+    required:
+        - format
+        - summary
+    properties:
+        id:
+            type: string
+            readOnly: true
+        format:
+            type: string
+        summary:
+            type: string
+    example:
+        - id: "1"
+          format: "$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country"
+          summary: "$city / $country"

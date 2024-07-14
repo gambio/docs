@@ -1,0 +1,30 @@
+/products/{product_id}/product_prices:
+    get:
+        tags:
+            - products
+        summary: 'Get Product Prices'
+        description: 'Get prices for customer groups and their graduated prices, if exists.'
+        operationId: getProductProductPrices
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product id'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns all price information for the given product'
+                schema:
+                    $ref: '#/definitions/GXProductPrices'
+            '400':
+                description: '(Missing or invalid id)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Product not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

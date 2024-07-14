@@ -1,0 +1,26 @@
+'/orders/{order_id}':
+    delete:
+        tags:
+            - orders
+        summary: 'Delete Order'
+        description: 'Remove an entire Order record from the database. This method will also remove the order-items along with their attributes and the order-total records. To see an example usage take a look at `docs/REST/samples/order-service/remove_order.php`'
+        operationId: deleteOrders
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the order ID'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithOrderID'
+            '400':
+                description: '(Order ID missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

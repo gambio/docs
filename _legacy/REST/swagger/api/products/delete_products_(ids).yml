@@ -1,0 +1,29 @@
+'/products/{product_ids}':
+    delete:
+        tags:
+            - products
+        summary: 'Delete Products (Multiple)'
+        description: 'Removes multiple product records from the database.'
+        operationId: deleteProducts
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_ids
+                in: path
+                description: 'A comma-seperated list of product IDs to delete'
+                required: true
+                type: array
+                items:
+                    type: 'integer'
+                    format: 'int64'
+                collectionFormat: csv
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted product IDs'
+                schema:
+                    $ref: '#/definitions/ProductsDeleteSuccessResponse'
+            '400':
+                description: '(Product ID missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

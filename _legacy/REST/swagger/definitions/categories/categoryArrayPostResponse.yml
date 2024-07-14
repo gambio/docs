@@ -1,0 +1,15 @@
+categoryArrayPostResponse:
+    title: categoryArrayPostResponse
+    type: object
+    required:
+        - created
+        - errors
+    properties:
+        created:
+            type: array
+            items:
+                $ref: '#/definitions/GXCategory'
+        errors:
+            type: array
+            items:
+                $ref: '#/definitions/defaultErrorResponse'

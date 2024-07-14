@@ -1,0 +1,28 @@
+'/categories':
+    put:
+        tags:
+            - categories
+        summary: 'Update Category (Multiple)'
+        description: 'Use this method to update multiple existing category records. It takes an array of GXCategory Objects, updating them based on their <b>id</b> property.'
+        operationId: updateCategories
+        produces:
+            - application/json
+        parameters:
+            -
+                name: GXCategoryArray
+                in: body
+                description: 'An array of categories to update.'
+                required: true
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXCategoryArray'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of the updated categories'
+                schema:
+                    $ref: '#/definitions/categoryArrayPutResponse'
+            '400':
+                description: '(Missing data or ID invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

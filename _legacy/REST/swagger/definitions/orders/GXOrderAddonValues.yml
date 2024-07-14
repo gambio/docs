@@ -1,0 +1,47 @@
+GXOrderAddonValues:
+    title: GXOrderAddonValues
+    type: object
+    required:
+        - ccCvv
+        - ccExpires
+        - ccIssue
+        - ccNumber
+        - ccOwner
+        - ccStart
+        - ccType
+        - customerIp
+        - downloadAbandonmentStatus
+        - serviceAbandonmentStatus
+    properties:
+        ccCvv:
+            type: string
+        ccExpires:
+            type: string
+        ccIssue:
+            type: string
+        ccNumber:
+            type: string
+        ccOwner:
+            type: string
+        ccStart:
+            type: string
+        ccType:
+            type: string
+        customerIp:
+            type: string
+        downloadAbandonmentStatus:
+            type: string
+        serviceAbandonmentStatus:
+            type: string
+    example:
+        ccCvv: ""
+        ccExpires: ""
+        ccIssue: ""
+        ccNumber: ""
+        ccOwner: ""
+        ccStart: ""
+        ccType: ""
+        customerIp: ""
+        downloadAbandonmentStatus: '0'
+        serviceAbandonmentStatus: '0'
+

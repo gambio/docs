@@ -1,0 +1,23 @@
+'/payment_details/{order_id}':
+    get:
+        tags:
+            - payment_details
+        summary: 'Get Payment Details'
+        description: 'Get the payment details for a specific order record through a GET request. This method supports all the GET parameters that are mentioned in the "Introduction" section of this documentation.'
+        operationId: getPaymentDetails
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the payment details of the order resource'
+                schema:
+                    $ref: '#/definitions/GXPaymentDetails'
+                    

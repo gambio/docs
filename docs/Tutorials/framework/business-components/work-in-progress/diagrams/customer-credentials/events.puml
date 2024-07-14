@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package Gambio\Admin\Modules\Customer\Submodules\Credential\Model\Events {
+	left to right direction
+
+	class BasicAuthsLoginUpdated{
+		- basicAuthId: BasicAuthId
+		- customerId: CustomerId
+		- login: BasicAuthLogin
+		--
+		+ {static} create(BasicAuthId $basicAuthId, CustomerId $customerId, BasicAuthLogin $login): BasicAuthsLoginUpdated
+		..
+		+ basicAuthId(): BasicAuthId
+		+ customerId(): CustomerId
+		+ login(): BasicAuthLogin
+	}
+
+	class BasicAuthsPasswordUpdated{
+		- basicAuthId: BasicAuthId
+		- customerId: CustomerId
+		- password: BasicAuthPassword
+		--
+		+ {static} create(BasicAuthId $basicAuthId, CustomerId $customerId, BasicAuthPassword $password): BasicAuthsPasswordUpdated
+		..
+		+ basicAuthId(): BasicAuthId
+		+ customerId(): CustomerId
+		+ password(): BasicAuthPassword
+	}
+
+	class BasicAuthDeleted{
+		- basicAuthId: BasicAuthId
+		--
+		+ {static} create(BasicAuthId $basicAuthId): BasicAuthDeleted
+		..
+		+ basicAuthId(): BasicAuthId
+	}
+
+	class CustomerBasicAuthCredentialCreated{
+		- basicAuthId: BasicAuthId
+		--
+		+ {static} create(BasicAuthId $basicAuthId): CustomerBasicAuthCredentialCreated
+		..
+		+ basicAuthId(): BasicAuthId
+	}
+
+	class JsonWebTokenDeleted{
+		- basicAuthId: JsonWebTokenId
+		--
+		+ {static} create(JsonWebTokenId $basicAuthId): JsonWebTokenDeleted
+		..
+		+ basicAuthId(): JsonWebTokenId
+	}
+	note top of JsonWebTokenDeleted: We won't implement this yet.
+
+	class CustomerJsonWebTokenCredentialCreated{
+		- basicAuthId: JsonWebTokenId
+		--
+		+ {static} create(JsonWebTokenId $basicAuthId): CustomerJsonWebTokenCredentialCreated
+		..
+		+ basicAuthId(): JsonWebTokenId
+	}
+	note top of CustomerJsonWebTokenCredentialCreated: We won't implement this yet.
+}
+
+@enduml

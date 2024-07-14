@@ -1,0 +1,14 @@
+/cache:
+    delete:
+        tags:
+            - cache
+        summary: 'Clear Shop Cache'
+        description: 'Clear the shop cache with a DELETE request.'
+        operationId: deleteCacheAll
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithFilename'

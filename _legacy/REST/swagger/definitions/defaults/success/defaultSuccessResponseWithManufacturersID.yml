@@ -1,0 +1,14 @@
+defaultSuccessResponseWithManufacturersID:
+    title: defaultSuccessResponseWithManufacturersID
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        manufacturersId:
+            type: integer
+            format: int64

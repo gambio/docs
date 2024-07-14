@@ -1,0 +1,6594 @@
+{
+  "swagger": "2.0",
+  "x-navigateMethodsByName": true,
+  "info": {
+    "description": "This is the Gambio GX Restful API documentation for the GX shop software. You can find out more about Gambio at [http://www.gambio.de](http://www.gambio.de).",
+    "version": "3.9.0",
+    "title": "Gambio GX3 API"
+  },
+  "host": "example.org",
+  "basePath": "/api.php/v2",
+  "tags": [
+    {
+      "name": "address_formats",
+      "description": "Address Formats"
+    },
+    {
+      "name": "addresses",
+      "description": "Addresses"
+    },
+    {
+      "name": "attachments",
+      "description": "Attachments"
+    },
+    {
+      "name": "categories",
+      "description": "Categories"
+    },
+    {
+      "name": "category_icons",
+      "description": "Category Icons"
+    },
+    {
+      "name": "category_images",
+      "description": "Category Images"
+    },
+    {
+      "name": "countries",
+      "description": "Countries"
+    },
+    {
+      "name": "customer_groups",
+      "description": "Customer Groups"
+    },
+    {
+      "name": "customers",
+      "description": "Customers"
+    },
+    {
+      "name": "emails",
+      "description": "Emails"
+    },
+    {
+      "name": "manufacturers",
+      "description": "Manufacturers"
+    },
+    {
+      "name": "order_statuses",
+      "description": "Order Statuses"
+    },
+    {
+      "name": "orders",
+      "description": "Orders"
+    },
+    {
+      "name": "product_images",
+      "description": "Product Images"
+    },
+    {
+      "name": "products",
+      "description": "Products"
+    },
+    {
+      "name": "quantity_units",
+      "description": "Quantity Units"
+    },
+    {
+      "name": "shop_information",
+      "description": "Shop Information"
+    },
+    {
+      "name": "tax",
+      "description": "Tax"
+    },
+    {
+      "name": "vpe",
+      "description": "Vpe"
+    },
+    {
+      "name": "zones",
+      "description": "Zones"
+    }
+  ],
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/address_formats": {
+      "get": {
+        "tags": [
+          "address_formats"
+        ],
+        "summary": "Get Address Formats",
+        "description": "Get all address formats or a single address format.",
+        "operationId": "getAddressFormats",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of address formats",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXAddressFormat"
+              }
+            }
+          },
+          "400": {
+            "description": "(Invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Address Format Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/addresses/{address_id}": {
+      "delete": {
+        "tags": [
+          "addresses"
+        ],
+        "summary": "Delete Address",
+        "description": "Remove an address record from the system. This method will always return success even if the address record does not exist (due to internal architecture decisions, which strive to avoid unnecessary failures).",
+        "operationId": "deleteAddress",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "address_id",
+            "in": "path",
+            "description": "The ID of the address to be removed",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted addressID",
+            "schema": {
+              "$ref": "#/definitions/addressDeleteResponse"
+            }
+          },
+          "400": {
+            "description": "(Address record ID not provided)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "addresses"
+        ],
+        "summary": "Get Address",
+        "description": "Get multiple or a single address records through a GET requets. This method supports all the GET parameters that are mentioned in the \"Introduction\" section of this documentation.",
+        "operationId": "getAddress",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "address_id",
+            "in": "path",
+            "description": "The ID of the address to fetch",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the address that was fetched",
+            "schema": {
+              "$ref": "#/definitions/GXAddress"
+            }
+          },
+          "404": {
+            "description": "(Invalid address ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "addresses"
+        ],
+        "summary": "Update Address",
+        "description": "Update an existing address record by providing new data. You do not have to provide the full presentation of the address in the JSON string of the request, rather just the fields to be updated. The address ID will be taken from the URI of the request so it is not required that it is included withing the request JSON.",
+        "operationId": "updateAddress",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "address_id",
+            "in": "path",
+            "description": "The ID of the address to be updated",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated address",
+            "schema": {
+              "$ref": "#/definitions/GXAddress"
+            }
+          }
+        }
+      }
+    },
+    "/addresses": {
+      "post": {
+        "tags": [
+          "addresses"
+        ],
+        "summary": "Create Address",
+        "description": "Create an address record for a customer in the system.",
+        "operationId": "createAddress",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "address",
+            "in": "body",
+            "description": "The address to be created",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXAddress"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the newly created address",
+            "schema": {
+              "$ref": "#/definitions/GXCustomer"
+            }
+          },
+          "400": {
+            "description": "(Address data was not provided)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/attachments": {
+      "post": {
+        "tags": [
+          "attachments"
+        ],
+        "summary": "Upload Attachment",
+        "description": "If an email contains an attachment this must be uploaded before the email is sent. This method accepts the upload of one file at a time. It will return its temporary path which can be used as the attachment path in the email JSON data. The name of the file form field is not taken into concern (can be whatever). The important rule is that only one file will be uploaded at a time.",
+        "operationId": "uploadAttachments",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "upload_icon",
+            "type": "file",
+            "required": true,
+            "description": "The icon to upload"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the default success response with the attachment path",
+            "schema": {
+              "$ref": "#/definitions/attachmentSuccessExample"
+            }
+          },
+          "400": {
+            "description": "(No attachment file was provided)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/categories/{category_id}": {
+      "delete": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "Delete Category",
+        "description": "Removes a category record from the database. The products that are assigned to this category will not be removed. To see an example usage take a look at `docs/REST/samples/category-service/remove_category.php`",
+        "operationId": "deleteCategories",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "description": "The category ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the category ID",
+            "schema": {
+              "$ref": "#/definitions/categorySuccessResponse"
+            }
+          },
+          "400": {
+            "description": "(Category record ID was not provided)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "Get Categories",
+        "description": "Get multiple or a single category records through a GET request. This method supports all the GET parameters that are mentioned in the \"Introduction\" section of this documentation. To see an example usage take a look at `docs/REST/samples/category-service/fetch_category.php`",
+        "operationId": "getCategories",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "description": "The category ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of categories",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXCategory"
+              }
+            }
+          },
+          "404": {
+            "description": "(Category does not exist)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "Update Category",
+        "description": "Use this method to update an existing category record. Take a look in the POST method for more detailed explanation on every resource property. To see an example usage take a look at `docs/REST/samples/category-service/update_category.php`",
+        "operationId": "updateCategories",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "description": "The category ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated category",
+            "schema": {
+              "$ref": "#/definitions/GXCategory"
+            }
+          },
+          "400": {
+            "description": "(Empty request body / Category record ID was not provided or is invalid)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/categories": {
+      "post": {
+        "tags": [
+          "categories"
+        ],
+        "summary": "Create Category",
+        "description": "Creates new category in the system. To see an example usage take a look at `docs/REST/samples/category-service/create_category.php`",
+        "operationId": "createCategories",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "body",
+            "description": "The ID of the parent category (use 0 if there is no parent category).",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXCategory"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the newly created category",
+            "schema": {
+              "$ref": "#/definitions/GXCategory"
+            }
+          },
+          "400": {
+            "description": "(Category data was not provided)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/category_icons": {
+      "delete": {
+        "tags": [
+          "category_icons"
+        ],
+        "summary": "Delete Category Icon",
+        "description": "Removes the category icon file from the server. This method will always provide a successful response even if the image file was not found.",
+        "operationId": "deleteCategoryIcon",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted filename",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithFilename"
+            }
+          },
+          "400": {
+            "description": "(Missing parameters / Empty request body)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "category_icons"
+        ],
+        "summary": "Get Category Icons",
+        "description": "Returns a list of all category icon files which exists in the servers filesystem through a GET request.",
+        "operationId": "getCategoryIcons",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of filenames",
+            "schema": {
+              "$ref": "#/definitions/categoryIconGetResponse"
+            }
+          },
+          "400": {
+            "description": "(No category icons)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "category_icons"
+        ],
+        "summary": "Upload Category Icon",
+        "description": "Upload an icon image for the categories. Make this request without the \"Content-Type: application/json\". Except from the file the POST request must also contain a \"filename\" value with the final file name.",
+        "operationId": "uploadCategoryIcons",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "upfile",
+            "type": "file",
+            "description": "The icon to upload"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the default success response with the filename",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithFilename"
+            }
+          },
+          "400": {
+            "description": "(No filename)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "category_icons"
+        ],
+        "summary": "Rename Icon File",
+        "description": "Use this method to rename an existing icon file.",
+        "operationId": "putCategoryIcons",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the updated filename",
+            "schema": {
+              "$ref": "#/definitions/defaultUpdateResponseWithFilenames"
+            }
+          },
+          "400": {
+            "description": "(Missing parameters)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/category_images": {
+      "delete": {
+        "tags": [
+          "category_images"
+        ],
+        "summary": "Delete Category Image",
+        "description": "Removes the category image file from the server. This method will always provide a successful response even if the image file was not found.",
+        "operationId": "deleteCategoryImages",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted filename",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithFilename"
+            }
+          },
+          "400": {
+            "description": "(Missing parameter)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "category_images"
+        ],
+        "summary": "Get Category Images",
+        "description": "Get a list of all category image files which exists in the server's filesystem through a GET request.",
+        "operationId": "getCategoryImages",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of filenames",
+            "schema": {
+              "$ref": "#/definitions/categoryImageGetResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "category_images"
+        ],
+        "summary": "Upload Category Image",
+        "description": "Uploads an icon image for the categories. Make this request without the \"Content-Type: application/json\". Except from the file the POST request must also contain a \"filename\" value with the final file name.",
+        "operationId": "uploadCategoryImages",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "upload_category_image",
+            "type": "file",
+            "required": true,
+            "description": "The category image to upload"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the default success response with the newly uploaded filename",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithFilename"
+            }
+          },
+          "400": {
+            "description": "(Missing filename parameter)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "category_images"
+        ],
+        "summary": "Rename Image File",
+        "description": "Use this method to rename an existing image file.",
+        "operationId": "renameCategoryImages",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the renamed filename",
+            "schema": {
+              "$ref": "#/definitions/defaultUpdateResponseWithFilenames"
+            }
+          },
+          "400": {
+            "description": "(Missing parameters)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/countries/{country_id}": {
+      "get": {
+        "tags": [
+          "countries"
+        ],
+        "summary": "Get Countries",
+        "description": "Get a single country. This method is currently limited to only fetching a single country resource so make sure that you provide the country ID in the request URI.",
+        "operationId": "getCountries",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "country_id",
+            "in": "path",
+            "description": "The country ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the country resource.",
+            "schema": {
+              "$ref": "#/definitions/GXCountry"
+            }
+          },
+          "500": {
+            "description": "(Country not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "501": {
+            "description": "(The ID is missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/countries/{country_id}/zones": {
+      "get": {
+        "tags": [
+          "countries"
+        ],
+        "summary": "Get Countries Zones",
+        "description": "Get a single countrys zones. This method is currently limited to only fetching a single countrys zone resource so make sure that you provide the country ID in the request URI.",
+        "operationId": "getCountriesZones",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "country_id",
+            "in": "path",
+            "description": "The country ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of country zone resources.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXCountryZone"
+              }
+            }
+          },
+          "500": {
+            "description": "(Country not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "501": {
+            "description": "(The ID is missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/customer_groups/{customer_group_id}": {
+      "delete": {
+        "tags": [
+          "customer_groups"
+        ],
+        "summary": "Delete Customer Groups",
+        "description": "Removes a customer groups record from the system. This method will always return success even if the customer group does not exist.",
+        "operationId": "deleteCustomerGroups",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_group_id",
+            "in": "path",
+            "description": "Customer Group ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the customer group ID that was deleted",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithCustomerGroupID"
+            }
+          },
+          "400": {
+            "description": "(Customer group ID invalid)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "customer_groups"
+        ],
+        "summary": "Get customer groups",
+        "description": "Get multiple or a single customer groups record through the GET method",
+        "operationId": "getCustomerGroups",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_group_id",
+            "in": "path",
+            "description": "The customer group ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of customer groups",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXCustomerGroup"
+              }
+            }
+          },
+          "400": {
+            "description": "(Missing or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(CustomerGroups Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "customer_groups"
+        ],
+        "summary": "Updates CustomerGroup entity",
+        "description": "Use this method if you want to update an existing customer groups record.",
+        "operationId": "updateCustomerGroups",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_group_id",
+            "in": "path",
+            "description": "The customer group ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXCustomerGroup",
+            "in": "body",
+            "description": "The customer group",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXCustomerGroup"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated customer group",
+            "schema": {
+              "$ref": "#/definitions/GXCustomerGroup"
+            }
+          },
+          "400": {
+            "description": "(Missing or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Entity not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/customer_groups": {
+      "post": {
+        "tags": [
+          "customer_groups"
+        ],
+        "summary": "Create CustomerGroups",
+        "description": "This method enables the creation of a new CustomerGroups into the system.",
+        "operationId": "createCustomerGroup",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXCustomerGroup",
+            "in": "body",
+            "description": "The customer group",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXCustomerGroup"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the newly created customer group",
+            "schema": {
+              "$ref": "#/definitions/GXCustomerGroup"
+            }
+          },
+          "400": {
+            "description": "(Failed to create customer group)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/customers/{customer_id}": {
+      "delete": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Delete Customer",
+        "description": "Remove a customer record from the system. This method will always return success even if the customer does not exist (due to internal CustomerWriteService architecture decisions, which strive to avoid unnecessary failures). An example script to demonstrate how to delete a customer is located under `./docs/REST/samples/customer-service/remove_account.php` in the git clone.",
+        "operationId": "deleteCustomer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "path",
+            "description": "The customer ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted customer ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithCustomerID"
+            }
+          },
+          "400": {
+            "description": "(Missing customer ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Get Customers",
+        "description": "Get multiple or a single customer record through the GET method. This resource supports the following GET parameters as described in the first section of documentation: sorting minimization, search, pagination and links. Additionally you can filter customers by providing the GET parameter \"type=guest\" or \"type=registree\". Sort and pagination GET parameters do not apply when a single customer record is selected (e.g. api.php/v2/customers/84). An example script to demonstrate how to fetch customer data is located under `./docs/REST/samples/customer-service/get_admin_data.php` in the git clone **Important**: Currently the CustomerReadService does not support searching in address information of a customer.",
+        "operationId": "getCustomer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "path",
+            "description": "The customer ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of customers",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXCustomer"
+              }
+            }
+          },
+          "400": {
+            "description": "(Invalid Type Filter)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Customer Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Update Customer",
+        "description": "This method will update the information of an existing customer record. You will need to provide all the customer information with the request (except from password and customer id). Also note that you only have to include the \"addressId\" property. An example script to demonstrate how to update the admin accounts telephone number is located under `./docs/REST/samples/customer-service/update_admin_telephone.php` in the git clone.",
+        "operationId": "updateCustomer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "path",
+            "description": "The customer ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated customer",
+            "schema": {
+              "$ref": "#/definitions/GXCustomer"
+            }
+          },
+          "400": {
+            "description": "(Customer data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Customer not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "409": {
+            "description": "(Customer email already exists)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/customers": {
+      "post": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Create Customer",
+        "description": "This method enables the creation of a new customer (whether registree or a guest). Additionally the user can provide new address information or just set the id of an existing one. Check the examples bellow. An example script to demonstrate the creation of a new customer is located under `./docs/REST/samples/customer-service/create_account.php` in the git clone, another one to demonstrate the creation of a guest customer is located under `./docs/REST/samples/customer-service/create_guest_account.php`.",
+        "operationId": "createCustomer",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXCustomer",
+            "in": "body",
+            "description": "The customer",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXCustomer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the customer that was created",
+            "schema": {
+              "$ref": "#/definitions/GXCustomer"
+            }
+          },
+          "400": {
+            "description": "(Customer data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "409": {
+            "description": "(Registree email already exists)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/emails/{email_id}": {
+      "delete": {
+        "tags": [
+          "emails"
+        ],
+        "summary": "Delete Email",
+        "description": "Delete an email record from database. To see an example usage take a look at `docs/REST/samples/email-service/remove_email.php`.",
+        "operationId": "deleteEmail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email_id",
+            "in": "path",
+            "description": "The email ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithEmailID"
+            }
+          },
+          "400": {
+            "description": "(Customer ID missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "emails"
+        ],
+        "summary": "Get Emails",
+        "description": "Get multiple or a single email record through the GET method. This resource supports the following GET parameters as described in the first section of documentation: sorting minimization, search, pagination. Additionally you can filter emails by providing the GET parameter \"state=pending\" or \"state=sent\". These filter parameters do not apply when a single emails record is selected (e.g. api.php/v2/emails/84) or when the emails are searched by the \"q\" parameter. To see an example usage take a look at `docs/REST/samples/email-service/fetch_email.php`",
+        "operationId": "getEmails",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email_id",
+            "in": "path",
+            "description": "The email ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of emails",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXCustomerEmail"
+              }
+            }
+          },
+          "400": {
+            "description": "(Invalid Type Filter)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Customer Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "emails"
+        ],
+        "summary": "Send Email",
+        "description": "This method will send and save a new or an existing email to the system. If you include mail attachments then they must already exist in the server. You will need to provide the full path to the file. To see an example usage take a look at `docs/REST/samples/email-service/send_email.php`",
+        "operationId": "sendEmail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email_id",
+            "in": "path",
+            "description": "The email ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXCustomerEmail",
+            "in": "body",
+            "description": "The email",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/GXCustomerEmail"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the email send",
+            "schema": {
+              "$ref": "#/definitions/GXCustomerEmail"
+            }
+          },
+          "400": {
+            "description": "(Email data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Email record not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/emails": {
+      "put": {
+        "tags": [
+          "emails"
+        ],
+        "summary": "Queue Email",
+        "description": "This method will queue a new email so that it can be send later (with the POST method). See the \"post\" method for parameter description. To see an example usage take a look at `docs/REST/samples/email-service/queue_email.php`",
+        "operationId": "queueEmail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXCustomerEmail",
+            "in": "body",
+            "description": "The email",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXCustomerEmail"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the email that was queued.",
+            "schema": {
+              "$ref": "#/definitions/GXCustomerEmail"
+            }
+          },
+          "400": {
+            "description": "(Email data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/manufacturers/{manufacturer_id}": {
+      "delete": {
+        "tags": [
+          "manufacturers"
+        ],
+        "summary": "Delete Manufacturers",
+        "description": "Removes a manufacturers record from the system. This method will always return success even if the manufacturers does not exist (due to internal ManufacturersWriteService architecture decisions, which strive to avoid unnecessary failures).",
+        "operationId": "deleteManufacturers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manufacturer_id",
+            "in": "path",
+            "description": "The manufacturers ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted manufacturer ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithManufacturersID"
+            }
+          },
+          "500": {
+            "description": "(Manufacturer ID missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "manufacturers"
+        ],
+        "summary": "Get manufacturers",
+        "description": "Get multiple or a single manufacturers record through the GET method",
+        "operationId": "getManufacturers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manufacturer_id",
+            "in": "path",
+            "description": "The manufacturers ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of manufacturers",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXManufacturer"
+              }
+            }
+          },
+          "400": {
+            "description": "(Missing or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Manufacturers Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "manufacturers"
+        ],
+        "summary": "Updates Manufacturers",
+        "description": "Use this method if you want to update an existing manufacturers record.",
+        "operationId": "updateManufacturers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manufacturer_id",
+            "in": "path",
+            "description": "The manufacturer ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXManufacturer",
+            "in": "body",
+            "description": "The manufacturer",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXManufacturer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated manufacturer",
+            "schema": {
+              "$ref": "#/definitions/GXManufacturer"
+            }
+          },
+          "400": {
+            "description": "(Missing manufacturer data)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Manufacturer not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "500": {
+            "description": "(Missing or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/manufacturers": {
+      "post": {
+        "tags": [
+          "manufacturers"
+        ],
+        "summary": "Create Manufacturers",
+        "description": "This method enables the creation of a new Manufacturers into the system.",
+        "operationId": "createNanufacturers",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXManufacturer",
+            "in": "body",
+            "description": "The manufacturer",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXManufacturer"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the created manufacturer",
+            "schema": {
+              "$ref": "#/definitions/GXManufacturer"
+            }
+          },
+          "400": {
+            "description": "(Manufacturer data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/order_statuses/{order_status_id}": {
+      "delete": {
+        "tags": [
+          "order_statuses"
+        ],
+        "summary": "Delete Order Status",
+        "description": "Removes a order status record from the system. This method will always return success.",
+        "operationId": "deleteOrderStatuses",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_status_id",
+            "in": "path",
+            "description": "The order status ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the order status ID that was deleted",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithOrderStatusID"
+            }
+          },
+          "400": {
+            "description": "(Order status ID invalid)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "order_statuses"
+        ],
+        "summary": "Get order statuses",
+        "description": "Get a single or multiple order status entries.",
+        "operationId": "getOrderStatuses",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_status_id",
+            "in": "path",
+            "description": "The order status ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array order status",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXOrderStatus"
+              }
+            }
+          },
+          "400": {
+            "description": "(Order status ID invalid)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "order_statuses"
+        ],
+        "summary": "Update Order Status",
+        "description": "This method updates a order status in the database.",
+        "operationId": "updateOrderStatuses",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_status_id",
+            "in": "path",
+            "description": "The order status ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrderStatus",
+            "in": "body",
+            "description": "The order status",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderStatus"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the updated order status",
+            "schema": {
+              "$ref": "#/definitions/GXOrderStatus"
+            }
+          },
+          "400": {
+            "description": "(Order status ID invalid or missing data)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/order_statuses": {
+      "post": {
+        "tags": [
+          "order_statuses"
+        ],
+        "summary": "Create Order Status",
+        "description": "This method creates a new order status in the database.",
+        "operationId": "createOrderStatuses",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXOrderStatus",
+            "in": "body",
+            "description": "The order status",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderStatus"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the order status that was created",
+            "schema": {
+              "$ref": "#/definitions/GXOrderStatus"
+            }
+          },
+          "400": {
+            "description": "(Order status data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}": {
+      "delete": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Delete Order",
+        "description": "Remove an entire Order record from the database. This method will also remove the order-items along with their attributes and the order-total records. To see an example usage take a look at `docs/REST/samples/order-service/remove_order.php`",
+        "operationId": "deleteOrders",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the order ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithOrderID"
+            }
+          },
+          "400": {
+            "description": "(Order ID missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Get Orders",
+        "description": "Get multiple or a single order record through a GET request. This method supports all the GET parameters that are mentioned in the \"Introduction\" section of this documentation. Important: Whenever you make requests that will return multiple orders the response will contain a smaller version of each order record called order-list-item. This is done for better performance because the creation of a complete order record takes significant time (many objects are involved). If you still need the complete data of an order record you will have to make an extra GET request with the ID provided.",
+        "operationId": "getOrders",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the order resource",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXOrder"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update Order",
+        "description": "Use this method to update an existing order record. It uses the complete order JSON resource so it might be useful to fetch it through a GET request, alter its values and PUT it back in order to perform the update operation. Take a look in the POST method for more detailed explanation on every resource property. To see an example usage take a look at `docs/REST/samples/order-service/update_order.php`",
+        "operationId": "updateOrder",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated order",
+            "schema": {
+              "$ref": "#/definitions/GXOrder"
+            }
+          },
+          "400": {
+            "description": "(Missing data or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/items/{item_id}": {
+      "delete": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Delete Order Item",
+        "description": "Use this method to remove an order item from an existing order.",
+        "operationId": "deleteOrderItems",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "The item ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with order and item ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithOrderIDAndOrderItemID"
+            }
+          },
+          "400": {
+            "description": "(Missing ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Item not found inside the order)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Get Order Item",
+        "description": "Get all or just a single order item from an existing orders. All the GET manipulation parameters are applied with this method (search, sort, minimize, paginate etc).",
+        "operationId": "getOrderItem",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "The item ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns a single or an array of order items",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXOrderItem"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update Order Item",
+        "description": "Use this method to update an existing order item. Use the same order item JSON format as in the POST method.",
+        "operationId": "updateOrderItems",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "The item ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrderItem",
+            "in": "body",
+            "description": "The order item",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderItem"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated orders items",
+            "schema": {
+              "$ref": "#/definitions/GXOrderItem"
+            }
+          },
+          "400": {
+            "description": "(Missing data or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Order item ID does not exist in given order)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/items/{item_id}/attributes/{attribute_id}/Property": {
+      "delete": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Delete Order Item Attribute/Property",
+        "description": "Removes a single order item attribute/property entry from an existing order item record.",
+        "operationId": "removeOrdersItemsAttribute",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "The item ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "attribute_id",
+            "in": "path",
+            "description": "The attribute ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the relevant IDs",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithOrderIDAndOrderItemIDAndOrderItemAttributeID"
+            }
+          },
+          "400": {
+            "description": "(Missing ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Get Order Item Attribute/Property",
+        "description": "Returns multiple or a single order item attribute/property records through a GET request. This method supports all the GET parameters that are mentioned in the \"Introduction\" section of this documentation.",
+        "operationId": "getOrdersItemsAttributesProperty",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "The item ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "attribute_id",
+            "in": "path",
+            "description": "The attribute ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of attributes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXOrderItemAttributes"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update Order Item Attribute/Property",
+        "description": "Use this method to update an existing order item attribute record. It uses the same attribute JSON format as in the \"Create Order Item Attribute\" method.",
+        "operationId": "updateOrdersItemsAttributesProperty",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "The item ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "attribute_id",
+            "in": "path",
+            "description": "The attribute ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrderItemAttributes",
+            "in": "body",
+            "description": "The order item attributes",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderItemAttributes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated order item attributes",
+            "schema": {
+              "$ref": "#/definitions/GXOrderItemAttributes"
+            }
+          },
+          "400": {
+            "description": "(Missing data or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/totals/{total_id}": {
+      "delete": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Delete Order Total",
+        "description": "Use this method to remove an order total from an existing order.",
+        "operationId": "deleteOrderTotals",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "total_id",
+            "in": "path",
+            "description": "The total ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the order and order total ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithOrderIDAndOrderTotalID"
+            }
+          },
+          "400": {
+            "description": "(Order total ID missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Order total ID does not exist in given order)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update Order Total",
+        "description": "Use this method to update an existing order total. Use the same order total JSON format as in the POST method.",
+        "operationId": "updateOrderTotal",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "total_id",
+            "in": "path",
+            "description": "The total ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrder",
+            "in": "body",
+            "description": "The order",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderTotal"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated order totals",
+            "schema": {
+              "$ref": "#/definitions/GXOrderTotal"
+            }
+          },
+          "400": {
+            "description": "(Missing data or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Provided order total not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/history/{history_id}": {
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Get Order History",
+        "description": "Returns multiple or a single order status history records. This method supports all the GET parameters that are mentioned in the \"Introduction\" section of this documentation.",
+        "operationId": "getOrderHistory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "history_id",
+            "in": "path",
+            "description": "The history ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of Order Histories",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXOrderStatusHistory"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/totals/{totals_id}": {
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Get Order Total",
+        "description": "Returns all or just a single order total from an existing orders. All the GET manipulation parameters are applied with this method (search, sort, minimize, paginate etc).",
+        "operationId": "getOrderTotal",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "totals_id",
+            "in": "path",
+            "description": "The totals ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns one or many order totals",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXOrderTotal"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/status": {
+      "patch": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update Order Status",
+        "description": "Use this method if you want to update the status of an existing order and create an order history entry. The status history entry must also contain extra information as shown in the JSON example.",
+        "operationId": "updateOrderStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The orders ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrderStatusHistory",
+            "in": "body",
+            "description": "The order status",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderStatusHistory"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated order status",
+            "schema": {
+              "$ref": "#/definitions/GXOrderStatus"
+            }
+          },
+          "400": {
+            "description": "(Missing data or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Create Order",
+        "description": "This method enables the creation of a new order into the system. The order can be bound to an existing customer or be standalone as implemented in the OrderService. Make sure that you check the Order resource representation. To see an example usage take a look at `docs/REST/samples/order-service/create_order.php`.",
+        "operationId": "createOrder",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXOrder",
+            "in": "body",
+            "description": "The order",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrder"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the order that was created",
+            "schema": {
+              "$ref": "#/definitions/GXOrder"
+            }
+          },
+          "400": {
+            "description": "(Order data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/items": {
+      "post": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Create Order Item",
+        "description": "Use this method to create a new order item to an existing order. The order item JSON format must be the same with the \"items\" entries in the original order item.",
+        "operationId": "createOrderItem",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrderItem",
+            "in": "body",
+            "description": "The order item",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderItem"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the created order item",
+            "schema": {
+              "$ref": "#/definitions/GXOrderItem"
+            }
+          },
+          "400": {
+            "description": "(Order Item data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/items/{item_id}/attributes": {
+      "post": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Create Order Item Attribute",
+        "description": "Use this method to create a new order item attribute to an existing order item. The order item attribute JSON object is the same as the one included in the full order representation. There are two different order item variation systems in the shop, the \"attributes\" and the \"properties\". Both of them define a variation of an order item (e.g. color, size etc). You must always use only one of them for a single order item.",
+        "operationId": "createOrderTimeAttribute",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "description": "The item ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrderItemAttributes",
+            "in": "body",
+            "description": "The order item attributes",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderItemAttributes"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the order item attributes",
+            "schema": {
+              "$ref": "#/definitions/GXOrderItemAttributes"
+            }
+          },
+          "400": {
+            "description": "(Order item attribute data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{order_id}/totals": {
+      "post": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Create Order Total",
+        "description": "Creates a new order total entry to the existing order. The order total JSON format must be the same with the \"totals\" entries in the original order total.",
+        "operationId": "createOrderTotal",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "description": "The order ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXOrderTotal",
+            "in": "body",
+            "description": "The order total",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXOrderTotal"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the order total",
+            "schema": {
+              "$ref": "#/definitions/GXOrderTotal"
+            }
+          },
+          "400": {
+            "description": "(Order total data missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/product_images": {
+      "delete": {
+        "tags": [
+          "product_images"
+        ],
+        "summary": "Delete Product Image",
+        "description": "Remove the product image file from the server. This method will always provide a successful response even if the image file was not found.",
+        "operationId": "deleteProductImage",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted filename",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithFilename"
+            }
+          },
+          "400": {
+            "description": "(Missing data)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "product_images"
+        ],
+        "summary": "Get Product Images",
+        "description": "Get a list of all product image files which exists in the server's filesystem through a GET request.",
+        "operationId": "getProductImage",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of files",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/productImageGetResponse"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "product_images"
+        ],
+        "summary": "Upload Product Image",
+        "description": "Uploads an image file for the products. Make this request without the \"Content-Type: application/json\". Except from the file the POST request must also contain a \"filename\" value with the final file name.",
+        "operationId": "uploadProductImage",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "upload_product_image",
+            "type": "file",
+            "required": true,
+            "description": "The product image to upload"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the default success response with the new filename",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithFilename"
+            }
+          },
+          "400": {
+            "description": "(No image file provided)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "product_images"
+        ],
+        "summary": "Rename Image File",
+        "description": "Use this method to rename an existing image file.",
+        "operationId": "renameImageFile",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXFilenameChange",
+            "in": "body",
+            "description": "The filenames",
+            "schema": {
+              "$ref": "#/definitions/GXFilenameChange"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the old and new name",
+            "schema": {
+              "$ref": "#/definitions/defaultUpdateResponseWithFilenames"
+            }
+          }
+        }
+      }
+    },
+    "/products/{product_id}": {
+      "delete": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Delete Product",
+        "description": "Removes a product record from the database. To see an example usage take a look at `docs/REST/samples/product-service/remove_product.php`",
+        "operationId": "deleteProduct",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with a product ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithProductID"
+            }
+          },
+          "400": {
+            "description": "(Product ID missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Get Products",
+        "description": "Get multiple or a single product records through a GET request. This method supports all the GET parameters that are mentioned in the \"Introduction\" section of this documentation. To see an example usage take a look at `docs/REST/samples/product-service/remove_product.php`",
+        "operationId": "getProducts",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of products",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXProduct"
+              }
+            }
+          },
+          "404": {
+            "description": "(Product does not exist)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Update Product",
+        "description": "Use this method to update an existing product record. Take a look in the POST method for more detailed explanation on every resource property. To see an example usage consider `docs/REST/samples/product-service/update_product.php`",
+        "operationId": "updateProducts",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXProduct",
+            "in": "body",
+            "description": "The product",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXProduct"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated product",
+            "schema": {
+              "$ref": "#/definitions/GXProduct"
+            }
+          },
+          "400": {
+            "description": "(Missing data or ID invalid)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/products/{product_id}/links": {
+      "delete": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Delete Product Link",
+        "description": "Deletes an existing product to category link. If there is no categoryId property set, all the product links will be removed.",
+        "operationId": "deleteProductLink",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product or category link ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "categoryId",
+            "in": "body",
+            "description": "The category ID",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productCategoryLinkID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the product ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithProductID"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Get Product Links",
+        "description": "Get all product or category links associated with a specific product.",
+        "operationId": "getProductLinks",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product or category ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of IDs for product or category links",
+            "schema": {
+              "$ref": "#/definitions/productLinksGetResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Create Product Link",
+        "description": "Creates a new product to category record in the system.",
+        "operationId": "createProductLink",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "categoryId",
+            "in": "body",
+            "description": "The category ID",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/productCategoryLinkID"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the default success response with the product and category ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithProductIDAndCategoryID"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Update Product Link",
+        "description": "Changes an existing product to category link.",
+        "operationId": "updateProductLink",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "The product link ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXProductLinkPutRequest",
+            "in": "body",
+            "description": "The old and new category ID",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXProductLinkPutRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the product ID and category IDs",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithProductIDAndCategoryIDs"
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Create Product",
+        "description": "Creates a new product record in the system. To see an example usage take a look at `docs/REST/samples/product-service/create_product.php`",
+        "operationId": "createProduct",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXProduct",
+            "in": "body",
+            "description": "The product",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXProduct"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the newly created product",
+            "schema": {
+              "$ref": "#/definitions/GXProduct"
+            }
+          },
+          "400": {
+            "description": "(Missing data)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/quantity_units/{quantity_unit_id}": {
+      "delete": {
+        "tags": [
+          "quantity_units"
+        ],
+        "summary": "Delete Quantity Units",
+        "description": "Removes a quantity units record from the system. This method will always return success even if the quantity unit does not exist.",
+        "operationId": "deleteQuantityUnits",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "quantity_unit_id",
+            "in": "path",
+            "description": "The quantity unit ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted quantityID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithQuantityUnitID"
+            }
+          },
+          "400": {
+            "description": "(Invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "quantity_units"
+        ],
+        "summary": "Get Quantity Units",
+        "description": "Get multiple or a single quantity units record through the GET method",
+        "operationId": "getQuantityUnits",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "quantity_unit_id",
+            "in": "path",
+            "description": "The quantity unit ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of Quantity Units",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXQuantityUnit"
+              }
+            }
+          },
+          "400": {
+            "description": "(Missing or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(QuantityUnits Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "quantity_units"
+        ],
+        "summary": "Updates Quantity Units",
+        "description": "Use this method if you want to update an existing quantity units record.",
+        "operationId": "updateQuantityUnitEntity",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "quantity_unit_id",
+            "in": "path",
+            "description": "The quantity unit ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXQuantityUnit",
+            "in": "body",
+            "description": "The quantity unit",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXQuantityUnit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated Quantity Unit",
+            "schema": {
+              "$ref": "#/definitions/GXQuantityUnit"
+            }
+          },
+          "400": {
+            "description": "(Missing or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Entity not found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/quantity_units": {
+      "post": {
+        "tags": [
+          "quantity_units"
+        ],
+        "summary": "Create Quantity Units",
+        "description": "This method enables the creation of a new QuantityUnits into the system.",
+        "operationId": "createQuantityUnits",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXQuantityUnit",
+            "in": "body",
+            "description": "The Quantity Unit.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXQuantityUnit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the newly created Quantity Unit",
+            "schema": {
+              "$ref": "#/definitions/GXQuantityUnit"
+            }
+          }
+        }
+      }
+    },
+    "/shop_information": {
+      "get": {
+        "tags": [
+          "shop_information"
+        ],
+        "summary": "Get Shop Information",
+        "description": "Returns shop information like shop url, shop name, shop owner address data, shop template name and shop version.",
+        "operationId": "getShopInformation",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the shop information",
+            "schema": {
+              "$ref": "#/definitions/GXShopInfo"
+            }
+          }
+        }
+      }
+    },
+    "/tax_classes": {
+      "get": {
+        "tags": [
+          "tax"
+        ],
+        "summary": "Get Tax Classes",
+        "description": "Get all tax classes or a single tax class including tax rates.",
+        "operationId": "getTaxClasses",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of tax classes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXTaxClass"
+              }
+            }
+          },
+          "400": {
+            "description": "(Invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Tax Class Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/tax_rates": {
+      "get": {
+        "tags": [
+          "tax"
+        ],
+        "summary": "Get Tax Rates",
+        "description": "Get all tax rates or a single tax rate.",
+        "operationId": "getTaxRates",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of tax rates",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXTaxClassRate"
+              }
+            }
+          },
+          "400": {
+            "description": "(Invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Tax Rate Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/tax_zones": {
+      "get": {
+        "tags": [
+          "tax"
+        ],
+        "summary": "Get Tax Zones",
+        "description": "Get all tax zones or a single tax zone.",
+        "operationId": "getTaxZones",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of tax zones",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXTaxZone"
+              }
+            }
+          },
+          "400": {
+            "description": "(Invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "404": {
+            "description": "(Tax Class Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/vpe/{vpe_id}": {
+      "delete": {
+        "tags": [
+          "vpe"
+        ],
+        "summary": "Delete VPE",
+        "description": "Removes a vpe record from the system. This method will always return success even if the vpe does not exist (due to internal VPEWriteService architecture decisions, which strive to avoid unnecessary failures).",
+        "operationId": "deleteVPE",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "vpe_id",
+            "in": "path",
+            "description": "The VPE ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the default success response with the deleted VPE ID",
+            "schema": {
+              "$ref": "#/definitions/defaultSuccessResponseWithVpeID"
+            }
+          },
+          "400": {
+            "description": "(Missing ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "vpe"
+        ],
+        "summary": "Get VPE",
+        "description": "Get multiple or a single vpe record through the GET method",
+        "operationId": "getVPE",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "vpe_id",
+            "in": "path",
+            "description": "The VPE ID",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns an array of VPEs",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GXVPE"
+              }
+            }
+          },
+          "404": {
+            "description": "(VPE Not Found)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "vpe"
+        ],
+        "summary": "Updates VPE",
+        "description": "Use this method if you want to update an existing vpe record.",
+        "operationId": "updateVPE",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "vpe_id",
+            "in": "path",
+            "description": "The VPE ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "GXVPE",
+            "in": "body",
+            "description": "The updated VPE",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXVPE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the updated VPE",
+            "schema": {
+              "$ref": "#/definitions/GXVPE"
+            }
+          },
+          "400": {
+            "description": "(Missing or invalid ID)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/vpe": {
+      "post": {
+        "tags": [
+          "vpe"
+        ],
+        "summary": "Create VPE",
+        "description": "This method enables the creation of a new VPE into the system.",
+        "operationId": "createVPE",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "GXVPE",
+            "in": "body",
+            "description": "The VPE to be created",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GXVPE"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Upon success, returns the newly created VPE",
+            "schema": {
+              "$ref": "#/definitions/GXVPE"
+            }
+          },
+          "400": {
+            "description": "(Missing data)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/zones/{zone_id}": {
+      "get": {
+        "tags": [
+          "zones"
+        ],
+        "summary": "Get Zones",
+        "description": "Get a single registered zone resource. This method is currently limited to only fetching a single zone and might be updated in a future version of the API.",
+        "operationId": "getZones",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "zone_id",
+            "in": "path",
+            "description": "The zone ID",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upon success, returns the zone resource",
+            "schema": {
+              "$ref": "#/definitions/GXZone"
+            }
+          },
+          "400": {
+            "description": "(ID invalid)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          },
+          "501": {
+            "description": "(ID missing)",
+            "schema": {
+              "$ref": "#/definitions/defaultErrorResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "GXAddressFormat": {
+      "title": "GXAddressFormat",
+      "type": "object",
+      "required": [
+        "id",
+        "format",
+        "summary"
+      ],
+      "example": [
+        {
+          "id": "1",
+          "format": "$firstname $lastname$cr$streets$cr$city, $postcode$cr$statecomma$country",
+          "summary": "$city / $country"
+        }
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      }
+    },
+    "GXAddress": {
+      "title": "GXAddress",
+      "type": "object",
+      "required": [
+        "id",
+        "customerId",
+        "gender",
+        "company",
+        "firstname",
+        "lastname",
+        "street",
+        "houseNumber",
+        "additionalAddressInfo",
+        "suburb",
+        "postcode",
+        "city",
+        "countryId",
+        "zoneId",
+        "class",
+        "b2bStatus"
+      ],
+      "example": {
+        "id": 1,
+        "customerId": 1,
+        "gender": "m",
+        "company": "Test Company",
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Test Street",
+        "houseNumber": "123",
+        "additionalAddressInfo": "1. Etage",
+        "suburb": "Test Suburb",
+        "postcode": "23983",
+        "city": "Test City",
+        "countryId": 81,
+        "zoneId": 84,
+        "class": null,
+        "b2bStatus": false,
+        "_links": {
+          "country": "https://example.org/api.php/v2/countries/81",
+          "customer": "https://example.org/api.php/v2/customers/1",
+          "zone": "https://example.org/api.php/v2/zones/1355"
+        }
+      },
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "customerId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "gender": {
+          "type": "string",
+          "enum": [
+            "m",
+            "f"
+          ]
+        },
+        "company": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "houseNumber": {
+          "type": "string"
+        },
+        "additionalAddressInfo": {
+          "type": "string"
+        },
+        "suburb": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "countryId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "zoneId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "class": {
+          "type": "string"
+        },
+        "b2bStatus": {
+          "type": "boolean"
+        },
+        "_links": {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string"
+            },
+            "customer": {
+              "type": "string"
+            },
+            "zone": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "addressDeleteResponse": {
+      "title": "addressDeleteResponse",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "example": {
+        "code": 200,
+        "status": "success",
+        "action": "delete",
+        "addressId": 811
+      }
+    },
+    "attachmentSuccessExample": {
+      "title": "attachmentSuccessExample",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      }
+    },
+    "GXCategory": {
+      "title": "GXCategory",
+      "type": "object",
+      "required": [
+        "parentId",
+        "isActive",
+        "sortOrder",
+        "name",
+        "headingTitle",
+        "description",
+        "metaTitle",
+        "metaDescription",
+        "metaKeywords",
+        "urlKeywords",
+        "icon",
+        "image",
+        "imageAltText",
+        "settings"
+      ],
+      "properties": {
+        "parentId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "headingTitle": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "description": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "metaTitle": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "metaDescription": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "metaKeywords": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "urlKeywords": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAltText": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "settings": {
+          "$ref": "#/definitions/categorySettings"
+        }
+      },
+      "example": {
+        "parentId": 0,
+        "isActive": true,
+        "sortOrder": 0,
+        "name": {
+          "en": "test category",
+          "de": "Testkategorie"
+        },
+        "headingTitle": {
+          "en": "test category",
+          "de": "Testkategorie"
+        },
+        "description": {
+          "en": "test category description",
+          "de": "Testkategorie Beschreibung"
+        },
+        "metaTitle": {
+          "en": "",
+          "de": ""
+        },
+        "metaDescription": {
+          "en": "",
+          "de": ""
+        },
+        "metaKeywords": {
+          "en": "",
+          "de": ""
+        },
+        "urlKeywords": {
+          "en": "test-category",
+          "de": "Testkategorie"
+        },
+        "icon": "item_ltr.gif",
+        "image": "",
+        "imageAltText": {
+          "en": "",
+          "de": ""
+        },
+        "settings": {
+          "categoryListingTemplate": "categorie_listing.html",
+          "productListingTemplate": "product_listing_v1.html",
+          "sortColumn": "p.products_price",
+          "sortDirection": "ASC",
+          "onSitemap": true,
+          "sitemapPriority": "0.5",
+          "sitemapChangeFrequency": "daily",
+          "showAttributes": false,
+          "showGraduatedPrice": false,
+          "showQuantity": true,
+          "showQuantityInfo": false,
+          "showSubCategories": true,
+          "showSubCategoryImages": true,
+          "showSubCategoryNames": true,
+          "showSubCategoryProducts": false,
+          "isViewModeTiled": false,
+          "showCategoryFilter": false,
+          "filterSelectionMode": 0,
+          "filterValueDeactivation": 0,
+          "groupPermissions": [
+            {
+              "id": "0",
+              "isPermitted": false
+            },
+            {
+              "id": "1",
+              "isPermitted": false
+            },
+            {
+              "id": "2",
+              "isPermitted": false
+            },
+            {
+              "id": "3",
+              "isPermitted": false
+            }
+          ]
+        }
+      }
+    },
+    "categoryGroupPermissions": {
+      "title": "categoryGroupPermissions",
+      "type": "object",
+      "required": [
+        "id",
+        "isPermitted"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isPermitted": {
+          "type": "boolean"
+        }
+      },
+      "example": [
+        {
+          "id": 0,
+          "isPermitted": false
+        }
+      ]
+    },
+    "categorySettings": {
+      "title": "categorySettings",
+      "type": "object",
+      "required": [
+        "categoryListingTemplate",
+        "productListingTemplate",
+        "sortColumn",
+        "sortDirection",
+        "onSitemap",
+        "sitemapPriority",
+        "sitemapChangeFrequency",
+        "showAttributes",
+        "showGraduatedPrice",
+        "showQuantity",
+        "showQuantityInfo",
+        "showSubCategories",
+        "showSubCategoryImages",
+        "showSubCategoryNames",
+        "showSubCategoryProducts",
+        "isViewModeTiled",
+        "showCategoryFilter",
+        "filterSelectionMode",
+        "filterValueDeactivation",
+        "groupPermissions"
+      ],
+      "properties": {
+        "categoryListingTemplate": {
+          "type": "string"
+        },
+        "productListingTemplate": {
+          "type": "string"
+        },
+        "sortColumn": {
+          "type": "string"
+        },
+        "sortDirection": {
+          "type": "string",
+          "enum": [
+            "ASC",
+            "DSC"
+          ]
+        },
+        "onSitemap": {
+          "type": "boolean"
+        },
+        "sitemapPriority": {
+          "type": "number",
+          "format": "double"
+        },
+        "sitemapChangeFrequency": {
+          "type": "string"
+        },
+        "showAttributes": {
+          "type": "boolean"
+        },
+        "showGraduatedPrice": {
+          "type": "boolean"
+        },
+        "showQuantity": {
+          "type": "boolean"
+        },
+        "showQuantityInfo": {
+          "type": "boolean"
+        },
+        "showSubCategories": {
+          "type": "boolean"
+        },
+        "showSubCategoryImages": {
+          "type": "boolean"
+        },
+        "showSubCategoryNames": {
+          "type": "boolean"
+        },
+        "showSubCategoryProducts": {
+          "type": "boolean"
+        },
+        "isViewModeTiled": {
+          "type": "boolean"
+        },
+        "showCategoryFilter": {
+          "type": "boolean"
+        },
+        "filterSelectionMode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "filterValueDeactivation": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "groupPermissions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/categoryGroupPermissions"
+          }
+        },
+        "example": {
+          "categoryListingTemplate": "categorie_listing.html",
+          "productListingTemplate": "product_listing_v1.html",
+          "sortColumn": "p.products_price",
+          "sortDirection": "ASC",
+          "onSitemap": true,
+          "sitemapPriority": "0.5",
+          "sitemapChangeFrequency": "daily",
+          "showAttributes": false,
+          "showGraduatedPrice": false,
+          "showQuantity": true,
+          "showQuantityInfo": false,
+          "showSubCategories": true,
+          "showSubCategoryImages": true,
+          "showSubCategoryNames": true,
+          "showSubCategoryProducts": false,
+          "isViewModeTiled": false,
+          "showCategoryFilter": false,
+          "filterSelectionMode": 0,
+          "filterValueDeactivation": 0
+        }
+      }
+    },
+    "categorySuccessResponse": {
+      "title": "categorySuccessResponse",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "categoryId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "categoryIconGetResponse": {
+      "title": "categoryIconGetResponse",
+      "type": "object"
+    },
+    "categoryImageGetResponse": {
+      "title": "categoryImageGetResponse",
+      "type": "object"
+    },
+    "GXCountry": {
+      "title": "GXCountry",
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "iso2",
+        "iso3",
+        "addressFormatId",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "iso2": {
+          "type": "string"
+        },
+        "iso3": {
+          "type": "string"
+        },
+        "addressFormatId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "boolean"
+        }
+      },
+      "example": {
+        "id": 81,
+        "name": "Deutschland",
+        "iso2": "de",
+        "iso3": "deu",
+        "addressFormatId": 3,
+        "status": true
+      }
+    },
+    "GXCountryZone": {
+      "title": "GXCountryZone",
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "iso"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "iso": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "id": 84,
+        "name": "Bremen",
+        "iso": "BRE"
+      }
+    },
+    "GXCustomerGroup": {
+      "title": "GXCustomerGroup",
+      "type": "object",
+      "required": [
+        "id",
+        "names",
+        "settings",
+        "configurations"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "names": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "settings": {
+          "$ref": "#/definitions/GXCustomerGroupSettings"
+        },
+        "configurations": {
+          "$ref": "#/definitions/GXCustomerGroupConfigurations"
+        }
+      },
+      "example": {
+        "id": 0,
+        "names": [
+          {
+            "en": "Kids",
+            "de": "Kinder"
+          }
+        ],
+        "settings": {
+          "public": false,
+          "otDiscountFlag": false,
+          "graduatedPrices": false,
+          "showPrice": true,
+          "showPriceTax": false,
+          "addTaxOt": false,
+          "discountAttributes": false,
+          "fsk18": false,
+          "fsk18Display": false,
+          "writeReviews": false,
+          "readReviews": false
+        },
+        "configurations": {
+          "minOrder": 2.5,
+          "maxOrder": 20,
+          "discount": 0.5,
+          "otDiscount": 0,
+          "unallowedPaymentModules": [
+            "paypal",
+            "cod",
+            "moneyorder"
+          ],
+          "unallowedShippingModules": [
+            "selfpickup"
+          ]
+        }
+      }
+    },
+    "GXCustomerGroupConfigurations": {
+      "title": "GXCustomerGroupConfigurations",
+      "type": "object",
+      "required": [
+        "minOrder",
+        "maxOrder",
+        "discount",
+        "otDiscount",
+        "unallowedPaymentModules",
+        "unallowedShippingModules"
+      ],
+      "properties": {
+        "discount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "otDiscount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "unallowedPaymentModules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unallowedShippingModules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "example": {
+        "minOrder": 2.5,
+        "maxOrder": 20,
+        "discount": 0.5,
+        "otDiscount": 0,
+        "unallowedPaymentModules": [
+          "paypal",
+          "cod",
+          "moneyorder"
+        ],
+        "unallowedShippingModules": [
+          "selfpickup"
+        ]
+      }
+    },
+    "GXCustomerGroupSettings": {
+      "title": "GXCustomerGroupSettings",
+      "type": "object",
+      "required": [
+        "public",
+        "otDiscountFlag",
+        "graduatedPrices",
+        "showPrice",
+        "showPriceTax",
+        "addTaxOt",
+        "discountAttributes",
+        "fsk18",
+        "fsk18Display",
+        "writeReviews",
+        "readReviews"
+      ],
+      "properties": {
+        "public": {
+          "type": "boolean"
+        },
+        "otDiscountFlag": {
+          "type": "boolean"
+        },
+        "graduatedPrices": {
+          "type": "boolean"
+        },
+        "showPrice": {
+          "type": "boolean"
+        },
+        "showPriceTax": {
+          "type": "boolean"
+        },
+        "addTaxOt": {
+          "type": "boolean"
+        },
+        "discountAttributes": {
+          "type": "boolean"
+        },
+        "fsk18": {
+          "type": "boolean"
+        },
+        "fsk18Display": {
+          "type": "boolean"
+        },
+        "writeReviews": {
+          "type": "boolean"
+        },
+        "readReviews": {
+          "type": "boolean"
+        }
+      },
+      "example": {
+        "public": false,
+        "otDiscountFlag": false,
+        "graduatedPrices": false,
+        "showPrice": true,
+        "showPriceTax": false,
+        "addTaxOt": false,
+        "discountAttributes": false,
+        "fsk18": false,
+        "fsk18Display": false,
+        "writeReviews": false,
+        "readReviews": false
+      }
+    },
+    "GXCustomer": {
+      "title": "GXCustomer",
+      "type": "object",
+      "required": [
+        "id",
+        "number",
+        "gender",
+        "firstname",
+        "lastname",
+        "dateOfBirth",
+        "vatNumber",
+        "vatNumberStatus",
+        "telephone",
+        "fax",
+        "email",
+        "statusId",
+        "isGuest",
+        "addressId",
+        "addonValues"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "number": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string",
+          "enum": [
+            "m",
+            "f"
+          ]
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "type": "string"
+        },
+        "vatNumber": {
+          "type": "string"
+        },
+        "vatNumberStatus": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "statusId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isGuest": {
+          "type": "boolean"
+        },
+        "addressId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "addonValues": {
+          "type": "string"
+        },
+        "_links": {
+          "type": "object",
+          "properties": {
+            "address": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "example": {
+        "id": 926,
+        "number": "234982739",
+        "gender": "m",
+        "firstname": "John",
+        "lastname": "Doe",
+        "dateOfBirth": "1985-02-13",
+        "vatNumber": "0923429837942",
+        "vatNumberStatus": true,
+        "telephone": "2343948798345",
+        "fax": "2093049283",
+        "email": "customer@email.de",
+        "password": "827ccb0eea8a706c4c34a16891f84e7b",
+        "statusId": 1,
+        "type": "registree",
+        "addressId": 1029,
+        "isGuest": false,
+        "addonValues": null
+      }
+    },
+    "GXCustomerEmail": {
+      "title": "GXCustomerEmail",
+      "type": "object",
+      "required": [
+        "id",
+        "subject",
+        "sender",
+        "recipient",
+        "replyTo",
+        "contentHtml",
+        "contentPlain",
+        "isPending",
+        "creationDate",
+        "sentDate",
+        "bcc",
+        "cc",
+        "attachments"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "sender": {
+          "$ref": "#/definitions/GXCustomerEmailAddress"
+        },
+        "recipient": {
+          "$ref": "#/definitions/GXCustomerEmailAddress"
+        },
+        "contentHtml": {
+          "type": "string"
+        },
+        "isPending": {
+          "type": "boolean"
+        },
+        "creationDate": {
+          "type": "string"
+        },
+        "sentDate": {
+          "type": "string"
+        },
+        "bcc": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cc": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "example": {
+        "id": 168,
+        "subject": "Test Subject",
+        "sender": {
+          "emailAddress": "sender@email.de",
+          "contactName": "John Doe"
+        },
+        "recipient": {
+          "emailAddress": "recipient@email.de",
+          "contactName": "Jane Doe"
+        },
+        "replyTo": {
+          "emailAddress": "reply_to@email.de",
+          "contactName": "John Doe (Reply To)"
+        },
+        "contentHtml": "<strong>html content</strong>",
+        "contentPlain": "plain content",
+        "isPending": false,
+        "creationDate": "2015-06-04 14:36:00",
+        "sendDate": "2015-06-04 14:36:00",
+        "bcc": [
+          {
+            "emailAddress": "bcc@email.de",
+            "contactName": "Chris Doe"
+          }
+        ],
+        "cc": [
+          {
+            "emailAddress": "cc@email.de",
+            "contactName": "Chloe Doe"
+          }
+        ],
+        "attachments": [
+          {
+            "path": "/var/www/html/shop/uploads/attachments/1434614398/myfile.txt",
+            "name": "nice_name_for_my_file.txt"
+          }
+        ]
+      }
+    },
+    "GXCustomerEmailAddress": {
+      "title": "GXCustomerEmailAddress",
+      "type": "object",
+      "required": [
+        "emailAddress",
+        "contactName"
+      ],
+      "properties": {
+        "emailAddress": {
+          "type": "string"
+        },
+        "contactName": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "emailAddress": "contact@mail.de",
+        "contactName": "John Doe"
+      }
+    },
+    "GXCustomerStatus": {
+      "title": "GXCustomerStatus",
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "image",
+        "discount",
+        "isGuest"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "discount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isGuest": {
+          "type": "boolean"
+        }
+      },
+      "example": {
+        "id": 0,
+        "name": "Admin",
+        "image": "admin_status.gif",
+        "discount": 0,
+        "isGuest": false
+      }
+    },
+    "GXManufacturer": {
+      "title": "GXManufacturer",
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "image",
+        "dateAdded",
+        "lastModified",
+        "urls"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "dateAdded": {
+          "$ref": "#/definitions/GXManufacturerDate"
+        },
+        "lastModified": {
+          "$ref": "#/definitions/GXManufacturerDate"
+        },
+        "urls": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        }
+      },
+      "example": {
+        "id": 2,
+        "name": "Breitling",
+        "image": "manufacturers/breitling-logo.png",
+        "dateAdded": {
+          "date": "2017-09-29 10:37:27.000000",
+          "timezone_type": 3,
+          "timezone": "Europe/Berlin"
+        },
+        "lastModified": {
+          "date": "2017-09-29 10:37:27.000000",
+          "timezone_type": 3,
+          "timezone": "Europe/Berlin"
+        },
+        "urls": {
+          "en": "https://breitling.com",
+          "de": "https://breitling.de"
+        }
+      }
+    },
+    "GXManufacturerDate": {
+      "title": "GXManufacturerDate",
+      "type": "object",
+      "required": [
+        "date",
+        "timezone_type",
+        "timezone"
+      ],
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "timezone_type": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "date": "2017-09-29 10:37:27.000000",
+        "timezone_type": 3,
+        "timezone": "Europe/Berlin"
+      }
+    },
+    "GXOrderStatus": {
+      "title": "GXOrderStatus",
+      "type": "object",
+      "required": [
+        "id",
+        "statusId",
+        "dateAdded",
+        "comment",
+        "customerNotified",
+        "customerId"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "statusId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "dateAdded": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "customerNotified": {
+          "type": "boolean"
+        },
+        "customerId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "example": {
+        "id": 3,
+        "statusId": 1,
+        "dateAdded": "2015-11-06 12:22:39",
+        "comment": "",
+        "customerNotified": true,
+        "customerId": 0
+      }
+    },
+    "GXOrder": {
+      "title": "GXOrder",
+      "type": "object",
+      "required": [
+        "id",
+        "statusId",
+        "purchaseDate",
+        "currencyCode",
+        "languageCode",
+        "comment",
+        "totalWeight",
+        "paymentType",
+        "shippingType",
+        "customer",
+        "addresses",
+        "items",
+        "totals",
+        "statusHistory",
+        "addonValues"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "statusId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "purchaseDate": {
+          "type": "string"
+        },
+        "currencyCode": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "totalWeight": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "paymentType": {
+          "$ref": "#/definitions/GXTitleAndModuleType"
+        },
+        "shippingType": {
+          "$ref": "#/definitions/GXTitleAndModuleType"
+        },
+        "customer": {
+          "$ref": "#/definitions/GXOrderCustomer"
+        },
+        "addresses": {
+          "$ref": "#/definitions/GXOrderAddressMain"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GXOrderItem"
+          }
+        },
+        "totals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GXOrderTotal"
+          }
+        },
+        "statusHistory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GXOrderStatusHistory"
+          }
+        },
+        "addonValues": {
+          "$ref": "#/definitions/GXOrderAddonValues"
+        }
+      },
+      "example": {
+        "id": 400210,
+        "statusId": 1,
+        "purchaseDate": "2015-11-06 12:22:39",
+        "currencyCode": "EUR",
+        "languageCode": "DE",
+        "totalWeight": 0.123,
+        "comment": "",
+        "paymentType": {
+          "title": "cod",
+          "module": "cod"
+        },
+        "shippingType": {
+          "title": "Pauschale Versandkosten (Standard)",
+          "module": "flat_flat"
+        },
+        "customer": {
+          "id": 1,
+          "number": "",
+          "email": "admin@example.org",
+          "phone": "0421 - 22 34 678",
+          "vatId": "",
+          "status": {
+            "id": 0,
+            "name": "Admin",
+            "image": "admin_status.gif",
+            "discount": 0,
+            "isGuest": false
+          }
+        },
+        "addresses": {
+          "customer": {
+            "gender": "m",
+            "firstname": "John",
+            "lastname": "Doe",
+            "company": "JD Company",
+            "street": "Test Street",
+            "houseNumber": "123",
+            "additionalAddressInfo": "1. Etage",
+            "suburb": "",
+            "postcode": "28219",
+            "city": "Bremen",
+            "countryId": 81,
+            "zoneId": 0,
+            "b2bStatus": false
+          },
+          "billing": {
+            "gender": "m",
+            "firstname": "John",
+            "lastname": "Doe",
+            "company": "JD Company",
+            "street": "Test Street",
+            "houseNumber": "123",
+            "additionalAddressInfo": "1. Etage",
+            "suburb": "",
+            "postcode": "28219",
+            "city": "Bremen",
+            "countryId": 81,
+            "zoneId": 0,
+            "b2bStatus": false
+          },
+          "delivery": {
+            "gender": "m",
+            "firstname": "John",
+            "lastname": "Doe",
+            "company": "JD Company",
+            "street": "Test Street",
+            "houseNumber": "123",
+            "additionalAddressInfo": "1. Etage",
+            "suburb": "",
+            "postcode": "28219",
+            "city": "Bremen",
+            "countryId": 81,
+            "zoneId": 0,
+            "b2bStatus": false
+          }
+        },
+        "items": [
+          {
+            "id": 1,
+            "model": "12345-s-black",
+            "name": "Ein Artikel",
+            "quantity": 1,
+            "price": 11,
+            "finalPrice": 11,
+            "tax": 19,
+            "isTaxAllowed": "true",
+            "discount": 0,
+            "shippingTimeInformation": "",
+            "checkoutInformation": "Checkout information goes here ...",
+            "quantityUnitName": "Liter",
+            "attributes": [
+              {
+                "id": 1,
+                "name": "Farbe",
+                "value": "rot",
+                "price": 0,
+                "priceType": "+",
+                "optionId": 1,
+                "optionValueId": 1,
+                "combisId": "null"
+              }
+            ],
+            "downloadInformation": [
+              {
+                "filename": "Dokument.pdf",
+                "maxDaysAllowed": 5,
+                "countAvailable": 14
+              }
+            ],
+            "addonValues": {
+              "productId": 2,
+              "quantityUnitId": 1
+            }
+          }
+        ],
+        "totals": [
+          {
+            "id": 1,
+            "title": "Zwischensumme",
+            "value": 50,
+            "valueText": "50,00 EUR",
+            "class": "ot_subtotal",
+            "sortOrder": 10
+          }
+        ],
+        "statusHistory": [
+          {
+            "id": 1,
+            "statusId": 1,
+            "dateAdded": "2015-11-06 12:22:39",
+            "comment": "",
+            "customerNotified": "true"
+          }
+        ],
+        "addonValues": {
+          "customerIp": "",
+          "downloadAbandonmentStatus": "0",
+          "serviceAbandonmentStatus": "0",
+          "ccType": "",
+          "ccOwner": "",
+          "ccNumber": "",
+          "ccExpires": "",
+          "ccStart": "",
+          "ccIssue": "",
+          "ccCvv": ""
+        }
+      }
+    },
+    "GXOrderAddonValues": {
+      "title": "GXOrderAddonValues",
+      "type": "object",
+      "required": [
+        "ccCvv",
+        "ccExpires",
+        "ccIssue",
+        "ccNumber",
+        "ccOwner",
+        "ccStart",
+        "ccType",
+        "customerIp",
+        "downloadAbandonmentStatus",
+        "serviceAbandonmentStatus"
+      ],
+      "properties": {
+        "ccCvv": {
+          "type": "string"
+        },
+        "ccExpires": {
+          "type": "string"
+        },
+        "ccIssue": {
+          "type": "string"
+        },
+        "ccNumber": {
+          "type": "string"
+        },
+        "ccOwner": {
+          "type": "string"
+        },
+        "ccStart": {
+          "type": "string"
+        },
+        "ccType": {
+          "type": "string"
+        },
+        "customerIp": {
+          "type": "string"
+        },
+        "downloadAbandonmentStatus": {
+          "type": "string"
+        },
+        "serviceAbandonmentStatus": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "ccCvv": "",
+        "ccExpires": "",
+        "ccIssue": "",
+        "ccNumber": "",
+        "ccOwner": "",
+        "ccStart": "",
+        "ccType": "",
+        "customerIp": "",
+        "downloadAbandonmentStatus": "0",
+        "serviceAbandonmentStatus": "0"
+      }
+    },
+    "GXOrderAddress": {
+      "title": "GXOrderAddress",
+      "type": "object",
+      "required": [
+        "gender",
+        "firstname",
+        "lastname",
+        "company",
+        "street",
+        "houseNumber",
+        "additionalAddressInfo",
+        "suburb",
+        "postcode",
+        "city",
+        "countryId",
+        "zoneId",
+        "b2bStatus"
+      ],
+      "properties": {
+        "gender": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "houseNumber": {
+          "type": "string"
+        },
+        "additionalAddressInfo": {
+          "type": "string"
+        },
+        "suburb": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "countryId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "zoneId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "b2bStatus": {
+          "type": "boolean"
+        }
+      },
+      "example": {
+        "customerId": 1,
+        "gender": "m",
+        "company": "Test Company",
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Test Street",
+        "houseNumber": "123",
+        "additionalAddressInfo": "1. Etage",
+        "suburb": "Test Suburb",
+        "postcode": "23983",
+        "city": "Test City",
+        "countryId": 81,
+        "zoneId": 84,
+        "class": null,
+        "b2bStatus": false
+      }
+    },
+    "GXOrderAddressMain": {
+      "title": "GXOrderAddressMain",
+      "type": "object",
+      "properties": {
+        "customer": {
+          "$ref": "#/definitions/GXOrderAddress"
+        },
+        "billing": {
+          "$ref": "#/definitions/GXOrderAddress"
+        },
+        "delivery": {
+          "$ref": "#/definitions/GXOrderAddress"
+        }
+      },
+      "example": {
+        "customer": {
+          "gender": "m",
+          "firstname": "John",
+          "lastname": "Doe",
+          "company": "JD Company",
+          "street": "Test Street",
+          "houseNumber": "123",
+          "additionalAddressInfo": "1. Etage",
+          "suburb": "",
+          "postcode": "28219",
+          "city": "Bremen",
+          "countryId": 81,
+          "zoneId": 0,
+          "b2bStatus": false
+        },
+        "billing": {
+          "gender": "m",
+          "firstname": "John",
+          "lastname": "Doe",
+          "company": "JD Company",
+          "street": "Test Street",
+          "houseNumber": "123",
+          "additionalAddressInfo": "1. Etage",
+          "suburb": "",
+          "postcode": "28219",
+          "city": "Bremen",
+          "countryId": 81,
+          "zoneId": 0,
+          "b2bStatus": false
+        },
+        "delivery": {
+          "gender": "m",
+          "firstname": "John",
+          "lastname": "Doe",
+          "company": "JD Company",
+          "street": "Test Street",
+          "houseNumber": "123",
+          "additionalAddressInfo": "1. Etage",
+          "suburb": "",
+          "postcode": "28219",
+          "city": "Bremen",
+          "countryId": 81,
+          "zoneId": 0,
+          "b2bStatus": false
+        }
+      }
+    },
+    "GXOrderCustomer": {
+      "title": "GXCustomer",
+      "type": "object",
+      "required": [
+        "id",
+        "number",
+        "email",
+        "phone",
+        "vatId",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "number": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "vatId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "$ref": "#/definitions/GXCustomerStatus"
+        }
+      },
+      "example": {
+        "customer": {
+          "id": 1,
+          "number": "",
+          "email": "admin@example.org",
+          "phone": "0421 - 22 34 678",
+          "vatId": 0,
+          "status": {
+            "id": 0,
+            "name": "Admin",
+            "image": "admin_status.gif",
+            "discount": 0,
+            "isGuest": false
+          }
+        }
+      }
+    },
+    "GXOrderItem": {
+      "title": "GXOrderItem",
+      "type": "object",
+      "required": [
+        "id",
+        "model",
+        "name",
+        "quantity",
+        "price",
+        "finalPrice",
+        "tax",
+        "isTaxAllowed",
+        "discount",
+        "shippingTimeInformation",
+        "checkoutInformation",
+        "attributes",
+        "downloadInformation",
+        "addonValues",
+        "quantityUnitName",
+        "gxCustomizerData"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "model": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "finalPrice": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "tax": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isTaxAllowed": {
+          "type": "boolean"
+        },
+        "discount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "shippingTimeInformation": {
+          "type": "string"
+        },
+        "checkoutInformation": {
+          "type": "string"
+        },
+        "attributes": {
+          "$ref": "#/definitions/GXOrderItemAttributes"
+        },
+        "downloadInformation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "addonValues": {
+          "$ref": "#/definitions/GXOrderItemAddons"
+        },
+        "quantityUnitName": {
+          "type": "string"
+        },
+        "gxCustomizerData": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "customizationData": {
+          "type": "array",
+          "items": {
+              "type": "object"
+          }
+        }
+      },
+      "example": {
+        "model": "12345-s-black",
+        "name": "Ein Artikel",
+        "quantity": 1,
+        "price": 11,
+        "finalPrice": 11,
+        "tax": 19,
+        "isTaxAllowed": true,
+        "discount": 0,
+        "shippingTimeInformation": "",
+        "checkoutInformation": "Checkout information goes here ...",
+        "quantityUnitName": "Liter",
+        "attributes": [
+          {
+            "id": 1,
+            "name": "Farbe",
+            "value": "rot",
+            "price": 0,
+            "priceType": "+",
+            "optionId": 1,
+            "optionValueId": 1,
+            "combisId": null
+          }
+        ],
+        "downloadInformation": {
+          "filename": "Dokument.pdf",
+          "maxDaysAllowed": 5,
+          "countAvailable": 14
+        },
+        "addonValues": {
+          "productId": "2",
+          "quantityUnitId": "1"
+        }
+      }
+    },
+    "GXOrderItemAddons": {
+      "title": "GXOrderItemsAddons",
+      "type": "object",
+      "required": [
+        "productId",
+        "productType"
+      ],
+      "properties": {
+        "productId": {
+          "type": "string"
+        },
+        "productType": {
+          "type": "string"
+        }
+      }
+    },
+    "GXOrderItemAttributes": {
+      "title": "GXOrderItemAttributes",
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "value",
+        "price",
+        "priceType",
+        "optionId",
+        "optionValueId",
+        "combisId"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "priceType": {
+          "type": "string"
+        },
+        "combisId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "example": {
+        "id": 1,
+        "name": "Farbe",
+        "value": "rot",
+        "price": 0,
+        "priceType": "+",
+        "combisId": null
+      }
+    },
+    "GXOrderStatusHistory": {
+      "title": "GXOrderStatusHistory",
+      "type": "object",
+      "required": [
+        "id",
+        "statusId",
+        "dateAdded",
+        "comment",
+        "customerNotified"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "statusId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "dateAdded": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "customerNotified": {
+          "type": "boolean"
+        }
+      },
+      "example": {
+        "id": 1,
+        "statusId": 1,
+        "dateAdded": "2015-11-06 12:22:39",
+        "comment": "",
+        "customerNotified": true,
+        "customerId": 1
+      }
+    },
+    "GXOrderTotal": {
+      "title": "GXOrderTotal",
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "value",
+        "valueText",
+        "class",
+        "sortOrder"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "valueText": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "example": {
+        "id": 1,
+        "title": "Zwischensumme",
+        "value": 50,
+        "valueText": "50,00 EUR",
+        "class": "ot_subtotal",
+        "sortOrder": 10
+      }
+    },
+    "GXProductImage": {
+      "title": "GXProductImage",
+      "type": "object",
+      "required": [
+        "filename",
+        "isPrimary",
+        "isVisible",
+        "imageAltText"
+      ],
+      "properties": {
+        "filename": {
+          "type": "string"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "isVisible": {
+          "type": "boolean"
+        },
+        "imageAltText": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        }
+      },
+      "example": {
+        "filename": "artikelbild_1_1.jpg",
+        "isPrimary": false,
+        "isVisible": true,
+        "imageAltText": {
+          "en": "article picture",
+          "de": "Artikelbild"
+        }
+      }
+    },
+    "productImageGetResponse": {
+      "title": "productImageGetResponse",
+      "type": "object"
+    },
+    "GXProduct": {
+      "title": "GXProduct",
+      "type": "object",
+      "required": [
+        "id",
+        "isActive",
+        "sortOrder",
+        "dateAdded",
+        "dateAvailable",
+        "lastModified",
+        "orderedCount",
+        "productModel",
+        "ean",
+        "price",
+        "discountAllowed",
+        "taxClassId",
+        "quantity",
+        "weight",
+        "shippingCosts",
+        "shippingTimeId",
+        "productTypeId",
+        "manufacturerId",
+        "isFsk18",
+        "isVpeActive",
+        "vpeId",
+        "vpeValue",
+        "name",
+        "description",
+        "shortDescription",
+        "keywords",
+        "metaTitle",
+        "metaDescription",
+        "metaKeywords",
+        "url",
+        "infoUrl",
+        "urlKeywords",
+        "checkoutInformation",
+        "viewedCount",
+        "addonValues"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "sortOrder": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "dateAdded": {
+          "type": "string"
+        },
+        "dateAvailable": {
+          "type": "string"
+        },
+        "lastModified": {
+          "type": "string"
+        },
+        "orderedCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "productModel": {
+          "type": "string"
+        },
+        "ean": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number",
+          "format": "float"
+        },
+        "discountAllowed": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "taxClassId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "weight": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "shippingCosts": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "shippingTimeId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "productTypeId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "manufacturerId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "isFsk18": {
+          "type": "boolean"
+        },
+        "isVpeActive": {
+          "type": "boolean"
+        },
+        "vpeId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "vpeValue": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "description": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "shortDescription": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "keywords": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "metaTitle": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "metaDescription": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "metaKeywords": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "url": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "infoUrl": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "urlKeywords": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "checkoutInformation": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "viewedCount": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GXProductImage"
+          }
+        },
+        "addonValues": {
+          "$ref": "#/definitions/GXOrderAddonValues"
+        }
+      },
+      "example": {
+        "id": 1,
+        "isActive": false,
+        "sortOrder": 0,
+        "dateAdded": "2015-08-08 17.19:46",
+        "dateAvailable": "2016-01-21 12:15:42",
+        "lastModified": "2016-03-16 16:01:51",
+        "orderedCount": 1,
+        "productModel": "ABC123",
+        "ean": "",
+        "price": 16.7983,
+        "discountAllowed": 0,
+        "taxClassId": 1,
+        "quantity": 998,
+        "weight": 0,
+        "shippingCosts": 0,
+        "shippingTimeId": 1,
+        "productTypeId": 1,
+        "manufacturerId": 0,
+        "isFsk18": false,
+        "isVpeActive": false,
+        "vpeID": 0,
+        "vpeValue": 0,
+        "name": {
+          "en": "Test Product",
+          "de": "Testartikel"
+        },
+        "description": {
+          "en": "<p>Test product description.</p>",
+          "de": "[TAB:Seite 1] Testartikel Beschreibung Seite 1 [TAB:Seite 2] Testartikel Beschreibung\nSeite 2 [TAB:Seite 3] Testartikel Beschreibung Seite 3"
+        },
+        "shortDescription": {
+          "en": "<p>Test product short description.</p>",
+          "de": "<p>Testartikel Kurzbeschreibung</p>"
+        },
+        "keywords": {
+          "en": "",
+          "de": ""
+        },
+        "metaTitle": {
+          "en": "",
+          "de": ""
+        },
+        "metaDescription": {
+          "en": "",
+          "de": ""
+        },
+        "metaKeywords": {
+          "en": "",
+          "de": ""
+        },
+        "url": {
+          "en": "",
+          "de": ""
+        },
+        "urlKeywords": {
+          "en": "test-product",
+          "de": "testartikel"
+        },
+        "checkoutInformation": {
+          "en": "",
+          "de": ""
+        },
+        "viewedCount": {
+          "en": 0,
+          "de": 32
+        },
+        "images": [
+          {
+            "filename": "artikelbild_1_1.jpg",
+            "isPrimary": false,
+            "isVisible": true,
+            "imageAltText": {
+              "en": "",
+              "de": ""
+            }
+          },
+          {
+            "filename": "artikelbild_1_2.jpg",
+            "isPrimary": false,
+            "isVisible": true,
+            "imageAltText": {
+              "en": "",
+              "de": ""
+            }
+          },
+          {
+            "filename": "artikelbild_1_3.jpg",
+            "isPrimary": false,
+            "isVisible": true,
+            "imageAltText": {
+              "en": "",
+              "de": ""
+            }
+          }
+        ],
+        "settings": {
+          "detailsTemplate": "standard.html",
+          "optionsDetailsTemplate": "product_options_dropdown.html",
+          "optionsListingTemplate": "product_options_dropdown.html",
+          "showOnStartpage": false,
+          "showQuantityInfo": true,
+          "showWeight": false,
+          "showPriceOffer": true,
+          "showAddedDateTime": false,
+          "priceStatus": 0,
+          "minOrder": 1,
+          "graduatedQuantity": 1,
+          "onSitemap": true,
+          "sitemapPriority": "0.5",
+          "sitemapChangeFrequency": "daily",
+          "propertiesDropdownMode": "dropdown_mode_1",
+          "startpageSortOrder": 0,
+          "showPropertiesPrice": true,
+          "usePropertiesCombisQuantity": false,
+          "usePropertiesCombisShippingTime": true,
+          "usePropertiesCombisWeight": false
+        },
+        "addonValues": {
+          "productsImageWidth": "0",
+          "productsImageHeight": "0"
+        }
+      }
+    },
+    "GXProductLinkPutRequest": {
+      "title": "GXProductLinkPutRequest",
+      "type": "object",
+      "required": [
+        "oldCategoryId",
+        "newCategoryId"
+      ],
+      "properties": {
+        "oldCategoryId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "newCategoryId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "example": {
+        "oldCategoryId": 1,
+        "newCategoryId": 2
+      }
+    },
+    "GXProductSettings": {
+      "title": "GXProductSettings",
+      "type": "object",
+      "required": [
+        "detailsTemplate",
+        "optionsDetailsTemplate",
+        "optionsListingTemplate",
+        "showOnStartpage",
+        "showQuantityInfo",
+        "showWeight",
+        "showPriceOffer",
+        "showAddedDateTime",
+        "priceStatus",
+        "minOrder",
+        "graduatedQuantity",
+        "onSitemap",
+        "sitemapPriority",
+        "sitemapChangeFrequency",
+        "propertiesDropdownMode",
+        "startpageSortOrder",
+        "showPropertiesPrice",
+        "propertiesCombisQuantityCheckMode",
+        "usePropertiesCombisShippingTime",
+        "usePropertiesCombisWeight",
+        "groupPermissions"
+      ],
+      "properties": {
+        "detailsTemplate": {
+          "type": "string"
+        },
+        "optionsDetailsTemplate": {
+          "type": "string"
+        },
+        "optionsListingTemplate": {
+          "type": "string"
+        },
+        "showOnStartpage": {
+          "type": "boolean"
+        },
+        "showQuantityInfo": {
+          "type": "boolean"
+        },
+        "showWeight": {
+          "type": "boolean"
+        },
+        "showPriceOffer": {
+          "type": "boolean"
+        },
+        "showAddedDateTime": {
+          "type": "boolean"
+        },
+        "priceStatus": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "minOrder": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "graduatedQuantity": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "onSitemap": {
+          "type": "boolean"
+        },
+        "sitemapPriority": {
+          "type": "string"
+        },
+        "sitemapChangeFrequency": {
+          "type": "string"
+        },
+        "propertiesDropdownMode": {
+          "type": "string"
+        },
+        "startpageSortOrder": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "showPropertiesPrice": {
+          "type": "boolean"
+        },
+        "propertiesCombisQuantityCheckMode": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "usePropertiesCombisShippingTime": {
+          "type": "boolean"
+        },
+        "usePropertiesCombisWeight": {
+          "type": "boolean"
+        },
+        "groupPermissions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GXProductSettingsGroupPermission"
+          }
+        }
+      },
+      "example": {
+        "settings": {
+          "detailsTemplate": "standard.html",
+          "optionsDetailsTemplate": "product_options_dropdown.html",
+          "optionsListingTemplate": "product_options_dropdown.html",
+          "showOnStartpage": false,
+          "showQuantityInfo": true,
+          "showWeight": false,
+          "showPriceOffer": true,
+          "showAddedDateTime": false,
+          "priceStatus": 0,
+          "minOrder": 1,
+          "graduatedQuantity": 1,
+          "onSitemap": true,
+          "sitemapPriority": "0.5",
+          "sitemapChangeFrequency": "daily",
+          "propertiesDropdownMode": "dropdown_mode_1",
+          "startpageSortOrder": 0,
+          "showPropertiesPrice": true,
+          "usePropertiesCombisQuantity": false,
+          "usePropertiesCombisShippingTime": true,
+          "usePropertiesCombisWeight": false
+        }
+      }
+    },
+    "GXProductSettingsGroupPermission": {
+      "title": "GXProductSettingsGroupPermission",
+      "type": "object",
+      "required": [
+        "id",
+        "isPermitted"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "isPermitted": {
+          "type": "boolean"
+        }
+      },
+      "example": {
+        "id": 0,
+        "isPermitted": false
+      }
+    },
+    "productCategoryLinkID": {
+      "title": "productCategoryLinkID",
+      "type": "object",
+      "properties": {
+        "categoryId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "example": {
+        "categoryId": 57
+      }
+    },
+    "productLinksGetResponse": {
+      "title": "productLinksGetResponse",
+      "type": "object"
+    },
+    "GXQuantityUnit": {
+      "title": "GXQuantityUnit",
+      "type": "object",
+      "required": [
+        "id",
+        "names"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "names": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        }
+      },
+      "example": {
+        "id": 2,
+        "names": {
+          "en": "piece",
+          "de": "Stück"
+        }
+      }
+    },
+    "GXShopInfo": {
+      "title": "GXShopInfo",
+      "type": "object",
+      "required": [
+        "url",
+        "shopName",
+        "owner",
+        "company",
+        "firstname",
+        "lastname",
+        "street",
+        "houseNumber",
+        "postcode",
+        "city",
+        "state",
+        "country",
+        "telephone",
+        "fax",
+        "email",
+        "zoneId",
+        "countryId",
+        "template",
+        "shopVersion"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "shopName": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "houseNumber": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "zoneId": {
+          "type": "string"
+        },
+        "countryId": {
+          "type": "string"
+        },
+        "template": {
+          "type": "string"
+        },
+        "shopVersion": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "url": "https://example.org/",
+        "shopName": "Mein Gambio Shop",
+        "owner": "John Doe",
+        "company": "Test Company",
+        "firstname": "John",
+        "lastname": "Doe",
+        "street": "Test Street",
+        "houseNumber": 1,
+        "postcode": "12345",
+        "city": "Bremen",
+        "state": "Bremen",
+        "country": "Deutschland",
+        "telephone": "0123456789",
+        "fax": "0123456789",
+        "email": "john@doe.com",
+        "zoneId": "1255",
+        "countryId": "81",
+        "template": "Honeygrid",
+        "shopVersion": "3.8"
+      }
+    },
+    "GXTaxClass": {
+      "title": "GXTaxClass",
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "taxRates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GXTaxClassRate"
+          }
+        }
+      },
+      "example": {
+        "id": "1",
+        "title": "Standardsatz",
+        "description": "",
+        "taxRates": [
+          {
+            "id": "1",
+            "taxZoneId": "5",
+            "taxClassId": "1",
+            "taxRate": "19.0000",
+            "description": "19% MwSt."
+          },
+          {
+            "id": "3",
+            "taxZoneId": "6",
+            "taxClassId": "1",
+            "taxRate": "0.0000",
+            "description": "EU-AUS-UST 0%"
+          }
+        ]
+      }
+    },
+    "GXTaxClassRate": {
+      "title": "GXTaxClassRate",
+      "type": "object",
+      "required": [
+        "id",
+        "taxZoneId",
+        "taxClassId",
+        "taxRate",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "taxZoneId": {
+          "type": "string"
+        },
+        "taxClassId": {
+          "type": "string"
+        },
+        "taxRate": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "id": "1",
+        "taxZoneId": "5",
+        "taxClassId": "1",
+        "taxRate": "19.0000",
+        "description": "19% MwSt."
+      }
+    },
+    "GXTaxZone": {
+      "title": "GXTaxZone",
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "id": "5",
+        "name": "Steuerzone EU",
+        "description": "Steuerzone für die EU"
+      }
+    },
+    "GXVPE": {
+      "title": "GXVPE",
+      "type": "object",
+      "required": [
+        "id",
+        "default",
+        "names"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "names": {
+          "$ref": "#/definitions/GXMultiLangOption"
+        }
+      },
+      "example": {
+        "names": {
+          "en": "API Packing unit",
+          "de": "API Verpackungseinheit"
+        }
+      }
+    },
+    "GXZone": {
+      "title": "GXZone",
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "iso"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "iso": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "id": 84,
+        "name": "Bremen",
+        "iso": "BRE"
+      }
+    },
+    "GXFilenameChange": {
+      "title": "GXFilenameChange",
+      "type": "object",
+      "properties": {
+        "oldFilename": {
+          "type": "string"
+        },
+        "newFilename": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "oldFilename": "my-old-file.png",
+        "newFilename": "my-new-file.png"
+      }
+    },
+    "GXMultiLangOption": {
+      "title": "GXMultiLangOption",
+      "type": "object",
+      "required": [
+        "langCode",
+        "text"
+      ],
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "en": "English Content",
+        "de": "Deutscher Inhalt"
+      }
+    },
+    "GXTitleAndModuleType": {
+      "title": "GXPaymentType",
+      "type": "object",
+      "required": [
+        "title",
+        "module"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "module": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "title": "Payment Title",
+        "module": "Payment Module"
+      }
+    },
+    "defaultErrorResponse": {
+      "title": "defaultErrorResponse",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "uri": {
+              "type": "object",
+              "properties": {
+                "root": {
+                  "type": "string"
+                },
+                "resource": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/defaultErrorsObject"
+          }
+        }
+      }
+    },
+    "defaultErrorStackObject": {
+      "title": "defaultErrorStackObject",
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "line": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "function": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "defaultErrorsObject": {
+      "title": "defaultErrorsObject",
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "line": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "stack": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/defaultErrorStackObject"
+          }
+        }
+      }
+    },
+    "defaultSuccessResponseWithCustomerGroupID": {
+      "title": "defaultSuccessResponseWithCustomerGroupID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "customerGroupId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithCustomerID": {
+      "title": "defaultSuccessResponseWithCustomerID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "customerId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithEmailID": {
+      "title": "defaultSuccessResponseWithEmailID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "emailId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithFilename": {
+      "title": "defaultSuccessResponseWithFilename",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        }
+      }
+    },
+    "defaultSuccessResponseWithManufacturersID": {
+      "title": "defaultSuccessResponseWithManufacturersID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "manufacturersId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithOrderID": {
+      "title": "defaultSuccessResponseWithOrderID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithOrderIDAndOrderItemID": {
+      "title": "defaultSuccessResponseWithOrderIDAndOrderItemID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderItemId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithOrderIDAndOrderItemIDAndOrderItemAttributeID": {
+      "title": "defaultSuccessResponseWithOrderIDAndOrderItemIDAndOrderItemAttributeID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderItemId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderItemAttributeId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithOrderIDAndOrderTotalID": {
+      "title": "defaultSuccessResponseWithOrderIDAndOrderTotalID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "orderTotalId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithOrderStatusID": {
+      "title": "defaultSuccessResponseWithOrderStatusID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "orderStatusId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithProductID": {
+      "title": "defaultSuccessResponseWithProductID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithProductIDAndCategoryID": {
+      "title": "defaultSuccessResponseWithProductIDAndCategoryID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "categoryId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithProductIDAndCategoryIDs": {
+      "title": "defaultSuccessResponseWithProductIDAndCategoryIDs",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "oldCategoryId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "newCategoryId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithQuantityUnitID": {
+      "title": "defaultSuccessResponseWithQuantityUnitID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "quantityUnitId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultSuccessResponseWithVpeID": {
+      "title": "defaultSuccessResponseWithVpeID",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "vpeId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "defaultUpdateResponseWithFilenames": {
+      "title": "defaultUpdateResponseWithFilenames",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "oldFilename": {
+          "type": "string"
+        },
+        "newFilename": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

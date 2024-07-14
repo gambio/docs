@@ -1,0 +1,40 @@
+'/orders/{order_id}/items/{item_id}/attributes':
+    post:
+        tags:
+            - orders
+        summary: 'Create Order Item Attribute'
+        description: 'Use this method to create a new order item attribute to an existing order item. The order item attribute JSON object is the same as the one included in the full order representation. There are two different order item variation systems in the shop, the "attributes" and the "properties". Both of them define a variation of an order item (e.g. color, size etc). You must always use only one of them for a single order item.'
+        operationId: createOrderTimeAttribute
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: item_id
+                in: path
+                description: 'The item ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXOrderItemAttributes
+                in: body
+                description: 'The order item attributes'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXOrderItemAttributes'
+        responses:
+            '201':
+                description: 'Upon success, returns the order item attributes'
+                schema:
+                    $ref: '#/definitions/GXOrderItemAttributes'
+            '400':
+                description: '(Order item attribute data missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

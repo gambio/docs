@@ -1,0 +1,30 @@
+'/customer_groups/{customer_group_id}':
+    get:
+        tags:
+            - customer_groups
+        summary: 'Get customer groups'
+        description: 'Get multiple or a single customer groups record through the GET method'
+        operationId: getCustomerGroup
+        produces:
+            - application/json
+        parameters:
+            -
+                name: customer_group_id
+                in: path
+                description: 'The customer group ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns a customer groups'
+                schema:
+                    $ref: '#/definitions/GXCustomerGroup'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(CustomerGroups Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

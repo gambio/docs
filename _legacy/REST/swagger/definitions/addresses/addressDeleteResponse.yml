@@ -1,0 +1,19 @@
+addressDeleteResponse:
+    title: addressDeleteResponse
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        addressId:
+            type: integer
+            format: int64
+    example:
+        code: 200
+        status: "success"
+        action: "delete"
+        addressId: 811

@@ -1,0 +1,42 @@
+GXOrderItemAttributes:
+    title: GXOrderItemAttributes
+    type: object
+    required:
+        - name
+        - value
+        - price
+        - priceType
+        - optionId
+        - optionValueId
+        - combisId
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        name:
+            type: string
+        value:
+            type: string
+        price:
+            type: integer
+            format: int64
+        priceType:
+            type: string
+        combisId:
+            type: integer
+            format: int64
+        optionId:
+            type: integer
+            format: int64
+        optionValueId:
+            type: integer
+            format: int64
+    example:
+        name: "Farbe"
+        value: "rot"
+        price: 0
+        priceType: ""
+        combisId: 1
+        optionId:
+        optionValueId:

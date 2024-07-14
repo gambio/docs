@@ -1,0 +1,28 @@
+/product_images:
+    delete:
+        tags:
+            - product_images
+        summary: 'Delete Product Image'
+        description: 'Remove the product image file from the server. This method will always provide a successful response even if the image file was not found.'
+        operationId: deleteProductImage
+        parameters:
+            -
+                name: GXFilename
+                in: body
+                required: true
+                description: 'Product image filename'
+                schema:
+                    type: object
+                    items:
+                        $ref: '#/definitions/GXFilename'
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted filename'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithFilename'
+            '400':
+                description: '(Missing data)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

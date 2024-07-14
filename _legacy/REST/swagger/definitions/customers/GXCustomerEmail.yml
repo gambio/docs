@@ -1,0 +1,72 @@
+GXCustomerEmail:
+    title: GXCustomerEmail
+    type: object
+    required:
+        - subject
+        - sender
+        - recipient
+        - replyTo
+        - contentHtml
+        - contentPlain
+        - isPending
+        - creationDate
+        - sentDate
+        - bcc
+        - cc
+        - attachments
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        subject:
+            type: string
+        sender:
+            $ref: '#/definitions/GXCustomerEmailAddress'
+        recipient:
+            $ref: '#/definitions/GXCustomerEmailAddress'
+        contentHtml:
+            type: string
+        isPending:
+            type: boolean
+        creationDate:
+            type: string
+        sentDate:
+            type: string
+        bcc:
+            type: array
+            items:
+                type: string
+        cc:
+            type: array
+            items:
+                type: string
+        attachments:
+            type: array
+            items:
+                type: string
+    example:
+        subject: "Test Subject"
+        sender:
+            emailAddress: "sender@email.de"
+            contactName: "John Doe"
+        recipient:
+            emailAddress: "recipient@email.de"
+            contactName: "Jane Doe"
+        replyTo:
+            emailAddress: "reply_to@email.de"
+            contactName: "John Doe (Reply To)"
+        contentHtml: "<strong>html content</strong>"
+        contentPlain: "plain content"
+        isPending: false
+        creationDate: "2015-06-04 14:36:00"
+        sendDate: "2015-06-04 14:36:00"
+        bcc:
+            - emailAddress: "bcc@email.de"
+              contactName: "Chris Doe"
+        cc:
+            - emailAddress: "cc@email.de"
+              contactName: "Chloe Doe"
+        attachments:
+            - path: "/var/www/html/shop/uploads/attachments/1434614398/myfile.txt"
+              name: "nice_name_for_my_file.txt"

@@ -1,0 +1,30 @@
+/withdrawals:
+    post:
+        tags:
+            - withdrawal
+        summary: 'Create Withdrawal'
+        description: 'Create a new withdrawal.'
+        operationId: postWithdrawals
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: GXWithdrawal
+                in: body
+                description: 'The withdrawal to be created'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXWithdrawal'
+        responses:
+            '201':
+                description: 'Upon success, returns the newly created withdrawal'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXWithdrawal'
+            '400':
+                description: '(Missing data)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

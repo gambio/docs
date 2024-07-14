@@ -1,0 +1,37 @@
+'/emails/{email_id}':
+    post:
+        tags:
+            - emails
+        summary: 'Send Email'
+        description: 'This method will send and save a new or an existing email to the system. If you include mail attachments then they must already exist in the server. You will need to provide the full path to the file. To see an example usage take a look at `docs/REST/samples/email-service/send_email.php`'
+        operationId: sendEmail
+        produces:
+            - application/json
+        parameters:
+            -
+                name: email_id
+                in: path
+                description: 'The email ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXCustomerEmail
+                in: body
+                description: 'The email'
+                required: false
+                schema:
+                    $ref: '#/definitions/GXCustomerEmail'
+        responses:
+            '201':
+                description: 'Upon success, returns the email send'
+                schema:
+                    $ref: '#/definitions/GXCustomerEmail'
+            '400':
+                description: '(Email data missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Email record not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

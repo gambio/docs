@@ -1,0 +1,8 @@
+{
+    "id": "Childgrid",
+    "title": "Childgrid",
+    "extends": "Honeygrid",
+    "thumbnail": "screenshot-theme-2.png",
+    "author": "Gambio GmbH",
+    "version": "1.0.0"
+}

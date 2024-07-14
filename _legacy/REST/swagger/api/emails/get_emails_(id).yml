@@ -1,0 +1,30 @@
+'/emails/{email_id}':
+    get:
+        tags:
+            - emails
+        summary: 'Get Emails'
+        description: 'Get a single email record through the GET method. This resource supports the following GET parameters as described in the first section of documentation: sorting minimization, search, pagination. Additionally you can filter emails by providing the GET parameter "state=pending" or "state=sent". These filter parameters do not apply when a single emails record is selected (e.g. api.php/v2/emails/84) or when the emails are searched by the "q" parameter. To see an example usage take a look at `docs/REST/samples/email-service/fetch_email.php`'
+        operationId: getEmails
+        produces:
+            - application/json
+        parameters:
+            -
+                name: email_id
+                in: path
+                description: 'The email ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns an email'
+                schema:
+                    $ref: '#/definitions/GXCustomerEmail'
+            '400':
+                description: '(Invalid Type Filter)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(Customer Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

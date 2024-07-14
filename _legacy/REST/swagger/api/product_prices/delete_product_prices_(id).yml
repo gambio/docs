@@ -1,0 +1,26 @@
+/product_prices/{product_id}:
+    delete:
+        tags:
+            - product_prices
+        summary: 'Delete Product Prices'
+        description: 'Deletes all customer group- and graduated prices of a product. This method will always return success even if the product does not exist.'
+        operationId: deleteProductPrices
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product id'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the product id of the deleted prices'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithProductID'
+            '400':
+                description: '(Missing or invalid id)'

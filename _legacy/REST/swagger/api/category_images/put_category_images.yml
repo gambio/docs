@@ -1,0 +1,18 @@
+/category_images:
+    put:
+        tags:
+            - category_images
+        summary: 'Rename Image File'
+        description: 'Use this method to rename an existing image file.'
+        operationId: renameCategoryImages
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the renamed filename'
+                schema:
+                    $ref: '#/definitions/defaultUpdateResponseWithFilenames'
+            '400':
+                description: '(Missing parameters)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

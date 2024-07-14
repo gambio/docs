@@ -1,0 +1,25 @@
+'/additional_fields/{field_id}':
+    delete:
+        tags:
+            - additional_fields
+        summary: 'Delete additional fields'
+        description: 'Remove an additional field record from the system. This method will always return success even if the additional field record does not exist (due to internal architecture decisions, which strive to avoid unnecessary failures).'
+        operationId: deleteAdditionalField
+        produces:
+            - application/json
+        parameters:
+            -
+                name: field_id
+                in: path
+                description: 'The ID of the additional field'
+                required: true
+                type: 'string'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted additional field'
+                schema:
+                    $ref: '#/definitions/additionalFieldDeleteResponse'
+            '400':
+                description: '(Address record ID not provided)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

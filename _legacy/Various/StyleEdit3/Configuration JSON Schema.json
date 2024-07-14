@@ -1,0 +1,309 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "name": {
+      "id": "name",
+      "type": "string",
+      "description": "The style configuration name will define the title displayed in StyleEdit list."
+    },
+    "thumbnail": {
+      "id": "thumbnail",
+      "type": "string",
+      "name": "Name of the thumbnail image to be displayed for boilerplate configurations."
+    },
+    "boilerplate": {
+      "id": "boilerplate",
+      "type": "string",
+      "description": "Provide a boilerplate filename if the template was generated based on a boilerplate json."
+    },
+    "isActive": {
+      "id": "isActive",
+      "type": "boolean",
+      "description": "Determines whether the current configuration file is the active one."
+    },
+    "creationDate": {
+      "id": "creationDate",
+      "type": "string",
+      "description": "The file creation date in the following format \"Y-m-d H:i:s\"."
+    },
+    "modificationDate": {
+      "id": "modificationDate",
+      "type": "string",
+      "description": "Enter the modification date."
+    },
+    "boilerplateModificationDate": {
+      "id": "boilerplateModificationDate",
+      "type": "string",
+      "description": "Enter the boilerplate modification date."
+    },
+    "settings": {
+      "id": "settings",
+      "type": "array",
+      "items": [
+        {
+          "id": "0",
+          "type": "object",
+          "properties": {
+            "name": {
+              "id": "name",
+              "type": "string"
+            },
+            "type": {
+              "id": "type",
+              "type": "string"
+            },
+            "entries": {
+              "id": "entries",
+              "type": "array",
+              "items": [
+                {
+                  "id": "0",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "id": "name",
+                      "type": "string",
+                      "description": "Give the variable name of the SASS file."
+                    },
+                    "type": {
+                      "id": "type",
+                      "type": "string",
+                      "description": "Can be either \"switch\", \"text\", \"select\", \"color\""
+                    },
+                    "value": {
+                      "id": "value",
+                      "type": "boolean",
+                      "description": "Give an appopriate value for the entry."
+                    }
+                  }
+                },
+                {
+                  "id": "1",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "id": "name",
+                      "type": "string"
+                    },
+                    "type": {
+                      "id": "type",
+                      "type": "string"
+                    },
+                    "value": {
+                      "id": "value",
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "id": "2",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "id": "name",
+                      "type": "string"
+                    },
+                    "type": {
+                      "id": "type",
+                      "type": "string"
+                    },
+                    "value": {
+                      "id": "value",
+                      "type": "string"
+                    },
+                    "defaultMetric": {
+                      "id": "defaultMetric",
+                      "type": "string",
+                      "description": "The default metric will be used if thje user gives a plain number value was provided."
+                    }
+                  }
+                },
+                {
+                  "id": "3",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "id": "name",
+                      "type": "string"
+                    },
+                    "type": {
+                      "id": "type",
+                      "type": "string"
+                    },
+                    "value": {
+                      "id": "value",
+                      "type": "string"
+                    },
+                    "options": {
+                      "id": "options",
+                      "type": "array",
+                      "items": [
+                        {
+                          "id": "0",
+                          "type": "string"
+                        },
+                        {
+                          "id": "1",
+                          "type": "string"
+                        },
+                        {
+                          "id": "2",
+                          "type": "string"
+                        },
+                        {
+                          "id": "3",
+                          "type": "string"
+                        },
+                        {
+                          "id": "4",
+                          "type": "string"
+                        },
+                        {
+                          "id": "5",
+                          "type": "string"
+                        }
+                      ],
+                      "description": "\"Select\" setting types require an options entry in order to display them in a list box."
+                    }
+                  }
+                }
+              ],
+              "description": "Contains setting entries that define various parameters of the template."
+            }
+          }
+        },
+        {
+          "id": "1",
+          "type": "object",
+          "properties": {
+            "name": {
+              "id": "name",
+              "type": "string"
+            },
+            "type": {
+              "id": "type",
+              "type": "string"
+            },
+            "entries": {
+              "id": "entries",
+              "type": "array",
+              "items": [
+                {
+                  "id": "0",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "id": "name",
+                      "type": "string"
+                    },
+                    "type": {
+                      "id": "type",
+                      "type": "string"
+                    },
+                    "value": {
+                      "id": "value",
+                      "type": "boolean"
+                    },
+                    "position": {
+                      "id": "position",
+                      "type": "integer",
+                      "description": "If the setting collection has the type of \"boxes\" then the entries need this value to define the correct setting possiton."
+                    }
+                  }
+                },
+                {
+                  "id": "1",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "id": "name",
+                      "type": "string"
+                    },
+                    "type": {
+                      "id": "type",
+                      "type": "string"
+                    },
+                    "value": {
+                      "id": "value",
+                      "type": "boolean"
+                    },
+                    "position": {
+                      "id": "position",
+                      "type": "integer"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "description": "Contains various collections of settings."
+    },
+    "customStyles": {
+      "id": "customStyles",
+      "type": "array",
+      "items": [
+        {
+          "id": "0",
+          "type": "object",
+          "properties": {
+            "type": {
+              "id": "type",
+              "type": "string",
+              "description": "This can be one of the \"beforeVariables\", \"afterVariables\" or \"atTheEnd\""
+            },
+            "content": {
+              "id": "content",
+              "type": "string",
+              "description": "Contains plain CSS or SASS code that will be rendered with the template."
+            }
+          }
+        },
+        {
+          "id": "1",
+          "type": "object",
+          "properties": {
+            "type": {
+              "id": "type",
+              "type": "string",
+              "description": "This can be one of the \"beforeVariables\", \"afterVariables\" or \"atTheEnd\""
+            },
+            "content": {
+              "id": "content",
+              "type": "string",
+              "description": "Contains plain CSS or SASS code that will be rendered with the template."
+            }
+          }
+        },
+        {
+          "id": "2",
+          "type": "object",
+          "properties": {
+            "type": {
+              "id": "type",
+              "type": "string",
+              "description": "This can be one of the \"beforeVariables\", \"afterVariables\" or \"atTheEnd\""
+            },
+            "content": {
+              "id": "content",
+              "type": "string",
+              "description": "Contains plain CSS or SASS code that will be rendered with the template."
+            }
+          }
+        }
+      ],
+      "description": "Contains the custom styles of the configuration."
+    }
+  },
+  "required": [
+    "name",
+    "isActive",
+    "creationDate",
+    "modificationDate",
+    "settings",
+    "customStyles"
+  ]
+}

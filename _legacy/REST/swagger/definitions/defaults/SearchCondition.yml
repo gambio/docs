@@ -1,0 +1,19 @@
+SearchCondition:
+    title: SearchCondition
+    type: object
+    required:
+        - search
+    properties:
+        search:
+            type: array
+            items:
+                type: string
+            description: "Contains the search condition. Further information can be found on the <a href='/gambio-gx3-api/guides/search-example'>Search Example</a> page."
+    example:
+        search:
+            -
+                match:
+                    database_table.database_attribute: "some value"
+            -
+                match:
+                    another_database_table.another_database_attribute: "some other value"

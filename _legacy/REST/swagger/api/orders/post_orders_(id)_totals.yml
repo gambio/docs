@@ -1,0 +1,33 @@
+'/orders/{order_id}/totals':
+    post:
+        tags:
+            - orders
+        summary: 'Create Order Total'
+        description: 'Creates a new order total entry to the existing order. The order total JSON format must be the same with the "totals" entries in the original order total.'
+        operationId: createOrderTotal
+        produces:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXOrderTotal
+                in: body
+                description: 'The order total'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXOrderTotal'
+        responses:
+            '201':
+                description: 'Upon success, returns the order total'
+                schema:
+                    $ref: '#/definitions/GXOrderTotal'
+            '400':
+                description: '(Order total data missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

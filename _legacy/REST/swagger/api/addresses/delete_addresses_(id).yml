@@ -1,0 +1,25 @@
+'/addresses/{address_id}':
+    delete:
+        tags:
+            - addresses
+        summary: 'Delete Address'
+        description: 'Remove an address record from the system. This method will always return success even if the address record does not exist (due to internal architecture decisions, which strive to avoid unnecessary failures).'
+        operationId: deleteAddress
+        produces:
+            - application/json
+        parameters:
+            -
+                name: address_id
+                in: path
+                description: 'The ID of the address to be removed'
+                required: true
+                type: 'string'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted addressID'
+                schema:
+                    $ref: '#/definitions/addressDeleteResponse'
+            '400':
+                description: '(Address record ID not provided)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

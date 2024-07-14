@@ -1,0 +1,36 @@
+GXCustomerArray:
+    title: GXCustomerArray
+    type: array
+    items:
+        $ref: '#/definitions/GXCustomer'
+    required:
+        - GXCustomer
+    example:
+        -
+
+            number: "234982739"
+            gender: "m"
+            firstname: "John"
+            lastname: "Doe"
+            dateOfBirth: "1985-02-13"
+            vatNumber: "0923429837942"
+            vatNumberStatus: true
+            telephone: "2343948798345"
+            fax: "2093049283"
+            email: "customer@email.de"
+            password: "827ccb0eea8a706c4c34a16891f84e7b"
+            statusId: "1"
+            type: "registree"
+            isGuest: false
+            addonValues:
+            address:
+                company: "Test Company"
+                b2bStatus: false
+                street: "Test Street"
+                houseNumber: "5"
+                additionalAddressInfo: "6. Etage"
+                suburb: "Test Suburb"
+                postcode: "23983"
+                city: "Test City"
+                countryId: "81"
+                zoneId: "1355"

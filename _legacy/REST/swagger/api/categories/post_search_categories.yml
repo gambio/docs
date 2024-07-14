@@ -1,0 +1,26 @@
+/categories/search:
+    post:
+        tags:
+            - categories
+        summary: 'Search Categories'
+        description: 'Returns multiple categories that are respecting the given search condition. Further information about defining a search condition can be found in the <a href="/gambio-gx3-api/guides/search-example">Search Example</a>.'
+        operationId: searchCategories
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: SearchCondition
+                in: body
+                description: 'The search condition'
+                required: true
+                schema:
+                    $ref: '#/definitions/SearchCondition'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of categories'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXCategory'

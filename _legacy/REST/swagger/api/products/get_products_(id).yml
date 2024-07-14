@@ -1,0 +1,26 @@
+'/products/{product_id}':
+    get:
+        tags:
+            - products
+        summary: 'Get Products'
+        description: 'Get a single product record through a GET request. This method supports all the GET parameters that are mentioned in the "Introduction" section of this documentation. To see an example usage take a look at `docs/REST/samples/product-service/remove_product.php`'
+        operationId: getProduct
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the specified product.'
+                schema:
+                    $ref: '#/definitions/GXProduct'
+            '404':
+                description: '(Product does not exist)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

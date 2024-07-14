@@ -1,0 +1,32 @@
+[
+    {
+        "name": "gx-header-bg",
+        "type": "text",
+        "value": "#80ba49"
+    },
+    {
+        "name": "some-padding-right",
+        "value": "right",
+        "type": "text"
+    },
+    {
+        "name": "some-padding-bottom",
+        "value": "bottom",
+        "type": "text"
+    },
+    {
+        "name": "header",
+        "value": "variants/header/logoRight",
+        "type": "variant"
+    },
+    {
+        "name": "some-padding-left",
+        "value": "left",
+        "type": "text"
+    },
+    {
+        "name": "some-unit",
+        "value": "unit",
+        "type": "radio"
+    }
+]

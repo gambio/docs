@@ -1,0 +1,25 @@
+'/orders':
+    get:
+        tags:
+            - orders
+        summary: 'Get Orders (Multiple)'
+        description: 'Get multiple order list item records through a GET request. This method supports all the GET parameters that are mentioned in the "Introduction" section of this documentation. Important: Whenever you make requests that will return multiple orders the response will contain a smaller version of each order record called order-list-item. This is done for better performance because the creation of a complete order record takes significant time (many objects are involved). If you still need the complete data of an order record you will have to make an extra GET request with the ID provided.'
+        operationId: getOrdersMultiple
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/changed'
+            - $ref: '#/parameters/modified'
+            - $ref: '#/parameters/deleted'
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns the order list item resources'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXOrderListItem'

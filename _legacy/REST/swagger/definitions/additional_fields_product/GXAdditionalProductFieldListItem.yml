@@ -1,0 +1,29 @@
+GXAdditionalProductFieldListItem:
+    title: GXAdditionalProductFieldListItem
+    type: object
+    required:
+        - id
+        - values
+    properties:
+        id:
+            type: integer
+            format: int64
+            example: '1'
+        values:
+            type: object
+            required:
+                - en
+                - de
+            properties:
+                en:
+                    type: string
+                de:
+                    type: string
+            example:
+                en: "English Content"
+                de: "Deutscher Inhalt"
+    example:
+        id: 1
+        values:
+            en: "English Content"
+            de: "Deutscher Inhalt"

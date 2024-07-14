@@ -1,0 +1,22 @@
+/languages:
+    get:
+        tags:
+            - languages
+        summary: 'Get languages (Multiple)'
+        description: 'Get multiple languages item records through a GET request. This method supports no additional GET parameters.'
+        operationId: getLanguagesMultiple
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'returns a list of language list item resources'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXLanguageListItem'

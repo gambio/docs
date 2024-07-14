@@ -1,0 +1,37 @@
+/withdrawals/{withdrawal_id}:
+    put:
+        tags:
+            - withdrawal
+        summary: 'Update Withdrawal'
+        description: 'Use this method to update an existing withdrawal record.'
+        operationId: updateWithdrawals
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: withdrawal_id
+                in: path
+                description: 'The withdrawal ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXWithdrawal
+                in: body
+                description: 'The withdrawal to be updated'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXWithdrawal'
+        responses:
+            '201':
+                description: 'Upon success, returns the updated withdrawal'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXWithdrawal'
+            '400':
+                description: '(Empty request body / Withdrawal record ID was not provided or is invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

@@ -1,0 +1,56 @@
+GXWithdrawalOrder:
+    title: GXWithdrawalOrder
+    type: object
+    required:
+        - customerId
+        - customerGender
+        - customerFirstname
+        - customerLastName
+        - customerStreetAddress
+        - customerPostCode
+        - customerCity
+        - customerCountry
+        - customerEmail
+        - orderDate
+        - deliveryDate
+    properties:
+        orderId:
+            type: integer
+            format: int64
+            readOnly: true
+        customerId:
+            type: integer
+            format: int64
+        customerGender:
+            type: string
+        customerFirstname:
+            type: string
+        customerLastName:
+            type: string
+        customerStreetAddress:
+            type: string
+        customerPostCode:
+            type: string
+        customerCity:
+            type: string
+        customerCountry:
+            type: string
+        customerEmail:
+            type: string
+        orderDate:
+            type: string
+        deliveryDate:
+            type: string
+    example:
+        orderId: 400276
+        customerId: 0
+        customerGender: "Frau"
+        customerFirstName: "Maxi"
+        customerLastName: "Musterfrau"
+        customerStreetAddress: "Musterstraße 3"
+        customerPostCode: "28219"
+        customerCity: "Bremen"
+        customerCountry: "Germany"
+        customerEmail: "m.musterfrau@example.com"
+        orderDate: "2018-05-14 12:45:07"
+        deliveryDate: "1000-01-01 00:00:00"

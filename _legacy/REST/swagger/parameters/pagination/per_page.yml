@@ -1,0 +1,8 @@
+per_page:
+    name: per_page
+    in: query
+    type: integer
+    format: int64
+    required: false
+    description: '*Optional parameter*. If provided, limits the amount of records in the response. Defaults to 50.'
+    default: 50

@@ -1,0 +1,22 @@
+'/special_offers':
+    get:
+        tags:
+            - special_offers
+        summary: 'Get Special Offers (Multiple)'
+        description: 'Get multiple special offers record through the GET method.'
+        operationId: getMultipleSpecialOffers
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of paginated special offer items'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXSpecialOffer'

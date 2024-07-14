@@ -1,0 +1,14 @@
+defaultSuccessResponseWithSpecialOfferID:
+    title: defaultSuccessResponseWithSpecialOfferID
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        specialOfferId:
+            type: integer
+            format: int64

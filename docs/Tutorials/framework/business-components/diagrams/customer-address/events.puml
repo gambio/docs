@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+package Gambio\Admin\Modules\Customer\Submodules\Address\Model\Events {
+	left to right direction
+
+	class CustomerAddressPersonalInformationUpdated{
+		- customerAddressId: CustomerAddressId
+		- personalInformation: PersonalInformation
+		+ {static} create(CustomerAddressId $customerAddressId, PersonalInformation $personalInformation): CustomerAddressPersonalInformationUpdated
+		+ customerAddressId(): CustomerAddressId
+		+ personalInformation(): PersonalInformation
+	}
+
+	class CustomerAddressLocationInformationUpdated{
+		- customerAddressId: CustomerAddressId
+		- LocationInformation: LocationInformation
+		+ {static} create(CustomerAddressId $customerAddressId, LocationInformation $locationInformation): CustomerAddressLocationInformationUpdated
+		+ customerAddressId(): CustomerAddressId
+		+ locationInformation(): LocationInformation
+	}
+}
+
+@enduml

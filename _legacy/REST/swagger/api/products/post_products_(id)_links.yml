@@ -1,0 +1,29 @@
+'/products/{product_id}/links':
+    post:
+        tags:
+            - products
+        summary: 'Create Product Link'
+        description: 'Creates a new product to category record in the system.'
+        operationId: createProductLink
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: categoryId
+                in: body
+                description: 'The category ID'
+                required: true
+                schema:
+                    $ref: '#/definitions/productCategoryLinkID'
+        responses:
+            '201':
+                description: 'Upon success, returns the default success response with the product and category ID'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithProductIDAndCategoryID'

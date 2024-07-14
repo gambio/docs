@@ -1,0 +1,14 @@
+/cache/text:
+    delete:
+        tags:
+            - cache
+        summary: 'Clear Text Cache'
+        description: 'Empty text cache with a DELETE request.'
+        operationId: deleteCacheText
+        produces:
+            - application/json
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithFilename'

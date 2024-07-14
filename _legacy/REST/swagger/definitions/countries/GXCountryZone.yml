@@ -1,0 +1,18 @@
+GXCountryZone:
+    title: GXCountryZone
+    type: object
+    required:
+        - name
+        - iso
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        name:
+            type: string
+        iso:
+            type: string
+    example:
+        name: "Bremen"
+        iso: "BRE"

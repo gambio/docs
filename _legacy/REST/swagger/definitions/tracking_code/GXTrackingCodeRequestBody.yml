@@ -1,0 +1,18 @@
+GXTrackingCodeRequestBody:
+    title: GXTrackingCodeRequestBody
+    type: object
+    required:
+        - trackingCode
+        - parcelServiceId
+        - languageId
+    properties:
+        trackingCode:
+            type: string
+        parcelServiceId:
+            type: string
+        languageId:
+            type: string
+    example:
+        trackingCode: "71179106254223"
+        parcelServiceId: "4"
+        languageId: "2"

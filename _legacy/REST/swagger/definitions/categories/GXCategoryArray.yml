@@ -1,0 +1,128 @@
+GXCategoryArray:
+    title: GXCategoryArray
+    type: object
+    required:
+        - dateAdded
+        - lastModified
+        - parentId
+        - isActive
+        - sortOrder
+        - name
+        - headingTitle
+        - description
+        - metaTitle
+        - metaDescription
+        - metaKeywords
+        - urlKeywords
+        - icon
+        - image
+        - imageAltText
+        - settings
+        - addonValues
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        dateAdded:
+            type: string
+        lastModified:
+            type: string
+        parentId:
+            type: integer
+            format: int64
+        isActive:
+            type: boolean
+        sortOrder:
+            type: integer
+            format: int64
+        name:
+            $ref: '#/definitions/GXMultiLangOption'
+        headingTitle:
+            $ref: '#/definitions/GXMultiLangOption'
+        description:
+            $ref: '#/definitions/GXMultiLangOption'
+        metaTitle:
+            $ref: '#/definitions/GXMultiLangOption'
+        metaDescription:
+            $ref: '#/definitions/GXMultiLangOption'
+        metaKeywords:
+            $ref: '#/definitions/GXMultiLangOption'
+        urlKeywords:
+            $ref: '#/definitions/GXMultiLangOption'
+        icon:
+            type: string
+        image:
+            type: string
+        imageAltText:
+            $ref: '#/definitions/GXMultiLangOption'
+        settings:
+            $ref: '#/definitions/categorySettings'
+        addonValues:
+            type: object
+            properties:
+                key:
+                    type: string
+    example:
+        -
+            dateAdded: '2008-08-08 17:16:41'
+            lastModified: '2008-08-25 17:33:52'
+            parentId: 0
+            isActive: true
+            sortOrder: 0
+            name:
+              en: "test category"
+              de: "Testkategorie"
+            headingTitle:
+              en: "test category"
+              de: "Testkategorie"
+            description:
+              en: "test category description"
+              de: "Testkategorie Beschreibung"
+            metaTitle:
+              en: ''
+              de: ''
+            metaDescription:
+              en: ''
+              de: ''
+            metaKeywords:
+              en: ''
+              de: ''
+            urlKeywords:
+              en: "test-category"
+              de: "Testkategorie"
+            icon: "item_ltr.gif"
+            image: ''
+            imageAltText:
+              en: ''
+              de: ''
+            settings:
+                categoryListingTemplate: "categorie_listing.html"
+                productListingTemplate: "product_listing_v1.html"
+                sortColumn: "p.products_price"
+                sortDirection: "ASC"
+                onSitemap: true
+                sitemapPriority: '0.5'
+                sitemapChangeFrequency: "daily"
+                showAttributes: false
+                showGraduatedPrice: false
+                showQuantity: true
+                showQuantityInfo: false
+                showSubCategories: true
+                showSubCategoryImages: true
+                showSubCategoryNames: true
+                showSubCategoryProducts: false
+                isViewModeTiled: false
+                showCategoryFilter: false
+                filterSelectionMode: 0
+                filterValueDeactivation: 0
+                groupPermissions:
+                -   id: '0'
+                    isPermitted: false
+                -   id: '1'
+                    isPermitted: false
+                -   id: '2'
+                    isPermitted: false
+                -   id: '3'
+                    isPermitted: false
+            addonValues:

@@ -1,0 +1,34 @@
+GXManufacturer:
+    title: GXManufacturer
+    type: object
+    required:
+        - name
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        name:
+            type: string
+        image:
+            type: string
+        dateAdded:
+            $ref: '#/definitions/GXManufacturerDate'
+        lastModified:
+            $ref: '#/definitions/GXManufacturerDate'
+        urls:
+            $ref: '#/definitions/GXMultiLangOption'
+    example:
+        name: "Breitling"
+        image: "manufacturers/breitling-logo.png"
+        dateAdded:
+            date: "2017-09-29 10:37:27.000000"
+            timezone_type: 3
+            timezone: "Europe/Berlin"
+        lastModified:
+            date: "2017-09-29 10:37:27.000000"
+            timezone_type: 3
+            timezone: "Europe/Berlin"
+        urls:
+            en: "https://breitling.com"
+            de: "https://breitling.de"

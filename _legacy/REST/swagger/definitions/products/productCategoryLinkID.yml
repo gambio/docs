@@ -1,0 +1,9 @@
+productCategoryLinkID:
+    title: productCategoryLinkID
+    type: object
+    properties:
+        categoryId:
+            type: integer
+            format: int64
+    example:
+        categoryId: 57

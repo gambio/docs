@@ -1,0 +1,30 @@
+'/quantity_units':
+    get:
+        tags:
+            - quantity_units
+        summary: 'Get Quantity Units (Multiple)'
+        description: 'Get multiple quantity unit records through the GET method'
+        operationId: getQuantityUnits
+        produces:
+            - application/json
+        parameters:
+            - $ref: '#/parameters/per_page'
+            - $ref: '#/parameters/page'
+            - $ref: '#/parameters/sort'
+            - $ref: '#/parameters/search'
+            - $ref: '#/parameters/fields'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of Quantity Units'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXQuantityUnit'
+            '400':
+                description: '(Missing or invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '404':
+                description: '(QuantityUnits Not Found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

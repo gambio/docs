@@ -1,0 +1,64 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+package Gambio\Admin\Modules\Customer\Submodules\Address\Services {
+	class CustomerAddressFactory {
+		+ createCustomerAddresses(CustomerAddress ...$customerAddresses): CustomerAddresses
+		+ createCustomerAddressIds(CustomerAddressId ...$customerAddressIds): CustomerAddressIds
+		+ createCustomerAddressId(int $customerAddressId): CustomerAddressId
+		+ createCustomerId(int $customerId): CustomerId
+		+ createPersonalInformation(\
+		\n    string $gender, string $firstName, string $lastName, string $companyName = ''\
+		\n): PersonalInformation
+		+ createLocationInformation(\
+        \n    string $streetName, string $houseNumber, string $postcode, string $city, string $country,\
+        \n    string $additionalInformation = '', string $suburb = '', string $state = '' \
+        \n): LocationInformation
+	}
+
+	interface CustomerDefaultAddressReadService {
+		+ getDefaultShippingAddress(int $customerId): CustomerAddress
+		+ getDefaultPaymentAddress(int $customerId): CustomerAddress
+	}
+
+	interface CustomerAddressReadService {
+        + function getAddresses(int $customerId): CustomerAddresses;
+    }
+
+	interface CustomerDefaultAddressWriteService {
+		+ createCustomerAddress(\
+		\n    int $customerId,  \
+        \n    PersonalInformation $personalInformation, \
+        \n    LocationInformation $locationInformation \
+		\n): CustomerAddressId
+		+ createCustomerAddresses(array ...$creationArguments): CustomerAddressIds
+		+ storeCustomerAddresses(CustomerAddress ...$customerAddresses): void
+	}
+
+	interface CustomerAddressWriteService {
+        + createCustomerAddress(\
+        \n    int $customerId,  \
+        \n    PersonalInformation $personalInformation, \
+        \n    LocationInformation $locationInformation \
+        \n): CustomerAddressId
+        + createCustomerAddresses(array ...$creationArguments): CustomerAddressIds
+        + storeCustomerAddresses(CustomerAddress ...$customerAddresses): void
+    }
+
+	note right of CustomerDefaultAddressWriteService: Default state for shipping and payment will always be true for the create methods.
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\Address\Services\Exceptions {
+	left to right direction
+
+	class CustomerAddressDoesNotExistException
+	class StorageOfCustomerAddressFailedException
+}
+
+CustomerDoesNotExistException -up-|> Exception
+StorageOfCustomerAddressFailedException -up-|> Exception
+
+
+@enduml

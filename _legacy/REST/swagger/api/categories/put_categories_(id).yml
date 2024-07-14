@@ -1,0 +1,31 @@
+'/categories/{category_id}':
+    put:
+        tags:
+            - categories
+        summary: 'Update Category'
+        description: 'Use this method to update an existing category record. Take a look in the POST method for more detailed explanation on every resource property. To see an example usage take a look at `docs/REST/samples/category-service/update_category.php`'
+        operationId: updateCategory
+        produces:
+            - application/json
+        parameters:
+            -   name: category_id
+                in: path
+                description: 'The category ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -   name: GXCategory
+                in: body
+                description: 'An array of categories to update.'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXCategory'
+        responses:
+            '200':
+                description: 'Upon success, returns the updated category'
+                schema:
+                    $ref: '#/definitions/GXCategory'
+            '400':
+                description: '(Empty request body / Category record ID was not provided or is invalid)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

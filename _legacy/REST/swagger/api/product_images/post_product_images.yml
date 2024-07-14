@@ -1,0 +1,31 @@
+/product_images:
+    post:
+        tags:
+            - product_images
+        summary: 'Upload Product Image'
+        description: 'Uploads an image file for the products. Make this request without the "Content-Type: application/json". Except from the file the POST request must also contain a "filename" value with the final filename.'
+        operationId: uploadProductImage
+        consumes:
+            - multipart/form-data
+        parameters:
+            - in: formData
+              name: upload_product_image
+              type: file
+              required: true
+              description: 'The product image to upload'
+            - in: formData
+              name: filename
+              type: string
+              required: true
+              description: 'The final filename'  
+        produces:
+            - application/json
+        responses:
+            '201':
+                description: 'Upon success, returns the default success response with the new filename'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithFilename'
+            '400':
+                description: '(No image file provided)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

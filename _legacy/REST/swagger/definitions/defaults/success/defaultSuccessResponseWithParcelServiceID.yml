@@ -1,0 +1,14 @@
+defaultSuccessResponseWithParcelServiceID:
+    title: defaultSuccessResponseWithParcelServiceID
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        parcelServiceId:
+            type: integer
+            format: int64

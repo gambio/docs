@@ -1,0 +1,28 @@
+/order_statuses:
+    post:
+        tags:
+            - order_statuses
+        summary: 'Create Order Status'
+        description: 'This method creates a new order status in the database.'
+        operationId: createOrderStatuses
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: GXOrderStatus
+                in: body
+                description: 'The order status'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXOrderStatus'
+        responses:
+            '201':
+                description: 'Upon success, returns the order status that was created'
+                schema:
+                    $ref: '#/definitions/GXOrderStatus'
+            '400':
+                description: '(Order status data missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

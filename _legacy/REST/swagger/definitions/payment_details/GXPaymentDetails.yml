@@ -1,0 +1,22 @@
+GXPaymentDetails:
+    title: GXPaymentDetails
+    type: object
+    required:
+        - module
+        - details
+    properties:
+        module:
+            type: string
+        details:
+            type: object
+            properties: {}
+    example:
+        module: 'sepa'
+        details:
+            creditor_id: "12345"
+            mandate_reference: "8465414"
+            sepa_owner: "Daniel Wu"
+            sepa_iban: "DF1524363456"
+            sepa_bic: "fghfg3456"
+            sepa_bankname: "fghfgjhfgjhfj"
+            

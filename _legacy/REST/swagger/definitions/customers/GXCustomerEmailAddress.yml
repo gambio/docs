@@ -1,0 +1,14 @@
+GXCustomerEmailAddress:
+    title: GXCustomerEmailAddress
+    type: object
+    required:
+        - emailAddress
+        - contactName
+    properties:
+        emailAddress:
+            type: string
+        contactName:
+            type: string
+    example:
+        emailAddress: "contact@mail.de"
+        contactName: "John Doe"

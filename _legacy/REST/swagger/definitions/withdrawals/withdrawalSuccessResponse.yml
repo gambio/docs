@@ -1,0 +1,16 @@
+withdrawalSuccessResponse:
+    title: withdrawalSuccessResponse
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        resource:
+            type: string
+        withdrawalId:
+            type: integer
+            format: int64

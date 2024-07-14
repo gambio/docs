@@ -1,0 +1,32 @@
+'/countries/{country_id}/zones':
+    get:
+        tags:
+            - countries
+        summary: 'Get Countries Zones'
+        description: 'Get a single countrys zones. This method is currently limited to only fetching a single countrys zone resource so make sure that you provide the country ID in the request URI.'
+        operationId: getCountriesZones
+        produces:
+            - application/json
+        parameters:
+            -
+                name: country_id
+                in: path
+                description: 'The country ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns an array of country zone resources.'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXCountryZone'
+            '500':
+                description: '(Country not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
+            '501':
+                description: '(The ID is missing)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

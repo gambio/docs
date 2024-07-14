@@ -1,0 +1,38 @@
+GXSpecialOffer:
+    title: GXSpecialOffer
+    type: object
+    required:
+        - price
+        - quantity
+        - status
+        - expiresAt
+    properties:
+        id:
+            type: integer
+            format: int64
+            readOnly: true
+        productId:
+            type: integer
+            format: int64
+        price:
+            type: number
+            format: double
+        quantity:
+            type: number
+            format: double
+        status:
+            type: boolean
+        expiresAt:
+            type: string
+        added:
+            type: string
+        modified:
+            type: string
+    example:
+        productId: 2
+        price: 1.2345
+        quantity: 5.4321
+        status: true
+        expiresAt: "2015-01-01 09:00:00"
+        added: "2015-01-01 09:00:00"
+        modified: "2015-01-01 09:00:00"

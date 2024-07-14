@@ -1,0 +1,37 @@
+/orders/{order_id}/tracking_code:
+    post:
+        tags:
+            - orders
+        summary: 'Create Order Tracking Code (deprecated)'
+        description: 'Create a new tracking code for an order.'
+        operationId: postTrackingCodeDeprecated
+        produces:
+            - application/json
+        consumes:
+            - application/json
+        parameters:
+            -
+                name: order_id
+                in: path
+                description: 'The order ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: GXTrackingCodeRequestBody
+                in: body
+                description: 'The tracking code to be created'
+                required: true
+                schema:
+                    $ref: '#/definitions/GXTrackingCodeRequestBody'
+        responses:
+            '201':
+                description: 'Upon success, returns the newly created tracking code.'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXTrackingCode'
+            '400':
+                description: '(Missing data)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

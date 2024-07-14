@@ -1,0 +1,21 @@
+/product_images:
+    put:
+        tags:
+            - product_images
+        summary: 'Rename Image File'
+        description: 'Use this method to rename an existing image file.'
+        operationId: renameImageFile
+        produces:
+            - application/json
+        parameters:
+            -
+                name: GXFilenameChange
+                in: body
+                description: 'The filenames'
+                schema:
+                    $ref: '#/definitions/GXFilenameChange'
+        responses:
+            '200':
+                description: 'Upon success, returns the old and new name'
+                schema:
+                    $ref: '#/definitions/defaultUpdateResponseWithFilenames'

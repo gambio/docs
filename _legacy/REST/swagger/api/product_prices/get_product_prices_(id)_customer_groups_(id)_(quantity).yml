@@ -1,0 +1,44 @@
+/product_prices/{product_id}/customer_groups/{customer_group_id}/{quantity}:
+    get:
+        tags:
+            - product_prices
+        summary: 'Get Graduated Product Price'
+        description: 'Get price information for given customer group and product quantity. Graduated- and customer group prices are included in the response'
+        operationId: getProductQuantityPrices
+        produces:
+            - application/json
+        parameters:
+            -
+                name: product_id
+                in: path
+                description: 'The product id'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: customer_group_id
+                in: path
+                description: 'The customer group id'
+                required: true
+                type: 'integer'
+                format: 'int64'
+            -
+                name: quantity
+                in: path
+                description: 'Products quantity'
+                required: true
+                type: 'number'
+                format: 'float'
+        responses:
+            '200':
+                description: 'Upon success, returns price information for the given customer group and quantity'
+                schema:
+                    type: array
+                    items:
+                        $ref: '#/definitions/GXProductQuantityPrice'
+            '400':
+                description: '(Missing or invalid id)'
+            '404':
+                description: '(Product not found)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

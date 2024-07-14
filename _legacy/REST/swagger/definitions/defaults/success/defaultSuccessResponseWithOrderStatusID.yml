@@ -1,0 +1,14 @@
+defaultSuccessResponseWithOrderStatusID:
+    title: defaultSuccessResponseWithOrderStatusID
+    type: object
+    properties:
+        code:
+            type: integer
+            format: int64
+        status:
+            type: string
+        action:
+            type: string
+        orderStatusId:
+            type: integer
+            format: int64

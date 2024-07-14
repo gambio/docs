@@ -1,0 +1,6 @@
+productLinksGetResponse:
+    title: productLinksGetResponse
+    type: integer
+    format: int64
+    example:
+        4

@@ -1,0 +1,26 @@
+'/quantity_units/{quantity_unit_id}':
+    delete:
+        tags:
+            - quantity_units
+        summary: 'Delete Quantity Units'
+        description: 'Removes a quantity units record from the system. This method will always return success even if the quantity unit does not exist.'
+        operationId: deleteQuantityUnits
+        produces:
+            - application/json
+        parameters:
+            -
+                name: quantity_unit_id
+                in: path
+                description: 'The quantity unit ID'
+                required: true
+                type: 'integer'
+                format: 'int64'
+        responses:
+            '200':
+                description: 'Upon success, returns the default success response with the deleted quantityID'
+                schema:
+                    $ref: '#/definitions/defaultSuccessResponseWithQuantityUnitID'
+            '400':
+                description: '(Invalid ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'

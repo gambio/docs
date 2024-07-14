@@ -1,0 +1,107 @@
+Overlay: true
+
+[[additional]]
+
+## Database attributes and tables available for search
+
+For an overview of how searching works with the Gambio GX3 API, please refer to the [search example](/gambio-gx3-api/guides/search-example).
+
+This endpoint provides the following list of database attributes and tables to search:
+
+- **orders**
+	- orders_id
+	- customers_id
+	- customers_cid
+	- customers_vat_id
+	- customers_status
+	- customers_status_name
+	- customers_status_image
+	- customers_status_discount
+	- customers_name
+	- customers_firstname
+	- customers_lastname
+	- customers_gender
+	- customers_company
+	- customers_street_address
+	- customers_house_number
+	- customers_additional_info
+	- customers_suburb
+	- customers_city
+	- customers_postcode
+	- customers_state
+	- customers_country
+	- customers_telephone
+	- customers_email_address
+	- customers_address_format_id
+	- delivery_name
+	- delivery_firstname
+	- delivery_lastname
+	- delivery_gender
+	- delivery_company
+	- delivery_street_address
+	- delivery_house_number
+	- delivery_additional_info
+	- delivery_suburb
+	- delivery_city
+	- delivery_postcode
+	- delivery_state
+	- delivery_country
+	- delivery_country_iso_code_2
+	- delivery_address_format_id
+	- billing_name
+	- billing_firstname
+	- billing_lastname
+	- billing_gender
+	- billing_company
+	- billing_street_address
+	- billing_house_number
+	- billing_additional_info
+	- billing_suburb
+	- billing_city
+	- billing_postcode
+	- billing_state
+	- billing_country
+	- billing_country_iso_code_2
+	- billing_address_format_id
+	- payment_method
+	- cc_type
+	- cc_owner
+	- cc_number
+	- cc_expires
+	- cc_start
+	- cc_issue
+	- cc_cvv
+	- comments
+	- last_modified
+	- date_purchased
+	- orders_status
+	- orders_date_finished
+	- currency
+	- currency_value
+	- account_type
+	- payment_class
+	- shipping_method
+	- shipping_class
+	- order_total_weight
+	- customers_ip
+	- language
+	- afterbuy_success
+	- afterbuy_id
+	- refferers_id
+	- conversion_type
+	- orders_ident_key
+	- gm_orders_id
+	- gm_packings_id
+	- gm_orders_code
+	- gm_packings_code
+	- gm_order_send_date
+	- gm_send_order_status
+	- gm_cancel_date
+	- abandonment_download
+	- abandonment_service
+	- orders_hash
+	- intraship_shipmentnumber
+	- exported
+	- gambio_hub_module
+	- gambio_hub_module_title
+	- gambio_hub_transaction_code

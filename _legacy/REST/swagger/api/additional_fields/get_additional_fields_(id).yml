@@ -1,0 +1,25 @@
+'/additional_fields/{field_id}':
+    get:
+        tags:
+            - additional_fields
+        summary: 'Get additional fields (Single)'
+        description: 'Get a single additional field list item record through a GET request. This method supports the following GET parameters that are mentioned in the "Introduction" section of this documentation.'
+        operationId: getAdditionalFieldsSingle
+        produces:
+            - application/json
+        parameters:
+            -
+                name: field_id
+                in: path
+                description: 'The ID of the additional field to fetch'
+                required: true
+                type: 'string'
+        responses:
+            '200':
+                description: 'Upon success, returns the additional field that was fetched'
+                schema:
+                    $ref: '#/definitions/GXAdditionalFieldListItem'
+            '404':
+                description: '(Invalid additional field ID)'
+                schema:
+                    $ref: '#/definitions/defaultErrorResponse'
