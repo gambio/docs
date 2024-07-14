@@ -1,0 +1,91 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+package Gambio\Admin\Modules\Customer\Services {
+
+    class CustomerFactory {
+        + createCustomers(Customer ...$customers): Customers
+        + createCustomerIds(CustomerId ...$customerIds): CustomerIds
+        + createCustomerId(int $customerId): CustomerId
+        + createCustomerGroup(int $customerGroup): CustomerGroup
+        + createPersonalInformation(\
+        \n    string $gender = '', string $firstName = '', string $lastName = '',\
+        \n    string $customerNumber = '', ?DateTimeImmutable $dateOfBirth = null\
+        \n): PersonalInformation
+        + createBusinessInformation(string $companyName = '', string $vatId = '', bool $isMerchant = false): BusinessInformation
+        + createContactInformation(string $email, string $phoneNumber = '', string $faxNumber = ''): ContactInformation
+        + createCredit(float $credit = 0.0): CustomerCredit
+    }
+
+    interface CustomerReadService {
+        + getCustomers(): Customers
+        + getGuestAccounts(): Customers
+        + getCustomerById(int $id): Customer
+    }
+
+    interface CustomerFilterService {
+        + filterCustomers(...): Customers
+        + getCustomersTotalCount(...): int
+    }
+
+    interface CustomerSearchService {
+        + searchCustomers(...): Customers
+        + getSearchedCustomerTotalCount(...): int
+    }
+
+    interface CustomerWriteService {
+        + createCustomer(\
+        \n    int $customerGroup, PersonalInformation $personalInformation,\
+        \n    BusinessInformation $businessInformation, ContactInformation $contactInformation,\
+        \n    float $credit = 0.0, $isFavorite = false\
+        \n): CustomerId
+        + createGuestAccount(\
+        \n    int $customerGroup, PersonalInformation $personalInformation,\
+        \n    BusinessInformation $businessInformation, ContactInformation $contactInformation,\
+        \n    float $credit = 0.0, $isFavorite = false\
+        \n): CustomerId
+        + createMultipleCustomers(array ...$creationArguments): CustomerIds
+        + storeCustomers(Customer ...$customers): void
+        + deleteCustomers(int ...$ids): void
+        + deleteGuestAccounts(): void
+    }
+
+    interface CustomerPasswordWriteService {
+        + setCustomerPassword(int $customerId, string $password): void
+    }
+
+    note top of CustomerPasswordWriteService: This is service will be replaced as soon as we refactored the customer credentials domain.
+
+}
+
+package Gambio\Admin\Modules\Customer\Services\Exceptions {
+	left to right direction
+
+	class CustomerDoesNotExistException
+	class CustomerGroupDoesNotExistException
+	class CreationOfCustomerFailedException
+	class CustomerEmailAddressMustBeUniqueException
+	class DeletionOfMainAdminNotPermittedException
+	class ChangingOfMainAdminCustomerGroupNotPermittedException
+	class DeletionOfCustomerFailedException
+	class StorageOfCustomerFailedException
+	class GuestCustomersCantBeCreatedWithABalanceException
+	class GuestCustomersBalanceCantBeChangedException
+}
+
+
+
+CustomerDoesNotExistException -up-|> Exception
+CreationOfCustomerFailedException -up-|> Exception
+DeletionOfCustomerFailedException -up-|> Exception
+StorageOfCustomerFailedException -up-|> Exception
+ChangingOfMainAdminCustomerGroupNotPermittedException -up-|> StorageOfCustomerFailedException
+DeletionOfMainAdminNotPermittedException -up-|> DeletionOfCustomerFailedException
+CustomerEmailAddressMustBeUniqueException -up-|> CreationOfCustomerFailedException
+CustomerGroupDoesNotExistException -up-|> CreationOfCustomerFailedException
+GuestCustomersCantBeCreatedWithABalanceException -up-|> CreationOfCustomerFailedException
+GuestCustomersBalanceCantBeChangedException -up-|> StorageOfCustomerFailedException
+
+@enduml

@@ -1,0 +1,75 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+interface IteratorAggregate
+
+package Gambio\Core\Event\EventRaisingEntity {
+	abstract class AbstractEventRaisingEntity {}
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\AddonValues\Model\Collections {
+    class CustomerAddonValueIds {
+		+ {static} create(CustomerAddonValueId ...$customerAddonValueIds): CustomerAddonValueIds
+		+ toArray(): array
+	}
+
+    class CustomerAddonValues {
+		+ {static} create(CustomerAddonValue ...$customerAddonValues): CustomerAddonValues
+		+ toArray(): array
+	}
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\AddonValues\Model {
+	class CustomerAddonValue <<Aggregate Root>> {
+		- value: string
+		--
+		+ {static} create(CustomerAddonValueId $customerAddonValueId, string $value): CustomerAddonValue
+		+ toArray(): array
+		..
+		+ changeValue(string $value): void
+		..
+		+ customerId(): int
+		+ key(): string
+		+ value(): string
+	}
+}
+
+package Gambio\Admin\Modules\Customer\Submodules\AddonValues\Model\ValueObjects {
+	class CustomerAddonValueId {
+		--
+		+ {static} create(CustomerId $customerId, CustomerAddonValueKey $key): CustomerAddonValueId
+		..
+		+ customerId(): int
+		+ key(): string
+	}
+
+	class CustomerId {
+		- value: int
+		--
+		+ {static} create(int $customerId): CustomerId
+		..
+		+ value(): int
+	}
+
+	class CustomerAddonValueKey {
+		- value: string
+		--
+		+ {static} create(string $value): CustomerAddonValueKey
+		..
+		+ value(): string
+	}
+}
+
+AbstractEventRaisingEntity <|-- CustomerAddonValue
+CustomerAddonValue *-- CustomerAddonValueId
+
+CustomerAddonValueId *-- CustomerAddonValueKey
+CustomerAddonValueId *-- CustomerId
+
+CustomerAddonValueIds o- CustomerAddonValueId
+IteratorAggregate <|-- CustomerAddonValueIds
+
+
+@enduml

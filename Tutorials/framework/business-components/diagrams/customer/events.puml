@@ -1,0 +1,78 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!theme gambio from ../gambio-puml-theme
+
+package Gambio\Admin\Modules\Customer\Model\Events {
+	left to right direction
+
+	class CustomerCreated {
+		- customerId: CustomerId
+		+ {static} create(CustomerId $customerId): CustomerCreated
+		+ customerId(): CustomerId
+	}
+
+	class CustomerDeleted{
+		- customerId: CustomerId
+		+ {static} create(CustomerId $customerId): CustomerCreated
+		+ customerId(): CustomerId
+	}
+
+
+	class CustomersCustomerGroupUpdated {
+		- customerId: CustomerId
+		- customerGroup: CustomerGroup
+		+ {static} create(CustomerId $customerId, CustomerGroup $customerGroup): CustomersCustomerGroupUpdated
+		+ customerId(): CustomerId
+		+ customerGroup(): CustomerGroup
+	}
+
+	class CustomersPersonalInformationUpdated {
+		- customerId: CustomerId
+		- personalInformation: PersonalInformation
+		+ {static} create(CustomerId $customerId, PersonalInformation $personalInformation): CustomersPersonalInformationUpdated
+		+ customerId(): CustomerId
+		+ personalInformation(): PersonalInformation
+	}
+
+	class CustomersBusinessInformationUpdated {
+		- customerId: CustomerId
+		- businessInformation: BusinessInformation
+		+ {static} create(CustomerId $customerId, BusinessInformation $businessInformation): CustomersBusinessInformationUpdated
+		+ customerId(): CustomerId
+		+ businessInformation(): BusinessInformation
+	}
+
+	class CustomersContactInformationUpdated {
+		- customerId: CustomerId
+		- contactInformation: ContactInformation
+		+ {static} create(CustomerId $customerId, ContactInformation $contactInformation): CustomersContactInformationUpdated
+		+ customerId(): CustomerId
+		+ contactInformation(): ContactInformation
+	}
+
+	class CustomersCreditUpdated {
+		- customerId: CustomerId
+		- customersCredit: CustomersCredit
+		+ {static} create(CustomerId $customerId, CustomerCredit $customerCredit): CustomersCreditUpdated
+		+ customerId(): CustomerId
+		+ customersCredit(): CustomersCredit
+	}
+
+	class CustomersIsFavoriteStateUpdated {
+		- customerId: CustomerId
+		- isFavorite: bool
+		+ {static} create(CustomerId $customerId, bool $isFavorite): CustomersIsFavoriteStateUpdated
+		+ customerId(): CustomerId
+		+ isFavorite(): bool
+	}
+
+}
+
+package Gambio\Admin\Modules\Customer\App\EventListeners {
+	class CustomerAddressPersonalInformationUpdatedListener
+
+	note right of CustomerAddressPersonalInformationUpdatedListener: Customer PersonalInformation must be updated if address is the new default
+}
+
+@enduml
