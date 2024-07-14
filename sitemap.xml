@@ -1,667 +1,672 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://developers.gambio.de/GX3/application/bootstrapper/</loc>
+         <loc>https://developers.gambio.de/de/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/application/ioc_container/</loc>
+         <loc>https://developers.gambio.de/de/application/bootstrapper/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/application/request_lifecycle/</loc>
+         <loc>https://developers.gambio.de/de/application/ioc_container/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/application/service_provider/</loc>
+         <loc>https://developers.gambio.de/de/application/request_lifecycle/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/configurations/gx_configurations_structure/</loc>
+         <loc>https://developers.gambio.de/de/application/service_provider/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/configurations/legacy_to_gx_configurations/</loc>
+         <loc>https://developers.gambio.de/de/configurations/gx_configurations_structure/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/</loc>
+         <loc>https://developers.gambio.de/de/configurations/legacy_to_gx_configurations/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/add_content_manager_content/</loc>
+         <loc>https://developers.gambio.de/de/markdown/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/base_structure_of_new_modules/</loc>
+         <loc>https://developers.gambio.de/de/markdown/add_content_manager_content/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/change_existing_classes/</loc>
+         <loc>https://developers.gambio.de/de/markdown/base_structure_of_new_modules/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_email_template/</loc>
+         <loc>https://developers.gambio.de/de/markdown/change_existing_classes/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_html_content/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_email_template/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_http_controller/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_html_content/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_javascript/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_http_controller/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_language_phrases/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_javascript/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_menu_entry/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_language_phrases/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_menubox/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_menu_entry/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_module-center_module/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_menubox/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_php_classes/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_module-center_module/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_styling/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_php_classes/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/create_new_theme/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_styling/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/deprecated/</loc>
+         <loc>https://developers.gambio.de/de/markdown/create_new_theme/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/development_git-workflow/</loc>
+         <loc>https://developers.gambio.de/de/markdown/deprecated/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/execute_unit_tests/</loc>
+         <loc>https://developers.gambio.de/de/markdown/development_git-workflow/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/extending_orders_overview/</loc>
+         <loc>https://developers.gambio.de/de/markdown/execute_unit_tests/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/extending_rest_api/</loc>
+         <loc>https://developers.gambio.de/de/markdown/extending_orders_overview/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/extending_style_edit/</loc>
+         <loc>https://developers.gambio.de/de/markdown/extending_rest_api/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/general_guidelines/</loc>
+         <loc>https://developers.gambio.de/de/markdown/extending_style_edit/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/guidelines/</loc>
+         <loc>https://developers.gambio.de/de/markdown/general_guidelines/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/gx-modules-configuration/</loc>
+         <loc>https://developers.gambio.de/de/markdown/guidelines/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/installing_needed_components/</loc>
+         <loc>https://developers.gambio.de/de/markdown/gx-modules-configuration/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/javascript_guidelines/</loc>
+         <loc>https://developers.gambio.de/de/markdown/installing_needed_components/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/list_of_all_extender/</loc>
+         <loc>https://developers.gambio.de/de/markdown/javascript_guidelines/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/module_development/</loc>
+         <loc>https://developers.gambio.de/de/markdown/list_of_all_extender/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/php_guidelines/</loc>
+         <loc>https://developers.gambio.de/de/markdown/module_development/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/setup_environment/</loc>
+         <loc>https://developers.gambio.de/de/markdown/php_guidelines/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/setup_project/</loc>
+         <loc>https://developers.gambio.de/de/markdown/setup_environment/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/special_topics/</loc>
+         <loc>https://developers.gambio.de/de/markdown/setup_project/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/styling_guidelines/</loc>
+         <loc>https://developers.gambio.de/de/markdown/special_topics/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/supported-php-versions/</loc>
+         <loc>https://developers.gambio.de/de/markdown/styling_guidelines/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/usage_of_the_admin_access/</loc>
+         <loc>https://developers.gambio.de/de/markdown/supported-php-versions/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/usage_of_the_auth_service/</loc>
+         <loc>https://developers.gambio.de/de/markdown/usage_of_the_admin_access/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/usage_of_widgets/</loc>
+         <loc>https://developers.gambio.de/de/markdown/usage_of_the_auth_service/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/using_docker/</loc>
+         <loc>https://developers.gambio.de/de/markdown/usage_of_widgets/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/markdown/using_vagrant/</loc>
+         <loc>https://developers.gambio.de/de/markdown/using_docker/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/plugins/1_introduction/</loc>
+         <loc>https://developers.gambio.de/de/markdown/using_vagrant/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/plugins/2_autoloading/</loc>
+         <loc>https://developers.gambio.de/de/plugins/1_introduction/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX3/plugins/application_core/</loc>
+         <loc>https://developers.gambio.de/de/plugins/2_autoloading/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/</loc>
+         <loc>https://developers.gambio.de/de/plugins/application_core/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/develop-environment/</loc>
+         <loc>https://developers.gambio.de/en/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/develop-environment/development-tools/</loc>
+         <loc>https://developers.gambio.de/en/develop-environment/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/develop-environment/setup-project/</loc>
+         <loc>https://developers.gambio.de/en/develop-environment/development-tools/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/</loc>
+         <loc>https://developers.gambio.de/en/develop-environment/setup-project/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/application-core/</loc>
+         <loc>https://developers.gambio.de/en/framework/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/legacy-architecture/</loc>
+         <loc>https://developers.gambio.de/en/framework/application-core/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/</loc>
+         <loc>https://developers.gambio.de/en/framework/legacy-architecture/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/_template/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/admin-access/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/_template/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/customer-addon-value/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/admin-access/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/customer-legacy-services/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/customer-addon-value/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/customer-memo/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/customer-legacy-services/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/customer/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/customer-memo/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/image-list/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/customer/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/option/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/image-list/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/parcel-service/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/option/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/product-option/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/parcel-service/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/product-variant/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/product-option/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/statistics-overview/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/product-variant/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/tracking-code/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/statistics-overview/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/user-configuration/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/tracking-code/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/withdrawal/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/user-configuration/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/internal/configuration/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/withdrawal/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/internal/exception-transmitter/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/internal/configuration/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/internal/sellingunit/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/internal/exception-transmitter/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/customer-address/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/internal/sellingunit/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/customer-credentials/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/customer-address/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/language/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/customer-credentials/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/product-listing/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/language/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/product-listing/components/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/product-listing/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/product-listing/deliverables/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/product-listing/components/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/product-listing/planning/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/product-listing/deliverables/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/business-components/work-in-progress/product-listing/price_notices/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/product-listing/planning/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/details/application-layers/</loc>
+         <loc>https://developers.gambio.de/en/framework/business-components/work-in-progress/product-listing/price_notices/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/details/autoloading/</loc>
+         <loc>https://developers.gambio.de/en/framework/details/application-layers/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/details/di-container/</loc>
+         <loc>https://developers.gambio.de/en/framework/details/autoloading/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/details/service-provider/</loc>
+         <loc>https://developers.gambio.de/en/framework/details/di-container/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/</loc>
+         <loc>https://developers.gambio.de/en/framework/details/service-provider/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/authentication/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/cache/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/authentication/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/configurations/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/cache/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/database/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/configurations/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/emails/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/database/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/environment/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/emails/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/events/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/environment/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/languages/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/events/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/logging/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/languages/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/permissions/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/logging/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/pricing/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/permissions/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/routing/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/pricing/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/text-phrases/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/routing/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/framework/technical-components/verification/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/text-phrases/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/gambio-admin/internal/frontend/entrypoint/</loc>
+         <loc>https://developers.gambio.de/en/framework/technical-components/verification/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/gambio-admin/internal/frontend/info-box/</loc>
+         <loc>https://developers.gambio.de/en/gambio-admin/internal/frontend/entrypoint/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/gambio-admin/internal/frontend/user-configuration/</loc>
+         <loc>https://developers.gambio.de/en/gambio-admin/internal/frontend/info-box/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/</loc>
+         <loc>https://developers.gambio.de/en/gambio-admin/internal/frontend/user-configuration/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/guidelines/</loc>
+         <loc>https://developers.gambio.de/en/module-development/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/sample-modules/</loc>
+         <loc>https://developers.gambio.de/en/module-development/guidelines/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/admin/admin-menu-json/</loc>
+         <loc>https://developers.gambio.de/en/module-development/sample-modules/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/admin/custom-configuration-page/</loc>
+         <loc>https://developers.gambio.de/en/module-development/admin/admin-menu-json/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/admin/custom-module-center-module/</loc>
+         <loc>https://developers.gambio.de/en/module-development/admin/custom-configuration-page/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/admin/define-http-routes/</loc>
+         <loc>https://developers.gambio.de/en/module-development/admin/custom-module-center-module/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/admin/gx-modules-json/</loc>
+         <loc>https://developers.gambio.de/en/module-development/admin/define-http-routes/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/admin/http-actions/</loc>
+         <loc>https://developers.gambio.de/en/module-development/admin/gx-modules-json/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/general/all-extenders/</loc>
+         <loc>https://developers.gambio.de/en/module-development/admin/http-actions/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/general/defining-a-module/</loc>
+         <loc>https://developers.gambio.de/en/module-development/general/all-extenders/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/general/extending-html/</loc>
+         <loc>https://developers.gambio.de/en/module-development/general/defining-a-module/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/general/gx-modules/</loc>
+         <loc>https://developers.gambio.de/en/module-development/general/extending-html/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/general/languages-text-phrases/</loc>
+         <loc>https://developers.gambio.de/en/module-development/general/gx-modules/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/store/adding-css/</loc>
+         <loc>https://developers.gambio.de/en/module-development/general/languages-text-phrases/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/store/adding-js/</loc>
+         <loc>https://developers.gambio.de/en/module-development/store/adding-css/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/store/creating-http-controller/</loc>
+         <loc>https://developers.gambio.de/en/module-development/store/adding-js/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/module-development/store/creating-theme/</loc>
+         <loc>https://developers.gambio.de/en/module-development/store/creating-http-controller/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/sample-modules/</loc>
+         <loc>https://developers.gambio.de/en/module-development/store/creating-theme/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/sample-modules/extend-shop-functionality/real-command-example/</loc>
+         <loc>https://developers.gambio.de/en/sample-modules/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/</loc>
+         <loc>https://developers.gambio.de/en/sample-modules/extend-shop-functionality/real-command-example/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/architecture/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/content-manager/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/architecture/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/extension/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/content-manager/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/final/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/extension/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/html-templates/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/final/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/scripts/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/html-templates/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/styles/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/scripts/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/GX4/theme-development/text-phrases/</loc>
+         <loc>https://developers.gambio.de/en/theme-development/styles/</loc>
+         <lastmod>2024-07-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://developers.gambio.de/en/theme-development/text-phrases/</loc>
          <lastmod>2024-07-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
