@@ -21,6 +21,13 @@ theme:
     - toc.integrate
     - navigation.top
 extra:
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: Deutsch
+      link: /de/
+      lang: de
   generator: false
   social:
     - icon: gambio/white
