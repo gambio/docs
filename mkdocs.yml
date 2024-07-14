@@ -1,6 +1,6 @@
 site_name: Developer Documentation
 site_url: https://developers.gambio.de/
-docs_dir: ./docs/Tutorials/GX4
+docs_dir: ./docs/Tutorials
 site_dir: ./site
 copyright: Copyright &copy; 2024 Gambio GmbH
 theme:
