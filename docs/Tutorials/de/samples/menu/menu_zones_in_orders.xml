@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<!-- {load_language_text section="admin_menu"} -->
-<admin_menu>
-    <menugroup id="BOX_HEADING_ORDERS">
-        <menuitem sort="40" link="start.php" title="{$txt.BOX_HEADING_ZONE|escape}" />
-    </menugroup>
-</admin_menu>
