@@ -23,10 +23,10 @@ theme:
 extra:
   alternate:
     - name: English
-      link: /en/
+      link: /docs/en/
       lang: en
     - name: Deutsch
-      link: /de/
+      link: /docs/de/
       lang: de
   generator: false
   social:
