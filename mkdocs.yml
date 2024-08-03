@@ -10,7 +10,17 @@ theme:
   logo: logo.svg
   language: en
   palette:
-    scheme: gambio
+      # Palette toggle for light mode
+      -   scheme: gambio
+          toggle:
+              icon: material/brightness-7
+              name: Switch to dark mode
+
+      # Palette toggle for dark mode
+      -   scheme: slate
+          toggle:
+              icon: material/brightness-4
+              name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono
@@ -21,13 +31,6 @@ theme:
     - toc.integrate
     - navigation.top
 extra:
-  alternate:
-    - name: English
-      link: /docs/en/
-      lang: en
-    - name: Deutsch
-      link: /docs/de/
-      lang: de
   generator: false
   social:
     - icon: gambio/white
