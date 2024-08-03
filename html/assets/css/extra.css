@@ -10,6 +10,13 @@
 	--md-accent-bg-color--dark: #1e2129;
 }
 
+[data-md-color-scheme="gambio-dark"] {
+	--md-primary-fg-color: #002337;
+	--md-primary-bg-color: #1e2129;
+
+	--md-primary-bg-color--dark: #1e2129;
+}
+
 .md-header .md-logo img {
 	width: 126px;
 	height: 100%;
