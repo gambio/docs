@@ -10,15 +10,11 @@ theme:
   logo: logo.svg
   language: en
   palette:
-      -   media: "(prefers-color-scheme)"
-          toggle:
-              icon: material/link
-              name: Switch to light mode
       -   media: "(prefers-color-scheme: light)"
           scheme: gambio
           toggle:
               icon: material/toggle-switch
-              name: Switch to dark mode
+              name: Switch to light mode
       -   media: "(prefers-color-scheme: dark)"
           scheme: slate
           primary: black
