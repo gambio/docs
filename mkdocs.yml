@@ -11,16 +11,18 @@ theme:
   language: en
   palette:
       # Palette toggle for light mode
-      -   scheme: gambio
-          toggle:
-              icon: material/brightness-7
-              name: Switch to dark mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: gambio
+        toggle:
+            icon: material/brightness-7
+            name: Switch to dark mode
 
       # Palette toggle for dark mode
-      -   scheme: gambio-dark
-          toggle:
-              icon: material/brightness-4
-              name: Switch to light mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: gambio-dark
+        toggle:
+            icon: material/brightness-4
+            name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono

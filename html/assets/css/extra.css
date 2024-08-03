@@ -4,17 +4,19 @@
 	
 	--md-accent-fg-color: #fdc300;
 	--md-accent-bg-color: #002337;
-	
-	--md-primary-bg-color--dark: #1e2129;
-	
-	--md-accent-bg-color--dark: #1e2129;
+
 }
 
 [data-md-color-scheme="gambio-dark"] {
 	--md-primary-fg-color: #002337;
 	--md-primary-bg-color: #1e2129;
-
+	
+	--md-accent-fg-color: #fdc300;
+	--md-accent-bg-color: #002337;
+	
+	--md-accent-fg-color--dark: #fdc300;
 	--md-primary-bg-color--dark: #1e2129;
+	--md-accent-bg-color--dark: #ededed;
 }
 
 .md-header .md-logo img {
