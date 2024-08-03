@@ -1,4 +1,4 @@
-# Introduction Theme Development
+# Theme Development
 
 In this part of the developers documentation we want to show you how to created a new theme. For this, the following
 tutorials are part of a workshop about how to create a new theme called **Darkness**, which inherits from Malibu.

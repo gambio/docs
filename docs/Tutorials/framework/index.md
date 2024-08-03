@@ -1,4 +1,4 @@
-# Introduction for Architecture and Framework
+# Architecture and Framework
 
 This part of our documentation explains the architecture and framework of the shop software. This basic knowledge
 will help you understand how the software is structured or handles incoming requests.

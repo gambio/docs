@@ -1,4 +1,4 @@
-# Introduction for Development Environment
+# Development Environment
 
 In order to set up the project or development environment, we assume that you already have some standard development
 tools such as a **webserver**, **Git**, **Composer**, **Node** and **Yarn** installed. If this is not the case, you

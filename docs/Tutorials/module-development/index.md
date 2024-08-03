@@ -1,4 +1,4 @@
-# Introduction for Module Development
+# Module Development
 
 This part of our documentation explains bit by bit how to start the development of your module. Beside some
 [development guidelines], we want to split the tutorials into categories. The general tutorials give you information
