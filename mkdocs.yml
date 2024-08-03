@@ -10,23 +10,22 @@ theme:
   logo: logo.svg
   language: en
   palette:
-    palette:
       -   media: "(prefers-color-scheme)"
           toggle:
-            icon: material/link
-            name: Switch to light mode
+              icon: material/link
+              name: Switch to light mode
       -   media: "(prefers-color-scheme: light)"
           scheme: gambio
           toggle:
-            icon: material/toggle-switch
-            name: Switch to dark mode
+              icon: material/toggle-switch
+              name: Switch to dark mode
       -   media: "(prefers-color-scheme: dark)"
           scheme: slate
           primary: black
           accent: indigo
           toggle:
-            icon: material/toggle-switch-off
-            name: Switch to system preference
+              icon: material/toggle-switch-off
+              name: Switch to system preference
   font:
     text: Roboto
     code: Roboto Mono
