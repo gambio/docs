@@ -1,5 +1,0 @@
-{
-	"post" : {
-		"$ref": "./post.json"
-	}
-}

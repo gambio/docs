@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://developers.gambio.de/">
+        <link rel="canonical" href="https://developers.gambio.de/module-development/admin/admin-menu-json/">
       
       
+        <link rel="prev" href="../../sample-modules/">
       
-        <link rel="next" href="develop-environment/">
+      
+        <link rel="next" href="../custom-configuration-page/">
       
       
-      <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
     
     
       
-        <title>Developer Documentation</title>
+        <title>Extending the Admin Menu - Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.649f08f9.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.649f08f9.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/css/extra.css">
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorials" class="md-skip">
+        <a href="#extending-the-admin-menu" class="md-skip">
           Skip to content
         </a>
       
@@ -91,9 +93,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Developer Documentation" class="md-header__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="logo.svg" alt="logo">
+  <img src="../../../logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tutorials
+              Extending the Admin Menu
             
           </span>
         </div>
@@ -210,11 +212,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -231,7 +231,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="develop-environment/" class="md-tabs__link">
+      <a href="../../../develop-environment/" class="md-tabs__link">
         
   
     
@@ -248,7 +248,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="framework/" class="md-tabs__link">
+      <a href="../../../framework/" class="md-tabs__link">
         
   
     
@@ -267,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="gambio-admin/internal/frontend/entrypoint/" class="md-tabs__link">
+        <a href="../../../gambio-admin/internal/frontend/entrypoint/" class="md-tabs__link">
           
   
   Gambio admin
@@ -281,9 +281,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="module-development/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../" class="md-tabs__link">
         
   
     
@@ -300,7 +302,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="sample-modules/" class="md-tabs__link">
+      <a href="../../../sample-modules/" class="md-tabs__link">
         
   
     
@@ -317,7 +319,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="theme-development/" class="md-tabs__link">
+      <a href="../../../theme-development/" class="md-tabs__link">
         
   
     
@@ -353,9 +355,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Developer Documentation" class="md-nav__button md-logo" aria-label="Developer Documentation" data-md-component="logo">
       
-  <img src="logo.svg" alt="logo">
+  <img src="../../../logo.svg" alt="logo">
 
     </a>
     Developer Documentation
@@ -367,18 +369,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -387,7 +380,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -413,7 +405,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="develop-environment/" class="md-nav__link ">
+            <a href="../../../develop-environment/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -442,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="develop-environment/development-tools/" class="md-nav__link">
+      <a href="../../../develop-environment/development-tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="develop-environment/setup-project/" class="md-nav__link">
+      <a href="../../../develop-environment/setup-project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +496,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="framework/" class="md-nav__link ">
+            <a href="../../../framework/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -533,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/application-core/" class="md-nav__link">
+      <a href="../../../framework/application-core/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/legacy-architecture/" class="md-nav__link">
+      <a href="../../../framework/legacy-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -588,7 +580,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="framework/business-components/" class="md-nav__link ">
+            <a href="../../../framework/business-components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -617,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/_template/" class="md-nav__link">
+      <a href="../../../framework/business-components/_template/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -637,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/admin-access/" class="md-nav__link">
+      <a href="../../../framework/business-components/admin-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -657,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/customer-addon-value/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer-addon-value/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -677,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/customer-legacy-services/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer-legacy-services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -697,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/customer-memo/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer-memo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/customer/" class="md-nav__link">
+      <a href="../../../framework/business-components/customer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -737,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/image-list/" class="md-nav__link">
+      <a href="../../../framework/business-components/image-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -757,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/option/" class="md-nav__link">
+      <a href="../../../framework/business-components/option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -777,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/parcel-service/" class="md-nav__link">
+      <a href="../../../framework/business-components/parcel-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -797,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/product-option/" class="md-nav__link">
+      <a href="../../../framework/business-components/product-option/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -817,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/product-variant/" class="md-nav__link">
+      <a href="../../../framework/business-components/product-variant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -837,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/statistics-overview/" class="md-nav__link">
+      <a href="../../../framework/business-components/statistics-overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -857,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/tracking-code/" class="md-nav__link">
+      <a href="../../../framework/business-components/tracking-code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -877,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/user-configuration/" class="md-nav__link">
+      <a href="../../../framework/business-components/user-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/withdrawal/" class="md-nav__link">
+      <a href="../../../framework/business-components/withdrawal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -932,7 +924,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="framework/business-components/internal/configuration/" class="md-nav__link ">
+            <a href="../../../framework/business-components/internal/configuration/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -961,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/internal/exception-transmitter/" class="md-nav__link">
+      <a href="../../../framework/business-components/internal/exception-transmitter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -981,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/internal/sellingunit/" class="md-nav__link">
+      <a href="../../../framework/business-components/internal/sellingunit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1024,7 +1016,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="framework/business-components/work-in-progress/customer-address/" class="md-nav__link ">
+            <a href="../../../framework/business-components/work-in-progress/customer-address/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1053,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/work-in-progress/customer-credentials/" class="md-nav__link">
+      <a href="../../../framework/business-components/work-in-progress/customer-credentials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1073,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/work-in-progress/language/" class="md-nav__link">
+      <a href="../../../framework/business-components/work-in-progress/language/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1093,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/work-in-progress/product-listing/" class="md-nav__link">
+      <a href="../../../framework/business-components/work-in-progress/product-listing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1128,7 +1120,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="framework/business-components/work-in-progress/product-listing/components/" class="md-nav__link ">
+            <a href="../../../framework/business-components/work-in-progress/product-listing/components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1157,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/work-in-progress/product-listing/deliverables/" class="md-nav__link">
+      <a href="../../../framework/business-components/work-in-progress/product-listing/deliverables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/work-in-progress/product-listing/planning/" class="md-nav__link">
+      <a href="../../../framework/business-components/work-in-progress/product-listing/planning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1197,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/business-components/work-in-progress/product-listing/price_notices/" class="md-nav__link">
+      <a href="../../../framework/business-components/work-in-progress/product-listing/price_notices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1248,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="framework/details/application-layers/" class="md-nav__link ">
+            <a href="../../../framework/details/application-layers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1285,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/details/autoloading/" class="md-nav__link">
+      <a href="../../../framework/details/autoloading/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1305,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/details/di-container/" class="md-nav__link">
+      <a href="../../../framework/details/di-container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1325,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/details/service-provider/" class="md-nav__link">
+      <a href="../../../framework/details/service-provider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1368,7 +1360,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="framework/technical-components/" class="md-nav__link ">
+            <a href="../../../framework/technical-components/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1397,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/authentication/" class="md-nav__link">
+      <a href="../../../framework/technical-components/authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1417,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/cache/" class="md-nav__link">
+      <a href="../../../framework/technical-components/cache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1437,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/configurations/" class="md-nav__link">
+      <a href="../../../framework/technical-components/configurations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1457,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/database/" class="md-nav__link">
+      <a href="../../../framework/technical-components/database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1477,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/emails/" class="md-nav__link">
+      <a href="../../../framework/technical-components/emails/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1497,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/environment/" class="md-nav__link">
+      <a href="../../../framework/technical-components/environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1517,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/events/" class="md-nav__link">
+      <a href="../../../framework/technical-components/events/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1537,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/languages/" class="md-nav__link">
+      <a href="../../../framework/technical-components/languages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1557,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/logging/" class="md-nav__link">
+      <a href="../../../framework/technical-components/logging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1577,7 +1569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/permissions/" class="md-nav__link">
+      <a href="../../../framework/technical-components/permissions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1597,7 +1589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/pricing/" class="md-nav__link">
+      <a href="../../../framework/technical-components/pricing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1617,7 +1609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/routing/" class="md-nav__link">
+      <a href="../../../framework/technical-components/routing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1637,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/text-phrases/" class="md-nav__link">
+      <a href="../../../framework/technical-components/text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1657,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="framework/technical-components/verification/" class="md-nav__link">
+      <a href="../../../framework/technical-components/verification/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1743,7 +1735,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="gambio-admin/internal/frontend/entrypoint/" class="md-nav__link ">
+            <a href="../../../gambio-admin/internal/frontend/entrypoint/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1772,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gambio-admin/internal/frontend/info-box/" class="md-nav__link">
+      <a href="../../../gambio-admin/internal/frontend/info-box/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1792,7 +1784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gambio-admin/internal/frontend/user-configuration/" class="md-nav__link">
+      <a href="../../../gambio-admin/internal/frontend/user-configuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1825,24 +1817,24 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="module-development/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1858,7 +1850,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Introduction for Module Development
@@ -1871,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/guidelines/" class="md-nav__link">
+      <a href="../../guidelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1891,7 +1883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/sample-modules/" class="md-nav__link">
+      <a href="../../sample-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1909,24 +1901,24 @@
                 
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="module-development/admin/admin-menu-json/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -1936,13 +1928,13 @@
 
             </a>
             
-              <label class="md-nav__link " for="__nav_5_3">
+              <label class="md-nav__link md-nav__link--active" for="__nav_5_3">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             Extending the Admin Menu
@@ -1955,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/admin/custom-configuration-page/" class="md-nav__link">
+      <a href="../custom-configuration-page/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1975,7 +1967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/admin/custom-module-center-module/" class="md-nav__link">
+      <a href="../custom-module-center-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1995,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/admin/define-http-routes/" class="md-nav__link">
+      <a href="../define-http-routes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2015,7 +2007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/admin/gx-modules-json/" class="md-nav__link">
+      <a href="../gx-modules-json/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2035,7 +2027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/admin/http-actions/" class="md-nav__link">
+      <a href="../http-actions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2078,7 +2070,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="module-development/general/all-extenders/" class="md-nav__link ">
+            <a href="../../general/all-extenders/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2107,7 +2099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/general/defining-a-module/" class="md-nav__link">
+      <a href="../../general/defining-a-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2127,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/general/extending-html/" class="md-nav__link">
+      <a href="../../general/extending-html/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2147,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/general/gx-modules/" class="md-nav__link">
+      <a href="../../general/gx-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2167,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/general/languages-text-phrases/" class="md-nav__link">
+      <a href="../../general/languages-text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2210,7 +2202,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="module-development/store/adding-css/" class="md-nav__link ">
+            <a href="../../store/adding-css/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2239,7 +2231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/store/adding-js/" class="md-nav__link">
+      <a href="../../store/adding-js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2259,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/store/creating-http-controller/" class="md-nav__link">
+      <a href="../../store/creating-http-controller/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2279,7 +2271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="module-development/store/creating-theme/" class="md-nav__link">
+      <a href="../../store/creating-theme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2329,7 +2321,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="sample-modules/" class="md-nav__link ">
+            <a href="../../../sample-modules/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2358,7 +2350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sample-modules/extend-shop-functionality/real-command-example/" class="md-nav__link">
+      <a href="../../../sample-modules/extend-shop-functionality/real-command-example/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2400,7 +2392,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="theme-development/" class="md-nav__link ">
+            <a href="../../../theme-development/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2429,7 +2421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/architecture/" class="md-nav__link">
+      <a href="../../../theme-development/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2449,7 +2441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/content-manager/" class="md-nav__link">
+      <a href="../../../theme-development/content-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2469,7 +2461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/extension/" class="md-nav__link">
+      <a href="../../../theme-development/extension/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2489,7 +2481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/final/" class="md-nav__link">
+      <a href="../../../theme-development/final/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2509,7 +2501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/html-templates/" class="md-nav__link">
+      <a href="../../../theme-development/html-templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2529,7 +2521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/scripts/" class="md-nav__link">
+      <a href="../../../theme-development/scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2549,7 +2541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/styles/" class="md-nav__link">
+      <a href="../../../theme-development/styles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2569,7 +2561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theme-development/text-phrases/" class="md-nav__link">
+      <a href="../../../theme-development/text-phrases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2605,43 +2597,400 @@
                   
 
 
-<h1 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h1>
-<p>On this page, we provide you with all kind of tutorials supporting you to start developing within the Gambio shop
-system quickly.</p>
-<div class="grid cards">
+<h1 id="extending-the-admin-menu">Extending the Admin Menu<a class="headerlink" href="#extending-the-admin-menu" title="Permanent link">&para;</a></h1>
+<p>To extend the Admin Menu, you need to create a specific JSON file within your GXModules module directory (e.g.
+<code>GXModules/&lt;Vendor&gt;/&lt;Module&gt;</code>), which defines the menu items you want to add or replace. The JSON file must end with
+<code>.menu.json</code> (e.g. <code>SampleModuleMenuFile.menu.json</code>), so that shop system can find and register it.</p>
+<p>The menu splits into groups and items. While the groups are always visible and contain the items, the items will be
+hidden if the user collapses the admin menu. The schema of the menu JSON file must match the existing schema of the menu
+dataset. You will find the <a href="#admin-menu-json-schema">schema definitions</a> at the bottom of this tutorial.</p>
+<p>The default admin menu is defined by the <code>GambioAdmin/Layout/Menu/data/GambioAdminMenu.json</code> file.</p>
+<h2 id="adding-a-new-item-to-an-existing-group">Adding a new item to an existing group<a class="headerlink" href="#adding-a-new-item-to-an-existing-group" title="Permanent link">&para;</a></h2>
+<p>To add a new item to an existing group, you have to use the same <code>id</code> attribute as in the group. Using the <code>sort</code>
+attribute, you can change the sorting order of the group items.</p>
+<p>The following example adds a new group item to the existing <strong>orders</strong> (<code>BOX_HEADING_ORDERS</code>) group:</p>
+<pre><code class="language-json">[
+    {
+        &quot;id&quot;: &quot;BOX_HEADING_ORDERS&quot;,
+        &quot;items&quot;: [
+            {
+                &quot;sort&quot;: 15,
+                &quot;link&quot;: &quot;&lt;Link&gt;&quot;,
+                &quot;title&quot;: &quot;&lt;SectionName&gt;.&lt;TextPhrase&gt;&quot;
+            }
+        ]
+    }
+]
+</code></pre>
+<h2 id="adding-a-new-group-to-the-menu">Adding a new group to the menu<a class="headerlink" href="#adding-a-new-group-to-the-menu" title="Permanent link">&para;</a></h2>
+<p>If you want to add a new menu group, use a unique unoccupied <code>id</code>. The <code>sort</code> attribute will determine the sorting
+order.</p>
+<p>The <code>title</code> attribute is similar to some other systems and provides a text phrase reference. The shop will map this
+reference into an existing text phrase and use it as the title of your group. The <code>title</code> attribute follows the
+convention: <code>&lt;Section&gt;.&lt;TextPhrase&gt;</code> (e.g. <code>sample_language_file.sample_text_phrase</code>).</p>
+<pre><code class="language-json">[
+    {
+        &quot;id&quot;: &quot;&lt;GroupId&gt;&quot;,
+        &quot;sort&quot;: 250,
+        &quot;class&quot;: &quot;fa &lt;FontAwesomeClass&gt;&quot;,
+        &quot;title&quot;: &quot;&lt;SectionName&gt;.&lt;TextPhrase&gt;&quot;,
+        &quot;items&quot;: [
+            {
+                &quot;sort&quot;: 10,
+                &quot;link&quot;: &quot;&lt;Link&gt;&quot;,
+                &quot;title&quot;: &quot;&lt;SectionName&gt;.&lt;TextPhrase&gt;&quot;
+            },
+            {
+                &quot;sort&quot;: 20,
+                &quot;link&quot;: &quot;&lt;Link&gt;&quot;,
+                &quot;title&quot;: &quot;&lt;SectionName&gt;.&lt;TextPhrase&gt;&quot;
+            }
+        ]
+    }
+]
+</code></pre>
+<blockquote>
+<p>Note: You can find an overview of all FontAwesome classes on
+<a href="https://fontawesome.com/icons?d=gallery&amp;m=free">their website</a>.</p>
+</blockquote>
+<h2 id="filter">Filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h2>
+<p>Some menu items should only be displayed if a condition applies. Menu filters can be used for this purpose.</p>
+<p>The shop system provides a few menu filters by default. To use them, you need to add an <code>if</code> attribute in the JSON. They
+can be applied to menu groups and menu items. It is possible to provide an array with filter objects to the <code>if</code>
+attribute to apply multiple filters.</p>
+<p>The <code>filter</code> attribute must match the registered filter name. The <code>args</code> attribute must an array containing mixed type
+elements. The args count is based on the filter implementation.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">[
+    {
+        &quot;sort&quot;: 1,
+        &quot;link&quot;: &quot;&lt;Link&gt;&quot;,
+        &quot;title&quot;: &quot;&lt;SectionName&gt;.&lt;TextPhrase&gt;&quot;,
+        &quot;if&quot;: {
+            &quot;filter&quot;: &quot;configActive&quot;,
+            &quot;args&quot;: [
+                &quot;&lt;ConfigKey&gt;&quot;
+            ]
+        }
+    },
+    {
+        &quot;sort&quot;: 2,
+        &quot;link&quot;: &quot;&lt;Link&gt;&quot;,
+        &quot;title&quot;: &quot;&lt;SectionName&gt;.&lt;TextPhrase&gt;&quot;,
+        &quot;if&quot;: [
+            {
+                &quot;filter&quot;: &quot;configActive&quot;,
+                &quot;args&quot;: [
+                    &quot;&lt;ConfigKey&gt;&quot;
+                ]
+            },
+            {
+                &quot;filter&quot;: &quot;configActive&quot;,
+                &quot;args&quot;: [
+                    &quot;&lt;OtherConfigKey&gt;&quot;
+                ]
+            }
+        ]
+    }
+]
+</code></pre>
+<h3 id="core-filter">Core filter<a class="headerlink" href="#core-filter" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 4a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8m0 2a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0-6-6m-1 2h1.5v3.78l2.33 2.33-1.06 1.06L14 12.4V8M2 18a1 1 0 0 1-1-1 1 1 0 0 1 1-1h3.83c.31.71.71 1.38 1.17 2H2m1-5a1 1 0 0 1-1-1 1 1 0 0 1 1-1h2.05L5 12l.05 1H3m1-5a1 1 0 0 1-1-1 1 1 0 0 1 1-1h3c-.46.62-.86 1.29-1.17 2H4Z"/></svg></span> <strong>Set up in 5 minutes</strong></p>
-<hr />
-<p>In the section <strong><a href="develop-environment/">Development Environment</a></strong>, we will show you how to quickly and easily set up the development
-environment and start developing your modules.</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Getting started</a></p>
+<p><code>Gambio\Admin\Layout\Menu\Filter\Types\ConfigActive</code></p>
+<ul>
+<li><strong>filter</strong>: <code>configActive</code></li>
+<li><strong>args</strong>: [(string $configKey)]</li>
+</ul>
 </li>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2M1 2v2h2l3.6 7.59-1.36 2.45c-.15.28-.24.61-.24.96a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25c0-.05.01-.09.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.47c.07-.16.12-.33.12-.5a1 1 0 0 0-1-1H5.21l-.94-2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2Z"/></svg></span> <strong>Architecture</strong></p>
-<hr />
-<p>The <strong><a href="framework/">Architecture and Framework</a></strong> section gives you an overview of the architecture of the shop software and its
-components and helpful services.</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Reference</a></p>
+<p><code>Gambio\Admin\Layout\Menu\Filter\Types\ConfigExists</code></p>
+<ul>
+<li><strong>filter</strong>: <code>configExists</code></li>
+<li><strong>args</strong>: [(string ...$configKeys)]</li>
+</ul>
 </li>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15M5 15.91l6 3.38v-6.71L5 9.21v6.7m14 0v-6.7l-6 3.37v6.71l6-3.38Z"/></svg></span> <strong>Modules</strong></p>
-<hr />
-<p>How to create your modules and what's essential regarding the store and admin area will be explained in the
-<strong><a href="module-development/">Module Development</a></strong> section.</p>
-<p>Of course, we have also prepared a few sample modules for you, which can be found in the <strong><a href="sample-modules/">Sample Modules</a></strong> section.</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Module Development</a></p>
+<p><code>Gambio\Admin\Layout\Menu\Filter\Types\DisplayOldModuleCenter</code></p>
+<ul>
+<li><strong>filter</strong>: <code>displayOldModuleCenter</code></li>
+<li><strong>args</strong>: [()]</li>
+</ul>
 </li>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 16c.55 0 1 .45 1 1 0 1.1-.9 2-2 2-.17 0-.33 0-.5-.05.31-.55.5-1.21.5-1.95 0-.55.45-1 1-1M18.67 3c-.26 0-.51.1-.71.29L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.04 0-1.41l-1.34-1.34c-.2-.2-.45-.29-.7-.29M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.5 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3Z"/></svg></span> <strong>Themes</strong></p>
-<hr />
-<p>The <strong><a href="theme-development/">Theme Development</a></strong> section provides step-by-step instructions for creating a new theme with modifications
-and your contents.</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> License</a></p>
+<p><code>Gambio\Admin\Layout\Menu\Filter\Types\TemplateVersion</code></p>
+<ul>
+<li><strong>filter</strong>: <code>templateVersion</code></li>
+<li><strong>args</strong>: [(string $operator)]</li>
+<li><code>$operator</code> <strong>must be</strong> <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, or <code>=</code></li>
+</ul>
 </li>
 </ul>
+<h3 id="custom-filter">Custom filter<a class="headerlink" href="#custom-filter" title="Permanent link">&para;</a></h3>
+<p>Custom filters can be implemented with the <code>Gambio\Admin\Layout\Menu\Filter\FilterInterface</code> Interface. It is possible
+to inject any class which is registered in the DI-Container into the filter implementation.</p>
+<p>The <code>check</code> method gets an instance of <code>Gambio\Admin\Layout\Menu\Filter\FilterConditionArguments</code> as argument which can
+be used to access values passed in the <code>args</code> array of the menu JSON filter object.</p>
+<p>Filters can be added to the application with a bootable <a href="../../../framework/details/service-provider/">Service Provider</a>. The application should inflect
+the <code>Gambio\Admin\Layout\Menu\Filter\FilterFactory::addLoader</code> method, passing the loader name as first argument and the
+full qualified filter classname string as second argument to the inflection registration.</p>
+<p><strong>Example Filter:</strong></p>
+<pre><code class="language-php">&lt;?php
+
+namespace GXModules\&lt;Vendor&gt;\&lt;Module&gt;;
+
+use Gambio\Admin\Layout\Menu\Filter\FilterConditionArguments;
+use Gambio\Admin\Layout\Menu\Filter\FilterInterface;
+
+class ExampleFilter implements FilterInterface
+{
+    public function check(FilterConditionArguments $condition): bool
+    {
+        $args = $condition-&gt;args();
+
+        return array_key_exists(0, $args) &amp;&amp; $args[0] === true;
+    }
+}
+</code></pre>
+<p><strong>Example ServiceProvider integration:</strong></p>
+<pre><code class="language-php">&lt;?php
+
+namespace GXModules\&lt;Vendor&gt;\&lt;Module&gt;;
+
+use GXModules\&lt;Vendor&gt;\&lt;Module&gt;\ExampleFilter;
+use Gambio\Admin\Layout\Menu\Filter\FilterFactory;
+use Gambio\Core\Application\DependencyInjection\AbstractModuleBootableServiceProvider;
+
+class ExampleServiceProvider extends AbstractModuleBootableServiceProvider
+{
+    public function boot(): void
+    {
+        $this-&gt;application-&gt;inflect(FilterFactory::class)
+            -&gt;invokeMethod('addFilter', ['exampleFilter', ExampleFilter::class]);
+    }
+
+
+    public function provides(): array
+    {
+        // define public available DI-container definitions
+        return [];
+    }
+
+
+    public function register(): void
+    {
+        // component registration code
+    }
+}
+</code></pre>
+<p><strong>Menu JSON:</strong></p>
+<pre><code class="language-json">{
+    &quot;sort&quot;: 1,
+    &quot;link&quot;: &quot;&lt;Link&gt;&quot;,
+    &quot;title&quot;: &quot;&lt;SectionName&gt;.&lt;TextPhrase&gt;&quot;,
+    &quot;if&quot;: {
+        &quot;filter&quot;: &quot;exampleFilter&quot;,
+        &quot;args&quot;: [
+            false
+        ]
+    }
+}
+</code></pre>
+<h2 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">&para;</a></h2>
+<p>We cache the menu dataset to improve the performance. If you change the dataset of the menu, you need to clear the
+module cache in the Gambio Admin (<strong>Toolbox &gt; Caches</strong>).</p>
+<h3 id="clear-menu-cache">Clear menu cache<a class="headerlink" href="#clear-menu-cache" title="Permanent link">&para;</a></h3>
+<p>In case you need to clear the menu cache by yourself, you can use the <code>Gambio\Admin\Layout\Menu\AdminMenuService</code>
+class like shown in the following example:</p>
+<pre><code class="language-php">use Gambio\Admin\Layout\Menu\AdminMenuService;
+
+/**
+ * Class SampleClass
+ */
+class SampleClass
+{
+    /**
+     * @var AdminMenuService
+     */
+    private $adminMenuService;
+
+
+    /**
+     * SampleClass constructor.
+     *
+     * @param AdminMenuService $adminMenuService
+     */
+    public function __construct(AdminMenuService $adminMenuService)
+    {
+        $this-&gt;adminMenuService = $adminMenuService;
+    }
+
+
+    public function clearAdminMenuCache(): void
+    {
+        $this-&gt;adminMenuService-&gt;deleteMenuCache();
+    }
+}
+</code></pre>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>This example expects you to use the <a href="../../../framework/details/service-provider/">Service Provider</a> to register your classes to the <a href="../../../framework/application-core/">Application Core</a>.
+If you are using the legacy architecture, you need to fetch this service using the <a href="../../../framework/details/di-container/#legacy-di-container">Legacy DI Container</a>.</p>
 </div>
-<p>Of course, we have also prepared a few sample modules for you, which can be found in the <strong><a href="sample-modules/">Sample Modules</a></strong> section.</p>
+<h2 id="admin-menu-json-schema">Admin Menu JSON schema<a class="headerlink" href="#admin-menu-json-schema" title="Permanent link">&para;</a></h2>
+<p>the following schema defines the menu dataset schema. Further down, you will find further information about the specific
+attributes inside this schema.</p>
+<pre><code class="language-json">{
+    &quot;$id&quot;: &quot;http://gambio.shop.com/admin/menu&quot;,
+    &quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,
+    &quot;description&quot;: &quot;JSON Schema for gambio admin menu&quot;,
+    &quot;type&quot;: &quot;array&quot;,
+    &quot;items&quot;: {
+        &quot;$ref&quot;: &quot;#/definitions/menuGroup&quot;
+    },
+    &quot;definitions&quot;: {
+        &quot;menuGroup&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+                &quot;id&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;title&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;sort&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;
+                },
+                &quot;class&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;type&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;enum&quot;: [
+                        &quot;standalone&quot;
+                    ]
+                },
+                &quot;brand&quot;: {
+                    &quot;type&quot;: &quot;string&quot;,
+                    &quot;enum&quot;: [
+                        &quot;alt&quot;
+                    ]
+                },
+                &quot;items&quot;: {
+                    &quot;type&quot;: &quot;array&quot;,
+                    &quot;items&quot;: {
+                        &quot;$ref&quot;: &quot;#/definitions/menuItem&quot;
+                    }
+                }
+            },
+            &quot;required&quot;: [
+                &quot;id&quot;
+            ]
+        },
+        &quot;menuItem&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+                &quot;title&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;sort&quot;: {
+                    &quot;type&quot;: &quot;integer&quot;
+                },
+                &quot;link&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;link_param&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                }
+            },
+            &quot;required&quot;: [
+                &quot;title&quot;,
+                &quot;sort&quot;,
+                &quot;link&quot;
+            ]
+        }
+    }
+}
+</code></pre>
+<h3 id="menu-group-attributes">Menu Group attributes<a class="headerlink" href="#menu-group-attributes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Menu Group Identifier</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Menu Group Title</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Sort order</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>class</code></td>
+<td><a href="https://fontawesome.com/icons?d=gallery&amp;m=free">FontAwesome-Icon class</a></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>if set to <code>standalone</code>, items will be hidden</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>brand</code></td>
+<td>if set to <code>alt</code>, group will be colored in gambio yellow</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>Menu items of group</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="menu-item-attributes">Menu Item attributes<a class="headerlink" href="#menu-item-attributes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>Menu Item Title</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Sort order</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td>Admin page link without (<code>my-shop.com/admin/</code>)</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>link_param</code></td>
+<td>Optional link param</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2729,10 +3078,10 @@ and your contents.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.autohide", "navigation.tabs", "navigation.expand", "toc.integrate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
     
   </body>

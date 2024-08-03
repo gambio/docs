@@ -1,7 +1,0 @@
-{
-	"description": "Current API version.",
-	"schema": {
-		"type": "string",
-		"example": "3.0.0"
-	}
-}
