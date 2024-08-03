@@ -18,7 +18,7 @@ theme:
       -   media: "(prefers-color-scheme: dark)"
           scheme: slate
           primary: black
-          accent: indigo
+          accent: yellow
           toggle:
               icon: material/toggle-switch-off
               name: Switch to system preference
