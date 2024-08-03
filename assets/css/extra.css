@@ -1,19 +1,12 @@
 [data-md-color-scheme="gambio"] {
 	--md-primary-fg-color: #002337;
-	--md-primary-bg-color: #ededed;
+	--md-primary-bg-color--light: #ededed;
 	
 	--md-accent-fg-color: #fdc300;
 	--md-accent-bg-color: #002337;
 	
-}
-
-[data-md-color-scheme="gambio-dark"] {
+	--md-primary-bg-color--dark: #1e2129;
 	
-	--md-primary-fg-color: #002337;
-	--md-primary-bg-color: #1e2129;
-	
-	--md-accent-fg-color: #fdc300;
-	--md-accent-bg-color: #002337;
 }
 
 .md-header .md-logo img {
