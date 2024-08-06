@@ -5,6 +5,7 @@ hide:
 ---
 
 # Tutorials
+![](assets/svg/undraw_programmer_re_owql.svg "undraw_programmer_re_owql"){: align=right }
 
 On this page, we provide you with all kind of tutorials supporting you to start developing within the Gambio shop
 system quickly.
