@@ -14,13 +14,13 @@ system quickly.
 
 -   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
 
+    ![](assets/svg/undraw_programmer_re_owql.svg "undraw_programmer_re_owql"){: align=right }
+
+
     ---
 
     In the section **[Development Environment]**, we will show you how to quickly and easily set up the development
     environment and start developing your modules.
-
-    ![](assets/svg/undraw_programmer_re_owql.svg "undraw_programmer_re_owql"){: align=right }
-
 
     [:octicons-arrow-right-24: Getting started](#)
 
