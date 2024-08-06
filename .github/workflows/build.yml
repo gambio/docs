@@ -13,7 +13,7 @@ jobs:
       - name: Build
         uses: Tiryoh/actions-mkdocs@v0
         with:
-          mkdocs_version: '9.5.0' # option
+          mkdocs_version: 'latest' # option
           #mkdocs_version: '1.1' # option
           requirements: '/requirements.txt' # option
           configfile: '/mkdocs.yml' # option
