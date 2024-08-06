@@ -36,10 +36,11 @@
 	float: left;
 }
 .md-typeset .grid {
+	width: 1070px;
 	grid-gap:              .4rem;
 	display:               grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-	margin:                1em 0;
+	margin:                0 auto;
 }
 
 .md-typeset .grid.cards>ul {
