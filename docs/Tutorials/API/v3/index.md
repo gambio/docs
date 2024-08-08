@@ -1,1 +1,1 @@
-[OAD(resolved.openapi.json)]
+[OAD(./resolved.openapi.json)]
