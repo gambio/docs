@@ -22,7 +22,7 @@
     
     
       
-        <title>API - Developer Documentation</title>
+        <title>REST API documentation - Developer Documentation</title>
       
     
     
@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#rest-api-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API
+              REST API documentation
             
           </span>
         </div>
@@ -233,7 +238,7 @@
   
     
   
-  API
+  REST API documentation
 
       </a>
     </li>
@@ -421,7 +426,7 @@
               
   
   <span class="md-ellipsis">
-    API
+    REST API documentation
   </span>
   
 
@@ -436,7 +441,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            API
+            REST API documentation
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2700,9 +2705,60 @@
                   
 
 
-  <h1>API</h1>
-
-
+<h1 id="rest-api-documentation">REST API documentation<a class="headerlink" href="#rest-api-documentation" title="Permanent link">&para;</a></h1>
+<p>This directory contains the specifications to build the API documentation of the Gambio REST API. The build process is
+based on OPEN API v3 specifications, an HTML/CSS/JS template, and some external Node modules included by Yarn.</p>
+<p>The OpenAPI v3 specifications are split into several files, which isn't of the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a> but allows better
+handling for a high number of endpoints. Therefore, the separate files need to be merged, so that the tool that
+generates the documentation can process the specification correctly.</p>
+<p>As you can see, the <code>[v2|v3]/openapi.json</code> uses JSON references to include additional content of other JSON or YAML
+files. The Node module <code>json-refs</code> merges the content (or resolving the references to external files) and creates the
+<code>[v2|v3]/resolved.openapi.json</code> file, which is used by the Node module <code>redoc-cli</code> to generate the documentation.
+The documentation is not only based on the content of the OpenAPI v3 specification, a template located at <code>./template</code>
+is used by the Redoc CLI tool and defines the look of the generated web page.</p>
+<blockquote>
+<p><strong>Note:</strong> Each JSON file can be replaced with a YAML files (and the other way around). For the merging CLI tool it
+doesn't matter, if a JSON or YAML file is referenced.</p>
+</blockquote>
+<h2 id="structure-of-the-specification-folder">Structure of the specification folder<a class="headerlink" href="#structure-of-the-specification-folder" title="Permanent link">&para;</a></h2>
+<p>As said, the specification is split into several files, which can be found in the <code>[v2|v3]</code> directory. The
+sub-directories mirrors the structure of the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a> based on the <code>[v2|v3]/openapi.json</code> file.</p>
+<ul>
+<li>
+<p><code>[v2|v3]/components</code><br />
+  This directory contains definitions of parts of the request and response body, as well as the HTTP header. The
+  internal structure of the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a> is strictly mirrored in this directory. The contained <code>index.json</code>
+  files are used to structure the other JSON/YAML files in the same directory or the directories below.</p>
+</li>
+<li>
+<p><code>[v2|v3]/paths</code><br />
+  This directory contains the files that define the several API endpoints. The <code>[v2|v3]/paths/index.json</code> file
+  defines the URLs and references the corresponding HTTP methods. The contained <code>index.json</code> inside the sub-directories
+  (e.g. <code>[v2|v3]/paths/parcel-services/index.json</code>) maps a specific HTTP method with the json files, that defines
+  the endpoint specifications.</p>
+</li>
+<li>
+<p><code>[v2|v3]/tags</code><br />
+  This directory contains the tags. Each group of API endpoints have a specific tag. E.g. all endpoints starting with
+  <code>api.php/v3/parcel-service</code> belong to the tag <em>parcel service</em> and the files <code>[v2|v3]/tags/parcelServices.json</code>.
+  It's also possible to add additional tags to the specification to provide additional information, like its done
+  with the <code>[v2|v3]/tags/generalInformation.yaml</code> file. The tag files need to be referenced in the
+  <code>[v2|v3]/openapi.json</code> file.</p>
+</li>
+</ul>
+<h2 id="how-to-define-a-new-api-endpoint">How to define a new API endpoint<a class="headerlink" href="#how-to-define-a-new-api-endpoint" title="Permanent link">&para;</a></h2>
+<p>At first, you need to understand the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a>. It's similar to the v2 standard, that is used to define the
+Gambio REST API v2 endpoints, but doesn't match one-to-one.</p>
+<p>To define the structure of the request and response body, you need to define their schemas by creating new files and a
+new sub-directory inside <code>[v2|v3]/components/schemas</code> (similar to the existing schemas). References to other schema
+files can and should be used. After adding the new schemas, you need to add them to the
+<code>[v2|v3]/components/schemas/index.json</code> as well. The assigned JSON key is later used to reference the schemas in the
+definition files for the endpoints. E.g. the reference <code>#/components/schemas/trackingCodes-trackingCode</code> would
+reference the schema defined in <code>[v2|v3]/components/schemas/trackingCodes/trackingCode.json</code>.</p>
+<p>To define new HTTP endpoints, you need to define their schemas by creating new files and new sub-directories inside
+<code>[v2|v3]/paths</code>. References to other schema files are also possible, but you should use the internal references
+(e.g. <code>#/components/schemas/trackingCodes-trackingCode</code>) to reference schemas for response and request bodies, etc.
+After adding the new schemas, you need to add them to the <code>[v2|v3]/paths/index.json</code> as well.</p>
 
 
 
