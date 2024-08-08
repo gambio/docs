@@ -1,4 +1,4 @@
-# REST API documentation
+# REST API
 
 This directory contains the specifications to build the API documentation of the Gambio REST API. The build process is
 based on OPEN API v3 specifications, an HTML/CSS/JS template, and some external Node modules included by Yarn.
