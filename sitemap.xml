@@ -6,7 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://developers.gambio.de/REST/</loc>
+         <loc>https://developers.gambio.de/API/</loc>
+         <lastmod>2024-08-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://developers.gambio.de/API/v2/</loc>
+         <lastmod>2024-08-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://developers.gambio.de/API/v3/</loc>
          <lastmod>2024-08-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
