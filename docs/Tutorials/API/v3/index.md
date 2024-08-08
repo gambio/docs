@@ -121,3 +121,5 @@ the amount of information inside the provided documents. By using the query para
 a comma separated list of document attributes, which describe the structure of the returned documents.
 
 **Example:** `/api.php/v3/withdrawals?fields=id,customer.firstName,customer.lastName`
+
+!!swagger resolved.openapi.json!!
