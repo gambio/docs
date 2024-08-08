@@ -57,6 +57,7 @@ markdown_extensions:
           class: plantuml
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed
+  - pymdownx.details
   - pymdownx.smartsymbols
   - pymdownx.emoji:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -77,7 +78,8 @@ markdown_extensions:
       permalink: true
 plugins:
   - section-index
-  - neoteroi.mkdocsoad
+  - neoteroi.mkdocsoad:
+      use_pymdownx: true
   - mkdocs-nav-enhancements
   - tags
   - search:
