@@ -1,0 +1,11 @@
+{
+	"type": "object",
+	"properties": {
+		"links": {
+			"type": "object",
+			"example": {
+				"parcel-service": "https://example.org/api.php/v3/..."
+			}
+		}
+	}
+}

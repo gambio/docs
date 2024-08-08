@@ -1,0 +1,15 @@
+{
+	"type": "object",
+	"properties": {
+		"links": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"example": "https://example.org/api.php/v3/..."
+			},
+			"example": [
+				"https://example.org/api.php/v3/..."
+			]
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"required": [
+		"email",
+		"phoneNumber",
+		"faxNumber"
+	],
+	"type": "object",
+	"properties": {
+		"email": {
+			"type": "string",
+			"example": "j.doe@mail.com",
+			"minLength": 1
+		},
+		"phoneNumber": {
+			"type": "string",
+			"example": "+49 152 012345"
+		},
+		"faxNumber": {
+			"type": "string",
+			"example": "+49 152 054321"
+		}
+	}
+}

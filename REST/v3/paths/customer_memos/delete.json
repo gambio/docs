@@ -1,0 +1,29 @@
+{
+	"summary": "Delete all customer memos",
+	"operationId": "delete-all-customer-memos",
+	"tags": [
+		{
+			"$ref": "./../../tags/customerMemo.json#/name"
+		}
+	],
+	"description": "Deletes all memos of a specified customer.",
+	"parameters": [
+		{
+			"name": "customerId",
+			"in": "path",
+			"description": "ID of an existing customer.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		}
+	],
+	"responses": {
+		"204": {
+			"description": "Customer memos successfully deleted."
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"type": "object",
+	"properties": {
+		"links": {
+			"type": "object",
+			"example": {
+				"order": "https://example.org/api.php/v3/...",
+				"customer": "https://example.org/api.php/v3/..."
+			}
+		}
+	}
+}

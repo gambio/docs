@@ -1,0 +1,17 @@
+{
+	"shopVersion": {
+		"$ref": "./shopVersion.json"
+	},
+	"apiVersion": {
+		"$ref": "./apiVersion.json"
+	},
+	"rateLimitLimit": {
+		"$ref": "./rateLimitLimit.json"
+	},
+	"rateLimitRemaining": {
+		"$ref": "./rateLimitRemaining.json"
+	},
+	"rateLimitReset": {
+		"$ref": "./rateLimitReset.json"
+	}
+}

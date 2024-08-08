@@ -1,0 +1,7 @@
+{
+	"description": "Current shop version.",
+	"schema": {
+		"type": "string",
+		"example": "4.1.0.0"
+	}
+}

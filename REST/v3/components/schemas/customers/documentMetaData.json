@@ -1,0 +1,20 @@
+{
+	"type": "object",
+	"properties": {
+		"links": {
+			"type": "object",
+            "properties": {
+                "memos": {
+                    "type": "string"
+                },
+                "addon-values": {
+                    "type": "string"
+                }
+            },
+			"example": {
+				"memos": "https://example.org/api.php/v3/...",
+				"addon-values": "https://example.org/api.php/v3/..."
+			}
+		}
+	}
+}

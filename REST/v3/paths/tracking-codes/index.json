@@ -1,0 +1,8 @@
+{
+	"get": {
+		"$ref": "./get.json"
+	},
+	"post":{
+		"$ref": "./post.json"
+	}
+}

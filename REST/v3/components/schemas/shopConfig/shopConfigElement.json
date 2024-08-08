@@ -1,0 +1,17 @@
+{
+    "required": [
+        "key",
+        "value"
+    ],
+    "type": "object",
+    "properties": {
+        "key": {
+            "type": "string",
+            "example": "DEFAULT_CURRENCY",
+            "minLength": 1
+        },
+        "value": {
+            "$ref": "./shopConfigElementValue.json"
+        }
+    }
+}

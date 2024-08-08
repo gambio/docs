@@ -1,0 +1,30 @@
+{
+	"required": [
+		"languageCode",
+		"label",
+		"adminLabel",
+		"description"
+	],
+	"type": "object",
+	"properties": {
+		"languageCode": {
+			"type": "string",
+			"example": "en",
+			"patten": "^\\w{2}$"
+		},
+		"label": {
+			"type": "string",
+			"example": "Size",
+			"minLength": 1
+		},
+		"adminLabel": {
+			"type": "string",
+			"example": "Size (T-Shirts)",
+			"minLength": 1
+		},
+		"description": {
+			"type": "string",
+			"example": "An additional description ..."
+		}
+	}
+}

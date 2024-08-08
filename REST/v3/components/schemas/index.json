@@ -1,0 +1,366 @@
+{
+	"withdrawals-collectionMetaData": {
+		"$ref": "./withdrawals/collectionMetaData.json"
+	},
+	"withdrawals-creationMetaData": {
+		"$ref": "./withdrawals/creationMetaData.json"
+	},
+	"withdrawals-customerAddress": {
+		"$ref": "./withdrawals/customerAddress.json"
+	},
+	"withdrawals-customerDetails": {
+		"$ref": "./withdrawals/customerDetails.json"
+	},
+	"withdrawals-documentMetaData": {
+		"$ref": "./withdrawals/documentMetaData.json"
+	},
+	"withdrawals-orderDetails": {
+		"$ref": "./withdrawals/orderDetails.json"
+	},
+	"withdrawals-withdrawal": {
+		"$ref": "./withdrawals/withdrawal.json"
+	},
+	"withdrawals-withdrawalData": {
+		"$ref": "./withdrawals/withdrawalData.json"
+	},
+	"withdrawals-withdrawalId": {
+		"$ref": "./withdrawals/withdrawalId.json"
+	},
+	"withdrawals-withdrawalIds": {
+		"$ref": "./withdrawals/withdrawalIds.json"
+	},
+	"withdrawals-withdrawals": {
+		"$ref": "./withdrawals/withdrawals.json"
+	},
+	"withdrawals-withdrawalsData": {
+		"$ref": "./withdrawals/withdrawalsData.json"
+	},
+	
+	"parcelServices-collectionMetaData": {
+		"$ref": "./parcelServices/collectionMetaData.json"
+	},
+	"parcelServices-creationMetaData": {
+		"$ref": "./parcelServices/creationMetaData.json"
+	},
+	"parcelServices-documentMetaData": {
+		"$ref": "./parcelServices/documentMetaData.json"
+	},
+	"parcelServices-parcelService": {
+		"$ref": "./parcelServices/parcelService.json"
+	},
+	"parcelServices-parcelServiceData": {
+		"$ref": "./parcelServices/parcelServiceData.json"
+	},
+	"parcelServices-parcelServiceDescription": {
+		"$ref": "./parcelServices/parcelServiceDescription.json"
+	},
+	"parcelServices-parcelServiceDescriptions": {
+		"$ref": "./parcelServices/parcelServiceDescriptions.json"
+	},
+	"parcelServices-parcelServiceId": {
+		"$ref": "./parcelServices/parcelServiceId.json"
+	},
+	"parcelServices-parcelServiceIds": {
+		"$ref": "./parcelServices/parcelServiceIds.json"
+	},
+	"parcelServices-parcelServices": {
+		"$ref": "./parcelServices/parcelServices.json"
+	},
+	"parcelServices-parcelServicesData": {
+		"$ref": "./parcelServices/parcelServicesData.json"
+	},
+	
+	"trackingCodes-collectionMetaData": {
+		"$ref": "./trackingCodes/collectionMetaData.json"
+	},
+	"trackingCodes-creationMetaData": {
+		"$ref": "./trackingCodes/creationMetaData.json"
+	},
+	"trackingCodes-documentMetaData": {
+		"$ref": "./trackingCodes/documentMetaData.json"
+	},
+	"trackingCodes-parcelServiceDetails": {
+		"$ref": "./trackingCodes/parcelServiceDetails.json"
+	},
+	"trackingCodes-trackingCode": {
+		"$ref": "./trackingCodes/trackingCode.json"
+	},
+	"trackingCodes-trackingCodeData": {
+		"$ref": "./trackingCodes/trackingCodeData.json"
+	},
+	"trackingCodes-trackingCodeId": {
+		"$ref": "./trackingCodes/trackingCodeId.json"
+	},
+	"trackingCodes-trackingCodeIds": {
+		"$ref": "./trackingCodes/trackingCodeIds.json"
+	},
+	"withdrawals-withdrawalPatch": {
+		"$ref": "./withdrawals/withdrawalPatch.json"
+	},
+	"withdrawals-withdrawalPatches": {
+		"$ref": "./withdrawals/withdrawalPatches.json"
+	},
+	"trackingCodes-trackingCodes": {
+		"$ref": "./trackingCodes/trackingCodes.json"
+	},
+	"trackingCodes-trackingCodesData": {
+		"$ref": "./trackingCodes/trackingCodesData.json"
+	},
+    
+    "shopConfig-shopConfig": {
+        "$ref": "./shopConfig/shopConfig.json"
+    },
+    "shopConfig-shopConfigElement": {
+        "$ref": "./shopConfig/shopConfigElement.json"
+    },
+    "shopConfig-shopConfigElementValue": {
+        "$ref": "./shopConfig/shopConfigElementValue.json"
+    },
+
+	"options-creationMetaData": {
+		"$ref": "./options/creationMetaData.json"
+	},
+	"options-documentMetaData": {
+		"$ref": "./options/documentMetaData.json"
+	},
+	"options-optionId": {
+		"$ref": "./options/optionId.json"
+	},
+	"options-optionIds": {
+		"$ref": "./options/optionIds.json"
+	},
+	"options-optionValueId": {
+		"$ref": "./options/optionValueId.json"
+	},
+	"options-optionValueIds": {
+		"$ref": "./options/optionValueIds.json"
+	},
+	"options-option": {
+		"$ref": "./options/option.json"
+	},
+	"options-option-creation": {
+		"$ref": "./options/optionCreation.json"
+	},
+	"options-option-update": {
+		"$ref": "./options/optionUpdate.json"
+	},
+	"options-option-values": {
+		"$ref": "./options/optionValues.json"
+	},
+	"options-option-values-create": {
+		"$ref": "./options/optionValuesCreate.json"
+	},
+	"options-option-values-update": {
+		"$ref": "./options/optionValuesUpdate.json"
+	},
+	"options-options": {
+		"$ref": "./options/options.json"
+	},
+	"options-options-creation": {
+		"$ref": "./options/optionsCreation.json"
+	},
+	"options-options-update": {
+		"$ref": "./options/optionsUpdate.json"
+	},
+	"options-collectionMetaData": {
+		"$ref": "./options/collectionMetaData.json"
+	},
+	"options-optionPatches": {
+		"$ref": "./options/optionsPatch.json"
+	},
+
+	"productVariants-creationMetaData": {
+		"$ref": "./productVariants/creationMetaData.json"
+	},
+	"productVariants-documentMetaData": {
+		"$ref": "./productVariants/documentMetaData.json"
+	},
+	"productVariants-variants": {
+		"$ref": "./productVariants/variants.json"
+	},
+	"productVariants-variant": {
+		"$ref": "./productVariants/variant.json"
+	},
+	"productVariants-patch": {
+		"$ref": "./productVariants/variantsPatch.json"
+	},
+	"productVariants-optionValues": {
+		"$ref": "./productVariants/optionValues.json"
+	},
+	"productVariants-generation": {
+		"$ref": "./productVariants/optionValuesForGeneration.json"
+	},
+	"productVariants-variants-creation": {
+		"$ref": "./productVariants/variantsCreation.json"
+	},
+	"productVariants-variants-update": {
+		"$ref": "./productVariants/variantsUpdate.json"
+	},
+	"productVariants-collectionMetaData": {
+		"$ref": "./productVariants/collectionMetaData.json"
+	},
+	"productVariants-option-ids": {
+		"$ref": "./productVariants/optionIds.json"
+	},
+	"productVariants-option-ids-option-value-ids": {
+		"$ref": "./productVariants/optionIdsValueIds.json"
+	},
+	"productVariants-variants-created": {
+		"$ref": "./productVariants/productsVariantsCreated.json"
+	},
+
+	"productOptions-creationMetaData": {
+		"$ref": "./productOptions/creationMetaData.json"
+	},
+	"productOptions-documentMetaData": {
+		"$ref": "./productOptions/documentMetaData.json"
+	},
+	"productOptions-collectionMetaData": {
+		"$ref": "./productOptions/collectionMetaData.json"
+	},
+	"productOptions-productOptions": {
+		"$ref": "./productOptions/productOptions.json"
+	},
+	"productOptions-productOption": {
+		"$ref": "./productOptions/productOption.json"
+	},
+	"productOptions-productOptionsCreation": {
+		"$ref": "./productOptions/productOptionsCreation.json"
+	},
+	"productOptions-OptionsCreated": {
+		"$ref": "./productOptions/productOptionsCreated.json"
+	},
+	"productOptions-Patch": {
+		"$ref": "./productOptions/productOptionsPatch.json"
+	},
+
+	"imageLists-creationMetaData": {
+		"$ref": "./imageLists/creationMetaData.json"
+	},
+	"imageLists-documentMetaData": {
+		"$ref": "./imageLists/documentMetaData.json"
+	},
+	"imageLists-collectionMetaData": {
+		"$ref": "./imageLists/collectionMetaData.json"
+	},
+	"imageLists-imageLists": {
+		"$ref": "./imageLists/imageLists.json"
+	},
+	"imageLists-imageList": {
+		"$ref": "./imageLists/imageList.json"
+	},
+	"imageLists-imageListImages": {
+		"$ref": "./imageLists/images.json"
+	},
+	"imagelists-imagelists-creation": {
+		"$ref": "./imageLists/createList.json"
+	},
+	"imagelists-imagelistIds": {
+		"$ref": "./imageLists/idCollection.json"
+	},
+	"imagelists-imagelistPaths": {
+		"$ref": "./imageLists/pathCollection.json"
+	},
+	"image-list-update": {
+		"$ref": "./imageLists/updateList.json"
+	},
+	"imagelists-image-creation": {
+		"$ref": "./imageLists/createImage.json"
+	},
+	"imagelists-image-patch": {
+		"$ref": "./imageLists/updateSortOrder.json"
+	},
+	"image-list-update-image": {
+		"$ref": "./imageLists/updateImage.json"
+	},
+	
+	"customerMemos-documentMetaData": {
+		"$ref": "./customerMemos/documentMetaData.json"
+	},
+	"customerMemos-collectionMetaData": {
+		"$ref": "./customerMemos/collectionMetaData.json"
+	},
+	"customerMemos-creationMetaData": {
+		"$ref": "./customerMemos/creationMetaData.json"
+	},
+	"customerMemos-customerMemos": {
+		"$ref": "./customerMemos/customerMemos.json"
+	},
+	"customerMemos-customerMemo": {
+		"$ref": "./customerMemos/customerMemo.json"
+	},
+	"customerMemos-createCustomerMemos": {
+		"$ref": "./customerMemos/createCustomerMemos.json"
+	},
+	"customerMemos-customerMemoIds": {
+		"$ref": "./customerMemos/idCollection.json"
+	},
+	"customerMemos-updateCustomerMemos": {
+		"$ref": "./customerMemos/updateCustomerMemos.json"
+	},
+	
+	"customerAddonValues-collectionMetaData": {
+		"$ref": "./customerAddonValues/collectionMetaData.json"
+	},
+	"customerAddonValues-creationMetaData": {
+		"$ref": "./customerAddonValues/creationMetaData.json"
+	},
+	"customerAddonValues-documentMetaData": {
+		"$ref": "./customerAddonValues/documentMetaData.json"
+	},
+	"customerAddonValues-customerAddonValue": {
+		"$ref": "./customerAddonValues/customerAddonValue.json"
+	},
+	"customerAddonValues-customerAddonValues": {
+		"$ref": "./customerAddonValues/customerAddonValues.json"
+	},
+	"customerAddonValues-create-update-customerAddonValues": {
+		"$ref": "./customerAddonValues/createCustomerAddonValues.json"
+	},
+	"customerAddonValues-customerAddonValuesIdentifiers": {
+		"$ref": "./customerAddonValues/customerAddonValuesIdentifiers.json"
+	},
+	
+	"customers-collectionMetaData": {
+		"$ref": "./customers/collectionMetaData.json"
+	},
+	"customers-creationMetaData": {
+		"$ref": "./customers/creationMetaData.json"
+	},
+	"customers-documentMetaData": {
+		"$ref": "./customers/documentMetaData.json"
+	},
+	"customers-customer": {
+		"$ref": "./customers/customer.json"
+	},
+	"customers-customers": {
+		"$ref": "./customers/customers.json"
+	},
+	"customers-customerIds": {
+		"$ref": "./customers/idCollection.json"
+	},
+	"customerMemos-createCustomer": {
+		"$ref": "./customers/createCustomers.json"
+	},
+	"customers-updateCustomers": {
+		"$ref": "./customers/updateCustomers.json"
+	},
+	"customers-patchCustomers": {
+		"$ref": "./customers/patchCustomers.json"
+	},
+    "customer-registration": {
+        "$ref": "./customerRegistration/registration.json"
+	},
+    "currencies-currencies": {
+        "$ref": "./currencies/currencies.json"
+    },
+    "currencies-currency": {
+        "$ref": "./currencies/currency.json"
+    },
+    "currencies-collectionMetaData": {
+        "$ref": "./currencies/collectionMetaData.json"
+    },
+    "currencies-documentMetaData": {
+        "$ref": "./currencies/documentMetaData.json"
+    }
+}

@@ -1,0 +1,44 @@
+{
+	"summary": "Delete multiple customer memos",
+	"operationId": "delete-customer-memos",
+	"tags": [
+		{
+			"$ref": "./../../tags/customerMemo.json#/name"
+		}
+	],
+	"description": "Deletes one or more customer memos based on the provided IDs.",
+	"parameters": [
+		{
+			"name": "customerId",
+			"in": "path",
+			"description": "ID of an existing customer.",
+			"required": true,
+			"style": "simple",
+			"schema": {
+				"type": "integer",
+				"example": 1,
+				"minimum": 1
+			}
+		},
+		{
+			"name": "memoIds",
+			"in": "path",
+			"description": "Customer memo IDs represented as a comma separated list.",
+			"required": true,
+			"style": "simple",
+			"explode": true,
+			"schema": {
+				"type": "string",
+				"example": "1,2,3"
+			}
+		}
+	],
+	"responses": {
+		"204": {
+			"description": "Customer memos successfully deleted."
+		},
+        "409": {
+            "$ref": "#/components/responses/conflictByDataOrAction"
+        }
+	}
+}

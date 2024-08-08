@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <title>{{title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.scss">
+        <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+        {{{redocHead}}}
+    </head>
+    
+    <body>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" id="logoLink" href="">
+                        <img id="logo" src="./images/logo.svg" alt="Gambio developers"/>
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <span class="fas fa-bars"></span>
+                        </span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" id="startLink" href="#">Start</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.gambio.de/blog">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.gambio.de">Gambio.de</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://sources.gambio-server.net">
+                                    <span class="fab fa-gitlab"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://twitter.com/gambio">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/company/gambio-gmbh">
+                                    <span class="fab fa-linkedin"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        <main>
+            {{{redocHTML}}}
+            
+            <div id="scrollTop"><span class="fas fa-arrow-up"></span></div>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <p id="copyright">Copyright &copy; <span id="year">2020</span> Gambio GmbH</p>
+                
+                <ul id="footer-navigation">
+                    <li><a href="https://www.gambio.de/Allgemeine-Geschaeftsbedingungen.html">general business terms</a>
+                    </li>
+                    <li><a href="https://www.gambio.de/Datenschutzerklaerung.html">data privacy</a></li>
+                    <li><a href="http://www.gambio.de/Impressum.html">imprint</a></li>
+                </ul>
+            </div>
+        </footer>
+        
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>

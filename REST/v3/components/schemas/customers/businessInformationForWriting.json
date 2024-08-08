@@ -1,0 +1,22 @@
+{
+	"required": [
+		"companyName",
+		"vatId",
+		"isTradesperson"
+	],
+	"type": "object",
+	"properties": {
+		"companyName": {
+			"type": "string",
+			"example": "Gambio GmbH"
+		},
+		"vatId": {
+			"type": "string",
+			"example": "DE 123456789"
+		},
+		"isTradesperson": {
+			"type": "boolean",
+			"example": true
+		}
+	}
+}
