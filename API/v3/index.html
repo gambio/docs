@@ -22,7 +22,7 @@
     
     
       
-        <title>V3 - Developer Documentation</title>
+        <title>General Information - Developer Documentation</title>
       
     
     
@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#general-information" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              V3
+              General Information
             
           </span>
         </div>
@@ -233,7 +238,7 @@
   
     
   
-  REST API documentation
+  REST API
 
       </a>
     </li>
@@ -421,7 +426,7 @@
               
   
   <span class="md-ellipsis">
-    REST API documentation
+    REST API
   </span>
   
 
@@ -436,7 +441,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            REST API documentation
+            REST API
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -472,16 +477,137 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    General Information
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    V3
+    General Information
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hateoas-support" class="md-nav__link">
+    HATEOAS Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-caching-support" class="md-nav__link">
+    HTTP Caching Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-with-postman" class="md-nav__link">
+    Usage with Postman
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage with Postman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-your-api-location" class="md-nav__link">
+    Defining your API location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-into-postman" class="md-nav__link">
+    Importing into Postman
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-query-parameters" class="md-nav__link">
+    Optional Query Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Query Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    Sorting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    Pagination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trim-documents" class="md-nav__link">
+    Trim documents
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2708,18 +2834,88 @@
                   
 
 
-  <h1>V3</h1>
-
-<p><link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"></p>
-<div id="swagger-ui-2">
-</div>
-<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
-<script>
-    SwaggerUIBundle({
-      url: 'resolved.openapi.json',
-      dom_id: '#swagger-ui-2',
-    })
-</script>
+<h1 id="general-information">General Information<a class="headerlink" href="#general-information" title="Permanent link">&para;</a></h1>
+<p>Since GX v4.1.1.0 there is a new REST API version available. Similar to the existing v2 API, the new endpoints can be
+called via <code>https://www.your-shop-domain.de/path-to-shop/api.php/v3</code>.</p>
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<p>Every error response will contain a valid HTTP Status Code. The response body itself will provided error information
+based on the current mode of the application (<em>develop</em> or <em>production</em>). If there is a <code>.dev-environment</code> file
+exists in the base directory of the shop, the <em>develop</em> mode is active and the response body will contain not only
+a error message itself, but also a stack trace of the error.</p>
+<h2 id="hateoas-support">HATEOAS Support<a class="headerlink" href="#hateoas-support" title="Permanent link">&para;</a></h2>
+<p>HATEOAS stands for Hypermedia as the Engine of Application State and describes the use of links which point to
+external resources or actions that are related to a specific resource. The API will provide links inside the
+response body, if available.</p>
+<h2 id="http-caching-support">HTTP Caching Support<a class="headerlink" href="#http-caching-support" title="Permanent link">&para;</a></h2>
+<p>Web caching is not currently supported by any resource but is planned for a future release of the API.
+Caching support will be stated in each section explicitly and the API will return an <code>ETag</code> or <code>Last-Modified</code>
+along with an <code>Expires</code> headers, containing information about the provided response.</p>
+<h2 id="usage-with-postman">Usage with Postman<a class="headerlink" href="#usage-with-postman" title="Permanent link">&para;</a></h2>
+<p>Postman is a third party graphical user interface to easily communicate with RESTful APIs. It enables you to directly
+import the swagger-defined GX4 API v3 specification, which we provide for you (link is at the top of this page).</p>
+<p>Importing the specification into Postman automatically provides you with all API-Endpoints available and
+additionally, most variables are already declared, allowing you to quickly explore the GX4 RESTful API v3.</p>
+<h3 id="defining-your-api-location">Defining your API location<a class="headerlink" href="#defining-your-api-location" title="Permanent link">&para;</a></h3>
+<p>Once you downloaded the <code>swagger.json</code>, it is advised to manually re-define your API's location according to your
+hosting. To do so, open the previously downloaded <code>swagger.json</code> with a text-editor of your choice, and you will
+see a JSON document defining all of the API's available communication.</p>
+<p>To quickly customize the specification to your needs, change the following values at the beginning of the document
+by replacing the string <code>https://www.gambio-shop.de/shop1</code> according to your setup:</p>
+<p><code>json
+  {
+    //...
+    "servers": [
+      {
+        "url": "https://www.gambio-shop.de/shop1"
+      }
+    ],
+    //...
+  }</code></p>
+<h3 id="importing-into-postman">Importing into Postman<a class="headerlink" href="#importing-into-postman" title="Permanent link">&para;</a></h3>
+<p>Once the above stated changes were manually applied, you may proceed to open Postman. Navigate to <code>File -&gt; Import...</code>
+in Postman's top menu bar. Once clicked, a dialog will open asking you to specify what to import. Either drag the
+edited <code>swagger.json</code> into the dialog, or click the <code>Choose Files</code> button and point Postman to the document.
+Once the API's <code>swagger.json</code> was imported into postman, you will have a Postman collection called
+<code>Gambio REST API v3</code> available, allowing you to quickly dive into the Gambio GX4 RESTful API v3.</p>
+<h2 id="optional-query-parameters">Optional Query Parameters<a class="headerlink" href="#optional-query-parameters" title="Permanent link">&para;</a></h2>
+<p>There are some optional query parameters, that can be used for endpoints that generally return a collection of
+documents.</p>
+<p><strong>Note:</strong> The attributes that can be used for the following actions, are the same like the attributes of the
+documents in the HTTP response. A dot <code>.</code> can be used to address attributes in on a deeper level.</p>
+<h3 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h3>
+<p>You can filter the documents of a collection by using the query parameter <code>filter</code> like:</p>
+<ul>
+<li>GET <code>/api.php/v3/withdrawals?filter[customer.firstName]=John</code> will return all withdrawals of customers with first
+  name <code>John</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[customer.firstName]=J*</code> will return all withdrawals of customers whose first
+  name begins with <code>J</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[customer.firstName]=J*&amp;filter[id]=*1</code> will return all withdrawals of customers
+  whose first name begins with <code>J</code> and withdrawal IDs will end with an one.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=gt|42</code> will return all withdrawals with an ID that is greater than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=gte|42</code> will return all withdrawals with an ID that is equals or greater
+  than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=lt|42</code> will return all withdrawals with an ID that is less than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=lte|42</code> will return all withdrawals with an ID that is equals or less
+  than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=neq|42</code> will return all withdrawals with an ID that is not equal to <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[date]=eq|2020-04-05</code> or GET <code>/api.php/v3/customers?filter[date]=2020-04-05</code>
+  will return all withdrawals with a withdrawal date of <code>2020-04-05</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[createdByAdmin]=1</code> will return all withdrawals that have been created by an
+  admin.</li>
+</ul>
+<h3 id="sorting">Sorting<a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h3>
+<p>The sorting order can be modified by using the query parameter <code>sort</code>. This parameter always expects a comma separated
+list of the document attributes. A <code>+</code> (ascending) or <code>-</code> (descending) at the beginning of a attribute can be used
+modify the order. If no specific order is provided than a ascending order should be used.</p>
+<p><strong>Example:</strong> <code>/api.php/v3/withdrawals?sort=-customer.firstName,+customer.lastName</code></p>
+<h3 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h3>
+<p>The query parameters <code>page</code> and <code>per-page</code> can be used for pagination.</p>
+<p><strong>Example:</strong> <code>/api.php/v3/withdrawals?per-page=5&amp;page=3</code></p>
+<h3 id="trim-documents">Trim documents<a class="headerlink" href="#trim-documents" title="Permanent link">&para;</a></h3>
+<p>Endpoint providing a collection of specific documents (like <code>/api.php/v3/withdrawals</code>), offer the possibility to reduce
+the amount of information inside the provided documents. By using the query parameter <code>fields</code> you are able to provided
+a comma separated list of document attributes, which describe the structure of the returned documents.</p>
+<p><strong>Example:</strong> <code>/api.php/v3/withdrawals?fields=id,customer.firstName,customer.lastName</code></p>
 
 
 
