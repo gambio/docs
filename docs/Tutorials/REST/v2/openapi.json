@@ -7618,7 +7618,7 @@
         "telephone": "2343948798345",
         "fax": "2093049283",
         "email": "customer@email.de",
-        "password": "827ccb0eea8a706c4c34a16891f84e7b",
+        "password": "md5 hash password",
         "statusId": 1,
         "type": "registree",
         "addressId": 1029,

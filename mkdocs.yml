@@ -77,7 +77,8 @@ markdown_extensions:
       permalink: true
 plugins:
   - section-index
-  - render_swagger
+  - render_swagger:
+      allow_arbitrary_locations: true
   - mkdocs-nav-enhancements
   - tags
   - search:
