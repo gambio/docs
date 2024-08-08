@@ -22,7 +22,7 @@
     
     
       
-        <title>REST API - Developer Documentation</title>
+        <title>General Information - Developer Documentation</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rest-api" class="md-skip">
+        <a href="#general-information" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              REST API
+              General Information
             
           </span>
         </div>
@@ -238,7 +238,7 @@
   
     
   
-  REST API
+  General Information
 
       </a>
     </li>
@@ -426,7 +426,7 @@
               
   
   <span class="md-ellipsis">
-    REST API
+    General Information
   </span>
   
 
@@ -441,7 +441,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            REST API
+            General Information
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -475,7 +475,7 @@
         
   
   <span class="md-ellipsis">
-    General Information
+    V3
   </span>
   
 
@@ -2705,60 +2705,88 @@
                   
 
 
-<h1 id="rest-api">REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h1>
-<p>This directory contains the specifications to build the API documentation of the Gambio REST API. The build process is
-based on OPEN API v3 specifications, an HTML/CSS/JS template, and some external Node modules included by Yarn.</p>
-<p>The OpenAPI v3 specifications are split into several files, which isn't of the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a> but allows better
-handling for a high number of endpoints. Therefore, the separate files need to be merged, so that the tool that
-generates the documentation can process the specification correctly.</p>
-<p>As you can see, the <code>[v2|v3]/openapi.json</code> uses JSON references to include additional content of other JSON or YAML
-files. The Node module <code>json-refs</code> merges the content (or resolving the references to external files) and creates the
-<code>[v2|v3]/resolved.openapi.json</code> file, which is used by the Node module <code>redoc-cli</code> to generate the documentation.
-The documentation is not only based on the content of the OpenAPI v3 specification, a template located at <code>./template</code>
-is used by the Redoc CLI tool and defines the look of the generated web page.</p>
-<blockquote>
-<p><strong>Note:</strong> Each JSON file can be replaced with a YAML files (and the other way around). For the merging CLI tool it
-doesn't matter, if a JSON or YAML file is referenced.</p>
-</blockquote>
-<h2 id="structure-of-the-specification-folder">Structure of the specification folder<a class="headerlink" href="#structure-of-the-specification-folder" title="Permanent link">&para;</a></h2>
-<p>As said, the specification is split into several files, which can be found in the <code>[v2|v3]</code> directory. The
-sub-directories mirrors the structure of the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a> based on the <code>[v2|v3]/openapi.json</code> file.</p>
+<h1 id="general-information">General Information<a class="headerlink" href="#general-information" title="Permanent link">&para;</a></h1>
+<p>Since GX v4.1.1.0 there is a new REST API version available. Similar to the existing v2 API, the new endpoints can be
+called via <code>https://www.your-shop-domain.de/path-to-shop/api.php/v3</code>.</p>
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<p>Every error response will contain a valid HTTP Status Code. The response body itself will provided error information
+based on the current mode of the application (<em>develop</em> or <em>production</em>). If there is a <code>.dev-environment</code> file
+exists in the base directory of the shop, the <em>develop</em> mode is active and the response body will contain not only
+a error message itself, but also a stack trace of the error.</p>
+<h2 id="hateoas-support">HATEOAS Support<a class="headerlink" href="#hateoas-support" title="Permanent link">&para;</a></h2>
+<p>HATEOAS stands for Hypermedia as the Engine of Application State and describes the use of links which point to
+external resources or actions that are related to a specific resource. The API will provide links inside the
+response body, if available.</p>
+<h2 id="http-caching-support">HTTP Caching Support<a class="headerlink" href="#http-caching-support" title="Permanent link">&para;</a></h2>
+<p>Web caching is not currently supported by any resource but is planned for a future release of the API.
+Caching support will be stated in each section explicitly and the API will return an <code>ETag</code> or <code>Last-Modified</code>
+along with an <code>Expires</code> headers, containing information about the provided response.</p>
+<h2 id="usage-with-postman">Usage with Postman<a class="headerlink" href="#usage-with-postman" title="Permanent link">&para;</a></h2>
+<p>Postman is a third party graphical user interface to easily communicate with RESTful APIs. It enables you to directly
+import the swagger-defined GX4 API v3 specification, which we provide for you (link is at the top of this page).</p>
+<p>Importing the specification into Postman automatically provides you with all API-Endpoints available and
+additionally, most variables are already declared, allowing you to quickly explore the GX4 RESTful API v3.</p>
+<h3 id="defining-your-api-location">Defining your API location<a class="headerlink" href="#defining-your-api-location" title="Permanent link">&para;</a></h3>
+<p>Once you downloaded the <code>swagger.json</code>, it is advised to manually re-define your API's location according to your
+hosting. To do so, open the previously downloaded <code>swagger.json</code> with a text-editor of your choice, and you will
+see a JSON document defining all of the API's available communication.</p>
+<p>To quickly customize the specification to your needs, change the following values at the beginning of the document
+by replacing the string <code>https://www.gambio-shop.de/shop1</code> according to your setup:</p>
+<p><code>json
+  {
+    //...
+    "servers": [
+      {
+        "url": "https://www.gambio-shop.de/shop1"
+      }
+    ],
+    //...
+  }</code></p>
+<h3 id="importing-into-postman">Importing into Postman<a class="headerlink" href="#importing-into-postman" title="Permanent link">&para;</a></h3>
+<p>Once the above stated changes were manually applied, you may proceed to open Postman. Navigate to <code>File -&gt; Import...</code>
+in Postman's top menu bar. Once clicked, a dialog will open asking you to specify what to import. Either drag the
+edited <code>swagger.json</code> into the dialog, or click the <code>Choose Files</code> button and point Postman to the document.
+Once the API's <code>swagger.json</code> was imported into postman, you will have a Postman collection called
+<code>Gambio REST API v3</code> available, allowing you to quickly dive into the Gambio GX4 RESTful API v3.</p>
+<h2 id="optional-query-parameters">Optional Query Parameters<a class="headerlink" href="#optional-query-parameters" title="Permanent link">&para;</a></h2>
+<p>There are some optional query parameters, that can be used for endpoints that generally return a collection of
+documents.</p>
+<p><strong>Note:</strong> The attributes that can be used for the following actions, are the same like the attributes of the
+documents in the HTTP response. A dot <code>.</code> can be used to address attributes in on a deeper level.</p>
+<h3 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h3>
+<p>You can filter the documents of a collection by using the query parameter <code>filter</code> like:</p>
 <ul>
-<li>
-<p><code>[v2|v3]/components</code><br />
-  This directory contains definitions of parts of the request and response body, as well as the HTTP header. The
-  internal structure of the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a> is strictly mirrored in this directory. The contained <code>index.json</code>
-  files are used to structure the other JSON/YAML files in the same directory or the directories below.</p>
-</li>
-<li>
-<p><code>[v2|v3]/paths</code><br />
-  This directory contains the files that define the several API endpoints. The <code>[v2|v3]/paths/index.json</code> file
-  defines the URLs and references the corresponding HTTP methods. The contained <code>index.json</code> inside the sub-directories
-  (e.g. <code>[v2|v3]/paths/parcel-services/index.json</code>) maps a specific HTTP method with the json files, that defines
-  the endpoint specifications.</p>
-</li>
-<li>
-<p><code>[v2|v3]/tags</code><br />
-  This directory contains the tags. Each group of API endpoints have a specific tag. E.g. all endpoints starting with
-  <code>api.php/v3/parcel-service</code> belong to the tag <em>parcel service</em> and the files <code>[v2|v3]/tags/parcelServices.json</code>.
-  It's also possible to add additional tags to the specification to provide additional information, like its done
-  with the <code>[v2|v3]/tags/generalInformation.yaml</code> file. The tag files need to be referenced in the
-  <code>[v2|v3]/openapi.json</code> file.</p>
-</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[customer.firstName]=John</code> will return all withdrawals of customers with first
+  name <code>John</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[customer.firstName]=J*</code> will return all withdrawals of customers whose first
+  name begins with <code>J</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[customer.firstName]=J*&amp;filter[id]=*1</code> will return all withdrawals of customers
+  whose first name begins with <code>J</code> and withdrawal IDs will end with an one.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=gt|42</code> will return all withdrawals with an ID that is greater than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=gte|42</code> will return all withdrawals with an ID that is equals or greater
+  than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=lt|42</code> will return all withdrawals with an ID that is less than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=lte|42</code> will return all withdrawals with an ID that is equals or less
+  than <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[id]=neq|42</code> will return all withdrawals with an ID that is not equal to <code>42</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[date]=eq|2020-04-05</code> or GET <code>/api.php/v3/customers?filter[date]=2020-04-05</code>
+  will return all withdrawals with a withdrawal date of <code>2020-04-05</code>.</li>
+<li>GET <code>/api.php/v3/withdrawals?filter[createdByAdmin]=1</code> will return all withdrawals that have been created by an
+  admin.</li>
 </ul>
-<h2 id="how-to-define-a-new-api-endpoint">How to define a new API endpoint<a class="headerlink" href="#how-to-define-a-new-api-endpoint" title="Permanent link">&para;</a></h2>
-<p>At first, you need to understand the <a href="http://spec.openapis.org/oas/v3.0.3">OpenAPI v3 standard</a>. It's similar to the v2 standard, that is used to define the
-Gambio REST API v2 endpoints, but doesn't match one-to-one.</p>
-<p>To define the structure of the request and response body, you need to define their schemas by creating new files and a
-new sub-directory inside <code>[v2|v3]/components/schemas</code> (similar to the existing schemas). References to other schema
-files can and should be used. After adding the new schemas, you need to add them to the
-<code>[v2|v3]/components/schemas/index.json</code> as well. The assigned JSON key is later used to reference the schemas in the
-definition files for the endpoints. E.g. the reference <code>#/components/schemas/trackingCodes-trackingCode</code> would
-reference the schema defined in <code>[v2|v3]/components/schemas/trackingCodes/trackingCode.json</code>.</p>
-<p>To define new HTTP endpoints, you need to define their schemas by creating new files and new sub-directories inside
-<code>[v2|v3]/paths</code>. References to other schema files are also possible, but you should use the internal references
-(e.g. <code>#/components/schemas/trackingCodes-trackingCode</code>) to reference schemas for response and request bodies, etc.
-After adding the new schemas, you need to add them to the <code>[v2|v3]/paths/index.json</code> as well.</p>
+<h3 id="sorting">Sorting<a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h3>
+<p>The sorting order can be modified by using the query parameter <code>sort</code>. This parameter always expects a comma separated
+list of the document attributes. A <code>+</code> (ascending) or <code>-</code> (descending) at the beginning of a attribute can be used
+modify the order. If no specific order is provided than a ascending order should be used.</p>
+<p><strong>Example:</strong> <code>/api.php/v3/withdrawals?sort=-customer.firstName,+customer.lastName</code></p>
+<h3 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h3>
+<p>The query parameters <code>page</code> and <code>per-page</code> can be used for pagination.</p>
+<p><strong>Example:</strong> <code>/api.php/v3/withdrawals?per-page=5&amp;page=3</code></p>
+<h3 id="trim-documents">Trim documents<a class="headerlink" href="#trim-documents" title="Permanent link">&para;</a></h3>
+<p>Endpoint providing a collection of specific documents (like <code>/api.php/v3/withdrawals</code>), offer the possibility to reduce
+the amount of information inside the provided documents. By using the query parameter <code>fields</code> you are able to provided
+a comma separated list of document attributes, which describe the structure of the returned documents.</p>
+<p><strong>Example:</strong> <code>/api.php/v3/withdrawals?fields=id,customer.firstName,customer.lastName</code></p>
 
 
 
