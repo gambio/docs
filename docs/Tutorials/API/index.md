@@ -1,5 +1,7 @@
 # REST API
 
+## General Information
+
 Since GX v4.1.1.0 there is a new REST API version available. Similar to the existing v2 API, the new endpoints can be
 called via `https://www.your-shop-domain.de/path-to-shop/api.php/v3`.
 
