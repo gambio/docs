@@ -1,1 +1,1 @@
-!!swagger openapi.json!!
+[OAD(openapi.json)]
