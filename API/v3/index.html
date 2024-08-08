@@ -2710,7 +2710,16 @@
 
   <h1>V3</h1>
 
-<p>!! SWAGGER ERROR: Cannot use 2 different swagger files with same filename in same page. !!</p>
+<p><link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"></p>
+<div id="swagger-ui-2">
+</div>
+<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
+<script>
+    SwaggerUIBundle({
+      url: 'resolved.openapi.json',
+      dom_id: '#swagger-ui-2',
+    })
+</script>
 
 
 
