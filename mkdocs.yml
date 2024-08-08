@@ -50,6 +50,7 @@ extra:
       link: https://www.linkedin.com/company/gambio-gmbh
 extra_css:
   - assets/css/extra.css
+  - assets/css/mkdocsoad.css
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
