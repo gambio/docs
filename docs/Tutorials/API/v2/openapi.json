@@ -3,7 +3,7 @@
   "x-navigateMethodsByName": true,
   "info": {
     "description": "This is the Gambio GX Restful API documentation for the GX shop software. You can find out more about Gambio at [http://www.gambio.de](http://www.gambio.de).",
-    "version": "2.0",
+    "version": "",
     "title": "API v2"
   },
   "host": "gambio-shop.de",
