@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Gambio REST API v3",
+        "title": "API v3",
         "version": "",
         "description": "This documentation reference will provide you analytic guides on how the API works, which resources are available and the proper way to request them efficiently.\n\nWe follow a strict deprecation period for breaking changes to our endpoints, so that appropriate time is given to users to update their implementations accordingly.\n\nThank you for using the Gambio GX4 API!",
         "contact": {
