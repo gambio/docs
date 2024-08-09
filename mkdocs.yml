@@ -81,6 +81,7 @@ markdown_extensions:
       permalink: true
 plugins:
   - section-index
+  - redoc-tag
   - neoteroi.mkdocsoad:
       use_pymdownx: true
   - mkdocs-nav-enhancements

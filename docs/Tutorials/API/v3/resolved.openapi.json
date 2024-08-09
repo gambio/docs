@@ -11170,5 +11170,13 @@
         "description": "The API also supports the usage of [JSON web tokens](https://de.wikipedia.org/wiki/JSON_Web_Token), which can be generated on the `Customers` &rarr; `Roles and Permissions` page of the Gambio Admin."
       }
     }
-  }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    },
+    {
+      "bearerAuth": []
+    }
+  ]
 }

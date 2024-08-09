@@ -3,3 +3,4 @@ mkdocs-nav-enhancements~=0.9.1
 mkdocs-plantuml-local
 mkdocs-render-swagger-plugin
 neoteroi-mkdocs
+mkdocs-redoc-tag
