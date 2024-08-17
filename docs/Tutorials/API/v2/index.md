@@ -1,1 +1,1 @@
-[OAD(./docs/Tutorials/API/v2/openapi.json)]
+<redoc src="./openapi.json"/>
